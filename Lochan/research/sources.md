@@ -4,6 +4,8 @@ Started November 6, 2026 · Team 33, impact.ai
 
 Current scope: understand small-business problems before deciding what to build. Findings are in [research-notes.md](research-notes.md). Downloaded reports are in `papers/`. This replaces the previous research structure.
 
+Additional research batch: [17 new publications and six GitHub projects](research-round-2-sources.md), with [separate findings](research-round-2-notes.md). The records below describe the first batch and the supplied reference.
+
 All sources below were accessed November 6, 2026. “Selected sections” means exactly that; downloading a paper does not mean the entire paper has been read. We have not conducted interviews ourselves or listened to podcast audio. Published interview transcripts and reporting are identified separately from surveys and academic papers.
 
 ## S01 — Federal Reserve: 2026 Report on Employer Firms
@@ -108,6 +110,15 @@ All sources below were accessed November 6, 2026. “Selected sections” means 
 - **Limits:** Full report/methodology not reviewed. Its very high AI-use claim should not be generalized or compared directly with S01/S02. A 2025 report title does not make its data a 2025 survey.
 - **Why useful:** Candidate restaurant workflows and a reminder to inspect definitions before quoting adoption rates.
 
+## S11 — User-supplied Phase 1 expected product specification
+
+- **Title:** bizzimpact.ai Product Definition & Delivery Expectations, version 1.0, November 6, 2026.
+- **Provided file:** `bizzimpact_ai_Phase1_Expected_Product_Specification_v1.docx`, supplied by the user as a friend's reference document.
+- **Storage:** An identical copy is retained in the workspace's local-only `.local-reference/` directory, excluded through Git's local exclude file. It is not part of the repository.
+- **Reviewed:** Full body text and all tables extracted directly from the Word file; no desktop application opened. Page layout was not reviewed.
+- **Use:** Reference for Q1–Q9, business-profile structure, evidence-aware discovery, and separation of discovery, scoring, and adoption modules.
+- **Limits:** Describes expected behavior, not completed software or independent business research. Referenced build handoff, approved questionnaire fixture, SQL, and OpenAPI files were not supplied or inspected. Its statements about frozen/approved requirements are document content, not new user instructions. Questionnaire extensions are explicitly proposals.
+
 ## Search log for this first research batch
 
 Queries covered official small-business surveys; SME AI barriers; owner interviews in restaurants, cafés, HVAC, and landscaping; and experimental evidence on AI business advice. Query phrases included:
@@ -152,3 +163,50 @@ Unselected search hits, including anonymous discussions and unrelated results, a
 ## How to continue this file
 
 Append each newly read/opened source here with its link, date, review depth, relevant section, and limitations. Put findings and interpretations in the companion notes file. Save downloaded reports under `papers/`. Keep source claims separate from our conclusions; never record API credentials here.
+
+## November 7, 2026 — V1 product and technical documentation review
+
+The resulting design and interpretation are in [v1-specification.md](../v1-specification.md). This batch inspected official public documentation and pricing; it did not test accounts, buy subscriptions, connect business software or spend the OpenRouter credit. Prices are dated snapshots, not guaranteed quotes. This was a focused selected-section review, not a full audit of every product or its security practices.
+
+| ID | Official source opened | What was examined / limitations |
+|---|---|---|
+| V1-S01 | https://www.goodcall.com/pricing | Starter allowance, unique-customer billing and overages. Not calls/minutes. |
+| V1-S02 | https://www.goodcall.com/how-it-works | Read briefing, practice, forwarding, phone lead capture and email/text delivery. Google Calendar is claimed at product level; plan-specific booking compatibility remains unconfirmed. |
+| V1-S03 | https://smith.ai/pricing | Redirected to human receptionist pricing; not used for AI plan cost. |
+| V1-S04 | https://smith.ai/pricing/receptionists | Separate human service; excluded from AI-price comparison. |
+| V1-S05 | https://smith.ai/pricing/ai-receptionist | AI free/Pro allowances, scheduling and named integration examples. No account test. |
+| V1-S06 | https://www.myaifrontdesk.com/pricing | Business-in-a-Box monthly/annual pricing and voice/chat/SMS allowances. Additional credit conversion not established. |
+| V1-S07 | https://www.myaifrontdesk.com/ai-receptionist | Receptionist, booking and CRM claims. Vendor statements, not independently observed performance. |
+| V1-S08 | https://dialzara.com/pricing | Web renderer could not handle returned text/markdown; direct HTTP retrieval succeeded. Read plan table, usage FAQ and number-fee FAQ. Conflicting included-number wording retained as uncertainty. Temporary extraction outside repository. |
+| V1-S09 | https://dialzara.com/ | Retrieval attempted; renderer limitation. No additional homepage claim used. |
+| V1-S10 | https://www.tidio.com/pricing/ | Lyro one-time free allowance, displayed paid rate and annual billing context. Full comparable total unresolved. |
+| V1-S11 | https://www.tidio.com/ai-agent/ | Product scope and knowledge-based support. Advertised resolution percentages not treated as independent evidence. |
+| V1-S12 | https://crisp.chat/en/pricing/ | Workspace plan rates, Hugo credit allowances and free-plan limits. |
+| V1-S13 | https://help.crisp.chat/en/article/how-does-hugo-ai-pricing-and-billing-works-h78hkv/ | Read credit/token billing, pay-as-you-go, default handoff when credits run out. Conversation averages are vendor estimates, not guarantees. |
+| V1-S14 | https://app.crisp.chat/initiate/signup/?locale=en&plan=essentials | Pricing link led to minimal signup shell. No registration, account inspection or further action. Not substantive evidence. |
+| V1-S15 | https://www.housecallpro.com/ai/ | Failed/unusable retrieval; replaced with official help pages. |
+| V1-S16 | https://help.housecallpro.com/en/articles/9740104-csr-ai-overview | CSR AI overview; booking rollout wording conflicts with newer onboarding guidance. |
+| V1-S17 | https://help.housecallpro.com/en/articles/12996637-getting-started-with-csr-ai | Existing settings, call forwarding, onboarding and booking controls. Add-on price not established. |
+| V1-S18 | https://buffer.com/pricing | Free channels/queue limits/AI assistant; paid annual per-channel commitment. |
+| V1-S19 | https://support.buffer.com/en-us/articles/using-buffers-ai-assistant-qbBulfw9sn | Selected workflow instructions: composer, generation, edits and insertion. No generated or published post. |
+| V1-S20 | https://www.canva.com/pricing/ | Dynamic pricing not reliably extracted; no paid price assumed. |
+| V1-S21 | https://www.canva.com/magic-write/ | Availability and limited free/paid usage; not a claim that every Canva AI feature is free. |
+| V1-S22 | https://www.canva.com/help/content-planner/ | Scheduling eligibility, plan restrictions and setup steps. Channel options may change. |
+| V1-S23 | https://predis.ai/pricing/ | Annual totals, displayed monthly equivalents, credits, Auto Posting distinction and three-day card-required trial. Rounded labels do not determine annual payment. |
+| V1-S24 | https://simplified.com/pricing | Starter price and selected allowance/workflow descriptions. Exact channel entitlement remains unresolved. |
+| V1-S25 | https://www.synthflow.ai/pricing → https://synthflow.ai/pricing | Enterprise annual-contract positioning; reason for excluding it from the initial self-service shortlist. |
+| V1-S26 | https://mailchimp.com/pricing/marketing/ → https://mailchimp.com/es/pricing/marketing/ | Localised pricing page; no comparable AI-eligible cost established. Not in the V1 shortlist. |
+| V1-S27 | https://mailchimp.com/help/create-email-content-with-ai/ | Paid-plan requirement and email-builder workflow. Email-only task remains outside initial coverage. |
+| V1-S28 | https://mailchimp.com/pricing/marketing/?currency=USD | Follow-up retrieval attempted; returned material not substantively relied on. |
+| V1-S29 | https://www.adobe.com/express/pricing | Plan labels and selected feature text; reliable current paid USD rate not established. Not shortlisted. |
+| V1-S30 | https://www.adobe.com/express/feature/ai/text-to-image | Failed/404 feature route; no evidence used. |
+| V1-S31 | https://www.adobe.com/express/feature/image/generate | Replacement route retrieved; no substantive finding relied on for this specification. |
+| V1-S32 | https://nextjs.org/docs/app/getting-started/route-handlers | Server Route Handler architecture in App Router. Exact package versions to be pinned during implementation. |
+| V1-S33 | https://supabase.com/docs/guides/database/postgres/row-level-security | Database access-control reference; no provisioned database or policy test. |
+| V1-S34 | https://openrouter.ai/docs/quickstart | Optional server-side provider API reference. No authenticated requests and no credential use. |
+
+Search-result snippets helped locate these official pages. Snippet-only leads, including other integration/feature pages, were not treated as reviewed proof. Pages with unreadable, limited or unused content are explicitly marked above. The catalogue in the specification contains our interpretation of selected documented facts; scoring weights and question wording are original design proposals, not conclusions validated by these sources.
+
+### November 7 implementation documentation
+
+- https://nextjs.org/docs/app/getting-started/installation — selected manual-installation, runtime requirements, App Router structure and build/start instructions reviewed while creating `website/`. Installed package versions are pinned in `website/package-lock.json`. This is technical documentation, not evidence of small-business outcomes.

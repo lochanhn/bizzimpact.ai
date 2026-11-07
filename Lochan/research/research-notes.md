@@ -2,6 +2,8 @@
 
 First research batch: November 6, 2026.
 
+The [second research batch](research-round-2-notes.md) adds 17 publications and six inspected GitHub projects. Its [source record](research-round-2-sources.md) preserves download links, versions and review depth. The earlier questionnaire remains a draft; the user requested deeper research before reducing and finalizing it.
+
 We are currently investigating business problems, existing evidence, and what still needs to be established. No target sector, final problem statement, software design, or implementation has been selected. Source IDs link to [sources.md](sources.md), which also records review depth and saved reports.
 
 ## 1. There is evidence of a tool-selection and adoption problem
@@ -122,3 +124,7 @@ If a paper measures perceived benefits, report them as perceived. If no reliable
 - Narrow the problem only when the evidence supports a clear choice.
 
 This is the first evidence batch, not a completed market study. No coding, API use, owner outreach, or desktop application launches occurred.
+
+## 10. Questionnaire design derived from this research
+
+On November 6, 2026, the user supplied a friend's Phase 1 product specification as local reference (S11). The [questionnaire design](questionnaire-design.md) now contains the eight starting profile questions, proposed task-specific follow-ups, practical constraints, answer-to-discovery rules, and a cost/impact worksheet. It separates the supplied reference's wording from our proposed extensions. This is a design draft; the questions, branching, and recommendation effects have not been tested with owners. The research above retains its original limitations.

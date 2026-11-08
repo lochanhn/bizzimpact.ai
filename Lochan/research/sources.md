@@ -210,3 +210,12 @@ Search-result snippets helped locate these official pages. Snippet-only leads, i
 ### November 7 implementation documentation
 
 - https://nextjs.org/docs/app/getting-started/installation — selected manual-installation, runtime requirements, App Router structure and build/start instructions reviewed while creating `website/`. Installed package versions are pinned in `website/package-lock.json`. This is technical documentation, not evidence of small-business outcomes.
+
+## November 7 — 100-tool catalogue expansion
+
+Reviewed 100 additional distinct AI-enabled products from official vendor pages/help articles, with separate selected pricing reviews for Wordtune, Rosie, Photoroom and Chatbase. Product and plan review depth are distinguished in the website; no paid API call or vendor-account test was performed.
+
+- [Complete dated source register and retrieval limitations](tool-catalogue/sources.md)
+- [Findings, small-business fit and outstanding checks for every tool](tool-catalogue/research-notes.md)
+- [Retrieval/redirect/failure audit](tool-catalogue/retrieval-audit.json)
+- [Machine-readable records used by the website](../../website/data/catalogue-expansion.json)

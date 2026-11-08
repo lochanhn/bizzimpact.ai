@@ -60,3 +60,37 @@ test('catalogue search, empty state and reset operate on the actual reviewed cat
  await user.clear(search);await user.type(search,'no-such-tool');assert.ok(view.getByText('No tools match this search.'));
  await user.click(view.getByRole('button',{name:'Clear filters'}));assert.ok(view.getByRole('heading',{name:'Goodcall'}));
 });
+
+test('expanded catalogue loads incrementally and can filter research depth and category',async()=>{
+ const {view,user}=await setup();await user.click(view.getByRole('button',{name:'Explore tools'}));
+ assert.ok(view.getByText('Showing 24 of 111 matching tools'));
+ await user.click(view.getByRole('button',{name:/Show more tools \(87 remaining\)/}));assert.ok(view.getByText('Showing 48 of 111 matching tools'));
+ await user.click(view.getByRole('button',{name:/Bookkeeping & finance 5/}));assert.ok(view.getByRole('heading',{name:'QuickBooks Intuit Intelligence'}));assert.ok(view.getByText('Showing 5 of 5 matching tools'));
+ await user.selectOptions(view.getByRole('combobox',{name:'Review depth'}),'plan');assert.ok(view.getByText('No tools match this search.'));
+ await user.click(view.getByRole('button',{name:'Clear filters'}));assert.ok(view.getByText('Showing 24 of 111 matching tools'));
+});
+test('a newly researched tool has source-linked notes and an honest pre-setup checklist',async()=>{
+ const {view,user}=await setup();await user.click(view.getByRole('button',{name:'Explore tools'}));
+ await user.type(view.getByRole('textbox',{name:'Search tools'}),'Notion');
+ assert.ok(view.getByRole('heading',{name:'Notion AI'}));
+ await user.click(view.getByRole('button',{name:'Research & details'}));
+ assert.ok(view.getByRole('heading',{name:'Research notes for Notion AI'}));
+ assert.ok(view.getByRole('heading',{name:'Before setup: research checklist'}));
+ assert.ok(view.getByRole('link',{name:'Official product documentation'}).getAttribute('href')?.includes('notion.com'));
+ assert.ok(view.getByText(/outside the current questionnaire matching scope/));
+});
+
+test('filtered catalogue export includes every filtered row, not only the visible page',async()=>{
+ const {view,user}=await setup();let captured:Blob|undefined;
+ const create=URL.createObjectURL;const click=dom.window.HTMLAnchorElement.prototype.click;
+ URL.createObjectURL=(blob:Blob)=>{captured=blob;return 'blob:catalogue-test';};
+ dom.window.HTMLAnchorElement.prototype.click=function(){};
+ try {
+  await user.click(view.getByRole('button',{name:'Explore tools'}));
+  await user.click(view.getByRole('button',{name:'Download filtered catalogue'}));
+  assert.ok(captured);const all=await captured.text();assert.equal(all.split('\r\n').length,112);assert.ok(all.includes('QuickBooks Intuit Intelligence'));
+  await user.click(view.getByRole('button',{name:/Bookkeeping & finance 5/}));
+  await user.click(view.getByRole('button',{name:'Download filtered catalogue'}));
+  assert.equal((await captured!.text()).split('\r\n').length,6);
+ }finally{URL.createObjectURL=create;dom.window.HTMLAnchorElement.prototype.click=click;}
+});

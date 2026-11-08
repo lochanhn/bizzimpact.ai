@@ -1,16 +1,20 @@
+import { expandedTools, type Research } from './catalogue-expansion';
 export const CHECKED = '2026-11-07';
-export const CATALOG_VERSION = '2026-11-07.1';
+export const CATALOG_VERSION = '2026-11-07.2';
+export const CATEGORIES = { marketing:'Marketing & content', calls:'Phone enquiries', chat:'Customer support', productivity:'Meetings & productivity', operations:'Automation & work', sales:'Sales & CRM', finance:'Bookkeeping & finance' } as const;
+export type Category = keyof typeof CATEGORIES;
 export type Status = 'yes' | 'no' | 'unknown';
 export type Capability = 'capture'|'faq'|'request'|'booking'|'text'|'image'|'video'|'schedule'|'google'|'outlook'|'calendly'|'facebook'|'instagram';
 export type Price = {
   monthly: number | null; annual?: number; unit?: 'calls'|'minutes'|'customers'|'conversations'|'pieces';
   included?:number; overage?:number; freeOngoing?:boolean; extraUnknown?:boolean;
-  note:string; label:string;
+  note:string; label:string; allowanceUnknown?:boolean; requiresAnnual?:boolean;
 };
 export type Plan = { id:string; name:string; price:Price; capabilities:Partial<Record<Capability,Status>> };
 export type Tool = {
-  id:string; name:string; monogram:string; color:string; task:'calls'|'chat'|'marketing'; tagline:string;
+  id:string; name:string; monogram:string; color:string; task:Category; tagline:string;
   description:string; existingOnly?:string; sources:{label:string;url:string}[]; plans:Plan[];
+  reviewLevel?:'plan'|'product'; assessmentTasks?:('calls'|'chat'|'marketing')[]; assessmentOutputs?:('text'|'image'|'video')[]; research?:Research;
   steps:string[]; test:string; rollback:string; caveat:string;
 };
 const voiceSteps = [
@@ -38,7 +42,7 @@ const marketingSteps=[
   'Download or copy the reviewed work. If scheduling is required, verify that your account type and channel are supported on this plan.',
   'Preview one post, confirm the destination and timezone, and publish only after your own review.',
 ];
-export const tools:Tool[]=[
+const originalTools:Tool[]=[
  {id:'goodcall',name:'Goodcall',monogram:'g',color:'#e7efca',task:'calls',tagline:'Capture enquiries while you’re on the job',description:'An AI phone agent that asks for caller details and sends leads by email or text.',
  sources:[{label:'Pricing',url:'https://www.goodcall.com/pricing'},{label:'Official workflow',url:'https://www.goodcall.com/how-it-works'}],
  plans:[{id:'goodcall-starter',name:'Starter',price:{monthly:79,unit:'customers',included:100,overage:0.79,label:'$79 / month',note:'100 unique customers included; $0.79 per additional unique customer. Carrier fees not established.'},capabilities:{capture:'yes',faq:'yes',request:'unknown',booking:'unknown',google:'unknown',outlook:'unknown',calendly:'unknown'}}],
@@ -65,3 +69,6 @@ export const tools:Tool[]=[
  {id:'predis-rise',name:'Rise annual',price:{monthly:474/12,annual:474,extraUnknown:true,label:'$474 / year upfront',note:'3,200 credits/month; Auto Posting listed. Confirm exact channel/account support.'},capabilities:{text:'yes',image:'yes',video:'yes',schedule:'yes',facebook:'unknown',instagram:'unknown'}}],steps:marketingSteps,test:'Check an exported draft and every generated claim. Test exact account/channel permissions before relying on publishing.',rollback:'Cancel queued publishing within Predis; retain a manual export. Review subscription/trial cancellation separately.',caveat:'The three-day trial requires a card and charges at its end. Rounded monthly labels are not the annual payment total.'},
  {id:'simplified',name:'Simplified',monogram:'s',color:'#f2e9c7',task:'marketing',tagline:'Copy and design in one workspace',description:'AI copy, design and social workflows; channel entitlements need confirmation.',sources:[{label:'Plans and allowances',url:'https://simplified.com/pricing'}],plans:[{id:'simplified-starter',name:'Starter',price:{monthly:79,extraUnknown:true,label:'$79 / month',note:'Campaign, AI-word and design allowances apply. Specific scheduling/channel entitlements need checking.'},capabilities:{text:'yes',image:'yes',video:'unknown',schedule:'unknown',facebook:'unknown',instagram:'unknown'}}],steps:marketingSteps,test:'Check the draft and exact output allowance. Confirm scheduling permissions if needed.',rollback:'Cancel queued work and keep drafts unpublished. Review subscription billing separately.',caveat:'A general social-workflow claim does not verify every platform or plan feature.'},
 ];
+
+export const tools:Tool[]=[...originalTools,...expandedTools];
+export const PLAN_REVIEWED_COUNT=tools.filter(t=>t.reviewLevel!=='product').length;

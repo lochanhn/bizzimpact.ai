@@ -1,0 +1,874 @@
+[
+  {
+    "id": "jasper",
+    "url": "https://www.jasper.ai/",
+    "finalUrl": "https://www.jasper.ai/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "3892396c4a6173a9fa0e556ebf48ef0f7dfa51b8767628e79ab97d0eb877f57c"
+  },
+  {
+    "id": "copy-ai",
+    "url": "https://www.copy.ai/",
+    "finalUrl": "https://www.copy.ai/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "8bdbd02de6a60e48f7e1c33ae8ee021dfa1442a863b2e36bc44abdd3ab526381"
+  },
+  {
+    "id": "writesonic",
+    "url": "https://writesonic.com/",
+    "finalUrl": "https://writesonic.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "a7daff3321518d82147d74508bb69ec8e926cd869dd115dcf3f9c8ed3c9a6f17"
+  },
+  {
+    "id": "rytr",
+    "url": "https://rytr.me/",
+    "finalUrl": "https://rytr.me/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "944838ea0082d33bce7d94abc34414f6a22f78ab0c7efa11400c0f210c3500a3"
+  },
+  {
+    "id": "anyword",
+    "url": "https://www.anyword.com/",
+    "finalUrl": "https://www.anyword.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "adbdfa31cfc0da9d0c5c241ff13a5bf3bf879fc1121434961d8c3af3dcc3dcf2"
+  },
+  {
+    "id": "writer",
+    "url": "https://writer.com/",
+    "finalUrl": "https://writer.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "622e8fbdd08e90f0247405978df968d6f66a028db8c7224672dd158f96f1b35f"
+  },
+  {
+    "id": "grammarly",
+    "url": "https://www.grammarly.com/ai",
+    "finalUrl": "https://www.grammarly.com/ai",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "13d1709f58f84583d40b31f77d9123533b5beaeb8afb8a87c3a96a69f56162d6"
+  },
+  {
+    "id": "wordtune",
+    "url": "https://www.wordtune.com/",
+    "finalUrl": "https://www.wordtune.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "ad081a0cc8d0f96fcc286a972f420b192646079cf1df9af12cae18efa5596a6a"
+  },
+  {
+    "id": "quillbot",
+    "url": "https://quillbot.com/",
+    "retrieval": "failed",
+    "error": "HTTP Error 403: Forbidden",
+    "successfulWebFallback": {
+      "url": "https://quillbot.com/",
+      "date": "2026-11-07"
+    }
+  },
+  {
+    "id": "frase",
+    "url": "https://www.frase.io/",
+    "finalUrl": "https://www.frase.io/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "9159c4617d0e90e1eb59ee475669effd5418542893920307ce900cf6804ac706"
+  },
+  {
+    "id": "surfer",
+    "url": "https://surferseo.com/",
+    "finalUrl": "https://surfer.ai/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "739511257cc32746fe9fac4c3f3dc1b610612aa62bd04af7f088b6cf0a904e34"
+  },
+  {
+    "id": "scalenut",
+    "url": "https://www.scalenut.com/",
+    "finalUrl": "https://www.scalenut.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "6c19406b4c3c073c02eaa40b1171b9236a253e93ddb83a62dd1a64a089a6aafe"
+  },
+  {
+    "id": "marketmuse",
+    "url": "https://www.marketmuse.com/",
+    "finalUrl": "https://www.marketmuse.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "8251df5e715977fd1ff39b0966bc8c2e6dbbf270815118e8242455f29309edd8"
+  },
+  {
+    "id": "semrush",
+    "url": "https://www.semrush.com/",
+    "finalUrl": "https://www.semrush.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "a23a4c90424c22099a5c61877c173fd015196e5066e7e8d0a9ac6deddaa97040"
+  },
+  {
+    "id": "ahrefs",
+    "url": "https://ahrefs.com/ai",
+    "finalUrl": "https://ahrefs.com/ai",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "ac0fa7ab47e663be9b648d56e08bd9bd14d37d448255f09e87395df6e0430c75"
+  },
+  {
+    "id": "adobe-express",
+    "url": "https://www.adobe.com/express/",
+    "retrieval": "failed",
+    "error": "HTTP Error 403: Forbidden",
+    "successfulWebFallback": {
+      "url": "https://www.adobe.com/express/",
+      "date": "2026-11-07"
+    }
+  },
+  {
+    "id": "photoroom",
+    "url": "https://www.photoroom.com/",
+    "finalUrl": "https://www.photoroom.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "94ab03523f11a4a9164d62a2fc606028c638967fe11335e24cf6da010e2f3366"
+  },
+  {
+    "id": "pixelcut",
+    "url": "https://www.pixelcut.ai/",
+    "finalUrl": "https://www.pixelcut.ai/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "151eb5db57fb442990ec15f077a913b271af8e9033ee9481eb5021a4e365c2de"
+  },
+  {
+    "id": "pebblely",
+    "url": "https://pebblely.com/",
+    "finalUrl": "https://pebblely.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "e48965489850a9c7956d6a57b64a46caf5e9c0ea1ef6ecb8e47215951eb26772"
+  },
+  {
+    "id": "flair",
+    "url": "https://flair.ai/",
+    "finalUrl": "https://flair.ai/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "12cb6a6cd4745b362f8259b1c450baf70993ea244e06186d933385ac137563f1"
+  },
+  {
+    "id": "adcreative",
+    "url": "https://www.adcreative.ai/",
+    "finalUrl": "https://www.adcreative.ai/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "fb47d487ec00638453d39f2acb34c8cb13bd2fed9908df526f5a2ef4e9fb703b"
+  },
+  {
+    "id": "creatopy",
+    "url": "https://www.creatopy.com/",
+    "finalUrl": "https://www.thebrief.ai/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "185e715ec03bd904a7b4c436722e5fe286e5b6863821bc3093a33e76423d07e6"
+  },
+  {
+    "id": "pencil",
+    "url": "https://www.trypencil.com/",
+    "finalUrl": "https://trypencil.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "6fcf6eaf546cb505393d4ec9d4b745e3971ec1eb9398935938e7416bcb499769"
+  },
+  {
+    "id": "lumen5",
+    "url": "https://lumen5.com/",
+    "finalUrl": "https://lumen5.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "d80d69a5c565ce7201b6074675b59ea812483de136ca31a7176a36ad1928b863"
+  },
+  {
+    "id": "invideo",
+    "url": "https://invideo.io/",
+    "finalUrl": "https://invideo.io/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "8c68704466d8aa7d668a531c079ca90b49b3e3782b86d8237d00757986daa0ab"
+  },
+  {
+    "id": "pictory",
+    "url": "https://pictory.ai/",
+    "finalUrl": "https://pictory.ai/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "be7afdbb13c92e1914109010f17a57d9b7f981f093c156b5b422d9fd3a4439e3"
+  },
+  {
+    "id": "descript",
+    "url": "https://www.descript.com/",
+    "finalUrl": "https://www.descript.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "79a7ab0ab61aab0a9f0db240e29d9a7086d935d133bbd39356ffae1e617a4e8e"
+  },
+  {
+    "id": "veed",
+    "url": "https://www.veed.io/",
+    "finalUrl": "https://www.veed.io/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "ec4fd9bef6d789c2958b239c88c1085b4fd8cba69fcc566714e322386c3a5547"
+  },
+  {
+    "id": "kapwing",
+    "url": "https://www.kapwing.com/ai",
+    "finalUrl": "https://www.kapwing.com/ai",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "93073d3ecf1fe3ae7ff274ffaad95d5e4c1eb89d34fb32cc956c1764e001cfe1"
+  },
+  {
+    "id": "runway",
+    "url": "https://runwayml.com/",
+    "finalUrl": "https://runway.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "a13695ef84e9ca873b5a1217eefb319e7c18ec0ef633ea7804e41d44a785a617"
+  },
+  {
+    "id": "synthesia",
+    "url": "https://www.synthesia.io/",
+    "finalUrl": "https://www.synthesia.io/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "516b25d598861aa6d4293f00a7a17b6738086c4f610c32d338b989a806201fe8"
+  },
+  {
+    "id": "heygen",
+    "url": "https://www.heygen.com/",
+    "finalUrl": "https://www.heygen.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "37df149b196476cffe12d741a5bbe257abcdcbc39d43f5efd956204401cd6943"
+  },
+  {
+    "id": "opusclip",
+    "url": "https://www.opus.pro/",
+    "finalUrl": "https://www.opus.pro/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "45d8b99c3978938698246d582cb744160bee6b384952576e97ac5925fd7a8063"
+  },
+  {
+    "id": "murf",
+    "url": "https://murf.ai/",
+    "finalUrl": "https://murf.ai/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "75ced86188c05bd33dc743059140caca7aa6cd7dd33ca89e33b5905df843c65f"
+  },
+  {
+    "id": "elevenlabs",
+    "url": "https://elevenlabs.io/",
+    "finalUrl": "https://elevenlabs.io/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "fa71039c9b9da09326bd85121c5b6ed24e57befd99b4d06f81c43774a6da5701"
+  },
+  {
+    "id": "suno",
+    "url": "https://suno.com/",
+    "finalUrl": "https://suno.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "491668854b1ec43995162e68e0e8e40bf6ffab3e84cb4273f8b53161a7a1f5e6"
+  },
+  {
+    "id": "hootsuite",
+    "url": "https://www.hootsuite.com/platform/ai",
+    "finalUrl": "https://www.hootsuite.com/platform/ai",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "2c094e923e90571d58257ff7f08e0028d105c490ada61c861c1498547468bb41",
+    "previousAttempt": {
+      "url": "https://www.hootsuite.com/platform/owlywriter-ai",
+      "error": "HTTP Error 404: Not Found",
+      "retrieval": "failed"
+    }
+  },
+  {
+    "id": "later",
+    "url": "https://later.com/",
+    "finalUrl": "https://later.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "7724cdd0d4869a36a0da4b1ff7cd80e2b5d2534cb2fb09b03b23ecb02bbc5b69"
+  },
+  {
+    "id": "socialbee",
+    "url": "https://socialbee.com/",
+    "finalUrl": "https://socialbee.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "9ba56bbdfb93fceccc809bb2780bd5f94782054b9abcd7287cd717ed46374abf"
+  },
+  {
+    "id": "ocoya",
+    "url": "https://www.ocoya.com/",
+    "finalUrl": "https://www.ocoya.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "1a1bc42bc4b198249ffa028244629d6fd4c9cc915d82b8bdf76a06e009f86ffc"
+  },
+  {
+    "id": "publer",
+    "url": "https://publer.com/features/ai-assist",
+    "finalUrl": "https://publer.com/features/ai-assist",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "af9cd7411e917b8a97de3409678bfeff7223af12e401115302dbd9da90e0ea09",
+    "previousAttempt": {
+      "url": "https://publer.com/ai-assist",
+      "error": "HTTP Error 404: Not Found",
+      "retrieval": "failed"
+    }
+  },
+  {
+    "id": "metricool",
+    "url": "https://metricool.com/",
+    "finalUrl": "https://metricool.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "a6a3a48baa9f095ab387ec648bf750df0dff2efe311bfd458e319c0d17ed142d",
+    "previousAttempt": {
+      "url": "https://metricool.com/ai-assistant/",
+      "error": "HTTP Error 404: Not Found",
+      "retrieval": "failed"
+    }
+  },
+  {
+    "id": "flick",
+    "url": "https://www.flick.social/",
+    "finalUrl": "https://www.flick.social/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "286325e9e0114abadd3e2a87cd3f0655b214f0afae50c642f7a6b85c54884e7d"
+  },
+  {
+    "id": "contentstudio",
+    "url": "https://contentstudio.io/",
+    "finalUrl": "https://contentstudio.io/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "b84ba1921e11ac669adb73c43f2210c5d9ac7f46a40b70c100e59083848f58a6"
+  },
+  {
+    "id": "mailchimp",
+    "url": "https://mailchimp.com/solutions/ai-tools/",
+    "finalUrl": "https://mailchimp.com/solutions/ai-tools/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "8bd5c863e14171e3734afdd23ca3a9e8e6fa580a2a2d9e1e957b4fcef6386662",
+    "previousAttempt": {
+      "url": "https://mailchimp.com/features/ai-marketing-tools/",
+      "error": "HTTP Error 404: Not Found",
+      "retrieval": "failed"
+    }
+  },
+  {
+    "id": "brevo",
+    "url": "https://www.brevo.com/",
+    "finalUrl": "https://www.brevo.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "bbd62c500b6f47616ba311031b48f00fc7bb8d5648c76f05e690aa2ca85315fc"
+  },
+  {
+    "id": "klaviyo",
+    "url": "https://www.klaviyo.com/",
+    "finalUrl": "https://www.klaviyo.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "10c35400f882e79963fa11edd7c5ec93dbc40bfd3649304c9c46ea0419401ff6",
+    "previousAttempt": {
+      "url": "https://www.klaviyo.com/products/klaviyo-ai",
+      "error": "HTTP Error 404: Not Found",
+      "retrieval": "failed"
+    }
+  },
+  {
+    "id": "omnisend",
+    "url": "https://www.omnisend.com/",
+    "finalUrl": "https://www.omnisend.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "72520b5c91c17fa3ff419dd58cd1092c38a5185564b9661cb5b6ca4c48b81376"
+  },
+  {
+    "id": "hubspot",
+    "url": "https://www.hubspot.com/products/artificial-intelligence",
+    "finalUrl": "https://www.hubspot.com/products/artificial-intelligence",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "61f85936a0edf19f60c509f2d5036a3cbeab03d4254982f003e5e34338d9ee42"
+  },
+  {
+    "id": "activecampaign",
+    "url": "https://www.activecampaign.com/ai",
+    "finalUrl": "https://www.activecampaign.com/ai",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "cb538f5a837c798baea38586769557ec5b462b30552e36b82d8e3ba5abfaaaca"
+  },
+  {
+    "id": "intercom-fin",
+    "url": "https://www.intercom.com/help/en/articles/7120684-fin-ai-agent-explained",
+    "finalUrl": "https://www.intercom.com/help/en/articles/7120684-fin-ai-agent-explained",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "d1fc70ec79b34f6792c02cd423e7e533d170cc974dd6fbd6c071df3a458c6e26"
+  },
+  {
+    "id": "zendesk",
+    "url": "https://www.zendesk.com/service/ai/",
+    "finalUrl": "https://www.zendesk.com/service/ai/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "1e101198d37c78d566902e70317d5bdc1fe1729fa44c4d1f42f46b1548c07a44"
+  },
+  {
+    "id": "freshdesk",
+    "url": "https://www.freshworks.com/freshdesk/ai/",
+    "finalUrl": "https://www.freshworks.com/freshdesk/ai/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "f68474f5fce3cfab620dff48804d7bfb5f0209b8194b1fcdf56de2f5046526dc"
+  },
+  {
+    "id": "gorgias",
+    "url": "https://www.gorgias.com/ai-agent",
+    "finalUrl": "https://www.gorgias.com/ai-agent",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "8c57e450a98ceb21c15467b45f66ddaddf2baef1ec94752f407d5b5495f0acad"
+  },
+  {
+    "id": "helpscout",
+    "url": "https://docs.helpscout.com/article/1796-introducing-scout",
+    "finalUrl": "https://docs.helpscout.com/article/1796-introducing-scout",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "bcecd184f9d34b2041fee712bead07303a503288b07f5693fdb04ab84309b12a",
+    "previousAttempt": {
+      "url": "https://www.helpscout.com/ai/",
+      "error": "HTTP Error 404: Not Found",
+      "retrieval": "failed"
+    }
+  },
+  {
+    "id": "ada",
+    "url": "https://www.ada.cx/",
+    "retrieval": "failed",
+    "error": "HTTP Error 403: Forbidden",
+    "successfulWebFallback": {
+      "url": "https://www.ada.cx/",
+      "date": "2026-11-07"
+    }
+  },
+  {
+    "id": "chatbase",
+    "url": "https://www.chatbase.co/",
+    "finalUrl": "https://www.chatbase.co/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "77ec185c6808b64648ead1a9547157cc4e96b8acd7cd4d718fe095e45eeaa196"
+  },
+  {
+    "id": "botpress",
+    "url": "https://botpress.com/",
+    "finalUrl": "https://botpress.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "449f3cc077d084fedc768cf284d65b0c52f78c4b725eebfac06df21e33675859"
+  },
+  {
+    "id": "voiceflow",
+    "url": "https://www.voiceflow.com/",
+    "finalUrl": "https://www.voiceflow.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "62b10f899cd7cefe3fadc29110f0b020424df4f3eb627688fdb378798d3fdc65"
+  },
+  {
+    "id": "landbot",
+    "url": "https://landbot.io/",
+    "finalUrl": "https://landbot.io/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "408a1c2ee647a2f3688d24fb2d9a3bc2c73f23d242cabaa6eb869116acaf80bd"
+  },
+  {
+    "id": "manychat",
+    "url": "https://manychat.com/product/ai",
+    "retrieval": "failed",
+    "error": "HTTP Error 403: Forbidden",
+    "successfulWebFallback": {
+      "url": "https://manychat.com/product/ai",
+      "date": "2026-11-07"
+    }
+  },
+  {
+    "id": "tars",
+    "url": "https://hellotars.com/",
+    "finalUrl": "https://hellotars.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "98e19ec951f0ffe59f49136808720477c6245a46bc91eed45a14072ace1539bb"
+  },
+  {
+    "id": "kommunicate",
+    "url": "https://www.kommunicate.io/",
+    "finalUrl": "https://www.kommunicate.io/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "1759632411b16f3ab5a69ed590d664258002e0d9e5a07b0713f122186f4bf853"
+  },
+  {
+    "id": "userlike",
+    "url": "https://www.userlike.com/",
+    "finalUrl": "https://connect.lime-technologies.com/en/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "0b5a08798c7d1d58ec65d00c059530f58205979fe4052435f42fe1fada93feb0"
+  },
+  {
+    "id": "chatbot",
+    "url": "https://www.chatbot.com/",
+    "finalUrl": "https://www.chatbot.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "7796292b8fe1d09fd1151b04020979a9fb2da4dbc7834788e59470d4c51bcce8"
+  },
+  {
+    "id": "retell",
+    "url": "https://www.retellai.com/",
+    "finalUrl": "https://www.retellai.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "28c36756a33e019f95b5dc5925e4bb13f0dacd51892f3e5d2b6a614458b56cc3"
+  },
+  {
+    "id": "bland",
+    "url": "https://www.bland.ai/",
+    "finalUrl": "https://www.bland.ai/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "92e40f9a7a251db9102ef65d7961404317fe38fc624ac492a1f5964a01f8550c"
+  },
+  {
+    "id": "vapi",
+    "url": "https://vapi.ai/",
+    "finalUrl": "https://vapi.ai/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "ac9d080085b53ecf3ff9e0e9799c3adafdf1a0f63472a532ef9bd928ccdf09c5"
+  },
+  {
+    "id": "rosie",
+    "url": "https://www.heyrosie.com/",
+    "finalUrl": "https://heyrosie.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "b606aa31bfc817a3bfc781020493a6a685ded2a830daebdf18ac77554c2c77f8"
+  },
+  {
+    "id": "slang",
+    "url": "https://www.slang.ai/",
+    "finalUrl": "https://www.slang.ai/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "d9fa47d6d872eda7023fe3da96cdfcb3eb7567115bca62c0e4ea08aa7b78eee1"
+  },
+  {
+    "id": "notion",
+    "url": "https://www.notion.com/product/ai",
+    "finalUrl": "https://www.notion.com/product/ai",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "d2497bc96c6c19a39cb85d05d92717657784723a0df8a48d8c20e799998f4bac"
+  },
+  {
+    "id": "otter",
+    "url": "https://otter.ai/",
+    "finalUrl": "https://otter.ai/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "b51b343a9a8302c94cf5a96cd9e76c0e3cf1b38215af36f8e4a02f066eba87d2"
+  },
+  {
+    "id": "fireflies",
+    "url": "https://fireflies.ai/",
+    "finalUrl": "https://fireflies.ai/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "06fcd3a7e098546e437dd7d23c218b0ea1ee91010691ee0c570664e12171dba6"
+  },
+  {
+    "id": "fathom",
+    "url": "https://fathom.video/",
+    "finalUrl": "https://www.fathom.ai/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "f5fc244b081d64c503a55b52edaca9a3d935572d647deee69ed0198bf15735ea"
+  },
+  {
+    "id": "tldv",
+    "url": "https://tldv.io/",
+    "finalUrl": "https://tldv.io/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "5225e450be7622bdf46d21c0400895268d1f66b249ed6f9d49f37ff6cb1440f3"
+  },
+  {
+    "id": "read-ai",
+    "url": "https://www.read.ai/",
+    "finalUrl": "https://www.read.ai/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "a84fb653720936b15e5d7aaea5e1aa4a3f4965fbfebb56d2f6e4dfe0c802612d"
+  },
+  {
+    "id": "sembly",
+    "url": "https://www.sembly.ai/",
+    "finalUrl": "https://www.sembly.ai/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "f3bcb5ce971a390edbb7eb51df9574ffc71d4ae98935db278794aaf6d658fc06"
+  },
+  {
+    "id": "avoma",
+    "url": "https://www.avoma.com/",
+    "finalUrl": "https://www.avoma.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "05c4dd7c88a8c7f8ce89e04c58136a525c2cf20d21db2905ded4d6c88f24733b"
+  },
+  {
+    "id": "reclaim",
+    "url": "https://reclaim.ai/",
+    "finalUrl": "https://reclaim.ai/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "41b2239b20bd3936a9e39576fdc534d165c53a911db95f004c3566d4751b2d1b"
+  },
+  {
+    "id": "motion",
+    "url": "https://www.usemotion.com/",
+    "finalUrl": "https://www.usemotion.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "8681e4d2262114f5f513ca87c05b1af946fc7f1c2f1230fb88ea87826388785e"
+  },
+  {
+    "id": "taskade",
+    "url": "https://www.taskade.com/",
+    "finalUrl": "https://www.taskade.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "15f03e9b7987dbc85189bd7d50b5aa56b7bebb8d8b3ac295fb19e354d8545c2e"
+  },
+  {
+    "id": "clickup",
+    "url": "https://clickup.com/brain",
+    "finalUrl": "https://clickup.com/brain",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "9935fc220294318dc7e13d89d291ce9b86a20b06fd3578f659338bc7d4841149"
+  },
+  {
+    "id": "asana",
+    "url": "https://asana.com/product/ai",
+    "finalUrl": "https://asana.com/product/ai",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "4a14810340c664665fb52be9ff95032e49395b0432179e92976d3e4343fe2423"
+  },
+  {
+    "id": "monday",
+    "url": "https://monday.com/",
+    "finalUrl": "https://monday.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "c27a9ac4b7a150d21e979d6c5a122cdaa92a7919214b5c796000bf4f44c69e4c",
+    "previousAttempt": {
+      "url": "https://monday.com/ai",
+      "error": "HTTP Error 404: Not Found",
+      "retrieval": "failed"
+    }
+  },
+  {
+    "id": "zapier",
+    "url": "https://zapier.com/ai",
+    "finalUrl": "https://zapier.com/ai",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "19587c023b3d0fe62ee29f266fd4c1329388194485cd0c25b149b0b4eb38c457"
+  },
+  {
+    "id": "make",
+    "url": "https://www.make.com/en",
+    "retrieval": "failed",
+    "error": "HTTP Error 403: Forbidden",
+    "previousAttempt": {
+      "url": "https://www.make.com/en/ai",
+      "error": "HTTP Error 403: Forbidden",
+      "retrieval": "failed"
+    },
+    "successfulWebFallback": {
+      "url": "https://www.make.com/",
+      "date": "2026-11-07"
+    }
+  },
+  {
+    "id": "lindy",
+    "url": "https://www.lindy.ai/",
+    "finalUrl": "https://www.lindy.ai/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "add604e94bc39df16725681d8948400c3c6b1bb9ecadb38049c9494fae37bf0d"
+  },
+  {
+    "id": "bardeen",
+    "url": "https://www.bardeen.ai/",
+    "finalUrl": "https://www.bardeen.ai/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "78b52b940311ef29c810e9ebb41cda8d10f97221ade5b6a4f7d9c8d5c574e1d2"
+  },
+  {
+    "id": "airtable",
+    "url": "https://www.airtable.com/platform/ai",
+    "finalUrl": "https://www.airtable.com/platform/ai",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "a6711680ba4aee7445784ad3854bc84832ffa2214987ab0f17b80fbe8b8ef3cd"
+  },
+  {
+    "id": "coda",
+    "url": "https://coda.io/product/ai",
+    "finalUrl": "https://coda.io/product/ai",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "ca2d4fa4d476d0e742b397fc20b48ab453f8e870814ebada6cf4988436a4e172"
+  },
+  {
+    "id": "pipedrive",
+    "url": "https://support.pipedrive.com/en/article/sales-assistant",
+    "finalUrl": "https://support.pipedrive.com/en/article/sales-assistant",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "3ff8e3e8ac66cdd5339293fcfc9de32cb39f332e56ce0fba4f3dd9bb380358db",
+    "previousAttempt": {
+      "url": "https://www.pipedrive.com/en/features/ai",
+      "error": "HTTP Error 404: Not Found",
+      "retrieval": "failed"
+    }
+  },
+  {
+    "id": "zoho-crm",
+    "url": "https://www.zoho.com/crm/zia/",
+    "finalUrl": "https://www.zoho.com/crm/zia/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "15cd798bed8ce9b71a4e38c292eb8be8ea1abb3920ae3aec05696c92bcd2bdfe",
+    "previousAttempt": {
+      "url": "https://www.zoho.com/crm/zia.html",
+      "error": "HTTP Error 404: Not Found",
+      "retrieval": "failed"
+    }
+  },
+  {
+    "id": "apollo",
+    "url": "https://www.apollo.io/",
+    "finalUrl": "https://www.apollo.io/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "e86dbb69b93039279bfe47304ab630c84b49ae4d8fd580e623375c94bc6d438e"
+  },
+  {
+    "id": "clay",
+    "url": "https://www.clay.com/",
+    "finalUrl": "https://www.clay.com/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "b5efdea444d05bbd8a23985f7b3d5f03e6fe80044ea33c043e3090bf094563e0"
+  },
+  {
+    "id": "regie",
+    "url": "https://www.regie.ai/",
+    "finalUrl": "https://regie.ai/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "1deb9725e24938ccf0a2e31ce344d918c88c27839ae8d06f1f2a84a3e81d887d"
+  },
+  {
+    "id": "quickbooks",
+    "url": "https://quickbooks.intuit.com/",
+    "retrieval": "failed",
+    "error": "The read operation timed out",
+    "previousAttempt": {
+      "url": "https://quickbooks.intuit.com/ai/",
+      "error": "[Errno 60] Operation timed out",
+      "retrieval": "failed"
+    },
+    "successfulWebFallback": {
+      "url": "https://quickbooks.intuit.com/learn-support/en-us/help-article/intuit-assist/introducing-intuit-intelligence/L189976Da_US_en_US",
+      "date": "2026-11-07"
+    }
+  },
+  {
+    "id": "xero",
+    "url": "https://www.xero.com/us/ai-in-accounting/jax/",
+    "finalUrl": "https://www.xero.com/us/ai-in-accounting/jax/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "f8482acbaf9333140b4a7057c56d0bd45c9fd68808feb3c97104ccdc7063adaa",
+    "previousAttempt": {
+      "url": "https://www.xero.com/us/artificial-intelligence/",
+      "error": "HTTP Error 404: Not Found",
+      "retrieval": "failed"
+    }
+  },
+  {
+    "id": "dext",
+    "url": "https://dext.com/",
+    "finalUrl": "https://dext.com/us",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "7b2743220c426b1d660422bd048bf0cca5f93beee1b4a228c57e078f5c3b5909"
+  },
+  {
+    "id": "vic",
+    "url": "https://www.vic.ai/",
+    "finalUrl": "https://www.vic.ai/",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "f975d22bb732ada58b2824ca2fa074c1c273b3a9727415d9f451f5a8c81e4f85"
+  },
+  {
+    "id": "ramp",
+    "url": "https://ramp.com/ai",
+    "finalUrl": "https://ramp.com/intelligence",
+    "retrieval": "retrieved",
+    "status": 200,
+    "sha256": "cd8d268eb1fca378beeacaf3f97c7655c9263062817bd4716338554f75448249"
+  }
+]

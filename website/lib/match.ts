@@ -1,12 +1,13 @@
 import type { Answers } from './assessment';
 import { tools, CATALOG_VERSION, type Capability, type Plan, type Tool } from './catalog';
-export const RULES_VERSION='1.0.0';
+export const RULES_VERSION='1.1.0';
 export type Criterion={label:string;points:number;max:number;reason:string;known:boolean};
 export type Match={toolId:string;planId:string;status:'suitable'|'check'|'excluded';score:number|null;criteria:Criterion[];reasons:string[];checks:string[];cost:number|null;costLabel:string;existing:boolean};
 export type AssessmentResult={catalogVersion:string;rulesVersion:string;suitable:Match[];check:Match[];excluded:Match[];message:string|null};
 const money=(n:number)=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:2}).format(n);
 function evaluate(a:Answers,tool:Tool,plan:Plan):Match {
  const reasons:string[]=[], checks:string[]=[], failures:string[]=[];
+ if(tool.reviewLevel==='product')checks.push('Product features were reviewed, but the AI-eligible plan and required capabilities are not confirmed.');
  const requireCapability=(key:Capability,label:string)=>{
   const state=plan.capabilities[key]??'unknown';
   if(state==='no') failures.push(`${label} is not supported on this plan.`);
@@ -46,7 +47,7 @@ function evaluate(a:Answers,tool:Tool,plan:Plan):Match {
   if(a.action==='booking'&&a.destination==='manual') checks.push('Confirmed booking needs a named booking system and tested appointment action.');
  }
  const p=plan.price;
- if(p.annual&&!a.annual) failures.push('Requires an annual payment you have not accepted.');
+ if((p.annual||p.requiresAnnual)&&!a.annual) failures.push('Requires an annual payment you have not accepted.');
  let cost:number|null=p.monthly;
  let costKnown=cost!==null&&!p.extraUnknown;
  if(p.unit) {
@@ -57,11 +58,12 @@ function evaluate(a:Answers,tool:Tool,plan:Plan):Match {
   }
  }
  if(p.extraUnknown){checks.push('Confirm mandatory fees, usage charges and the relevant allowance.');}
- if(a.task==='marketing'&&a.volume!==null&&a.volume>1&&['buffer','canva'].includes(tool.id)){
+ if(a.task==='marketing'&&a.volume!==null&&a.volume>1&&(['buffer','canva'].includes(tool.id)||p.allowanceUnknown)){
   costKnown=false; checks.push('Confirm that the AI generation allowance covers your planned monthly output.');
  }
  if(a.budget==='free') {
-  if(!p.freeOngoing || (cost!==null&&cost>0)) failures.push('Not an ongoing free plan for this usage.');
+  if(p.freeOngoing===false || (cost!==null&&cost>0)) failures.push('Not an ongoing free plan for this usage.');
+  else if(p.freeOngoing!==true){costKnown=false;checks.push('An ongoing free AI entitlement is not established.');}
   else if(p.overage!==undefined) {costKnown=false;checks.push('Confirm a hard stop before paid overages; a free base price is not a spending cap.');}
  }
  if(a.budget==='amount'&&a.monthlyBudget!==null&&cost!==null&&cost>a.monthlyBudget) failures.push(`The known price ${money(cost)}/month exceeds your budget.`);
@@ -82,13 +84,13 @@ function evaluate(a:Answers,tool:Tool,plan:Plan):Match {
  if(a.task!=='marketing')checks.push('Verify carrier/site compatibility and any external setup charges before buying.');
  const status=failures.length?'excluded':blocking.length?'check':'suitable';
  const displayCost=costKnown?cost:null;
- return {toolId:tool.id,planId:plan.id,status,score:status==='suitable'?criteria.reduce((sum,c)=>sum+c.points,0):null,criteria,reasons:failures.length?failures:reasons,checks:[...new Set(checks)],cost:displayCost,costLabel:costKnown&&cost!==null?`${money(cost)}/month${p.annual?' equivalent · annual payment required':''} for the stated usage`:p.label,existing};
+ return {toolId:tool.id,planId:plan.id,status,score:status==='suitable'?criteria.reduce((sum,c)=>sum+c.points,0):null,criteria,reasons:failures.length?failures:reasons,checks:[...new Set(checks)],cost:displayCost,costLabel:costKnown&&cost!==null?`${money(cost)}/month${p.annual||p.requiresAnnual?' equivalent · annual payment required':''} for the stated usage`:p.label,existing};
 }
 export function assess(a:Answers):AssessmentResult {
  const response:AssessmentResult={catalogVersion:CATALOG_VERSION,rulesVersion:RULES_VERSION,suitable:[],check:[],excluded:[],message:null};
  if(a.task==='other'||a.task==='marketing'&&a.output==='email') return {...response,message:'This first version covers phone enquiries, website enquiries and social content. We do not have enough evidence to recommend a tool for this task yet.'};
  const order=(a:Match,b:Match)=>(b.score??-1)-(a.score??-1)||(a.cost??Infinity)-(b.cost??Infinity)||a.planId.localeCompare(b.planId);
- for(const tool of tools.filter(t=>t.task===a.task)){
+ for(const tool of tools.filter(t=>(t.assessmentTasks?t.assessmentTasks.includes(a.task as 'calls'|'chat'|'marketing'):t.task===a.task)&&(!(a.task==='marketing'&&a.output!=='unknown'&&a.output!=='email')||!t.assessmentOutputs||t.assessmentOutputs.includes(a.output)))){
   const plans=tool.plans.map(plan=>evaluate(a,tool,plan));
   const suitable=plans.filter(p=>p.status==='suitable').sort(order);
   const check=plans.filter(p=>p.status==='check').sort((a,b)=>a.checks.length-b.checks.length||a.planId.localeCompare(b.planId));

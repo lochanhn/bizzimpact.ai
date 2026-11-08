@@ -70,7 +70,7 @@ test('input schema rejects forged scores, invalid enums, negative budget and mis
  assert.equal(assessmentSchema.safeParse({...sample(),budget:'amount',monthlyBudget:null}).success,false);
 });
 test('every catalogue plan has official evidence, a cost label and a usable guide',()=>{
- assert.equal(tools.length,11);const ids=new Set<string>();
+ assert.equal(tools.length,111);const ids=new Set<string>();
  for(const t of tools){assert.ok(t.sources.every(s=>new URL(s.url).protocol==='https:'));assert.ok(t.steps.length>=3);assert.ok(t.test&&t.rollback&&t.caveat);for(const p of t.plans){assert.ok(!ids.has(p.id));ids.add(p.id);assert.ok(p.price.label&&p.price.note);}}
 });
 test('API validates JSON and never accepts a supplied ranking',async()=>{
@@ -79,5 +79,38 @@ test('API validates JSON and never accepts a supplied ranking',async()=>{
  assert.equal((await send(JSON.stringify({...sample(),score:100}))).status,400);
  assert.equal((await send('x'.repeat(17000))).status,413);
  const response=await send(JSON.stringify(sample({budget:'free',volume:1,volumeUnit:'pieces'})));assert.equal(response.status,200);assert.equal(response.headers.get('Cache-Control'),'no-store');
- const value=await response.json();assert.equal(value.suitable[0].toolId,'buffer');assert.equal(value.rulesVersion,'1.0.0');
+ const value=await response.json();assert.equal(value.suitable[0].toolId,'buffer');assert.equal(value.rulesVersion,'1.1.0');
+});
+
+test('100 distinct additions have evidence, honest review levels and seven-category coverage',()=>{
+ const added=tools.filter(t=>t.research);assert.equal(added.length,100);assert.equal(new Set(tools.map(t=>t.id)).size,111);
+ assert.equal(new Set(tools.map(t=>t.task)).size,7);assert.equal(added.filter(t=>t.reviewLevel==='product').length,97);
+ for(const t of added){assert.ok(t.research!.sourceId.match(/^CAT-\d{3}$/));assert.equal(t.research!.checkedAt,'2026-11-07');assert.ok(t.research!.evidenceSummary.length>30);assert.ok(t.research!.limitations.length>=2);assert.ok(t.sources.every(s=>s.url.startsWith('https://')));if(t.reviewLevel==='product')assert.ok(t.plans.every(p=>p.price.monthly===null));}
+});
+test('product-level research never becomes a scored match across supported assessment variants',()=>{
+ for(const task of ['calls','chat','marketing'] as const)for(const budget of ['free','amount','unknown'] as const)for(const output of ['text','image','video'] as const){
+  const r=assess(sample({task,budget,output,annual:true,monthlyBudget:500,volume:1,volumeUnit:task==='marketing'?'pieces':task==='calls'?'minutes':'conversations'}));
+  assert.ok(r.suitable.every(m=>tools.find(t=>t.id===m.toolId)!.reviewLevel!=='product'));
+  assert.ok(r.check.every(m=>m.score===null));
+ }
+});
+test('unknown price and unknown free entitlement remain checks, not a fabricated paid/free conclusion',()=>{
+ const p=find(sample({budget:'free'}),'jasper');assert.equal(p.status,'check');assert.equal(p.cost,null);assert.ok(p.checks.some(c=>c.includes('free AI entitlement')));
+});
+test('broader business tools are browsable without leaking into unrelated recommendations',()=>{
+ const r=assess(sample({task:'marketing',budget:'unknown'}));const ids=[...r.suitable,...r.check,...r.excluded].map(m=>m.toolId);
+ for(const id of ['quickbooks','xero','notion','otter','manychat','mailchimp','suno'])assert.ok(!ids.includes(id),id);
+});
+test('Wordtune Basic joins manual free text candidates, while its unknown volume allowance remains visible',()=>{
+ assert.equal(find(sample({budget:'free',volume:1,volumeUnit:'pieces'}),'wordtune').status,'suitable');
+ assert.equal(find(sample({budget:'free',volume:100,volumeUnit:'pieces'}),'wordtune').status,'check');
+});
+test('Rosie Professional is eligible for message capture but cannot satisfy direct booking',()=>{
+ const capture=find(sample({task:'calls',budget:'unknown',volume:100,volumeUnit:'minutes'}),'rosie');assert.equal(capture.status,'suitable');assert.equal(capture.planId,'rosie-professional');
+ const booking=find(sample({task:'calls',action:'booking',destination:'google'}),'rosie');assert.equal(booking.planId,'rosie-scale');assert.equal(booking.status,'check');
+});
+test('Photoroom Pro respects annual commitment and cannot be selected for video',()=>{
+ const noAnnual=find(sample({output:'image',annual:false}),'photoroom');assert.equal(noAnnual.status,'excluded');
+ const video=find(sample({output:'video',annual:true}),'photoroom');assert.equal(video.status,'excluded');
+ assert.ok(video.reasons.some(r=>r.includes('video')));
 });

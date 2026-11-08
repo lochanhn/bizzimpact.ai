@@ -2,7 +2,7 @@ import { afterEach, test } from 'node:test';
 import assert from 'node:assert/strict';
 import { JSDOM } from 'jsdom';
 import React from 'react';
-import Home from '../app/page';
+import Home from '../components/prototype';
 import AuthPage from '../app/auth/page';
 import { AuthProvider } from '../components/auth-provider';
 import { POST } from '../app/api/assess/route';

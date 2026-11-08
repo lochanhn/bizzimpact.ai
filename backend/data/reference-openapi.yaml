@@ -1,0 +1,601 @@
+openapi: 3.1.0
+info:
+  title: impact.ai — AI Tool Discovery API
+  version: 2.0.0
+  description: Contract proposal for the discovery module. Aligns to approved onboarding questionnaire v1.
+    Authenticate requests with a validated Supabase JWT; demo access is a separate server-defined limited identity.
+servers:
+- url: https://YOUR_BACKEND_DOMAIN/api/v1
+  description: Placeholder; configure before deployment
+security:
+- BearerAuth: []
+tags:
+- name: Onboarding
+- name: Discovery
+- name: Tools
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    BusinessProfile:
+      type: object
+      additionalProperties: false
+      required:
+      - industry
+      - business_description
+      - employee_band
+      - operating_region
+      - existing_software_status
+      - existing_software
+      properties:
+        industry:
+          type: object
+          required:
+          - category
+          - subtype
+          properties:
+            category:
+              type: string
+            subtype:
+              type: string
+            raw_custom:
+              type:
+              - string
+              - 'null'
+        business_description:
+          type: string
+          minLength: 1
+          maxLength: 500
+        customer_type:
+          type:
+          - string
+          - 'null'
+          enum:
+          - b2c
+          - b2b
+          - both
+          - government
+          - other
+          - null
+        employee_band:
+          type: string
+          enum:
+          - solo
+          - '2_10'
+          - '11_50'
+          - '51_250'
+          - 250_plus
+        operating_region:
+          type: object
+          required:
+          - country
+          properties:
+            country:
+              type: string
+              minLength: 2
+              maxLength: 2
+            region:
+              type:
+              - string
+              - 'null'
+        existing_software_status:
+          type: string
+          enum:
+          - selected
+          - none
+          - unknown
+        existing_software:
+          type: array
+          items:
+            type: object
+            required:
+            - raw_name
+            properties:
+              raw_name:
+                type: string
+              canonical_id:
+                type:
+                - string
+                - 'null'
+        improvement_priorities:
+          type: array
+          maxItems: 3
+          items:
+            type: string
+        monthly_budget_band:
+          type:
+          - string
+          - 'null'
+          enum:
+          - free
+          - under_50
+          - '50_150'
+          - '150_500'
+          - over_500
+          - unknown
+          - null
+        customer_contact_channels:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+    DiscoveryRequest:
+      type: object
+      required:
+      - business_id
+      - problem_text
+      properties:
+        business_id:
+          type: string
+          format: uuid
+        problem_text:
+          type: string
+          minLength: 10
+          maxLength: 2000
+        force_web:
+          type: boolean
+          default: false
+    DiscoveryRunCreated:
+      type: object
+      required:
+      - run_id
+      - status
+      - poll_url
+      properties:
+        run_id:
+          type: string
+          format: uuid
+        status:
+          type: string
+          const: queued
+        poll_url:
+          type: string
+        estimated_duration_note:
+          type: string
+          description: Avoid promising completion time; display progress/state.
+    ClaimEvidence:
+      type: object
+      required:
+      - claim_key
+      - verification_state
+      properties:
+        claim_key:
+          type: string
+        claim_value: {}
+        verification_state:
+          type: string
+          enum:
+          - vendor_documented
+          - third_party_reported
+          - independently_tested
+          - unverified
+          - conflicting
+        source_url:
+          type:
+          - string
+          - 'null'
+          format: uri
+        observed_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+    DiscoveredTool:
+      type: object
+      required:
+      - tool_id
+      - name
+      - official_url
+      - catalog_status
+      - matched_capabilities
+      - retrieval_channels
+      - evidence
+      properties:
+        tool_id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        official_url:
+          type: string
+          format: uri
+        short_description:
+          type:
+          - string
+          - 'null'
+        ai_classification:
+          type: string
+          enum:
+          - ai_native
+          - ai_enabled
+          - non_ai_complement
+          - unverified
+        catalog_status:
+          type: string
+          enum:
+          - seeded
+          - provisional
+          - confirmed
+          - rejected
+        matched_capabilities:
+          type: array
+          items:
+            type: string
+        retrieval_channels:
+          type: array
+          items:
+            type: string
+        discovery_status:
+          type: string
+          enum:
+          - candidate
+          - evidence_pending
+          - verified_candidate
+          - rejected
+        evidence:
+          type: array
+          items:
+            $ref: '#/components/schemas/ClaimEvidence'
+        issues:
+          type: array
+          items:
+            type: string
+    DiscoveryRun:
+      type: object
+      required:
+      - run_id
+      - status
+      - mode
+      - tools
+      - warnings
+      properties:
+        run_id:
+          type: string
+          format: uuid
+        status:
+          type: string
+          enum:
+          - queued
+          - parsing
+          - needs_clarification
+          - catalog_search
+          - web_search
+          - enriching
+          - completed
+          - partial
+          - failed
+        mode:
+          type: string
+          enum:
+          - baseline
+          - problem_search
+        requirements:
+          type:
+          - object
+          - 'null'
+        clarification_question:
+          type:
+          - string
+          - 'null'
+        tools:
+          type: array
+          items:
+            $ref: '#/components/schemas/DiscoveredTool'
+        warnings:
+          type: array
+          items:
+            type: string
+        error_code:
+          type:
+          - string
+          - 'null'
+        usage:
+          type: object
+          properties:
+            search_calls:
+              type: integer
+            model_calls:
+              type: integer
+            estimated_cost_usd:
+              type: number
+    Clarification:
+      type: object
+      required:
+      - answer
+      properties:
+        answer:
+          type: string
+          minLength: 1
+          maxLength: 500
+    ProblemDetails:
+      type: object
+      properties:
+        detail:
+          type: string
+        code:
+          type: string
+paths:
+  /onboarding/schema:
+    get:
+      tags:
+      - Onboarding
+      summary: Return the frozen Q1–Q9 questionnaire specification
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Same embedded JSON as HTML script#questionnaire-spec
+  /businesses:
+    get:
+      tags:
+      - Onboarding
+      summary: List businesses owned by the signed-in user
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    business_id:
+                      type: string
+                      format: uuid
+                    industry_subtype:
+                      type: string
+    post:
+      tags:
+      - Onboarding
+      summary: Create a business from first-time questionnaire; server assigns ID and owner
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BusinessProfile'
+      responses:
+        '201':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - business_id
+                - profile
+                properties:
+                  business_id:
+                    type: string
+                    format: uuid
+                  profile:
+                    $ref: '#/components/schemas/BusinessProfile'
+        '400':
+          description: Invalid answers
+          content:
+            application/json:
+              schema: &id001
+                $ref: '#/components/schemas/ProblemDetails'
+  /businesses/{business_id}/profile:
+    parameters:
+    - in: path
+      name: business_id
+      required: true
+      schema:
+        type: string
+        format: uuid
+    get:
+      tags:
+      - Onboarding
+      summary: Get the current business profile
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BusinessProfile'
+        '403':
+          description: Not authorized
+          content:
+            application/json:
+              schema: *id001
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema: *id001
+    put:
+      tags:
+      - Onboarding
+      summary: Upsert profile from Q1–Q8 responses; use existing server-owned ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BusinessProfile'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BusinessProfile'
+        '400':
+          description: Invalid form
+          content:
+            application/json:
+              schema: *id001
+        '403':
+          description: Not authorized
+          content:
+            application/json:
+              schema: *id001
+  /discovery/baseline:
+    post:
+      tags:
+      - Discovery
+      summary: Fast catalog-only baseline; no broad web search
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - business_id
+              properties:
+                business_id:
+                  type: string
+                  format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - business_id
+                - capability_categories
+                - tools
+                properties:
+                  business_id:
+                    type: string
+                    format: uuid
+                  capability_categories:
+                    type: array
+                    items:
+                      type: string
+                  tools:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/DiscoveredTool'
+                  is_baseline:
+                    type: boolean
+                    const: true
+  /discovery/runs:
+    post:
+      tags:
+      - Discovery
+      summary: Create a new problem-specific hybrid discovery run
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DiscoveryRequest'
+      responses:
+        '202':
+          description: Accepted for asynchronous processing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DiscoveryRunCreated'
+        '400':
+          description: Bad input
+          content:
+            application/json:
+              schema: *id001
+        '403':
+          description: Not authorized
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: Rate-limited
+          content:
+            application/json:
+              schema: *id001
+  /discovery/runs/{run_id}:
+    parameters:
+    - in: path
+      name: run_id
+      required: true
+      schema:
+        type: string
+        format: uuid
+    get:
+      tags:
+      - Discovery
+      summary: Poll status and results of discovery run
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DiscoveryRun'
+        '403':
+          description: Not authorized
+          content:
+            application/json:
+              schema: *id001
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema: *id001
+  /discovery/runs/{run_id}/clarification:
+    parameters:
+    - in: path
+      name: run_id
+      required: true
+      schema:
+        type: string
+        format: uuid
+    post:
+      tags:
+      - Discovery
+      summary: Answer one targeted clarification and resume discovery
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Clarification'
+      responses:
+        '202':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DiscoveryRunCreated'
+        '409':
+          description: Run not awaiting clarification
+          content:
+            application/json:
+              schema: *id001
+  /tools/{tool_id}:
+    parameters:
+    - in: path
+      name: tool_id
+      required: true
+      schema:
+        type: string
+        format: uuid
+    get:
+      tags:
+      - Tools
+      summary: Retrieve sanitized evidence-backed tool detail
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DiscoveredTool'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema: *id001

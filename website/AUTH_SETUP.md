@@ -1,36 +1,23 @@
-# Connect login and saved assessments
+# Connect real accounts and private Phase 1 storage
 
-The code is wired for Supabase, but a project has not been created or connected. Guest assessment and the 111-tool catalogue work without it. No desktop app or browser was opened by the assistant.
+The no-account synthetic demo works now. Real accounts require your own Supabase project; no project has been created or connected by the assistant.
 
-1. Open [Supabase](https://supabase.com/dashboard) yourself, create a project, and keep the database password private.
-2. In the project’s Connect dialog, copy the **Project URL** and **publishable key**. We do not need a secret/service-role key. Copy `website/.env.example` to `website/.env.local` and fill in those two values. Leave both AI flags false.
-3. In Supabase’s SQL Editor, run the contents of `website/supabase/migrations/202611070001_business_profiles.sql` once. It creates one private saved assessment per user and owner-only row-level policies.
-4. In Authentication → URL Configuration, set Site URL to `http://localhost:3000` and allow `http://localhost:3000/auth/callback`. Use this hostname consistently. In Authentication → Providers, enable email/password and email confirmation. For confirmation links that work across devices, update the Confirm signup email template to link to `{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=email`. The code also supports the PKCE `/auth/callback` route for standard redirects.
-5. Restart `npm run dev` in `website/`. Open `/auth`, create a test account, confirm the email, and sign in. Complete an assessment, click **Save answers to my workspace**, then open **My workspace**. Sign out and confirm private profile API access is denied. Sign in again and reopen your saved answers.
+1. Open [Supabase](https://supabase.com/dashboard) yourself and create a project. Keep its database password private.
+2. Copy `website/.env.example` to `website/.env.local`. In Supabase’s Connect dialog, obtain the Project URL and publishable key; fill `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`. Set `SITE_URL=http://localhost:3000`. Do not use a service-role secret in any public variable.
+3. In the Supabase SQL Editor, run both versioned migrations, in order: `202611070001_business_profiles.sql` (legacy saved assessment support), then `202611070002_discovery_phase1.sql` (the reference normalized businesses/discovery/evidence schema and additions). Run each once. They contain owner policies; real two-user RLS verification is still required.
+4. Configure backend environment variables from `backend/.env.example`: `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY` and a private `DATABASE_URL` from the project’s database connection settings. Use a trusted server-only DB connection. Set `DISCOVERY_MODE=catalog` for the real researched catalogue without model or web calls. Do not put DB credentials in the frontend or chat. These settings must be exported to the backend process; uvicorn does not automatically read `.env.example` or `.env.local`.
+5. From the repo root, seed the normalized catalogue after exporting backend settings: `uv run --directory backend python seed_catalog.py`. This writes 111 public researched tool records and their source claims, not fictional vendors. No model/search request is made.
+6. In Authentication → URL Configuration, set Site URL to `http://localhost:3000` and allow `http://localhost:3000/auth/callback`. Use that hostname consistently. Enable email/password and email confirmation. For confirmation across devices, the Confirm signup template can link to `{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=email`. Standard PKCE `/auth/callback` is also supported. Check Supabase’s email delivery/rate limits; custom SMTP may be needed for a team demo.
+7. Restart both servers. At `/auth`, create and confirm a test account, sign in, complete onboarding, and edit the saved profile. Returning users should go to their existing dashboard. Create a second account and verify neither can read the other’s profile/run. Test logout, refresh, confirmation, and database owner policies before describing live authentication as verified.
 
-Supabase may limit confirmation emails on its default sender. Check delivery and Auth rate-limit settings before a group demo; configure your own SMTP if needed. Never disable confirmation just to hide a failed email test.
+For production, replace the site URL and allowed redirects with the actual HTTPS origin, set the server-side proxy’s `DISCOVERY_BACKEND_URL` to the persistent Python service, and configure secret environment settings on the hosts. Cookies are HttpOnly and SameSite=Lax; signed-in backend requests use a verified Supabase bearer token. Do not deploy the SQLite demo store as the database for real private business profiles.
 
-For deployment, set `SITE_URL` to the real HTTPS origin, update Supabase’s allowed URLs and email template, and configure the environment settings on the host. The application uses server-only Supabase clients and HttpOnly, SameSite=Lax session cookies. Cookie refresh happens in Route Handlers; private content is fetched through verified-user APIs rather than rendered from an unverified browser session. No service-role credential is used.
+## Optional live model/web activation
 
-## What is implemented
+Only after explicit authorisation and replacement of the previously shared key: configure `OPENROUTER_API_KEY` and a supported `OPENROUTER_MODEL` in backend environment, then set `DISCOVERY_MODE=live`, `OPENROUTER_ENABLED=true`, `EXPLICIT_LIVE_AUTHORIZED=true`. Leave `LIVE_WEB_ENABLED=false` for an initial parse-only test. Enable web only for a separately reviewed bounded live test. Demo identities can never invoke paid calls.
 
-- `/auth`: email/password sign-up and sign-in; honest unconfigured state; guest access.
-- `/auth/callback` and `/auth/confirm`: server-side confirmation/session exchange, with fixed dashboard redirects.
-- `/dashboard`: fetch the signed-in user’s saved assessment and reopen it for editing.
-- `/api/auth/session`, `/login`, `/signup`, `/logout`: session status and account operations. Logout ends this browser’s session and clears its saved guest answers after successful sign-out.
-- `/api/account/profile`: verified-user GET and PUT. User identity comes from Supabase verification, never a body parameter. Validation rejects supplied owner IDs.
-- SQL migration: owner-only select/insert/update/delete policies; anonymous users have no table privileges.
+The backend uses the shared PostgreSQL reservation ledger with a $20 stop target, maximum five explicit model calls/run, three planned queries, five vendor domains and ten fetches. Provider-managed internal search operations are not guaranteed by these bounds. Review key-level restrictions and usage before enabling it; no live budget use has been tested here.
 
-Guest answers remain tab-local unless the signed-in user explicitly saves them. Saving stores the current structured answers, including any optional problem note, in that user’s private profile. Saving again replaces the saved assessment. This is not the full Phase 1 multi-business profile and historical discovery-run schema. The reference’s frozen onboarding and complete hybrid discovery remain separate work; the existing V1 questionnaire and experimental fit rubric were preserved.
+## Verification status
 
-## Diagnostic logging
-
-API responses carry `X-Request-Id`. Server stdout receives structured JSON for request route, status, duration, catalogue/rules versions, result counts and account/save outcomes. It excludes bodies, problem text, emails, user IDs, passwords, cookies, tokens, raw exceptions and provider response bodies. Logs use an allowlist of fields, not generic object dumping. Auth confirmation URLs are excluded from Next.js’s built-in development request logging; browser console forwarding and Server Function argument logging are disabled.
-
-No log files, analytics SDK or remote logging service are configured. Hosting/edge request logs may still capture URLs independently; redact auth query strings there and choose retention before deployment. Application stdout retention is controlled by the terminal/hosting service, not an implemented seven-day deletion job. The auth endpoint backstop is per-process (20 attempts/minute per action), not a distributed abuse-prevention system; Supabase’s provider controls remain necessary.
-
-## Verification limits
-
-Local tests can verify validation, trusted owner IDs, response codes, secret-free log formatting and disabled configuration. Real email delivery, cookie issuance/refresh, logout, cross-user database isolation and database migration execution need the connected Supabase project. Do not call these live checks passed until they are actually run with two test accounts.
-
-Official references: [Supabase SSR clients](https://supabase.com/docs/guides/auth/server-side/creating-a-client?queryGroups=framework&framework=nextjs), [password-based auth](https://supabase.com/docs/guides/auth/passwords), [row-level security](https://supabase.com/docs/guides/database/postgres/row-level-security).
+Mock/demo ownership, validation, origin restrictions, safe logging, provider payloads, failure fallbacks and spend reservations have automated tests. Real signup email, token/cookie refresh, PostgreSQL schema execution, RLS, SQL seeding and actual OpenRouter/web discovery remain unverified until these external settings are supplied. See [PHASE1_STATUS.md](PHASE1_STATUS.md).

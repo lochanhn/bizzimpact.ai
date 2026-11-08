@@ -1,0 +1,4058 @@
+[
+  {
+    "tool_id": "0594df1e-384b-5141-a1c2-d7b49700eb70",
+    "slug": "goodcall",
+    "name": "Goodcall",
+    "official_url": "https://www.goodcall.com/how-it-works",
+    "short_description": "An AI phone agent that asks for caller details and sends leads by email or text.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "ai_voice_receptionist",
+      "lead_capture"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "An AI phone agent that asks for caller details and sends leads by email or text.",
+        "source_url": "https://www.goodcall.com/how-it-works",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "ai_voice_receptionist",
+        "source_url": "https://www.goodcall.com/how-it-works",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "lead_capture",
+        "source_url": "https://www.goodcall.com/how-it-works",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "pricing",
+        "claim_value": "{\"plan\":\"Starter\",\"base_monthly_usd\":79,\"annual_commitment\":false,\"note\":\"100 unique customers included; $0.79 per additional unique customer. Carrier fees not established.\"}",
+        "source_url": "https://www.goodcall.com/pricing",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Product documentation mentions Google Calendar, but exact plan-specific booking requirements need checking. Carrier compatibility and charges have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "772ca3ce-88e7-5de3-8469-8d5a0388e72d",
+    "slug": "smith",
+    "name": "Smith.ai",
+    "official_url": "https://smith.ai/pricing/ai-receptionist",
+    "short_description": "The AI Receptionist product handles qualification, summaries and documented scheduling options.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "ai_voice_receptionist",
+      "lead_capture",
+      "appointment_scheduling"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "The AI Receptionist product handles qualification, summaries and documented scheduling options.",
+        "source_url": "https://smith.ai/pricing/ai-receptionist",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "ai_voice_receptionist",
+        "source_url": "https://smith.ai/pricing/ai-receptionist",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "lead_capture",
+        "source_url": "https://smith.ai/pricing/ai-receptionist",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "appointment_scheduling",
+        "source_url": "https://smith.ai/pricing/ai-receptionist",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "pricing",
+        "claim_value": "{\"plan\":\"AI Receptionist Free\",\"base_monthly_usd\":0,\"annual_commitment\":false,\"note\":\"25 calls included, then $3/call. Not unlimited free use; hard-stop controls need checking.\"}",
+        "source_url": "https://smith.ai/pricing/ai-receptionist",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "pricing",
+        "claim_value": "{\"plan\":\"AI Receptionist Pro\",\"base_monthly_usd\":150,\"annual_commitment\":false,\"note\":\"75 calls included; overage rate not established in this review.\"}",
+        "source_url": "https://smith.ai/pricing/ai-receptionist",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "These prices belong to AI Receptionist, not the separate human receptionist service. Confirm the selected calendar action and permissions.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "20dc1582-3b77-5391-b2e7-d9f86f1d790e",
+    "slug": "frontdesk",
+    "name": "My AI Front Desk",
+    "official_url": "https://www.myaifrontdesk.com/ai-receptionist",
+    "short_description": "A voice receptionist with enquiry and appointment features; exact destination support requires a check.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "ai_voice_receptionist",
+      "lead_capture",
+      "appointment_scheduling"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "A voice receptionist with enquiry and appointment features; exact destination support requires a check.",
+        "source_url": "https://www.myaifrontdesk.com/ai-receptionist",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "ai_voice_receptionist",
+        "source_url": "https://www.myaifrontdesk.com/ai-receptionist",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "lead_capture",
+        "source_url": "https://www.myaifrontdesk.com/ai-receptionist",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "appointment_scheduling",
+        "source_url": "https://www.myaifrontdesk.com/ai-receptionist",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "pricing",
+        "claim_value": "{\"plan\":\"Business-in-a-Box\",\"base_monthly_usd\":99,\"annual_commitment\":false,\"note\":\"200 voice minutes, 100 chatbot conversations and 400 SMS. Extra-usage credit conversion is unverified.\"}",
+        "source_url": "https://www.myaifrontdesk.com/pricing",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "pricing",
+        "claim_value": "{\"plan\":\"Business-in-a-Box annual\",\"base_monthly_usd\":79,\"annual_commitment\":true,\"note\":\"Displayed $79/month billed annually (about $948/year by arithmetic, not a verified invoice). Extra usage and exact destination support need checking.\"}",
+        "source_url": "https://www.myaifrontdesk.com/pricing",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "A Zapier listing is not proof that a particular booking or CRM workflow will work.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "b3b3d059-af86-58c9-a849-0b7c760cffcc",
+    "slug": "dialzara",
+    "name": "Dialzara",
+    "official_url": "https://dialzara.com/pricing",
+    "short_description": "Voice enquiry capture, with calendar features on higher plans.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "ai_voice_receptionist",
+      "lead_capture"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Voice enquiry capture, with calendar features on higher plans.",
+        "source_url": "https://dialzara.com/pricing",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "ai_voice_receptionist",
+        "source_url": "https://dialzara.com/pricing",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "lead_capture",
+        "source_url": "https://dialzara.com/pricing",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "pricing",
+        "claim_value": "{\"plan\":\"Lite\",\"base_monthly_usd\":29,\"annual_commitment\":false,\"note\":\"60 minutes, then $0.48/minute. Number-fee wording conflicts; total is a lower bound.\"}",
+        "source_url": "https://dialzara.com/pricing",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "pricing",
+        "claim_value": "{\"plan\":\"Pro\",\"base_monthly_usd\":99,\"annual_commitment\":false,\"note\":\"220 minutes, then $0.45/minute. Number fees need checking.\"}",
+        "source_url": "https://dialzara.com/pricing",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Calendar sync does not by itself establish confirmed appointment creation. Plan and phone-number fees need confirmation.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "6b6e3854-94fc-562a-834a-f8dc500f3c2f",
+    "slug": "tidio",
+    "name": "Tidio Lyro",
+    "official_url": "https://www.tidio.com/pricing/",
+    "short_description": "AI chat support using approved knowledge and human handoff.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "customer_support_chat"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "AI chat support using approved knowledge and human handoff.",
+        "source_url": "https://www.tidio.com/pricing/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "customer_support_chat",
+        "source_url": "https://www.tidio.com/pricing/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Do not substitute the base customer-service plan price for Lyro AI usage.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "ae345f74-5498-56b1-98e6-242894e26e04",
+    "slug": "crisp",
+    "name": "Crisp Hugo",
+    "official_url": "https://crisp.chat/en/pricing/",
+    "short_description": "AI answers with credit-based usage and a human fallback.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "customer_support_chat"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "AI answers with credit-based usage and a human fallback.",
+        "source_url": "https://crisp.chat/en/pricing/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "customer_support_chat",
+        "source_url": "https://crisp.chat/en/pricing/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "pricing",
+        "claim_value": "{\"plan\":\"Mini\",\"base_monthly_usd\":45,\"annual_commitment\":false,\"note\":\"Includes $5 of token-based Hugo credits. No fixed conversation total; extra usage costs vary.\"}",
+        "source_url": "https://crisp.chat/en/pricing/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Free has no included Hugo credits. By default AI stops when credits run out and hands work to people unless pay-as-you-go is enabled.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "39c80799-8a41-5176-b9e0-114423b07b04",
+    "slug": "housecall",
+    "name": "Housecall Pro CSR AI",
+    "official_url": "https://help.housecallpro.com/en/articles/9740104-csr-ai-overview",
+    "short_description": "An AI enquiry option for existing Housecall Pro users.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "ai_voice_receptionist",
+      "lead_capture"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "An AI enquiry option for existing Housecall Pro users.",
+        "source_url": "https://help.housecallpro.com/en/articles/9740104-csr-ai-overview",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "ai_voice_receptionist",
+        "source_url": "https://help.housecallpro.com/en/articles/9740104-csr-ai-overview",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "lead_capture",
+        "source_url": "https://help.housecallpro.com/en/articles/9740104-csr-ai-overview",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Official articles differ on booking rollout. Confirm availability, settings, permissions and the total subscription price.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "9cadf118-54a7-5b28-9b9d-76945e2ca4b4",
+    "slug": "buffer",
+    "name": "Buffer",
+    "official_url": "https://buffer.com/pricing",
+    "short_description": "AI help with social text, with publishing and scheduling tools.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "AI help with social text, with publishing and scheduling tools.",
+        "source_url": "https://buffer.com/pricing",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://buffer.com/pricing",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "pricing",
+        "claim_value": "{\"plan\":\"Free\",\"base_monthly_usd\":0,\"annual_commitment\":false,\"note\":\"3 channels; 10 scheduled slots per channel at a time. AI Assistant included; monthly generation quota not established.\"}",
+        "source_url": "https://buffer.com/pricing",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "pricing",
+        "claim_value": "{\"plan\":\"Essentials · one channel\",\"base_monthly_usd\":5,\"annual_commitment\":true,\"note\":\"$5/channel/month equivalent, paid yearly. More channels cost extra; AI generation quota not established.\"}",
+        "source_url": "https://buffer.com/pricing",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Buffer helps draft text; this record does not promise AI image/video creation. Ten queued slots are not a monthly post limit.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "f552f4a8-baa0-567b-a698-d003acd9814f",
+    "slug": "canva",
+    "name": "Canva Magic Write",
+    "official_url": "https://www.canva.com/magic-write/",
+    "short_description": "AI text assistance inside Canva, with a manual download/copy workflow.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "AI text assistance inside Canva, with a manual download/copy workflow.",
+        "source_url": "https://www.canva.com/magic-write/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://www.canva.com/magic-write/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "pricing",
+        "claim_value": "{\"plan\":\"Free · Magic Write\",\"base_monthly_usd\":0,\"annual_commitment\":false,\"note\":\"Limited free Magic Write allowance. Current remaining allowance must be checked in your account; paid plan price not established.\"}",
+        "source_url": "https://www.canva.com/pricing/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Free drafting does not include Content Planner scheduling. Do not assume every AI image or video feature is included.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "a503388f-5174-5b11-84e4-213ade5b5559",
+    "slug": "predis",
+    "name": "Predis.ai",
+    "official_url": "https://predis.ai/pricing/",
+    "short_description": "AI social content with credit-based usage and plan-specific publishing.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "AI social content with credit-based usage and plan-specific publishing.",
+        "source_url": "https://predis.ai/pricing/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://predis.ai/pricing/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "pricing",
+        "claim_value": "{\"plan\":\"Core annual\",\"base_monthly_usd\":19.166666666666668,\"annual_commitment\":true,\"note\":\"1,300 credits/month. No Auto Posting. Credits are not equivalent to a fixed number of all output types.\"}",
+        "source_url": "https://predis.ai/pricing/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "pricing",
+        "claim_value": "{\"plan\":\"Rise annual\",\"base_monthly_usd\":39.5,\"annual_commitment\":true,\"note\":\"3,200 credits/month; Auto Posting listed. Confirm exact channel/account support.\"}",
+        "source_url": "https://predis.ai/pricing/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "The three-day trial requires a card and charges at its end. Rounded monthly labels are not the annual payment total.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "44bcd25a-a0a5-514e-b384-779b5b359179",
+    "slug": "simplified",
+    "name": "Simplified",
+    "official_url": "https://simplified.com/pricing",
+    "short_description": "AI copy, design and social workflows; channel entitlements need confirmation.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "AI copy, design and social workflows; channel entitlements need confirmation.",
+        "source_url": "https://simplified.com/pricing",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://simplified.com/pricing",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "pricing",
+        "claim_value": "{\"plan\":\"Starter\",\"base_monthly_usd\":79,\"annual_commitment\":false,\"note\":\"Campaign, AI-word and design allowances apply. Specific scheduling/channel entitlements need checking.\"}",
+        "source_url": "https://simplified.com/pricing",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "A general social-workflow claim does not verify every platform or plan feature.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "0804b89c-0122-5038-bea3-237cdd6dff36",
+    "slug": "jasper",
+    "name": "Jasper",
+    "official_url": "https://www.jasper.ai/",
+    "short_description": "Marketing copy and brand-aware content workflows.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Marketing copy and brand-aware content workflows.",
+        "source_url": "https://www.jasper.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://www.jasper.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "efecfe93-36bd-5c7f-83ba-307877c769ac",
+    "slug": "copy-ai",
+    "name": "Copy.ai",
+    "official_url": "https://www.copy.ai/",
+    "short_description": "Sales and marketing workflows for go-to-market teams.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Sales and marketing workflows for go-to-market teams.",
+        "source_url": "https://www.copy.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "a1a64b75-9a82-53db-878d-89910087114c",
+    "slug": "writesonic",
+    "name": "Writesonic",
+    "official_url": "https://writesonic.com/",
+    "short_description": "Monitor AI-search visibility and plan content or outreach to address visibility gaps.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Monitor AI-search visibility and plan content or outreach to address visibility gaps.",
+        "source_url": "https://writesonic.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "e746f35c-1355-59c0-bac0-5afbd5c98b30",
+    "slug": "rytr",
+    "name": "Rytr",
+    "official_url": "https://rytr.me/",
+    "short_description": "Bring client context together, prepare meetings and draft relationship follow-ups.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Bring client context together, prepare meetings and draft relationship follow-ups.",
+        "source_url": "https://rytr.me/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "29e17262-7938-5134-b7b5-b5d95d7ceb1f",
+    "slug": "anyword",
+    "name": "Anyword",
+    "official_url": "https://www.anyword.com/",
+    "short_description": "Create and evaluate marketing copy variants.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Create and evaluate marketing copy variants.",
+        "source_url": "https://www.anyword.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://www.anyword.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "a36e451c-3e46-550c-81cb-e7eb7c177ec0",
+    "slug": "writer",
+    "name": "Writer",
+    "official_url": "https://writer.com/",
+    "short_description": "Enterprise AI agents and governed content workflows.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "workflow_automation"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Enterprise AI agents and governed content workflows.",
+        "source_url": "https://writer.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "workflow_automation",
+        "source_url": "https://writer.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Enterprise-oriented positioning; check minimum spend and implementation support before considering it for a small firm. Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "41f5a56c-9769-5ae1-b9d0-62c71d8a44a4",
+    "slug": "grammarly",
+    "name": "Grammarly",
+    "official_url": "https://www.grammarly.com/ai",
+    "short_description": "Improve and draft everyday business writing.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Improve and draft everyday business writing.",
+        "source_url": "https://www.grammarly.com/ai",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "e09febcd-f968-57e5-afea-a1085dc616f1",
+    "slug": "wordtune",
+    "name": "Wordtune",
+    "official_url": "https://www.wordtune.com/",
+    "short_description": "Rewrite and refine business text.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Rewrite and refine business text.",
+        "source_url": "https://www.wordtune.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://www.wordtune.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "pricing",
+        "claim_value": "{\"plan\":\"Basic\",\"base_monthly_usd\":0,\"annual_commitment\":false,\"note\":\"Basic $0, limited daily rewrites/AI suggestions and AI generations. Exact generation allowance is not stated here; no unlimited-use claim.\"}",
+        "source_url": "https://www.wordtune.com/plans",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "4c36b215-cc38-5730-af91-23a08759e055",
+    "slug": "quillbot",
+    "name": "QuillBot",
+    "official_url": "https://quillbot.com/",
+    "short_description": "Paraphrase and edit drafts before publication.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Paraphrase and edit drafts before publication.",
+        "source_url": "https://quillbot.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://quillbot.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "1c5648b2-83dd-53c0-9cab-d453f373b7f2",
+    "slug": "frase",
+    "name": "Frase",
+    "official_url": "https://www.frase.io/",
+    "short_description": "Research and optimise search-focused content.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Research and optimise search-focused content.",
+        "source_url": "https://www.frase.io/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "8770237e-727c-5dde-8ef2-6251847cf21c",
+    "slug": "surfer",
+    "name": "Surfer",
+    "official_url": "https://surfer.ai/",
+    "short_description": "Plan and optimise website content for search.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Plan and optimise website content for search.",
+        "source_url": "https://surfer.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "af1b52da-35fc-5cc8-83eb-88e6443165cb",
+    "slug": "scalenut",
+    "name": "Scalenut",
+    "official_url": "https://www.scalenut.com/",
+    "short_description": "Plan and generate search-oriented marketing content.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Plan and generate search-oriented marketing content.",
+        "source_url": "https://www.scalenut.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "048dab85-1f01-58d3-93bb-b9d2795837bb",
+    "slug": "marketmuse",
+    "name": "MarketMuse",
+    "official_url": "https://www.marketmuse.com/",
+    "short_description": "Use AI-supported analysis to plan topics and identify content gaps.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Use AI-supported analysis to plan topics and identify content gaps.",
+        "source_url": "https://www.marketmuse.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "b57d52e1-9f61-5311-a33e-3df3aa2785c9",
+    "slug": "semrush",
+    "name": "Semrush",
+    "official_url": "https://www.semrush.com/",
+    "short_description": "Research search visibility and marketing opportunities.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Research search visibility and marketing opportunities.",
+        "source_url": "https://www.semrush.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "9e910565-c2e2-5794-bdba-74c753b84ba6",
+    "slug": "ahrefs",
+    "name": "Ahrefs",
+    "official_url": "https://ahrefs.com/ai",
+    "short_description": "Assist keyword research, content creation and AI-search visibility work.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Assist keyword research, content creation and AI-search visibility work.",
+        "source_url": "https://ahrefs.com/ai",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "2bc6141e-9f89-5835-a1da-584daa79b40c",
+    "slug": "adobe-express",
+    "name": "Adobe Express",
+    "official_url": "https://www.adobe.com/express/",
+    "short_description": "Create promotional graphics and social content.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Create promotional graphics and social content.",
+        "source_url": "https://www.adobe.com/express/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://www.adobe.com/express/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "c99af79b-53b0-5bda-8571-eff8371029bc",
+    "slug": "photoroom",
+    "name": "Photoroom",
+    "official_url": "https://www.photoroom.com/",
+    "short_description": "Create and edit product photos for selling online.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Create and edit product photos for selling online.",
+        "source_url": "https://www.photoroom.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://www.photoroom.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "pricing",
+        "claim_value": "{\"plan\":\"Pro · annual billing\",\"base_monthly_usd\":7.5,\"annual_commitment\":true,\"note\":\"Pro displayed $7.50/month billed yearly, 8,000 AI credits and 1,000 exports. Pro excludes video; exact credit-to-output costs and checkout annual total need checking.\"}",
+        "source_url": "https://www.photoroom.com/pricing",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "438f9752-f9c8-5cdd-a314-c5eaa870d577",
+    "slug": "pixelcut",
+    "name": "Pixelcut",
+    "official_url": "https://www.pixelcut.ai/",
+    "short_description": "Edit product images and promotional visuals.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Edit product images and promotional visuals.",
+        "source_url": "https://www.pixelcut.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://www.pixelcut.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "aea3a1ec-7c9b-5807-ad4e-7df89a189dc9",
+    "slug": "pebblely",
+    "name": "Pebblely",
+    "official_url": "https://pebblely.com/",
+    "short_description": "Generate backgrounds for product photography.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Generate backgrounds for product photography.",
+        "source_url": "https://pebblely.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://pebblely.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "9850ff94-c9e6-506a-ace7-6a646ea21281",
+    "slug": "flair",
+    "name": "Flair",
+    "official_url": "https://flair.ai/",
+    "short_description": "Stage and generate branded product imagery.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Stage and generate branded product imagery.",
+        "source_url": "https://flair.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://flair.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "1224f3a1-f50a-59d6-a024-f3523cf621b7",
+    "slug": "adcreative",
+    "name": "AdCreative.ai",
+    "official_url": "https://www.adcreative.ai/",
+    "short_description": "Generate advertising creative and variants.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Generate advertising creative and variants.",
+        "source_url": "https://www.adcreative.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://www.adcreative.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "fbaeb324-4157-572d-9305-8d5cee53ab3c",
+    "slug": "creatopy",
+    "name": "The Brief (formerly Creatopy)",
+    "official_url": "https://www.thebrief.ai/",
+    "short_description": "Generate and adapt branded ad images, videos and campaign creative.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Generate and adapt branded ad images, videos and campaign creative.",
+        "source_url": "https://www.thebrief.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://www.thebrief.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "c13be40a-ddc5-5e6f-8a1c-80d17c7ec433",
+    "slug": "pencil",
+    "name": "Pencil",
+    "official_url": "https://trypencil.com/",
+    "short_description": "Develop AI-assisted advertising creative.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Develop AI-assisted advertising creative.",
+        "source_url": "https://trypencil.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://trypencil.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Enterprise-oriented positioning; check minimum spend and implementation support before considering it for a small firm. Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "f8359e54-40d0-53e9-8bc4-e9388b32ad38",
+    "slug": "lumen5",
+    "name": "Lumen5",
+    "official_url": "https://lumen5.com/",
+    "short_description": "Turn written material into marketing videos.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Turn written material into marketing videos.",
+        "source_url": "https://lumen5.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://lumen5.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "b8371b27-0301-50ba-b772-7f8b1abe9862",
+    "slug": "invideo",
+    "name": "InVideo",
+    "official_url": "https://invideo.io/",
+    "short_description": "Generate and assemble promotional videos.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Generate and assemble promotional videos.",
+        "source_url": "https://invideo.io/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://invideo.io/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "4de7b9f8-0928-59fd-82d1-a632068fa8e8",
+    "slug": "pictory",
+    "name": "Pictory",
+    "official_url": "https://pictory.ai/",
+    "short_description": "Turn scripts and longer material into videos.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Turn scripts and longer material into videos.",
+        "source_url": "https://pictory.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://pictory.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "4ce38685-06c9-5a52-bdda-ed98b641057b",
+    "slug": "descript",
+    "name": "Descript",
+    "official_url": "https://www.descript.com/",
+    "short_description": "Edit spoken video and audio through text.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Edit spoken video and audio through text.",
+        "source_url": "https://www.descript.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://www.descript.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "c0190b64-235e-5e46-9552-a7137a8470e6",
+    "slug": "veed",
+    "name": "VEED",
+    "official_url": "https://www.veed.io/",
+    "short_description": "Create and edit videos with AI assistance.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Create and edit videos with AI assistance.",
+        "source_url": "https://www.veed.io/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://www.veed.io/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "07f6ed1d-19dd-50b4-a4a9-1450109b4490",
+    "slug": "kapwing",
+    "name": "Kapwing",
+    "official_url": "https://www.kapwing.com/ai",
+    "short_description": "Create and repurpose social video content.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Create and repurpose social video content.",
+        "source_url": "https://www.kapwing.com/ai",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://www.kapwing.com/ai",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "8e4573fe-099b-539d-b6fa-08be158049f4",
+    "slug": "runway",
+    "name": "Runway",
+    "official_url": "https://runway.com/",
+    "short_description": "Generate and edit creative video material.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Generate and edit creative video material.",
+        "source_url": "https://runway.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://runway.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "8a421723-1e13-5652-bc53-981bbe62d3d5",
+    "slug": "synthesia",
+    "name": "Synthesia",
+    "official_url": "https://www.synthesia.io/",
+    "short_description": "Create presenter-led explainer and training videos.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Create presenter-led explainer and training videos.",
+        "source_url": "https://www.synthesia.io/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://www.synthesia.io/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Check commercial-use rights and permissions for voices, avatars, music and uploaded assets on the exact plan.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "aa3733b8-917c-541b-8a40-2793ec7f7bac",
+    "slug": "heygen",
+    "name": "HeyGen",
+    "official_url": "https://www.heygen.com/",
+    "short_description": "Create avatar videos and translated video content.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Create avatar videos and translated video content.",
+        "source_url": "https://www.heygen.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://www.heygen.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Check commercial-use rights and permissions for voices, avatars, music and uploaded assets on the exact plan.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "1367325c-d22f-51ac-98e4-ac179bdd7ab3",
+    "slug": "opusclip",
+    "name": "OpusClip",
+    "official_url": "https://www.opus.pro/",
+    "short_description": "Repurpose long videos into short social clips.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Repurpose long videos into short social clips.",
+        "source_url": "https://www.opus.pro/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://www.opus.pro/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "e7477439-e80a-58f0-8785-86637c905733",
+    "slug": "murf",
+    "name": "Murf",
+    "official_url": "https://murf.ai/",
+    "short_description": "Create voiceovers for explainers and promotions.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Create voiceovers for explainers and promotions.",
+        "source_url": "https://murf.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Check commercial-use rights and permissions for voices, avatars, music and uploaded assets on the exact plan.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "fad67ec9-4f69-5fef-b92d-01d2be28167e",
+    "slug": "elevenlabs",
+    "name": "ElevenLabs",
+    "official_url": "https://elevenlabs.io/",
+    "short_description": "Generate speech and voice content.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Generate speech and voice content.",
+        "source_url": "https://elevenlabs.io/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Check commercial-use rights and permissions for voices, avatars, music and uploaded assets on the exact plan.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "f615b820-36b4-5d21-aa21-d791e6d944b0",
+    "slug": "suno",
+    "name": "Suno",
+    "official_url": "https://suno.com/",
+    "short_description": "Explore generated music for creative projects.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Explore generated music for creative projects.",
+        "source_url": "https://suno.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Check commercial-use rights and permissions for voices, avatars, music and uploaded assets on the exact plan.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "6ea03d6b-710a-54c1-973f-9f9595779290",
+    "slug": "hootsuite",
+    "name": "Hootsuite",
+    "official_url": "https://www.hootsuite.com/platform/ai",
+    "short_description": "Generate social content and use AI-assisted listening, inbox and reporting workflows.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Generate social content and use AI-assisted listening, inbox and reporting workflows.",
+        "source_url": "https://www.hootsuite.com/platform/ai",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://www.hootsuite.com/platform/ai",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "88406473-0157-5220-bfa0-a29982c4b9c6",
+    "slug": "later",
+    "name": "Later",
+    "official_url": "https://later.com/",
+    "short_description": "Manage social campaigns and explore AI-powered marketing insights.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Manage social campaigns and explore AI-powered marketing insights.",
+        "source_url": "https://later.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "50ab8a88-6211-5898-a1ef-89367cffad84",
+    "slug": "socialbee",
+    "name": "SocialBee",
+    "official_url": "https://socialbee.com/",
+    "short_description": "Create and organise social media posts.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Create and organise social media posts.",
+        "source_url": "https://socialbee.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://socialbee.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "3edb1e0c-75d7-53b4-9f77-6ac8c8287d97",
+    "slug": "ocoya",
+    "name": "Ocoya",
+    "official_url": "https://www.ocoya.com/",
+    "short_description": "Prepare social content with AI writing assistance.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Prepare social content with AI writing assistance.",
+        "source_url": "https://www.ocoya.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://www.ocoya.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "5ae156ec-18a1-5e43-983f-64be9d7270de",
+    "slug": "publer",
+    "name": "Publer",
+    "official_url": "https://publer.com/features/ai-assist",
+    "short_description": "Assist with social copy and content preparation.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Assist with social copy and content preparation.",
+        "source_url": "https://publer.com/features/ai-assist",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://publer.com/features/ai-assist",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "fa19bf96-6a42-50e0-98d8-efc66555087e",
+    "slug": "metricool",
+    "name": "Metricool",
+    "official_url": "https://metricool.com/",
+    "short_description": "Prepare social posts alongside publishing analytics.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Prepare social posts alongside publishing analytics.",
+        "source_url": "https://metricool.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://metricool.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "4c55f197-333e-5029-be30-8f5a0154c56e",
+    "slug": "flick",
+    "name": "Flick",
+    "official_url": "https://www.flick.social/",
+    "short_description": "Generate and organise social content ideas.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Generate and organise social content ideas.",
+        "source_url": "https://www.flick.social/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://www.flick.social/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "63ffdc7a-d029-5e79-b83a-03e0338cc4b8",
+    "slug": "contentstudio",
+    "name": "ContentStudio",
+    "official_url": "https://contentstudio.io/",
+    "short_description": "Plan social content and assist with drafting.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "marketing_content"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Plan social content and assist with drafting.",
+        "source_url": "https://contentstudio.io/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "marketing_content",
+        "source_url": "https://contentstudio.io/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "3f5d442e-ea09-50ba-ac78-1fbd6c4acd29",
+    "slug": "mailchimp",
+    "name": "Mailchimp",
+    "official_url": "https://mailchimp.com/solutions/ai-tools/",
+    "short_description": "Explore AI-assisted email content and campaign analytics inside Mailchimp.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Explore AI-assisted email content and campaign analytics inside Mailchimp.",
+        "source_url": "https://mailchimp.com/solutions/ai-tools/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Email/SMS campaign scope is outside the current social-content questionnaire; do not equate it with social-post drafting.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "9ab2a65b-b7e7-5a7c-b156-2c3e82c8bb68",
+    "slug": "brevo",
+    "name": "Brevo",
+    "official_url": "https://www.brevo.com/",
+    "short_description": "Manage customer communication and marketing campaigns.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Manage customer communication and marketing campaigns.",
+        "source_url": "https://www.brevo.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Email/SMS campaign scope is outside the current social-content questionnaire; do not equate it with social-post drafting.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "234cdca1-68a5-56b9-963a-bed7a3e261ee",
+    "slug": "klaviyo",
+    "name": "Klaviyo",
+    "official_url": "https://www.klaviyo.com/",
+    "short_description": "AI-assisted marketing for customer messaging.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "AI-assisted marketing for customer messaging.",
+        "source_url": "https://www.klaviyo.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Email/SMS campaign scope is outside the current social-content questionnaire; do not equate it with social-post drafting.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "4b4859e7-1027-530e-a0a7-6d80a28030c9",
+    "slug": "omnisend",
+    "name": "Omnisend",
+    "official_url": "https://www.omnisend.com/",
+    "short_description": "Prepare email and SMS marketing for online shops.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Prepare email and SMS marketing for online shops.",
+        "source_url": "https://www.omnisend.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Email/SMS campaign scope is outside the current social-content questionnaire; do not equate it with social-post drafting.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "453d8b78-0e60-53ba-bc33-1939715ac365",
+    "slug": "hubspot",
+    "name": "HubSpot Agent Hub",
+    "official_url": "https://www.hubspot.com/products/artificial-intelligence",
+    "short_description": "Build and manage AI agents around existing HubSpot customer data.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Build and manage AI agents around existing HubSpot customer data.",
+        "source_url": "https://www.hubspot.com/products/artificial-intelligence",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "dbcaf611-47da-5988-b16d-20bf09d6bf73",
+    "slug": "activecampaign",
+    "name": "ActiveCampaign",
+    "official_url": "https://www.activecampaign.com/ai",
+    "short_description": "Assist with marketing campaigns and automation.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Assist with marketing campaigns and automation.",
+        "source_url": "https://www.activecampaign.com/ai",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Email/SMS campaign scope is outside the current social-content questionnaire; do not equate it with social-post drafting.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "b53592bb-5136-5161-87e8-b402083ea5f7",
+    "slug": "intercom-fin",
+    "name": "Fin by Intercom",
+    "official_url": "https://www.intercom.com/help/en/articles/7120684-fin-ai-agent-explained",
+    "short_description": "Answer customer questions with knowledge-backed AI support.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "customer_support_chat"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Answer customer questions with knowledge-backed AI support.",
+        "source_url": "https://www.intercom.com/help/en/articles/7120684-fin-ai-agent-explained",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "customer_support_chat",
+        "source_url": "https://www.intercom.com/help/en/articles/7120684-fin-ai-agent-explained",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "53d2293c-e631-58b5-85de-912e5aeb0bce",
+    "slug": "zendesk",
+    "name": "Zendesk AI",
+    "official_url": "https://www.zendesk.com/service/ai/",
+    "short_description": "AI-assisted customer service and support workflows.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "customer_support_chat"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "AI-assisted customer service and support workflows.",
+        "source_url": "https://www.zendesk.com/service/ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "customer_support_chat",
+        "source_url": "https://www.zendesk.com/service/ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "f3016536-c8c8-5aaf-bdd4-dd21b90d6124",
+    "slug": "freshdesk",
+    "name": "Freshdesk Freddy AI",
+    "official_url": "https://www.freshworks.com/freshdesk/ai/",
+    "short_description": "AI support assistance within Freshdesk.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "customer_support_chat"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "AI support assistance within Freshdesk.",
+        "source_url": "https://www.freshworks.com/freshdesk/ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "customer_support_chat",
+        "source_url": "https://www.freshworks.com/freshdesk/ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "99866da4-2616-5f08-ba04-fe9f721f392d",
+    "slug": "gorgias",
+    "name": "Gorgias",
+    "official_url": "https://www.gorgias.com/ai-agent",
+    "short_description": "Handle customer support for online shops.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "customer_support_chat"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Handle customer support for online shops.",
+        "source_url": "https://www.gorgias.com/ai-agent",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "customer_support_chat",
+        "source_url": "https://www.gorgias.com/ai-agent",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "97837678-b456-5319-bc44-ec1b63fff973",
+    "slug": "helpscout",
+    "name": "Help Scout Scout",
+    "official_url": "https://docs.helpscout.com/article/1796-introducing-scout",
+    "short_description": "Answer customer questions in Beacon and email using approved knowledge and instructions.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "customer_support_chat"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Answer customer questions in Beacon and email using approved knowledge and instructions.",
+        "source_url": "https://docs.helpscout.com/article/1796-introducing-scout",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "customer_support_chat",
+        "source_url": "https://docs.helpscout.com/article/1796-introducing-scout",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "30019dd9-afb4-5844-9e48-fb0c236ba2ea",
+    "slug": "ada",
+    "name": "Ada",
+    "official_url": "https://www.ada.cx/",
+    "short_description": "Automate customer support using AI agents.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "customer_support_chat"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Automate customer support using AI agents.",
+        "source_url": "https://www.ada.cx/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "customer_support_chat",
+        "source_url": "https://www.ada.cx/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Enterprise-oriented positioning; check minimum spend and implementation support before considering it for a small firm. Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "00d7fd79-e2ac-54df-a117-4db535b74f08",
+    "slug": "chatbase",
+    "name": "Chatbase",
+    "official_url": "https://www.chatbase.co/",
+    "short_description": "Build a support agent from business information.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "customer_support_chat"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Build a support agent from business information.",
+        "source_url": "https://www.chatbase.co/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "customer_support_chat",
+        "source_url": "https://www.chatbase.co/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "354f6fdc-ec41-5fc0-9b17-bb8ea6a8969d",
+    "slug": "botpress",
+    "name": "Botpress",
+    "official_url": "https://botpress.com/",
+    "short_description": "Build and configure AI agents for business workflows.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "customer_support_chat"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Build and configure AI agents for business workflows.",
+        "source_url": "https://botpress.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "customer_support_chat",
+        "source_url": "https://botpress.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Configuration or development work may be required; this is not an automatic install.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "b60965ea-0245-54af-8709-de07d4cf59cf",
+    "slug": "voiceflow",
+    "name": "Voiceflow",
+    "official_url": "https://www.voiceflow.com/",
+    "short_description": "Design and operate conversational agents.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "customer_support_chat"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Design and operate conversational agents.",
+        "source_url": "https://www.voiceflow.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "customer_support_chat",
+        "source_url": "https://www.voiceflow.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Enterprise-oriented positioning; check minimum spend and implementation support before considering it for a small firm. Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Configuration or development work may be required; this is not an automatic install.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "351ee783-2a77-55e8-aba4-f0db43b58707",
+    "slug": "landbot",
+    "name": "Landbot",
+    "official_url": "https://landbot.io/",
+    "short_description": "Build conversational customer enquiry workflows.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "customer_support_chat"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Build conversational customer enquiry workflows.",
+        "source_url": "https://landbot.io/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "customer_support_chat",
+        "source_url": "https://landbot.io/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Configuration or development work may be required; this is not an automatic install.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "90c372e6-3ee6-5bcc-880c-6707155500d3",
+    "slug": "manychat",
+    "name": "Manychat",
+    "official_url": "https://manychat.com/product/ai",
+    "short_description": "AI-assisted customer conversations on social channels.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "customer_support_chat"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "AI-assisted customer conversations on social channels.",
+        "source_url": "https://manychat.com/product/ai",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "customer_support_chat",
+        "source_url": "https://manychat.com/product/ai",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "2128107a-b426-5280-a76f-e9386886a76a",
+    "slug": "tars",
+    "name": "Tars",
+    "official_url": "https://hellotars.com/",
+    "short_description": "Build conversational enquiry and support agents.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "customer_support_chat"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Build conversational enquiry and support agents.",
+        "source_url": "https://hellotars.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "customer_support_chat",
+        "source_url": "https://hellotars.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "a8a6c777-d91f-5c1b-bf5f-627fc90adfbe",
+    "slug": "kommunicate",
+    "name": "Kommunicate",
+    "official_url": "https://www.kommunicate.io/",
+    "short_description": "AI support chat with human handoff workflows.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "customer_support_chat"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "AI support chat with human handoff workflows.",
+        "source_url": "https://www.kommunicate.io/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "customer_support_chat",
+        "source_url": "https://www.kommunicate.io/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "2bdcab6b-76f1-51db-a565-b7a9817f54b5",
+    "slug": "userlike",
+    "name": "Lime Connect (formerly Userlike)",
+    "official_url": "https://connect.lime-technologies.com/en/",
+    "short_description": "Combine customer messaging with AI-assisted sales and support.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "customer_support_chat"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Combine customer messaging with AI-assisted sales and support.",
+        "source_url": "https://connect.lime-technologies.com/en/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "customer_support_chat",
+        "source_url": "https://connect.lime-technologies.com/en/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "554e513b-9d6b-533b-829c-8ecdd69cbc32",
+    "slug": "chatbot",
+    "name": "ChatBot",
+    "official_url": "https://www.chatbot.com/",
+    "short_description": "Create AI customer-service chatbots.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "customer_support_chat"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Create AI customer-service chatbots.",
+        "source_url": "https://www.chatbot.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "customer_support_chat",
+        "source_url": "https://www.chatbot.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "7d00fb8d-85c7-5943-8554-8be4da94f02a",
+    "slug": "retell",
+    "name": "Retell AI",
+    "official_url": "https://www.retellai.com/",
+    "short_description": "Build AI phone agents for customer calls.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "ai_voice_receptionist"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Build AI phone agents for customer calls.",
+        "source_url": "https://www.retellai.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "ai_voice_receptionist",
+        "source_url": "https://www.retellai.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Configuration or development work may be required; this is not an automatic install.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "7107afcf-7315-5a12-922c-a25b2f8552b2",
+    "slug": "bland",
+    "name": "Bland AI",
+    "official_url": "https://www.bland.ai/",
+    "short_description": "Create automated phone conversation workflows.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "ai_voice_receptionist"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Create automated phone conversation workflows.",
+        "source_url": "https://www.bland.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "ai_voice_receptionist",
+        "source_url": "https://www.bland.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Enterprise-oriented positioning; check minimum spend and implementation support before considering it for a small firm. Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Configuration or development work may be required; this is not an automatic install.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "890d57cc-1720-5839-8292-e44e01a01742",
+    "slug": "vapi",
+    "name": "Vapi",
+    "official_url": "https://vapi.ai/",
+    "short_description": "Developer platform for voice-agent applications.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "ai_voice_receptionist"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Developer platform for voice-agent applications.",
+        "source_url": "https://vapi.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "ai_voice_receptionist",
+        "source_url": "https://vapi.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Configuration or development work may be required; this is not an automatic install.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "ea272abc-233f-578f-92d7-54de33b06aab",
+    "slug": "rosie",
+    "name": "Rosie",
+    "official_url": "https://heyrosie.com/",
+    "short_description": "AI answering assistance for small-business enquiries.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "ai_voice_receptionist",
+      "lead_capture",
+      "appointment_scheduling"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "AI answering assistance for small-business enquiries.",
+        "source_url": "https://heyrosie.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "ai_voice_receptionist",
+        "source_url": "https://heyrosie.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "lead_capture",
+        "source_url": "https://heyrosie.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "appointment_scheduling",
+        "source_url": "https://heyrosie.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "pricing",
+        "claim_value": "{\"plan\":\"Professional\",\"base_monthly_usd\":49,\"annual_commitment\":false,\"note\":\"Professional $49/month with 250 minutes and message taking; sending a booking link is not direct calendar booking. Scale $149/month with 1,000 minutes lists direct booking. Extra-minute rate not established.\"}",
+        "source_url": "https://heyrosie.com/pricing",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "pricing",
+        "claim_value": "{\"plan\":\"Scale\",\"base_monthly_usd\":149,\"annual_commitment\":false,\"note\":\"1,000 minutes/month; direct calendar booking listed, but exact calendar support and extra-minute rate need checking.\"}",
+        "source_url": "https://heyrosie.com/pricing",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "05f661c0-4076-570b-b2e1-3f24725bd891",
+    "slug": "slang",
+    "name": "Slang.ai",
+    "official_url": "https://www.slang.ai/",
+    "short_description": "Voice enquiry handling for restaurants.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "ai_voice_receptionist"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Voice enquiry handling for restaurants.",
+        "source_url": "https://www.slang.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "ai_voice_receptionist",
+        "source_url": "https://www.slang.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "a67338a9-e32d-5ddf-94ef-0a6176241fb6",
+    "slug": "notion",
+    "name": "Notion AI",
+    "official_url": "https://www.notion.com/product/ai",
+    "short_description": "Find information and assist with workspace tasks.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Find information and assist with workspace tasks.",
+        "source_url": "https://www.notion.com/product/ai",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "9013e02b-4f21-5daf-925a-64643b3aecde",
+    "slug": "otter",
+    "name": "Otter.ai",
+    "official_url": "https://otter.ai/",
+    "short_description": "Transcribe meetings and prepare meeting notes.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Transcribe meetings and prepare meeting notes.",
+        "source_url": "https://otter.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Get participants’ permission and review recording, retention and sharing settings before capturing meetings.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "764aa257-2409-5603-b214-fb59f473087b",
+    "slug": "fireflies",
+    "name": "Fireflies.ai",
+    "official_url": "https://fireflies.ai/",
+    "short_description": "Record, transcribe and summarise meetings.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Record, transcribe and summarise meetings.",
+        "source_url": "https://fireflies.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Get participants’ permission and review recording, retention and sharing settings before capturing meetings.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "d07f5d06-8e52-5fd5-9c18-8f0a8326dcbd",
+    "slug": "fathom",
+    "name": "Fathom",
+    "official_url": "https://www.fathom.ai/",
+    "short_description": "Capture meeting notes and action items.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Capture meeting notes and action items.",
+        "source_url": "https://www.fathom.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Get participants’ permission and review recording, retention and sharing settings before capturing meetings.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "dad4d92e-52de-54c0-85ad-fd7259a7487a",
+    "slug": "tldv",
+    "name": "tl;dv",
+    "official_url": "https://tldv.io/",
+    "short_description": "Summarise and search recorded business meetings.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Summarise and search recorded business meetings.",
+        "source_url": "https://tldv.io/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Get participants’ permission and review recording, retention and sharing settings before capturing meetings.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "d713ffb6-655c-58fe-98ad-5f58ddca1f6c",
+    "slug": "read-ai",
+    "name": "Read AI",
+    "official_url": "https://www.read.ai/",
+    "short_description": "Summarise meetings and business communications.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Summarise meetings and business communications.",
+        "source_url": "https://www.read.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Get participants’ permission and review recording, retention and sharing settings before capturing meetings.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "ffb8432a-9f83-54ce-9521-6d9aad5e5748",
+    "slug": "sembly",
+    "name": "Sembly AI",
+    "official_url": "https://www.sembly.ai/",
+    "short_description": "Produce meeting notes and follow-up tasks.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Produce meeting notes and follow-up tasks.",
+        "source_url": "https://www.sembly.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Get participants’ permission and review recording, retention and sharing settings before capturing meetings.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "33ee4b78-6b52-5b32-a38b-57225cfa31a6",
+    "slug": "avoma",
+    "name": "Avoma",
+    "official_url": "https://www.avoma.com/",
+    "short_description": "Meeting assistance and sales conversation workflows.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Meeting assistance and sales conversation workflows.",
+        "source_url": "https://www.avoma.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Get participants’ permission and review recording, retention and sharing settings before capturing meetings.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "5a227b89-f494-5a29-8fef-1486859e8d6e",
+    "slug": "reclaim",
+    "name": "Reclaim",
+    "official_url": "https://reclaim.ai/",
+    "short_description": "Schedule focused work, habits and meetings.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Schedule focused work, habits and meetings.",
+        "source_url": "https://reclaim.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "ba3b3f6a-e0e2-52df-bb21-e1f998e2447a",
+    "slug": "motion",
+    "name": "Motion",
+    "official_url": "https://www.usemotion.com/",
+    "short_description": "Plan tasks and calendars with AI assistance.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Plan tasks and calendars with AI assistance.",
+        "source_url": "https://www.usemotion.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "6750d29b-02e3-5d87-acac-d3b5e1cd139a",
+    "slug": "taskade",
+    "name": "Taskade",
+    "official_url": "https://www.taskade.com/",
+    "short_description": "Build AI-assisted task and team workflows.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "workflow_automation"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Build AI-assisted task and team workflows.",
+        "source_url": "https://www.taskade.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "workflow_automation",
+        "source_url": "https://www.taskade.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Configuration or development work may be required; this is not an automatic install.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "f620e46a-a28c-549d-9677-465e3b8b4b91",
+    "slug": "clickup",
+    "name": "ClickUp Brain",
+    "official_url": "https://clickup.com/brain",
+    "short_description": "Find information and assist work within ClickUp.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Find information and assist work within ClickUp.",
+        "source_url": "https://clickup.com/brain",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "bdce5095-f3c8-52c8-b7c2-42a949d9ed10",
+    "slug": "asana",
+    "name": "Asana AI",
+    "official_url": "https://asana.com/product/ai",
+    "short_description": "Assist team project and work-management workflows.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "workflow_automation"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Assist team project and work-management workflows.",
+        "source_url": "https://asana.com/product/ai",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "workflow_automation",
+        "source_url": "https://asana.com/product/ai",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "d418accf-799d-569c-b25b-521e146ac149",
+    "slug": "monday",
+    "name": "monday AI",
+    "official_url": "https://monday.com/",
+    "short_description": "Automate and assist work inside monday.com.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "workflow_automation"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Automate and assist work inside monday.com.",
+        "source_url": "https://monday.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "workflow_automation",
+        "source_url": "https://monday.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "16c45593-3ddf-5574-b02f-31237bb2d04b",
+    "slug": "zapier",
+    "name": "Zapier",
+    "official_url": "https://zapier.com/ai",
+    "short_description": "Build AI-assisted workflows across supported applications.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "workflow_automation"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Build AI-assisted workflows across supported applications.",
+        "source_url": "https://zapier.com/ai",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "workflow_automation",
+        "source_url": "https://zapier.com/ai",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Configuration or development work may be required; this is not an automatic install.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "5d5b8ab1-2e6a-5044-8851-e0378a5cfa10",
+    "slug": "make",
+    "name": "Make",
+    "official_url": "https://www.make.com/",
+    "short_description": "Create visual workflows using AI and app connections.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "workflow_automation"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Create visual workflows using AI and app connections.",
+        "source_url": "https://www.make.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "workflow_automation",
+        "source_url": "https://www.make.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Configuration or development work may be required; this is not an automatic install.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "be318101-8638-5cec-ad8e-c7b0f4c619a2",
+    "slug": "lindy",
+    "name": "Lindy",
+    "official_url": "https://www.lindy.ai/",
+    "short_description": "Configure AI assistants for business tasks.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "workflow_automation"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Configure AI assistants for business tasks.",
+        "source_url": "https://www.lindy.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "workflow_automation",
+        "source_url": "https://www.lindy.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Configuration or development work may be required; this is not an automatic install.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "5d2bcfb2-0a61-5def-bc57-e79dd058bc80",
+    "slug": "bardeen",
+    "name": "Bardeen",
+    "official_url": "https://www.bardeen.ai/",
+    "short_description": "Research, qualify and enrich sales leads with AI-assisted browser workflows.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Research, qualify and enrich sales leads with AI-assisted browser workflows.",
+        "source_url": "https://www.bardeen.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Configuration or development work may be required; this is not an automatic install.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "4c2550bf-6970-5d1d-b559-65325dac5bf8",
+    "slug": "airtable",
+    "name": "Airtable AI",
+    "official_url": "https://www.airtable.com/platform/ai",
+    "short_description": "Apply AI to structured business information and workflows.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "workflow_automation"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Apply AI to structured business information and workflows.",
+        "source_url": "https://www.airtable.com/platform/ai",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "workflow_automation",
+        "source_url": "https://www.airtable.com/platform/ai",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Configuration or development work may be required; this is not an automatic install.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "d59517b5-754e-5a37-a8b4-9b4c90f2be57",
+    "slug": "coda",
+    "name": "Coda / Superhuman Docs",
+    "official_url": "https://coda.io/product/ai",
+    "short_description": "Work with an AI assistant inside connected team documents.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Work with an AI assistant inside connected team documents.",
+        "source_url": "https://coda.io/product/ai",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "7b4c227a-e9ab-5e79-b79e-1252a2b5ee43",
+    "slug": "pipedrive",
+    "name": "Pipedrive AI",
+    "official_url": "https://support.pipedrive.com/en/article/sales-assistant",
+    "short_description": "Assist sales work inside Pipedrive.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Assist sales work inside Pipedrive.",
+        "source_url": "https://support.pipedrive.com/en/article/sales-assistant",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "43e1fd38-415f-539b-b2fc-0682b12afc73",
+    "slug": "zoho-crm",
+    "name": "Zoho CRM Zia",
+    "official_url": "https://www.zoho.com/crm/zia/",
+    "short_description": "AI assistance for existing CRM data and sales work.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "AI assistance for existing CRM data and sales work.",
+        "source_url": "https://www.zoho.com/crm/zia/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "11ce0092-a765-5609-b8bf-7b15b4a65aad",
+    "slug": "apollo",
+    "name": "Apollo",
+    "official_url": "https://www.apollo.io/",
+    "short_description": "Assist prospect research and sales outreach.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Assist prospect research and sales outreach.",
+        "source_url": "https://www.apollo.io/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "77e15671-69a1-58fd-9201-1c6f1a8e6f33",
+    "slug": "clay",
+    "name": "Clay",
+    "official_url": "https://www.clay.com/",
+    "short_description": "Research and enrich sales prospect information.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Research and enrich sales prospect information.",
+        "source_url": "https://www.clay.com/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Configuration or development work may be required; this is not an automatic install.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "df264181-7c1b-5b33-acd6-6c9cbfd7a6cf",
+    "slug": "regie",
+    "name": "Regie.ai",
+    "official_url": "https://regie.ai/",
+    "short_description": "Assist prospecting and sales communication.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Assist prospecting and sales communication.",
+        "source_url": "https://regie.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "1d8f5ed9-76ed-50e9-96df-2536c5499e5e",
+    "slug": "quickbooks",
+    "name": "QuickBooks Intuit Intelligence",
+    "official_url": "https://quickbooks.intuit.com/learn-support/en-us/help-article/intuit-assist/introducing-intuit-intelligence/L189976Da_US_en_US",
+    "short_description": "Use AI assistance for financial tasks and questions inside QuickBooks Online or IAS.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Use AI assistance for financial tasks and questions inside QuickBooks Online or IAS.",
+        "source_url": "https://quickbooks.intuit.com/learn-support/en-us/help-article/intuit-assist/introducing-intuit-intelligence/L189976Da_US_en_US",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Keep human approval for bookkeeping changes, invoices, payments and any financial conclusion.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "d3e49c8d-1a3c-52c6-befc-6cc141011dd2",
+    "slug": "xero",
+    "name": "Xero JAX",
+    "official_url": "https://www.xero.com/us/ai-in-accounting/jax/",
+    "short_description": "Assist accounting work inside Xero.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Assist accounting work inside Xero.",
+        "source_url": "https://www.xero.com/us/ai-in-accounting/jax/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Keep human approval for bookkeeping changes, invoices, payments and any financial conclusion.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "f7e13c1f-5392-57ff-b139-b0b4c5a543e0",
+    "slug": "dext",
+    "name": "Dext",
+    "official_url": "https://dext.com/us",
+    "short_description": "Capture and organise receipts and accounting documents.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "invoice_automation"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Capture and organise receipts and accounting documents.",
+        "source_url": "https://dext.com/us",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "invoice_automation",
+        "source_url": "https://dext.com/us",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Keep human approval for bookkeeping changes, invoices, payments and any financial conclusion.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "dca04378-4e17-593d-a68c-d87116bac63c",
+    "slug": "vic",
+    "name": "Vic.ai",
+    "official_url": "https://www.vic.ai/",
+    "short_description": "Assist accounts-payable and invoice workflows.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "invoice_automation"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Assist accounts-payable and invoice workflows.",
+        "source_url": "https://www.vic.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "invoice_automation",
+        "source_url": "https://www.vic.ai/",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Enterprise-oriented positioning; check minimum spend and implementation support before considering it for a small firm. Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Keep human approval for bookkeeping changes, invoices, payments and any financial conclusion.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  },
+  {
+    "tool_id": "d40f9b86-f595-529f-b7b9-acbad2aec791",
+    "slug": "ramp",
+    "name": "Ramp",
+    "official_url": "https://ramp.com/intelligence",
+    "short_description": "Assist finance and spend-management workflows.",
+    "ai_classification": "ai_enabled",
+    "catalog_status": "seeded",
+    "matched_capabilities": [
+      "invoice_automation"
+    ],
+    "retrieval_channels": [
+      "catalog"
+    ],
+    "discovery_status": "candidate",
+    "evidence": [
+      {
+        "claim_key": "ai_feature",
+        "claim_value": "Assist finance and spend-management workflows.",
+        "source_url": "https://ramp.com/intelligence",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      },
+      {
+        "claim_key": "capability",
+        "claim_value": "invoice_automation",
+        "source_url": "https://ramp.com/intelligence",
+        "observed_at": "2026-11-07T12:00:00Z",
+        "verification_state": "vendor_documented"
+      }
+    ],
+    "issues": [
+      "Current AI-eligible plan price, quotas and billing commitment are not fully verified. Exact integration actions, setup effort and output quality have not been tested. Keep human approval for bookkeeping changes, invoices, payments and any financial conclusion.",
+      "Vendor documentation is not an independent product test.",
+      "Specific integrations and total price require checking."
+    ],
+    "synthetic": false
+  }
+]

@@ -1,0 +1,95 @@
+{
+  "synthetic_warning": "ALL products below are intentionally fictional and MUST be labeled SYNTHETIC DEMO DATA. example.org domains must never be presented as real product links.",
+  "products": [
+    {
+      "id": "00000000-0000-4000-8000-000000000001",
+      "name": "DEMO Field Voice Helper",
+      "official_url": "https://voice.example.org",
+      "vendor_domain": "example.org",
+      "synthetic": true,
+      "capabilities": [
+        "ai_voice_receptionist",
+        "lead_capture",
+        "appointment_scheduling"
+      ],
+      "verification": "fixture_only",
+      "catalog_status": "seeded",
+      "retrieval_channels": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000002",
+      "name": "DEMO Inventory Planner",
+      "official_url": "https://inventory.example.org",
+      "vendor_domain": "example.org",
+      "synthetic": true,
+      "capabilities": [
+        "demand_forecasting",
+        "inventory_optimization"
+      ],
+      "verification": "fixture_only",
+      "catalog_status": "seeded",
+      "retrieval_channels": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000003",
+      "name": "DEMO Campaign Assistant",
+      "official_url": "https://marketing.example.org",
+      "vendor_domain": "example.org",
+      "synthetic": true,
+      "capabilities": [
+        "marketing_content"
+      ],
+      "verification": "fixture_only",
+      "catalog_status": "seeded",
+      "retrieval_channels": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000004",
+      "name": "DEMO Invoice Parser",
+      "official_url": "https://invoices.example.org",
+      "vendor_domain": "example.org",
+      "synthetic": true,
+      "capabilities": [
+        "invoice_automation"
+      ],
+      "verification": "fixture_only",
+      "catalog_status": "seeded",
+      "retrieval_channels": [
+        "catalog"
+      ]
+    }
+  ],
+  "mock_web_new_product": {
+    "id": "00000000-0000-4000-8000-000000000005",
+    "name": "DEMO Web-Only Call Assistant",
+    "official_url": "https://webvoice.example.org",
+    "vendor_domain": "example.org",
+    "synthetic": true,
+    "capabilities": [
+      "ai_voice_receptionist",
+      "lead_capture"
+    ],
+    "verification": "fixture_only",
+    "catalog_status": "provisional",
+    "retrieval_channels": [
+      "web_search"
+    ]
+  },
+  "mock_web_duplicate_product": {
+    "name": "DEMO Field Voice Helper",
+    "official_url": "https://voice.example.org/features",
+    "synthetic": true,
+    "retrieval_channels": [
+      "web_search"
+    ],
+    "capabilities": [
+      "ai_voice_receptionist"
+    ]
+  }
+}

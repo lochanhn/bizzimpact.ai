@@ -1,0 +1,168 @@
+{
+  "fixtures_version": "v3.0",
+  "are_products_real": false,
+  "cases": [
+    {
+      "case_id": "LANDSCAPE_VOICE",
+      "label": "Phone calls landscaping",
+      "profile": {
+        "industry": {
+          "category": "Home Services",
+          "subtype": "Landscaping"
+        },
+        "business_description": "We do residential lawn maintenance and garden care.",
+        "employee_band": "2_10",
+        "operating_region": {
+          "country": "US",
+          "region": "MD"
+        },
+        "customer_type": "b2c",
+        "existing_software_status": "selected",
+        "existing_software": [
+          "QuickBooks",
+          "Gmail"
+        ],
+        "improvement_priorities": [
+          "Sales",
+          "Customer service"
+        ],
+        "monthly_budget_band": "50_150"
+      },
+      "problem": "I miss customer calls while working outside and need them answered and appointments booked.",
+      "expected_capabilities": [
+        "ai_voice_receptionist",
+        "lead_capture",
+        "appointment_scheduling"
+      ],
+      "should_ask_q9": false,
+      "expected_query_terms": [
+        "AI phone answering",
+        "landscaping"
+      ],
+      "not_expected": [
+        "inventory_optimization"
+      ]
+    },
+    {
+      "case_id": "LANDSCAPE_AMBIGUOUS",
+      "label": "Ambiguous contact channel",
+      "profile": {
+        "industry": {
+          "category": "Home Services",
+          "subtype": "Landscaping"
+        },
+        "business_description": "We maintain residential lawns.",
+        "employee_band": "2_10",
+        "operating_region": {
+          "country": "US",
+          "region": "MD"
+        },
+        "existing_software_status": "none",
+        "existing_software": [],
+        "improvement_priorities": [
+          "Getting new customers"
+        ]
+      },
+      "problem": "Customer inquiries keep getting lost and I need an automated way to respond.",
+      "expected_capabilities": [
+        "lead_capture",
+        "automated_followup"
+      ],
+      "should_ask_q9": true,
+      "q9_skip_must_work": true
+    },
+    {
+      "case_id": "RESTAURANT_INVENTORY",
+      "label": "Restaurant inventory",
+      "profile": {
+        "industry": {
+          "category": "Food & Beverage",
+          "subtype": "Restaurant"
+        },
+        "business_description": "We run a neighborhood restaurant serving lunch and dinner.",
+        "employee_band": "11_50",
+        "operating_region": {
+          "country": "US",
+          "region": "MD"
+        },
+        "existing_software_status": "selected",
+        "existing_software": [
+          "Square"
+        ],
+        "improvement_priorities": [
+          "Inventory & purchasing"
+        ]
+      },
+      "problem": "We regularly over-order perishables; we need better demand forecasting and restock planning.",
+      "expected_capabilities": [
+        "demand_forecasting",
+        "inventory_optimization"
+      ],
+      "should_ask_q9": false,
+      "not_expected": [
+        "marketing_content"
+      ]
+    },
+    {
+      "case_id": "RETAIL_SHOPIFY",
+      "label": "Shopify retail",
+      "profile": {
+        "industry": {
+          "category": "Retail & E-commerce",
+          "subtype": "Online retail"
+        },
+        "business_description": "We sell clothing through a website.",
+        "employee_band": "solo",
+        "operating_region": {
+          "country": "US",
+          "region": "NY"
+        },
+        "existing_software_status": "selected",
+        "existing_software": [
+          "Shopify"
+        ],
+        "improvement_priorities": [
+          "Marketing"
+        ]
+      },
+      "problem": "I need assistance creating product campaign content and tracking response to promotions.",
+      "expected_capabilities": [
+        "marketing_content"
+      ],
+      "should_ask_q9": false,
+      "expected_query_terms": [
+        "marketing",
+        "Shopify"
+      ]
+    },
+    {
+      "case_id": "B2B_INVOICE",
+      "label": "Professional services invoicing",
+      "profile": {
+        "industry": {
+          "category": "Professional Services",
+          "subtype": "Consultancy"
+        },
+        "business_description": "Small consulting studio serving other businesses.",
+        "employee_band": "2_10",
+        "operating_region": {
+          "country": "US",
+          "region": "VA"
+        },
+        "customer_type": "b2b",
+        "existing_software_status": "unknown",
+        "existing_software": [],
+        "improvement_priorities": [
+          "Finance & invoicing"
+        ],
+        "monthly_budget_band": null
+      },
+      "problem": "We spend too much time entering invoices manually and matching invoice details.",
+      "expected_capabilities": [
+        "invoice_automation"
+      ],
+      "should_ask_q9": false,
+      "must_not_assume_existing_integration": true
+    }
+  ]
+}

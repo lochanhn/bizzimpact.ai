@@ -1,77 +1,73 @@
-# bizzimpact.ai website
+# bizzimpact.ai
 
-Working local V1 built with Next.js, React, TypeScript and Zod. Uses a reviewed, versioned local catalogue; no database account or AI key is required.
+Phase 1: small-business onboarding and evidence-backed discovery of existing AI tools. Next.js frontend in `website/`; FastAPI/Pydantic backend in `backend/`. The primary flow has no scores or ratings.
 
-## Run
+## Run the complete local demo
+
+Requires Node 20.9+, Python 3.11+ and [uv](https://docs.astral.sh/uv/).
+
+From the repository root:
 
 ```sh
+uv sync --project backend --frozen
+npm ci --prefix website
 cd website
-npm ci
-npm run dev
+npm run dev:full
 ```
 
-Then visit the printed local address yourself. No browser opens automatically. Use `npm run build` and `npm start` for a production build. Node 20.9 or newer is required.
+Open `http://localhost:3000` yourself and choose **Try the synthetic demo**. No application opens automatically. The demo uses an isolated temporary workspace, exact eight-question onboarding, a catalogue baseline, natural-language problem parsing, actual run statuses, conditional Q9, and fictional candidates clearly labelled synthetic. No account, LLM key or paid call is needed.
 
-## Included
+Alternatively use two terminals:
 
-- Responsive landing page and searchable/filterable 111-tool catalogue across seven business areas.
-- Two adaptive assessment branches: marketing (eight questions) and phone/website enquiries (seven questions).
-- Editable review, tab-session persistence, clear-answers control, and fictional demo scenarios.
-- Validated server-side matching, plan/budget gates, explained fit scores, evidence links, separate needs-checking results, and useful empty/error states.
-- Documentation-based guides, text-plan downloads and a generic blank enquiry CSV.
-- Keyboard focus management and modal focus trapping. Visual and real-browser checks are still pending; no desktop application was launched.
+```sh
+# Terminal 1, repository root
+uv run --directory backend uvicorn app.main:app --host 127.0.0.1 --port 8001 --no-access-log
+# Terminal 2, repository root
+npm run dev --prefix website
+```
+
+The local SQLite demo database is ignored under `backend/.runtime/`; sessions expire in two hours and are isolated from other demo visitors. The public research catalogue contains 111 real, source-linked products; it is distinct from fictional demo results.
+
+## Routes
+
+- `/`: Phase 1 landing and constrained demo entry.
+- `/auth`: Supabase account sign-up/sign-in and guest demo option.
+- `/onboarding`: frozen Q1–Q8 over three screens; optional answers can be skipped.
+- `/dashboard`: reusable business context, zero-model/web-call baseline, and the problem input.
+- `/profile`: edit the current business profile.
+- `/discovery/[runId]`: real state polling, optional Q9/Skip, candidates and source uncertainty.
+- `/tools/[toolId]`: claim-level evidence and unknowns.
+- `/catalog`: 111-tool source-aware research catalogue.
+- `/api/v1/*`: Next.js proxy to the Python API. Cookies/tokens stay server-side.
+
+The earlier scored assessment is retained as source in `components/prototype.tsx` and in its regression tests; it is not mounted in the Phase 1 user journey. Its weights are not validated Phase 2 metrics.
+
+## Real accounts and live discovery
+
+[AUTH_SETUP.md](AUTH_SETUP.md) explains Supabase configuration. Both SQL migrations and the catalogue seed are required for the new business/discovery records. Account/DB credentials are not configured in this workspace.
+
+Backend default: `DISCOVERY_MODE=mock`, `OPENROUTER_ENABLED=false`, `LIVE_WEB_ENABLED=false`, `EXPLICIT_LIVE_AUTHORIZED=false`. No live credential is read from the repository’s saved key file. Real authenticated users can use `DISCOVERY_MODE=catalog` with the seeded SQL catalogue and no model/web charges. Only an explicitly authorised, configured `live` mode can enable OpenRouter parsing/search; demo identities always remain mock, even if flags change.
+
+OpenRouter is the runtime provider behind a replaceable interface. AI interpretation maps needs to the fixed eleven-capability taxonomy. Catalogue retrieval and evidence are separate from formal scoring. API/model output cannot invent prices or compatibility; unknowns stay visible. Gemini direct is a later optional adapter, not an enabled dependency.
+
+[PHASE1_STATUS.md](PHASE1_STATUS.md) is the detailed gap audit, contract deltas, test evidence and blocked/deferred work. It distinguishes implemented code from unperformed live verification.
 
 ## Checks
 
 ```sh
-npm test
-npm run typecheck
-npm run build
+uv run --directory backend pytest -q
+npm test --prefix website
+npm run typecheck --prefix website
+npm run build --prefix website
 ```
 
-Simulated-page tests cover both owner journeys, guides, catalogue search and clearing saved answers. These do not replace visual/browser checks. Matching/API tests cover annual commitments, overages, incompatible requirements, unknown prices/usage, unsupported tasks, schema validation, and ranking. They do not establish vendor product quality.
+Observed: 41 backend tests and 44 frontend/matching/auth/DOM tests passed; TypeScript and production build passed. Local HTTP verified landscaping calls, restaurant inventory, clarification Skip, profile persistence and eight page routes. No browser, live model/search or real Supabase account was tested.
 
-## Code
+## Data and logs
 
-- `app/page.tsx`: owner journey, catalogue and guides.
-- `app/globals.css`: responsive visual design; plain CSS keeps this initial build small.
-- `app/api/assess/route.ts`: validates requests and returns deterministic matches.
-- `app/api/catalog/route.ts`: public catalogue and source links.
-- `lib/catalog.ts`: original tools, category definitions and unified 111-tool catalogue.
-- `data/catalogue-expansion.json`: 100 additional evidence-linked research records.
-- `lib/catalogue-expansion.ts`: type-safe adaptation, selected plan details and research checklists.
-- `scripts/generate-catalogue-research.mjs`: regenerates the source register and findings from the reviewed records.
-- `lib/assessment.ts`: answer schema and shared labels.
-- `lib/match.ts`: plan selection, hard gates, cost calculations and scoring.
-
-## Current limits
-
-The active catalogue is a local fixture, not Supabase. Supabase sign-in/sign-up/logout and private saved-assessment APIs are implemented but require the project setup in [AUTH_SETUP.md](AUTH_SETUP.md). No Supabase project, live AI interpretation, vendor account connections, automated discovery or deployment is configured. Owner free text is context only, not interpreted by AI. A SQL catalogue adapter can replace the local read without changing matching rules later.
-
-Tool facts come from the project research and official pages reviewed November 7, 2026. Sources and unknowns are visible in the UI. Tools and setup guides have not been tested in vendor accounts. The application provides guidance, not installation or verified business outcomes.
-
-Assessment bodies are not logged. They are saved to a private Supabase profile only when a signed-in owner explicitly chooses Save. Tab sessionStorage holds answers until cleared or the tab session ends. Review hosting access/error logs before deployment. Do not put the saved OpenRouter key in this app or use a `NEXT_PUBLIC_` variable for a secret. No paid API calls were made.
-
-Research and proposed product scope: `../Lochan/v1-specification.md` and `../Lochan/research/`.
-
-Verification on November 7, 2026: 21 automated tests passed, TypeScript and the production build passed, and the production server returned HTTP 200 for the homepage and catalogue. Actual HTTP requests returned Buffer for the cafe example and Goodcall for the HVAC example. The temporary verification server was stopped. No browser was opened; visual verification remains pending.
-
-## Catalogue expansion
-
-The catalogue now contains 111 distinct products: the original 11 and 100 additions. Fourteen have selected plan details (not necessarily complete compatibility or pricing); 97 are product-level reviews with plan checks outstanding. Unknown prices stay null. Product-only records cannot become confirmed matches or receive public fit scores. Broader finance, sales, automation and productivity categories are browsable; the questionnaire still supports phone enquiries, website enquiries and social content.
-
-Catalogue search includes existing-software notes. Category and review-depth filters, incremental loading, per-tool research notes and filtered CSV export make the larger dataset usable. Official sources and findings are in `../Lochan/research/tool-catalogue/`. Research checklists for additions are labelled separately from the original setup guides.
-
-Expansion verification: 31 automated tests and the production build passed. HTTP checks against the restarted localhost server confirmed 111 unique entries, 100 research additions, seven categories, Wordtune in the relevant free-text candidate flow, and Jasper held in needs-checking. Source/findings coverage was checked for all 100 additions. Browser visual checks remain pending; no browser was opened.
-
-## Accounts, logs and AI direction
-
-Account setup, routes, privacy boundaries, migration and live-verification limits are in [AUTH_SETUP.md](AUTH_SETUP.md). This adds account foundations without rewriting the existing V1 questionnaire into the reference document’s entire Phase 1 design. Authentication and private persistence are conditional on connecting Supabase. Diagnostic logging is structured stdout with allowlisted fields and request IDs; it is not a hosted logging service.
-
-The next AI step is problem interpretation: owner text + relevant profile context → a validated intent using controlled capability IDs → catalogue retrieval → evidence and requirement gates. Optional AI explanations can describe retrieved evidence; they must not invent tool names, prices, integrations or scores. The current fit rubric is deterministic and experimental; the supplied reference defers formal evaluation to Phase 2. No model currently quantifies suitability or produces live recommendations. No paid AI call was made.
-
-Provider decision: use the existing funded OpenRouter account for the hackathon’s live interpretation after explicit activation, with one replaceable provider interface rather than adding two integrations now. Gemini direct can be added later. Its free tier has model/project quotas and its pricing page flags content use to improve products on free services; do not assume unlimited free private business processing. Current rates and policies need checking at activation. Retain a $20 application budget target and $5 reserve; implementing and verifying a shared spend ledger/provider limits is required before enabling paid calls. Use a replacement credential as requested by the Phase 1 reference; do not copy the old key from chat into code.
-
-Pricing illustration checked against the public OpenRouter model API on November 7, 2026: `google/gemini-2.5-flash-lite` listed $0.10 per million input tokens and $0.40 per million output tokens. A 2,000-input/400-output-token interpretation is about $0.00036, or $0.36 per 1,000 such calls, excluding reasoning, search, extra calls and applicable fees. This is an estimate, not a measured application bill or guaranteed capacity. The $25 credit should be ample for a bounded hackathon interpretation demo; live web calls and large prompts change the calculation.
-
-Account/logging verification: 40 automated tests and production build passed. Local HTTP checks returned 200 for home/auth/dashboard, explicit unconfigured session state, denied private-profile access and cross-origin account submissions, and 111 catalogue entries. Real Supabase email, cookie/session and database isolation checks remain NOT RUN until project setup.
+- Source research: `Lochan/research/`, with tool catalogue sources, findings and retrieval audit.
+- Tool seed: generated from `lib/catalog.ts` and the researched expansion with `npx tsx scripts/export-discovery-catalogue.ts` inside `website/`. Frontend/backend mirrors are checked in tests.
+- Approved questionnaire and scenarios: versioned fixtures from the supplied v4 package; frozen HTML JSON was compared to the fixture.
+- Private profile/run data: local demo SQLite, or PostgreSQL for authenticated users after setup. Runs preserve an immutable profile snapshot.
+- Diagnostic logs: allowlisted JSON metadata, request IDs, durations, statuses and usage; no body, password, token, email or original problem text. Hosting log retention/URL redaction must be configured separately.
+- OpenRouter application target: $20 reservation ledger, preserving $5 of the supplied credit. This is not a guaranteed provider hard cap; missing usage conservatively pauses further calls. Live search can include provider-managed internal operations beyond our explicit query count.

@@ -1,0 +1,9 @@
+[project]
+name = "bizzimpact-discovery"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = ["fastapi", "uvicorn", "httpx", "pydantic", "psycopg[binary]"]
+[dependency-groups]
+dev = ["pytest"]
+[tool.pytest.ini_options]
+pythonpath = ["."]

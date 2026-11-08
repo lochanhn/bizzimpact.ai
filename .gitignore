@@ -7,3 +7,9 @@ node_modules/
 website/coverage/
 
 !website/.env.example
+backend/.venv/
+backend/.runtime/
+__pycache__/
+.pytest_cache/
+*.pyc
+!backend/.env.example

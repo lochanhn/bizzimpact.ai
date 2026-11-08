@@ -1,0 +1,5 @@
+import type { Profile } from './profile';
+export type Evidence={claim_key:string;claim_value:unknown;verification_state:string;source_url:string|null;observed_at:string|null};
+export type ToolRecord={tool_id:string;name:string;official_url:string;short_description:string|null;ai_classification:string;catalog_status:string;matched_capabilities:string[];retrieval_channels:string[];discovery_status:string;evidence:Evidence[];issues:string[];synthetic:boolean};
+export type Business={business_id:string;industry_subtype:string;profile:Profile};
+export type Run={run_id:string;business_id:string;status:string;mode:string;requirements:{problem_summary:string;required_capabilities:string[];optional_capabilities:string[];explicit_attributes:string[];inferred_attributes:string[]}|null;clarification_question:string|null;tools:ToolRecord[];warnings:string[];error_code:string|null;usage:{model_calls:number;search_calls:number;estimated_cost_usd:number;cost_uncertain?:boolean};profile_snapshot:Profile;state_history:{status:string;at:string}[];synthetic:boolean;queries:{query_text:string;query_kind:string;executed:boolean}[]};

@@ -46,11 +46,11 @@ Simulated-page tests cover both owner journeys, guides, catalogue search and cle
 
 ## Current limits
 
-The active catalogue is a local fixture, not Supabase. No SQL credentials, authentication, AI interpretation, live vendor account connections, automated discovery, or deployment are configured. Owner free text is context only, not interpreted by AI. A SQL catalogue adapter can replace the local read without changing matching rules later.
+The active catalogue is a local fixture, not Supabase. Supabase sign-in/sign-up/logout and private saved-assessment APIs are implemented but require the project setup in [AUTH_SETUP.md](AUTH_SETUP.md). No Supabase project, live AI interpretation, vendor account connections, automated discovery or deployment is configured. Owner free text is context only, not interpreted by AI. A SQL catalogue adapter can replace the local read without changing matching rules later.
 
 Tool facts come from the project research and official pages reviewed November 7, 2026. Sources and unknowns are visible in the UI. Tools and setup guides have not been tested in vendor accounts. The application provides guidance, not installation or verified business outcomes.
 
-Assessment bodies are not deliberately logged or stored on the server. Tab sessionStorage holds answers until cleared or the tab session ends. Review hosting access/error logs before deployment. Do not put the saved OpenRouter key in this app or use a `NEXT_PUBLIC_` variable for a secret. No paid API calls were made.
+Assessment bodies are not logged. They are saved to a private Supabase profile only when a signed-in owner explicitly chooses Save. Tab sessionStorage holds answers until cleared or the tab session ends. Review hosting access/error logs before deployment. Do not put the saved OpenRouter key in this app or use a `NEXT_PUBLIC_` variable for a secret. No paid API calls were made.
 
 Research and proposed product scope: `../Lochan/v1-specification.md` and `../Lochan/research/`.
 
@@ -63,3 +63,15 @@ The catalogue now contains 111 distinct products: the original 11 and 100 additi
 Catalogue search includes existing-software notes. Category and review-depth filters, incremental loading, per-tool research notes and filtered CSV export make the larger dataset usable. Official sources and findings are in `../Lochan/research/tool-catalogue/`. Research checklists for additions are labelled separately from the original setup guides.
 
 Expansion verification: 31 automated tests and the production build passed. HTTP checks against the restarted localhost server confirmed 111 unique entries, 100 research additions, seven categories, Wordtune in the relevant free-text candidate flow, and Jasper held in needs-checking. Source/findings coverage was checked for all 100 additions. Browser visual checks remain pending; no browser was opened.
+
+## Accounts, logs and AI direction
+
+Account setup, routes, privacy boundaries, migration and live-verification limits are in [AUTH_SETUP.md](AUTH_SETUP.md). This adds account foundations without rewriting the existing V1 questionnaire into the reference document’s entire Phase 1 design. Authentication and private persistence are conditional on connecting Supabase. Diagnostic logging is structured stdout with allowlisted fields and request IDs; it is not a hosted logging service.
+
+The next AI step is problem interpretation: owner text + relevant profile context → a validated intent using controlled capability IDs → catalogue retrieval → evidence and requirement gates. Optional AI explanations can describe retrieved evidence; they must not invent tool names, prices, integrations or scores. The current fit rubric is deterministic and experimental; the supplied reference defers formal evaluation to Phase 2. No model currently quantifies suitability or produces live recommendations. No paid AI call was made.
+
+Provider decision: use the existing funded OpenRouter account for the hackathon’s live interpretation after explicit activation, with one replaceable provider interface rather than adding two integrations now. Gemini direct can be added later. Its free tier has model/project quotas and its pricing page flags content use to improve products on free services; do not assume unlimited free private business processing. Current rates and policies need checking at activation. Retain a $20 application budget target and $5 reserve; implementing and verifying a shared spend ledger/provider limits is required before enabling paid calls. Use a replacement credential as requested by the Phase 1 reference; do not copy the old key from chat into code.
+
+Pricing illustration checked against the public OpenRouter model API on November 7, 2026: `google/gemini-2.5-flash-lite` listed $0.10 per million input tokens and $0.40 per million output tokens. A 2,000-input/400-output-token interpretation is about $0.00036, or $0.36 per 1,000 such calls, excluding reasoning, search, extra calls and applicable fees. This is an estimate, not a measured application bill or guaranteed capacity. The $25 credit should be ample for a bounded hackathon interpretation demo; live web calls and large prompts change the calculation.
+
+Account/logging verification: 40 automated tests and production build passed. Local HTTP checks returned 200 for home/auth/dashboard, explicit unconfigured session state, denied private-profile access and cross-origin account submissions, and 111 catalogue entries. Real Supabase email, cookie/session and database isolation checks remain NOT RUN until project setup.

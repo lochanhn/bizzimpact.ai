@@ -1,3 +1,3 @@
 import type { NextConfig } from 'next';
-const config: NextConfig = { poweredByHeader: false };
+const config: NextConfig = { poweredByHeader: false, logging:{incomingRequests:{ignore:[/\/auth\/(callback|confirm)/]},serverFunctions:false,browserToTerminal:false} };
 export default config;

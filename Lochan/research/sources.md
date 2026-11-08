@@ -219,3 +219,22 @@ Reviewed 100 additional distinct AI-enabled products from official vendor pages/
 - [Findings, small-business fit and outstanding checks for every tool](tool-catalogue/research-notes.md)
 - [Retrieval/redirect/failure audit](tool-catalogue/retrieval-audit.json)
 - [Machine-readable records used by the website](../../website/data/catalogue-expansion.json)
+
+## November 7 — accounts, diagnostic logging and provider choice
+
+Read the supplied `bizzimpact_ai_Phase1_Expected_Product_Specification_v1.docx` through its document XML (no Word launch). It is an expected-build reference, not evidence of completed features. Relevant sections: 2–3 account journey; 10–14 Supabase ownership, private persistence, discovery and spend controls; 18–19 deferred ratings and conditional live services. Current implementation keeps the existing V1 questionnaire and adds account foundations; it does not claim the complete reference architecture or hybrid discovery has been delivered.
+
+| Official source | Selected material reviewed and limitation |
+|---|---|
+| https://supabase.com/docs/guides/auth/server-side/nextjs → https://supabase.com/docs/guides/auth/server-side/creating-a-client?queryGroups=framework&framework=nextjs | SSR package, cookie-based sessions, server/browser client distinction and refresh guidance. This application uses server-only clients in Route Handlers; no browser auth SDK. |
+| https://supabase.com/docs/guides/auth/passwords | Email confirmation, password sign-up/sign-in, redirect and PKCE context. No real account or email delivery test. |
+| https://supabase.com/docs/guides/auth/server-side/nextjs?queryGroups=flow&flow=pkce | Follow-up route retrieval failed; not additional evidence. |
+| https://ai.google.dev/gemini-api/docs/pricing | Web renderer could not read returned Markdown; direct HTTPS retrieval succeeded. Selected free/paid tier data-use indicators and model pricing structure reviewed. Not every model is free. |
+| https://ai.google.dev/gemini-api/docs/rate-limits | Same renderer limitation; direct retrieval succeeded. Reviewed project-level RPM/TPM/RPD limits, tier dependence and AI Studio quota lookup. No user's actual quota inspected. |
+| https://ai.google.dev/gemini-api/terms | Web retrieval failed; terms were not substantively read in this batch. Pricing-page data-use labels support the limited free-tier caution; do not claim a full policy/legal review. |
+| https://openrouter.ai/docs/guides/overview/pricing | Inaccessible route; replaced with the official pricing page. |
+| https://openrouter.ai/pricing | Selected token billing, provider pricing, fees, free-model limits and spending-control descriptions. No authenticated account/credit inspection. |
+| https://openrouter.ai/api/v1/models | Public unauthenticated model metadata retrieved; selected Gemini 2.5 Flash Lite input/output rates used for the illustrative cost calculation in the website README. No inference request or credit use. |
+| Installed Next.js documentation: `website/node_modules/next/dist/docs/01-app/03-api-reference/04-functions/cookies.md` and `.../05-config/01-next-config-js/logging.md` | Async cookies, Route Handler writes, development request/Server Function/browser log controls. Corresponding public references: https://nextjs.org/docs/app/api-reference/functions/cookies and https://nextjs.org/docs/app/api-reference/config/next-config-js/logging. |
+
+Implementation and setup details: [AUTH_SETUP.md](../../website/AUTH_SETUP.md). Provider selection is an engineering recommendation for the two-day hackathon, not a claim that one provider is universally superior. All AI remains disabled.

@@ -1,0 +1,16 @@
+'use client';
+import { useEffect,useState } from 'react';
+import { ArrowLeft,ArrowRight,FolderOpen } from 'lucide-react';
+import { AccountControl,useAuth } from '@/components/auth-provider';
+import { assessmentSchema,summaryLines,type Answers } from '@/lib/assessment';
+export default function Dashboard(){
+ const {user,loading,configured,error:authError}=useAuth();const [profile,setProfile]=useState<{answers:Answers;updatedAt:string}|null>(null);const [pending,setPending]=useState(true);const [error,setError]=useState('');
+ useEffect(()=>{
+  if(loading)return;if(!user){setPending(false);return;}
+  let active=true;setPending(true);
+  fetch('/api/account/profile',{cache:'no-store',signal:AbortSignal.timeout(12000)}).then(async response=>{const data=await response.json();if(!response.ok)throw Error(data.error||'Could not load your workspace.');if(active)setProfile(data.profile);}).catch(e=>{if(active)setError(e instanceof Error?e.message:'Please try again.');}).finally(()=>{if(active)setPending(false);});
+  return()=>{active=false;};
+ },[user,loading]);
+ function restore(){const parsed=assessmentSchema.safeParse(profile?.answers);if(!parsed.success){setError('The saved answers cannot be loaded. Start a new assessment.');return;}try{sessionStorage.setItem('bizzimpact-assessment-v1',JSON.stringify({answers:parsed.data}));window.location.assign('/?saved=1');}catch{setError('This browser is blocking tab storage. Allow session storage to open the saved assessment.');}}
+ return <main className="workspace wrap"><div className="workspace-nav"><a className="text-button" href="/"><ArrowLeft size={15}/>Back to the website</a><AccountControl/></div><div className="eyebrow">YOUR PRIVATE WORKSPACE</div><h1>Welcome back.</h1><p>Keep your business assessment here, and revisit your options when things change.</p>{authError&&<p className="error" role="alert">{authError}</p>}{loading||pending?<p className="note" role="status">Loading your workspace…</p>:!user?<div className="empty-state"><h2>{configured?'Sign in to continue.':'Accounts aren’t configured yet.'}</h2><p>Your guest assessment still works. Saved profiles require a connected Supabase project.</p><a className="button primary" href="/auth">Account setup & sign in <ArrowRight size={16}/></a></div>:error?<p className="error" role="alert">{error}</p>:profile?<section className="saved-profile"><div className="section-heading"><div><FolderOpen size={25}/><h2>Your saved assessment</h2></div><small>Saved {new Date(profile.updatedAt).toLocaleDateString()}</small></div><div className="review-list">{summaryLines(profile.answers).map(line=><div key={line}><p>{line}</p></div>)}</div><button className="button primary" onClick={restore}>Open & edit my answers <ArrowRight size={16}/></button><small className="input-help">Recalculate recommendations using the current catalogue. Saving again replaces this saved assessment.</small></section>:<div className="empty-state"><FolderOpen size={32}/><h2>Your first assessment starts here.</h2><p>Complete an assessment, then choose “Save answers to my workspace” on the results screen.</p><a className="button primary" href="/">Start an assessment <ArrowRight size={16}/></a></div>}</main>;
+}

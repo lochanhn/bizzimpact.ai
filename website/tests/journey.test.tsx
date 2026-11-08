@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import { JSDOM } from 'jsdom';
 import React from 'react';
 import Home from '../app/page';
+import AuthPage from '../app/auth/page';
+import { AuthProvider } from '../components/auth-provider';
 import { POST } from '../app/api/assess/route';
 
 const dom=new JSDOM('<!doctype html><html><body></body></html>',{url:'http://localhost:3000'});
@@ -10,11 +12,11 @@ for(const [key,value] of Object.entries({window:dom.window,document:dom.window.d
 const originalFetch=globalThis.fetch;
 let cleanup:()=>void=()=>{};
 afterEach(()=>{cleanup();sessionStorage.clear();globalThis.fetch=originalFetch;});
-async function setup(){
+async function setup(element:React.ReactElement=<Home/>){
  const lib=await import('@testing-library/react');cleanup=lib.cleanup;
  const {default:userEvent}=await import('@testing-library/user-event');
- globalThis.fetch=async (input,init)=>POST(new Request(`http://localhost${String(input)}`,init));
- return {view:lib.render(<Home/>),user:userEvent.setup({document:dom.window.document})};
+ globalThis.fetch=async (input,init)=>String(input)==='/api/auth/session'?Response.json({configured:false,user:null}):POST(new Request(`http://localhost${String(input)}`,init));
+ return {view:lib.render(element),user:userEvent.setup({document:dom.window.document})};
 }
 test('owner can complete cafe questionnaire, inspect results, open guide and clear answers without AI',async()=>{
  const {view,user}=await setup();
@@ -93,4 +95,14 @@ test('filtered catalogue export includes every filtered row, not only the visibl
   await user.click(view.getByRole('button',{name:'Download filtered catalogue'}));
   assert.equal((await captured!.text()).split('\r\n').length,6);
  }finally{URL.createObjectURL=create;dom.window.HTMLAnchorElement.prototype.click=click;}
+});
+
+test('account screen makes missing configuration clear and preserves guest access',async()=>{
+ const {view,user}=await setup(<AuthProvider><AuthPage/></AuthProvider>);
+ await view.findByText('Accounts aren’t connected yet.');
+ assert.equal((view.getByLabelText('Email') as HTMLInputElement).disabled,true);
+ assert.equal((view.getByLabelText('Password') as HTMLInputElement).disabled,true);
+ assert.equal(view.getByRole('link',{name:/Continue as a guest/}).getAttribute('href'),'/');
+ await user.click(view.getByRole('button',{name:'Create account'}));
+ assert.ok(view.getByRole('heading',{name:'Let’s get you set up.'}));
 });

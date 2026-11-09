@@ -96,6 +96,7 @@ function makeRecipe(brief: BusinessBrief, r: ToolReview, cap: string, event: str
     schema: RECIPE_SCHEMA, id: `${r.toolId}:${cap}:${app}`.toLowerCase().replace(/[^a-z0-9:]+/g, '-'),
     title: `${r.name} → ${app}`,
     plain: cap === 'email-marketing' && app !== 'You' ? `New customers in ${app} are added to your ${r.name} list${via}.`
+      : cap === 'meeting-notes' && app !== 'You' && /Zoom|Meet|Teams/.test(app) ? `${r.name} joins your ${app} meetings and writes notes and action items${via}.`
       : `When ${r.name} ${event}, ${app === 'You' ? `it ${does}` : `${app} ${does}`}${via}.`,
     trigger: { tool: r.name, event }, action: { app, does }, connection, connectionLabel: CONNECTION_LABEL[connection],
     evidence, zapierUrl, humanApproval, guardrail,

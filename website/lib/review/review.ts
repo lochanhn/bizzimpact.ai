@@ -54,7 +54,8 @@ export type ToolReview = {
   status: 'top-pick' | 'worth-a-look' | 'not-suitable';
   gates: string[];
   fit: number | null; proof: number; confidence: 'High' | 'Medium' | 'Low';
-  quadrant: 'Strong fit, well proven' | 'Strong fit, needs checking' | 'Partial fit, well proven' | 'Partial fit, needs checking';
+  quadrant: 'Strong fit, well proven' | 'Strong fit, needs checking' | 'Partial fit, well proven' | 'Partial fit, needs checking' | 'Helps with a related need';
+  fitBasis: { known: number; total: number; label: string }; confidenceReason: string;
   pillars: PillarScore[];
   requirements: Coverage['results']; requirementsMet: string | null;
   security: Badge; ici: { tier: IciTier; label: string; reasons: string[]; cited: boolean };
@@ -68,6 +69,9 @@ export type ReviewResult = {
 };
 
 const toolById = new Map(tools.map(t => [t.id, t]));
+/** Sentence case that keeps acronyms (AI, SEO, CRM, SMS…) intact. */
+const lower = (t: string) => (/^[A-Z]{2,}\b/.test(t) ? t : t.charAt(0).toLowerCase() + t.slice(1));
+const sentence = (t: string) => t.charAt(0).toUpperCase() + t.slice(1);
 const money = (n: number) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: n % 1 ? 2 : 0 }).format(n);
 const clamp = (n: number) => Math.max(0, Math.min(100, Math.round(n)));
 const SENSITIVE = ['payments', 'health', 'employees', 'financial'] as const;
@@ -125,7 +129,7 @@ function estimateCost(tool: Tool, cov: Coverage, brief: BusinessBrief): CostEsti
   const annualRequired = !!(p.requiresAnnual || p.annual);
   if (annualRequired) assumptions.push(`Shown as a monthly equivalent; billed ${p.annual ? `${money(p.annual)} per year` : 'yearly'}.`);
   monthly = Math.round(monthly * 100) / 100;
-  const label = monthly === 0 && !lowerBound ? `Free (${plan.name})` : `${lowerBound ? 'From ' : ''}${money(monthly)}/mo · ${plan.name}`;
+  const label = monthly === 0 && !lowerBound ? (/^free/i.test(plan.name) ? plan.name : `Free (${plan.name})`) : `${lowerBound ? 'From ' : ''}${money(monthly)}/mo · ${plan.name}`;
   return { plan: plan.name, monthly, lowerBound, label, assumptions, annualRequired };
 }
 
@@ -177,7 +181,7 @@ export function review(brief: BusinessBrief, discovery: DiscoveryResult, reports
     let need = reqPct === null ? base : base * 0.6 + reqPct * 0.4;
     if (!coversFocus) need = Math.min(need, 70);
     const mainNeed = cand.matched.find(m => m.strength === 'primary') ?? cand.matched[0];
-    const needReason = `${mainNeed.strength === 'primary' ? 'Main purpose' : 'Offers'}: ${mainNeed.label.toLowerCase()}${coversFocus ? ' (your #1 problem)' : ''}${coveredNeeds > 1 ? `; covers ${coveredNeeds} of your needs` : ''}${cov.total ? `; meets ${cov.met} of ${cov.total} requirements${cov.unknown ? ` (${cov.unknown} not verified)` : ''}` : ''}${coversFocus ? '' : '; does not address your #1 problem'}.`;
+    const needReason = `${mainNeed.strength === 'primary' ? 'Main purpose' : 'Offers'}: ${lower(mainNeed.label)}${coversFocus ? ' (your #1 problem)' : ''}${coveredNeeds > 1 ? `; covers ${coveredNeeds} of your needs` : ''}${cov.total ? `; meets ${cov.met} of ${cov.total} requirements${cov.unknown ? ` (${cov.unknown} not verified)` : ''}` : ''}${coversFocus ? '' : '; does not address your #1 problem'}.`;
 
     let costScore: number | null = null;
     let costReason = 'Price not verified, so cost cannot be scored.';
@@ -208,7 +212,7 @@ export function review(brief: BusinessBrief, discovery: DiscoveryResult, reports
     const autonomyPart = toolLevel > ownerLevel ? 35 : 90;
     const badge = securityBadge(facts);
     let securityPart = { green: 90, yellow: 65, grey: 50, red: 20 }[badge.level];
-    const secNotes: string[] = [badge.label.toLowerCase()];
+    const secNotes: string[] = [badge.label];
     if (brief.constraints.dataHandled.includes('health')) {
       const h = facts?.hipaaBaa.status ?? 'not-found';
       if (h === 'not-available') gates.push('States it does not offer a HIPAA business associate agreement, but you handle health information.');
@@ -220,7 +224,7 @@ export function review(brief: BusinessBrief, discovery: DiscoveryResult, reports
     if (toolLevel > ownerLevel) trustNotes.push(toolLevel === 3 ? 'it talks to customers on its own, but you want to approve everything' : 'it acts more on its own than you said you want');
     else trustNotes.push('works at the level of control you chose');
 
-    const pillars: PillarScore[] = [
+    const pillarsRaw: PillarScore[] = [
       { id: 'need', label: PILLARS.need.label, score: clamp(need), reason: needReason },
       { id: 'cost', label: PILLARS.cost.label, score: costScore, reason: costReason },
       { id: 'ease', label: PILLARS.ease.label, score: easeScore, reason: `${easeNotes.join('; ')}.${ici.cited ? ' From the vendor’s own setup pages.' : ' Estimated; not yet verified.'}` },
@@ -228,6 +232,7 @@ export function review(brief: BusinessBrief, discovery: DiscoveryResult, reports
       { id: 'security', label: PILLARS.security.label, score: trustScore, reason: `${trustNotes.join('; ')}.${facts ? ` Checked ${facts.checkedAt} on ${facts.domain}.` : ''}` },
       { id: 'owners', label: PILLARS.owners.label, score: owners.score, reason: owners.score === null ? 'No results from owners like you yet; this does not count for or against the tool.' : `${owners.label}; at least ${owners.fixedAtLeast}% of adopters say it fixed the problem${owners.typicalHours ? `; typical time saved ${owners.typicalHours} h/week` : ''}.` },
     ];
+    const pillars: PillarScore[] = pillarsRaw.map(p => ({ ...p, reason: sentence(p.reason) }));
     let wsum = 0, ssum = 0;
     const ownerWeight = owners.score === null ? 0 : OWNER_MAX_WEIGHT * Math.min(1, owners.effective / OWNER_FULL_AT);
     for (const p of pillars) { const wt = p.id === 'owners' ? ownerWeight : weights[p.id]; if (p.score !== null && wt > 0) { wsum += wt; ssum += wt * p.score; } }
@@ -242,8 +247,14 @@ export function review(brief: BusinessBrief, discovery: DiscoveryResult, reports
     const factsShare = facts ? Math.min(1, ([facts.soc2.status !== 'not-found', facts.trainsOnData.status !== 'not-found', facts.setup.evidence.length > 0, facts.integrations.length > 0].filter(Boolean).length) / 3) : 0;
     const proof = clamp(evidence * decay * 0.5 + knownShare * 20 + reqShare * 10 + factsShare * 10 + Math.min(20, owners.effective * 4));
     const confidence = proof >= 65 ? 'High' : proof >= 45 ? 'Medium' : 'Low';
-    const strongFit = (fit ?? 0) >= 65, wellProven = proof >= 60;
-    const quadrant = strongFit ? (wellProven ? 'Strong fit, well proven' : 'Strong fit, needs checking') : (wellProven ? 'Partial fit, well proven' : 'Partial fit, needs checking');
+    // "Strong fit" only for tools whose main purpose is the owner's #1 problem.
+    const strongFit = coversFocus && (fit ?? 0) >= 65, wellProven = proof >= 60;
+    const quadrant: ToolReview['quadrant'] = !coversFocus ? 'Helps with a related need' : strongFit ? (wellProven ? 'Strong fit, well proven' : 'Strong fit, needs checking') : (wellProven ? 'Partial fit, well proven' : 'Partial fit, needs checking');
+    const counted = pillars.filter(p => p.id !== 'owners' && weights[p.id] > 0);
+    const knownN = counted.filter(p => p.score !== null).length;
+    const fitBasis = { known: knownN, total: counted.length, label: knownN === counted.length ? `Based on all ${counted.length} factors` : `Based on ${knownN} of ${counted.length} factors` };
+    const missingFacts = [cost.monthly === null ? 'price' : null, stackScore === null && brief.stack.tools.length ? 'connections to your apps' : null, badge.level === 'grey' ? 'security and privacy' : null, tool.reviewLevel === 'product' ? 'plan details' : null, !ici.cited ? 'setup steps' : null].filter(Boolean) as string[];
+    const confidenceReason = missingFacts.length ? `Not yet verified: ${missingFacts.join(', ')}` : 'Price, plan, connections and security checked against vendor sources';
 
     // ── Check before buying ──
     if (cost.monthly === null) check.push('Confirm the plan price, usage limits and any yearly commitment.');
@@ -260,8 +271,8 @@ export function review(brief: BusinessBrief, discovery: DiscoveryResult, reports
     reviews.push({
       toolId: tool.id, name: tool.name, category: cand.category, status: gates.length ? 'not-suitable' : 'worth-a-look', gates,
       fit, proof, confidence, quadrant, pillars, requirements: cov.results,
-      requirementsMet: cov.total ? `${cov.met} of ${cov.total}${cov.unknown ? ` (${cov.unknown} unverified)` : ''}` : null,
-      cost, compatibility: compat, coversFocus, checkBeforeBuying: [...new Set(check)].slice(0, 7), discovery: cand,
+      requirementsMet: cov.total ? `${cov.met} of ${cov.total} requirements${cov.unknown ? ` (${cov.unknown} unverified)` : ''}` : null,
+      cost, compatibility: compat, coversFocus, checkBeforeBuying: [...new Set(check)].slice(0, 7), discovery: cand, fitBasis, confidenceReason,
       security: badge, ici: { ...ici, label: ICI_LABEL[ici.tier] }, owners, missingLinks,
     });
   }
@@ -277,7 +288,7 @@ export function review(brief: BusinessBrief, discovery: DiscoveryResult, reports
   const notes: string[] = [];
   if (!topPicks.length) notes.push(discovery.gaps.some(g => focusCaps.includes(g.capabilityId))
     ? 'No reviewed tool covers your #1 problem yet. We will not invent one; see the gaps below.'
-    : 'No tool scored high enough for your #1 problem; see “Worth a look” and what to check.');
+    : 'No tool for your #1 problem has enough verified information to be a top pick yet. See “Worth a look” and what to check before buying.');
   if (sensitive.length) notes.push('Compliance claims are vendor statements we have not audited. Always confirm before sharing sensitive data.');
   return {
     reviewVersion: REVIEW_VERSION,

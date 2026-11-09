@@ -19,8 +19,8 @@ function ReviewCard({ r, rank }: { r: ToolReview; rank?: number }) {
       {rank && <span className="dx-rank" aria-hidden="true">{rank}</span>}
       <div className="dx-card-title"><h3 id={`rv-${r.toolId}`}>{r.name}</h3><small>{r.category} · {r.quadrant}</small></div>
       <div className="st-scores">
-        <div><small>Fit for you</small><strong>{r.fit ?? '—'}</strong></div>
-        <div><small>Confidence</small><strong className={`st-conf ${r.confidence.toLowerCase()}`}>{r.confidence}</strong></div>
+        <div><small>Fit for you</small><strong>{r.fit ?? '—'}</strong><em className="st-basis">{r.fitBasis.label}</em></div>
+        <div><small>Confidence</small><strong className={`st-conf ${r.confidence.toLowerCase()}`}>{r.confidence}</strong><em className="st-basis">{r.confidenceReason}</em></div>
       </div>
     </div>
     {r.gates.length > 0 && <ul className="dx-warnings">{r.gates.map(g => <li key={g}><AlertTriangle size={14} aria-hidden="true" /> {g}</li>)}</ul>}
@@ -37,7 +37,7 @@ function ReviewCard({ r, rank }: { r: ToolReview; rank?: number }) {
     </tbody></table>
     <div className="dx-badges">
       <span className={`dx-badge ${r.cost.monthly !== null ? '' : 'muted'}`}>{r.cost.label}</span>
-      {r.requirementsMet && <span className="dx-badge">Meets {r.requirementsMet} requirements</span>}
+      {r.requirementsMet && <span className="dx-badge">Meets {r.requirementsMet}</span>}
       {r.compatibility.items.map(i => <span key={i.app} className={`dx-badge ${GRADE_CLASS[i.grade]}`} title={i.action ?? ''}>{i.app}: {i.label}</span>)}
     </div>
     {r.cost.assumptions.length > 0 && <p className="dx-missing">{r.cost.assumptions.join(' ')}</p>}

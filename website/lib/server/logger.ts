@@ -1,5 +1,5 @@
 // Allowlisted diagnostics. Never accept request bodies, free text or raw errors.
-export type Event='request_completed'|'request_failed'|'auth_login'|'auth_signup'|'auth_logout'|'profile_saved';
+export type Event='request_completed'|'request_failed'|'auth_login'|'auth_signup'|'auth_logout'|'profile_saved'|'ai_call';
 export type LogFields={requestId?:string;route?:string;status?:number;durationMs?:number;reasonCode?:'internal_error'|'invalid_input'|'not_configured'|'not_authenticated'|'provider_rejected'|'rate_limited'|'origin_rejected';catalogVersion?:string;rulesVersion?:string;suitableCount?:number;checkCount?:number;excludedCount?:number;model?:string;inputTokens?:number;outputTokens?:number;costUsd?:number};
 const textKeys=new Set(['requestId','route','catalogVersion','rulesVersion','model']);
 const numberKeys=new Set(['status','durationMs','suitableCount','checkCount','excludedCount','inputTokens','outputTokens','costUsd']);

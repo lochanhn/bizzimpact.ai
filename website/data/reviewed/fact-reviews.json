@@ -1,0 +1,9 @@
+{
+  "note": "Human review of automatically extracted facts. Red badges require an entry here. Each entry quotes the vendor's own page and records who reviewed it and when.",
+  "reviews": {
+    "later": { "trainsOnData": { "status": "yes", "reviewedAt": "2026-11-08", "note": "Privacy page states: \"We may use your content, engagement data, and platform interactions to train and improve our AI models\"." } },
+    "quickbooks": { "trainsOnData": { "status": "yes", "reviewedAt": "2026-11-08", "note": "Intuit privacy statement lists \"training our artificial intelligence models\" among uses of data. Opt-out options were not found in the quoted passage." } },
+    "goodcall": { "trainsOnData": { "status": "yes", "reviewedAt": "2026-11-08", "note": "Privacy article says saved call audio and transcripts are used to train and improve models; the opt-out covers only manual review." } },
+    "rosie": { "trainsOnData": { "status": "not-found", "reviewedAt": "2026-11-08", "note": "The quoted passage says AI training is governed by subscriber contracts; it is not a statement either way." } }
+  }
+}

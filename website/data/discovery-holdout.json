@@ -1,0 +1,21 @@
+{
+  "version": "2026-11-08.holdout-1",
+  "note": "Held-out set written after tuning on discovery-eval.json and scored once without further rule changes. Report these numbers as the honest generalisation estimate.",
+  "cases": [
+    { "id": "H01", "industry": "home", "problem": "My HVAC techs are on service calls all day and the office line just rings out.", "expect": ["phone-answering"], "acceptTop3": ["goodcall", "smith", "frontdesk", "dialzara", "rosie"] },
+    { "id": "H02", "industry": "health", "problem": "Clients want to book appointments online at night when we're closed.", "expect": ["appointment-booking"], "acceptTop3": ["frontdesk", "smith", "dialzara", "rosie", "slang"] },
+    { "id": "H03", "industry": "retail", "problem": "Our Shopify store gets tons of support tickets about order status.", "expect": ["customer-support"], "acceptTop3": ["gorgias", "zendesk", "freshdesk", "helpscout", "intercom-fin", "crisp", "tidio", "chatbase", "chatbot", "kommunicate", "userlike", "ada"] },
+    { "id": "H04", "industry": "food", "problem": "I need eye-catching flyers and graphics for our weekend specials.", "expect": ["image-creation"], "acceptTop3": ["adobe-express", "canva", "simplified", "creatopy", "predis", "photoroom", "pixelcut", "flair", "pebblely"] },
+    { "id": "H05", "industry": "professional", "problem": "Can AI transcribe my Zoom calls with clients and pull out action items?", "expect": ["meeting-notes"], "acceptTop3": ["otter", "fireflies", "fathom", "tldv", "read-ai", "sembly", "avoma"] },
+    { "id": "H06", "industry": "home", "problem": "I keep losing track of which customers I quoted and never chase them.", "expect": ["crm-followup"], "acceptTop3": ["hubspot", "pipedrive", "zoho-crm", "rytr", "avoma", "regie"] },
+    { "id": "H07", "industry": "retail", "problem": "I want an email campaign to win back customers who haven't bought in a while.", "expect": ["email-marketing"], "acceptTop3": ["mailchimp", "klaviyo", "omnisend", "brevo", "activecampaign"] },
+    { "id": "H08", "industry": "food", "problem": "Staff call out sick and building the weekly shift schedule is a nightmare.", "expect": ["staff-scheduling"], "expectGap": "staff-scheduling" },
+    { "id": "H09", "industry": "professional", "problem": "Taxes and cash flow stress me out; I want help understanding my accounting.", "expect": ["bookkeeping"], "acceptTop3": ["quickbooks", "xero", "dext"] },
+    { "id": "H10", "industry": "retail", "problem": "Visitors to my website leave without asking anything; I want a chat assistant.", "expect": ["website-chat"], "acceptTop3": ["tidio", "crisp", "chatbase", "chatbot", "intercom-fin", "kommunicate", "userlike", "landbot", "tars"] },
+    { "id": "H11", "industry": "home", "problem": "Messages from customers pile up and I want them answered automatically.", "expect": [], "expectClarification": true },
+    { "id": "H12", "industry": "food", "problem": "We need a voiceover for our restaurant promo video.", "expect": ["voice-audio", "video-creation"], "acceptTop3": ["murf", "elevenlabs", "descript"] },
+    { "id": "H13", "industry": "professional", "problem": "I'd like to repurpose my long webinar into short social clips.", "expect": ["video-creation"], "acceptTop3": ["opusclip", "kapwing", "veed", "descript", "lumen5", "pictory", "invideo", "runway"] },
+    { "id": "H14", "industry": "manufacturing", "problem": "We run out of stock of parts and other times have way too much inventory.", "expect": ["inventory-forecasting"], "expectGap": "inventory-forecasting" },
+    { "id": "H15", "industry": "home", "problem": "Hiring seasonal workers and writing job ads eats my spring.", "expect": ["hiring-hr"], "expectGap": "hiring-hr" }
+  ]
+}

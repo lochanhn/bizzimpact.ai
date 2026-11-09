@@ -20,7 +20,7 @@ async function setup(element:React.ReactElement=<Home/>){
 }
 test('owner can complete cafe questionnaire, inspect results, open guide and clear answers without AI',async()=>{
  const {view,user}=await setup();
- await user.click(view.getByRole('button',{name:'Find the right tools'}));
+ await user.click(view.getByRole('button',{name:/Quick plan check/}));
  assert.ok(view.getByText('Question 1 of 8'));
  await user.click(view.getByRole('button',{name:'Continue'}));
  await user.click(view.getByRole('button',{name:'Continue'}));
@@ -46,7 +46,7 @@ test('owner can complete cafe questionnaire, inspect results, open guide and cle
 });
 test('HVAC fictional example produces a Goodcall plan and a concrete setup checklist',async()=>{
  const {view,user}=await setup();
- await user.click(view.getByRole('button',{name:/Catch missed enquiries/}));
+ await user.click(view.getByRole('button',{name:/HVAC missed enquiries/}));
  assert.ok(view.getByText('Current software: None'));
  await user.click(view.getByRole('button',{name:'Show my options'}));
  await view.findByRole('heading',{name:'Your next step, a little clearer.'});

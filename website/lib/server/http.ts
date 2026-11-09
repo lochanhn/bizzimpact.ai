@@ -9,7 +9,14 @@ export async function readJSON(request:Request,maxBytes=16000):Promise<unknown>{
  try{return JSON.parse(Buffer.concat(chunks).toString('utf8'));}catch{throw new HttpError(400,'The request could not be read.');}
 }
 export function requireSameOrigin(request:Request){
- if(request.headers.get('origin')!==new URL(request.url).origin)throw new HttpError(403,'Please submit this action from the website.','origin_rejected');
+ let expectedOrigin=new URL(request.url).origin;
+ // TLS ends at the proxy, so the internal request URL may be HTTP.
+ // Use the configured public origin rather than trusting forwarded headers.
+ if(process.env.NODE_ENV==='production'){
+  try{const site=new URL(process.env.SITE_URL??'');if(site.protocol!=='https:'||site.username||site.password)throw new Error();expectedOrigin=site.origin;}
+  catch{throw new HttpError(503,'Configure an HTTPS SITE_URL before accepting submissions.','not_configured');}
+ }
+ if(request.headers.get('origin')!==expectedOrigin)throw new HttpError(403,'Please submit this action from the website.','origin_rejected');
 }
 export type Trace={requestId:string;details:LogFields};
 export function loggedRoute(route:string,handler:(request:Request,trace:Trace)=>Promise<Response>|Response){

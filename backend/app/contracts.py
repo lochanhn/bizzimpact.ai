@@ -23,6 +23,7 @@ class BusinessProfile(StrictModel):
  industry:Industry
  business_description:str=Field(min_length=1,max_length=500)
  customer_type:Literal['b2c','b2b','both','government','other']|None=None
+ customer_description:str|None=Field(default=None,max_length=300)
  employee_band:Literal['solo','2_10','11_50','51_250','250_plus']
  operating_region:Region
  existing_software_status:Literal['selected','none','unknown']
@@ -39,10 +40,15 @@ class BusinessProfile(StrictModel):
   if 'Not sure yet' in self.improvement_priorities and len(self.improvement_priorities)>1:raise ValueError('Not sure yet is exclusive.')
   if self.customer_contact_channels and (len(set(self.customer_contact_channels))!=len(self.customer_contact_channels) or any(x not in CHANNELS for x in self.customer_contact_channels)):raise ValueError('Invalid contact channel.')
   return self
+class DiscoveryContext(StrictModel):
+ current_workflow:str|None=Field(default=None,max_length=500)
+ desired_outcome:str|None=Field(default=None,max_length=500)
+ constraints:str|None=Field(default=None,max_length=500)
 class DiscoveryRequest(StrictModel):
  business_id:str=Field(pattern=r'^[0-9a-fA-F-]{36}$')
  problem_text:str=Field(min_length=10,max_length=2000)
  force_web:bool=False
+ context:DiscoveryContext=Field(default_factory=DiscoveryContext)
 class BusinessRequest(StrictModel):
  business_id:str=Field(pattern=r'^[0-9a-fA-F-]{36}$')
 class Clarification(StrictModel):
@@ -111,6 +117,7 @@ class DiscoveryRun(BaseModel):
  error_code:str|None=None
  usage:Usage
  profile_snapshot:BusinessProfile
+ discovery_context:DiscoveryContext=Field(default_factory=DiscoveryContext)
  state_history:list[dict]
  queries:list[dict]
  synthetic:bool

@@ -122,7 +122,7 @@ def create_app(local_path=None,db_url=None):
  @app.post('/api/v1/discovery/runs',status_code=202,response_model=DiscoveryRunCreated)
  def create_run(body:DiscoveryRequest,background:BackgroundTasks,a:Actor=Depends(actor)):
   rate(a.owner+':run',8);p=owned('business',body.business_id,a)['profile'];id=str(uuid4())
-  run={'run_id':id,'business_id':body.business_id,'owner':a.owner,'status':'queued','mode':'problem_search','profile_snapshot':copy.deepcopy(p),'problem_text':body.problem_text,'force_web':body.force_web,'requirements':None,'clarification_question':None,'tools':[],'warnings':[],'error_code':None,'usage':{'search_calls':0,'model_calls':0,'estimated_cost_usd':0},'queries':[],'state_history':[{'status':'queued','at':now()}],'synthetic':a.mode=='mock','created_at':now(),'updated_at':now()}
+  run={'run_id':id,'business_id':body.business_id,'owner':a.owner,'status':'queued','mode':'problem_search','profile_snapshot':copy.deepcopy(p),'discovery_context':body.context.model_dump(),'problem_text':body.problem_text,'force_web':body.force_web,'requirements':None,'clarification_question':None,'tools':[],'warnings':[],'error_code':None,'usage':{'search_calls':0,'model_calls':0,'estimated_cost_usd':0},'queries':[],'state_history':[{'status':'queued','at':now()}],'synthetic':a.mode=='mock','created_at':now(),'updated_at':now()}
   a.store.put('run',id,a.owner,run);background.add_task(orchestrator(a).execute,run)
   return {'run_id':id,'status':'queued','poll_url':f'/api/v1/discovery/runs/{id}','estimated_duration_note':'The status page shows the actual discovery progress.'}
  @app.get('/api/v1/discovery/runs/{run_id}',response_model=DiscoveryRun)

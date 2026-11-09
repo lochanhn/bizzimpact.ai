@@ -32,8 +32,8 @@ The local SQLite demo database is ignored under `backend/.runtime/`; sessions ex
 
 - `/`: Phase 1 landing and constrained demo entry.
 - `/auth`: Supabase account sign-up/sign-in and guest demo option.
-- `/onboarding`: frozen Q1–Q8 over three screens; optional answers can be skipped.
-- `/dashboard`: reusable business context, zero-model/web-call baseline, and the problem input.
+- `/onboarding`: business profile over three screens using plain-language customer options; optional answers can be skipped.
+- `/dashboard`: the landing page for accounts and demos, optional profile setup, a zero-call baseline, and a task/workflow/outcome request that is reviewed before search.
 - `/profile`: edit the current business profile.
 - `/discovery/[runId]`: real state polling, optional Q9/Skip, candidates and source uncertainty.
 - `/tools/[toolId]`: claim-level evidence and unknowns.
@@ -53,6 +53,8 @@ Backend default: `DISCOVERY_MODE=mock`, `OPENROUTER_ENABLED=false`, `LIVE_WEB_EN
 OpenRouter is the runtime provider behind a replaceable interface. AI interpretation maps needs to the fixed eleven-capability taxonomy. Catalogue retrieval and evidence are separate from formal scoring. API/model output cannot invent prices or compatibility; unknowns stay visible. Gemini direct is a later optional adapter, not an enabled dependency.
 
 [PHASE1_STATUS.md](PHASE1_STATUS.md) is the detailed gap audit, contract deltas, test evidence and blocked/deferred work. It distinguishes implemented code from unperformed live verification.
+
+[Questionnaire and discovery quality update](../Lochan/research/discovery-quality-plan.md) records the later owner-language revision, optional task context, retrieval changes, OpenRouter's intended role, and the evaluation still needed with actual owners.
 
 ## Checks
 

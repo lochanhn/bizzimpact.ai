@@ -5,6 +5,7 @@ import React from 'react';
 import OnboardingForm from '../components/phase1/onboarding-form';
 import Landing from '../app/page';
 import Dashboard from '../app/dashboard/page';
+import DiscoveryForm from '../components/phase1/discovery-form';
 import { CandidateCard } from '../components/phase1/shared';
 import { startDemo } from '../lib/phase1/api';
 import { evidenceBackTarget } from '../lib/phase1/navigation';
@@ -25,7 +26,7 @@ test('approved three-screen onboarding saves required answers, exclusive softwar
  };
  const{view,user}=await setup(<OnboardingForm onSaved={()=>{completed=true;}}/>);
  await view.findByRole('heading',{name:'Tell us about your business'});
- await user.type(view.getByLabelText(spec.questions[0].label),'Home Services');await user.type(view.getByLabelText('Business subtype'),'Landscaping');
+ await user.type(view.getByLabelText(spec.questions[0].label),'Home Services');await user.type(view.getByLabelText('What kind of work do you do?'),'Landscaping');
  await user.type(view.getByLabelText(spec.questions[1].label),'We maintain residential lawns.');
  await user.selectOptions(view.getByLabelText(spec.questions[3].label),'2_10');await user.click(view.getByRole('button',{name:'Next'}));
  await view.findByRole('heading',{name:'Understand your existing setup'});await user.type(view.getByLabelText('Country'),'US');
@@ -39,7 +40,7 @@ test('approved three-screen onboarding saves required answers, exclusive softwar
 });
 test('required first-screen fields cannot be skipped',async()=>{
  globalThis.fetch=async input=>String(input).endsWith('/context')?context():Response.json([]);
- const{view,user}=await setup(<OnboardingForm/>);await view.findByRole('heading',{name:'Tell us about your business'});await user.click(view.getByRole('button',{name:'Next'}));assert.ok(view.getByRole('alert').textContent?.includes('Complete Q1'));assert.ok(view.getByRole('heading',{name:'Tell us about your business'}));
+ const{view,user}=await setup(<OnboardingForm/>);await view.findByRole('heading',{name:'Tell us about your business'});await user.click(view.getByRole('button',{name:'Next'}));assert.ok(view.getByRole('alert').textContent?.includes('business type'));assert.ok(view.getByRole('heading',{name:'Tell us about your business'}));
 });
 test('primary landing opens the dashboard and keeps scores out of Phase 1',async()=>{
  globalThis.fetch=async()=>Response.json({detail:'Not signed in'},{status:401});const{view}=await setup(<Landing/>);
@@ -70,13 +71,13 @@ test('onboarding Back preserves entered answers and always offers a route to the
  assert.equal(view.getByRole('link',{name:'Back to dashboard'}).getAttribute('href'),'/dashboard');
  assert.ok(view.getByRole('button',{name:'Back to dashboard'}));
  await user.type(view.getByLabelText(spec.questions[0].label),'Home Services');
- await user.type(view.getByLabelText('Business subtype'),'Landscaping');
+ await user.type(view.getByLabelText('What kind of work do you do?'),'Landscaping');
  await user.type(view.getByLabelText(spec.questions[1].label),'We maintain residential lawns.');
  await user.selectOptions(view.getByLabelText(spec.questions[3].label),'2_10');
  await user.click(view.getByRole('button',{name:'Next'}));
  await user.type(view.getByLabelText('Country'),'US');await user.click(view.getByRole('button',{name:'None'}));
  await user.click(view.getByRole('button',{name:'Back'}));
- assert.equal((view.getByLabelText('Business subtype') as HTMLInputElement).value,'Landscaping');
+ assert.equal((view.getByLabelText('What kind of work do you do?') as HTMLInputElement).value,'Landscaping');
  await user.click(view.getByRole('button',{name:'Next'}));
  assert.equal((view.getByLabelText('Country') as HTMLInputElement).value,'US');
  assert.equal(view.getByRole('button',{name:'None'}).getAttribute('aria-pressed'),'true');
@@ -95,4 +96,45 @@ test('evidence links retain their source and direct links fall back to the dashb
 test('profile schema rejects optional-field contradictions and accepts custom subtypes',()=>{
  const profile={industry:{category:'Other',subtype:'Custom repair shop'},business_description:'We repair equipment.',employee_band:'solo',operating_region:{country:'us',region:null},existing_software_status:'none',existing_software:[],improvement_priorities:[],monthly_budget_band:null,customer_type:null,customer_contact_channels:null};
  assert.equal(profileSchema.parse(profile).operating_region.country,'US');assert.equal(profileSchema.safeParse({...profile,existing_software:[{raw_name:'Square'}]}).success,false);assert.equal(profileSchema.safeParse({...profile,improvement_priorities:['Not sure yet','Marketing']}).success,false);
+});
+test('customer questions use everyday language while keeping existing stored IDs',async()=>{
+ globalThis.fetch=async input=>String(input).endsWith('/context')?context():Response.json([]);
+ const {view,user}=await setup(<OnboardingForm/>);
+ await view.findByRole('heading',{name:'Tell us about your business'});
+ const customers=view.getByRole('combobox',{name:/Who usually buys from you/});
+ await user.selectOptions(customers,'b2b');
+ assert.equal((customers as HTMLSelectElement).selectedOptions[0].textContent,'Other businesses');
+ assert.equal(/B2B|B2C/.test(view.container.textContent??''),false);
+ await user.type(view.getByLabelText(/Tell us a little about your customers/),'Local repair shops');
+ assert.equal(JSON.parse(sessionStorage.getItem('bizzimpact-approved-onboarding-v1')!).draft.customer_description,'Local repair shops');
+});
+function searchBusiness(id='11111111-1111-4111-8111-111111111111'){
+ return {business_id:id,industry_subtype:'Landscaping',profile:profileSchema.parse({industry:{category:'Home Services',subtype:'Landscaping'},business_description:'We maintain gardens.',employee_band:'solo',operating_region:{country:'US'},existing_software_status:'none',existing_software:[]})};
+}
+test('owners review and edit workflow details before a single discovery request is sent',async()=>{
+ const sent:any[]=[];let started='';
+ globalThis.fetch=async(_input,init)=>{sent.push(JSON.parse(String(init?.body)));return Response.json({run_id:'test-run'});};
+ const {view,user}=await setup(<DiscoveryForm business={searchBusiness()} synthetic={false} onStarted={id=>{started=id;}}/>);
+ await user.type(view.getByLabelText('What task would you like help with?'),'I miss incoming phone calls.');
+ await user.click(view.getByText('Add details for a more focused search (optional)'));
+ await user.type(view.getByLabelText(/How do you handle this today/),'Voicemail at the end of the day.');
+ await user.type(view.getByLabelText(/What would you like to happen instead/),'Collect details and ask me to approve bookings.');
+ await user.type(view.getByLabelText(/What must a tool work with or avoid/),'Keep QuickBooks.');
+ await user.click(view.getByRole('button',{name:'Review my search'}));
+ assert.ok(view.getByRole('heading',{name:'Review your search request'}));assert.equal(sent.length,0);
+ await user.click(view.getByRole('button',{name:'Edit request'}));
+ assert.equal((view.getByLabelText('What task would you like help with?') as HTMLTextAreaElement).value,'I miss incoming phone calls.');
+ await user.click(view.getByRole('button',{name:'Review my search'}));
+ await user.click(view.getByRole('button',{name:'Search for candidate tools'}));
+ assert.equal(sent.length,1);assert.equal(started,'test-run');assert.deepEqual(sent[0].context,{current_workflow:'Voicemail at the end of the day.',desired_outcome:'Collect details and ask me to approve bookings.',constraints:'Keep QuickBooks.'});
+});
+test('search drafts survive returning to the dashboard and remain separate by business',async()=>{
+ globalThis.fetch=async()=>{throw new Error('Draft editing must not make a request.');};
+ const {view,user}=await setup(<DiscoveryForm business={searchBusiness()} synthetic={false}/>);
+ await user.type(view.getByLabelText('What task would you like help with?'),'Help with invoices each week.');
+ view.unmount();
+ const next=await setup(<DiscoveryForm business={searchBusiness()} synthetic={false}/>);
+ assert.equal((next.view.getByLabelText('What task would you like help with?') as HTMLTextAreaElement).value,'Help with invoices each week.');
+ next.view.rerender(<DiscoveryForm business={searchBusiness('22222222-2222-4222-8222-222222222222')} synthetic={false}/>);
+ assert.equal((next.view.getByLabelText('What task would you like help with?') as HTMLTextAreaElement).value,'');
 });

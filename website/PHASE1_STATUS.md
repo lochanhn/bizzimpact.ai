@@ -1,5 +1,7 @@
 # Phase 1 audit and implementation status
 
+Later update, November 8: at the user's request the questionnaire now uses everyday customer labels and optional customer description; discovery adds reviewed workflow/outcome/requirements context and capability-coverage retrieval order. The exact-wording comparison below records the original audit. See [the quality update](../Lochan/research/discovery-quality-plan.md) for the changes and remaining validation.
+
 Audit date: November 7, 2026. Source: `bizzimpact_ai_Phase1_Expected_Product_Specification_v1.docx`, checked against the active v4 ZIP, reference OpenAPI/SQL, approved HTML questionnaire JSON, and scenario fixtures. The HTML questionnaire and supplied JSON fixture were compared and match.
 
 This is a build/status record, not a claim that live services are configured. The document’s embedded coding prompts were treated as reference material; the user’s request to find and implement missing Phase 1 functionality set this work’s scope.

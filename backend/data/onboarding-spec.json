@@ -1,8 +1,8 @@
 {
   "document_title": "Business Onboarding Questionnaire — AI Discovery Platform",
-  "version": "1.0",
-  "document_date": "2026-11-06",
-  "status": "approved_questionnaire_baseline",
+  "version": "2.0",
+  "document_date": "2026-11-08",
+  "status": "owner_language_revision_pending_user_research",
   "scope": "first_time_business_onboarding_only",
   "standard_question_count": 8,
   "conditional_question_count_max": 1,
@@ -68,7 +68,7 @@
     },
     {
       "id": "Q2",
-      "label": "In one sentence, what does your business primarily do?",
+      "label": "What do you sell or help people with?",
       "required": true,
       "input_type": "short_text",
       "field": "business_description",
@@ -78,19 +78,20 @@
     },
     {
       "id": "Q3",
-      "label": "Who are your primary customers?",
+      "label": "Who usually buys from you?",
       "required": false,
       "input_type": "single_select",
       "field": "customer_type",
       "options": [
-        "Individuals / consumers (B2C)",
-        "Other businesses (B2B)",
-        "Both B2C and B2B",
-        "Government / organizations",
-        "Other"
+        "People or households",
+        "Other businesses",
+        "Both people and businesses",
+        "Public agencies or institutions",
+        "Something else"
       ],
       "allow_other_description": true,
-      "purpose": "Distinguish B2C, B2B, mixed, and institutional customer contexts."
+      "purpose": "Provide optional customer context using everyday language. Internal IDs remain compatible with existing profiles.",
+      "description_field": "customer_description"
     },
     {
       "id": "Q4",
@@ -100,10 +101,10 @@
       "field": "employee_band",
       "options": [
         "Just me",
-        "2–10",
-        "11–50",
-        "51–250",
-        "250+"
+        "2–10 people",
+        "11–50 people",
+        "51–249 people",
+        "250 or more people"
       ],
       "purpose": "Capture organization-size band rather than exact headcount."
     },
@@ -148,7 +149,7 @@
     },
     {
       "id": "Q7",
-      "label": "Which areas of your business would you most like to improve?",
+      "label": "Where would a little help make the biggest difference?",
       "required": false,
       "input_type": "multi_select",
       "field": "improvement_priorities",
@@ -168,25 +169,40 @@
         "Not sure yet"
       ],
       "exclusive_option": "Not sure yet",
-      "purpose": "Indicate broad business areas for a lightweight baseline catalog lookup."
+      "purpose": "Indicate broad business areas for a lightweight baseline catalog lookup.",
+      "option_labels": {
+        "Marketing": "Create marketing content",
+        "Getting new customers": "Find new customers",
+        "Sales": "Prepare quotes and follow up on sales",
+        "Customer service": "Answer customer questions",
+        "Scheduling": "Book appointments and manage schedules",
+        "Inventory & purchasing": "Track stock and plan purchases",
+        "Logistics & delivery": "Organize deliveries",
+        "Finance & invoicing": "Handle invoices and bookkeeping",
+        "HR & workforce": "Organize staff and training",
+        "Administrative work": "Reduce repetitive office work",
+        "Analytics & planning": "Understand sales and plan ahead",
+        "Not sure yet": "Not sure yet"
+      }
     },
     {
       "id": "Q8",
-      "label": "What's your approximate monthly budget for new AI tools?",
+      "label": "What could you spend each month on new tools, in US dollars?",
       "required": false,
       "input_type": "single_select",
       "field": "monthly_budget_band",
       "options": [
         "Free tools only",
-        "Under $50",
-        "$50–$150",
-        "$150–$500",
-        "Over $500",
+        "Under US$50",
+        "US$50 to under US$150",
+        "US$150–US$500",
+        "Over US$500",
         "Not sure yet"
       ],
       "budget_is_total_not_per_tool": true,
       "not_a_discovery_exclusion_filter": true,
-      "purpose": "Record an affordability preference for downstream evaluation."
+      "purpose": "Record an affordability preference for downstream evaluation.",
+      "currency": "USD"
     },
     {
       "id": "Q9",
@@ -242,5 +258,10 @@
     "rating metric formula",
     "multi-tool integration",
     "authentication provider"
+  ],
+  "revision_notes": [
+    "Owner-facing wording revised at the user's request; this is not a validated questionnaire.",
+    "Stored customer, team-size and budget IDs remain compatible; display boundaries no longer overlap.",
+    "Problem-specific workflow, desired outcome and constraints are optional and reviewed before discovery."
   ]
 }

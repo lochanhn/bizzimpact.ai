@@ -13,18 +13,22 @@ def clean_text(value):
  value=re.sub(r'(?:\+?\d[\d ().-]{7,}\d)','[redacted]',value)
  return value[:2000]
 
-def interpret(profile,problem,answer=None,skip=False):
- text=problem.lower();caps=[];explicit=[];inferred=[]
+def interpret(profile,problem,answer=None,skip=False,context=None):
+ # Workflow describes the present situation, not necessarily a requested feature.
+ text=' '.join((problem+' '+((context or {}).get('desired_outcome') or '')).lower().split())
+ text=re.sub(r"\b(?:don't|do not)\s+(?:need|want|require)\s+(?!to\b).*?(?=\bbut\b|\binstead\b|[.;!?\n]|$)",' ',text)
+ caps=[];explicit=[];inferred=[]
  def add(*values):
   for value in values:
    if value not in caps:caps.append(value)
- phone=bool(re.search(r'\b(call|calls|phone|telephone|voicemail)\b',text))
- chat=bool(re.search(r'website|web chat|chatbot|live chat',text))
+ outbound=bool(re.search(r'\b(outbound|cold calls?|call prospects)\b',text))
+ phone=bool(re.search(r'\b(call|calls|phone|telephone|voicemail)\b',text)) and (not outbound or bool(re.search(r'incoming|inbound|missed',text)))
+ chat=bool(re.search(r'web chat|chatbot|live chat|website.*(?:chat|questions?|enquir|inquir|support)|(?:chat|questions?|enquir|inquir|support).*website',text))
  inquiry=bool(re.search(r'inquir|enquir|customer|lead|respond',text))
  inventory=bool(re.search(r'inventor|stock|restock|perishable|over.?order|ingredient|waste|forecast',text))
  if phone:add('ai_voice_receptionist','lead_capture');explicit.append('phone channel stated')
  if chat:add('customer_support_chat','lead_capture');explicit.append('website channel stated')
- if re.search(r'appoint|reservat|booked|booking|schedule',text):add('appointment_scheduling')
+ if re.search(r'appoint|reservat|booked|booking|schedule (?:a |my |our )?(?:visit|meeting|customer)',text):add('appointment_scheduling')
  if inquiry and not inventory and not phone and not chat:add('lead_capture','automated_followup')
  if inventory:add('demand_forecasting','inventory_optimization')
  if re.search(r'invoic|receipt|bill entry',text):add('invoice_automation')
@@ -69,7 +73,9 @@ def search_catalog(products,capabilities,limit=15):
   matched=[cap for cap in product['matched_capabilities'] if cap in capabilities]
   if matched:
    p=copy.deepcopy(product);p['matched_capabilities']=matched;result.append(p)
- return result[:limit]
+ # Consider the whole catalogue before limiting. Coverage is retrieval order,
+ # not a suitability score, price check or integration guarantee.
+ return sorted(result,key=lambda p:-len(set(p['matched_capabilities'])))[:limit]
 
 def baseline_capabilities(profile):
  priorities=profile['improvement_priorities'];caps=[]
@@ -110,10 +116,11 @@ class Orchestrator:
  def execute(self,run,answer=None,skip=False):
   try:
    self.save(run,'parsing');profile=run['profile_snapshot']
-   intent=interpret(profile,run['problem_text'],answer,skip)
+   context=run.get('discovery_context') or {}
+   intent=interpret(profile,run['problem_text'],answer,skip,context)
    if self.parser:
     try:
-     parsed=self.parser.parse_problem(profile,run['problem_text'],run['usage'])
+     parsed=self.parser.parse_problem(profile,run['problem_text'],run['usage'],context=context)
      # Deterministic clarification state/explicit channels override model guesses.
      parsed.clarification_needed=intent.clarification_needed
      if answer or skip:parsed.required_capabilities=list(dict.fromkeys(parsed.required_capabilities+intent.required_capabilities))
@@ -140,11 +147,16 @@ class Orchestrator:
    else:run['warnings'].append('Live discovery is disabled or unavailable; these are catalogue results only.')
    if self.mode=='mock':run['warnings'].append('Synthetic demo: web results are simulated; no external request was made.')
    self.save(run,'enriching');run['tools']=dedupe(run['tools']);run['clarification_question']=None
-   run['tools']=[p for p in run['tools'] if set(p['matched_capabilities'])&set(intent.required_capabilities)]
+   catalog_updates=copy.deepcopy([p for p in run['tools'] if 'web_search' in p['retrieval_channels']])
+   run['tools']=search_catalog(run['tools'],intent.required_capabilities)
+   if context.get('constraints'):
+    for product in run['tools']:
+     product['issues']=list(dict.fromkeys(product.get('issues',[])+['Your stated requirements still need to be checked against the vendor; a capability match does not confirm compatibility.']))
+   if not intent.required_capabilities:run['warnings'].append('We could not identify a supported task. Refine your request with the work you want done and the result you need.')
    if not run['tools']:run['warnings'].append('No evidenced catalogue candidate covers this need yet. No tools were invented to fill the result.')
    terminal='partial' if self.mode!='mock' and (not self.searcher or run['warnings']) else 'completed'
    if self.mode!='mock' and hasattr(self.store,'upsert_catalog'):
-    self.store.upsert_catalog([p for p in run['tools'] if 'web_search' in p['retrieval_channels']])
+    self.store.upsert_catalog(catalog_updates)
    self.save(run,terminal)
    logging.getLogger('bizzimpact').info(json.dumps({'event':'discovery_completed','run_id':run['run_id'],'status':terminal,'model_id':getattr(self.parser,'model',None),**run['usage']}))
   except Exception:

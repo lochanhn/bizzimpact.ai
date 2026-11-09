@@ -2,6 +2,8 @@
 
 Current paid-AI update: the user authorized live calls on November 8. The separate AI trial, shared credit controls, model/prompt versions and scoring are described in [AI_DISCOVERY.md](../../backend/AI_DISCOVERY.md). Preserve the deployed private backend environment during updates. New-environment templates below deliberately keep paid flags off until explicitly configured; the earlier initial-deployment snapshot records a catalogue-only setup.
 
+The latest verified application image tag is `f5c652834963584f19ad354df1f78552c91cd406`. Both BizzImpact containers use it. See the [paid HTTPS verification report](../../backend/evaluations/20261109T014132Z-deployment.json); NourishNet and Caddy were preserved. Documentation-only commits after this tag do not require rebuilding the application.
+
 This README explains how teammates can package BizzImpact, deploy a release, check it, and roll it back. Commands use Bash. Run **local** commands from the repository root; commands marked **EC2** run after SSH. A Git push saves source but does **not** automatically deploy the application.
 
 ## Current deployment

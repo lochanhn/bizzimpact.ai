@@ -80,7 +80,20 @@ Model applicability labels and audit decisions can vary across repeated runs, ev
 - Early provider rejections left conservative spend reservations. Those were reconciled once confirmed as rejected requests; original evaluation accounting is annotated. Provider-reported costs and conservative reservations must not be confused.
 - HTTPS testing exposed another failure mode: the audit sometimes rejected an accurately limited partial explanation because the product did not fully meet the request. Later prompts explicitly distinguish factual support from full compatibility, provide positive/negative audit examples, and request shorter explanations. Rejected proposed explanations and audit reasons are retained for operator review; the audit can still make mistakes.
 
-The key's usage increased by about US$0.083 through these implementation tests before deployment verification. Later calls add to that amount; check the current key usage rather than treating this snapshot as a permanent balance.
+Across implementation and final deployment verification, the key's reported usage increased by US$0.1525324; US$24.1166058 remained at the final check. The shared ledger was US$0.152530, agreeing within its stored rounding. These are completion-time snapshots; later user searches add to the spend.
+
+### Final deployed verification
+
+Application images `f5c652834963584f19ad354df1f78552c91cd406` were deployed on November 8, 2026 (US Eastern), using prompt v1.4. [The final HTTPS report](evaluations/20261109T014132Z-deployment.json) passed:
+
+| Fictional task | Live result | Paid calls |
+| --- | --- | --- |
+| Extract/match invoices | Three audited partial matches, each 87.5/100 | Three model calls; no web search |
+| Incoming calls and booking | Eight audited partial matches, 62.5–87.5/100; exact booking remains unverified | Three model calls; no web search |
+| Ingredient demand and stock | One source-backed provisional Nory lead; full score withheld | Five model calls, including one web search |
+| Physically carry boxes | No software candidates invented | One interpretation call; no web search |
+
+This final HTTPS suite reported US$0.0183352 across its four searches. It also verified zero-call baseline/demo behavior, cross-session isolation, the four-search trial cap, and HTTP 200 for both BizzImpact and NourishNet. All 85 backend tests and 57 frontend tests passed, TypeScript checking passed, and both Docker builds succeeded. The deployed containers had zero restarts/OOM events, using about 65 MiB backend and 73 MiB frontend in the observed snapshot. These checks are bounded demonstrations, not load tests or real-owner validation.
 
 ## Cost and access controls
 

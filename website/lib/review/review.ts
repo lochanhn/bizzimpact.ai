@@ -90,7 +90,7 @@ export function personalWeights(brief: BusinessBrief): { weights: Record<PillarI
   else if (brief.readiness.techComfort === 'steps') { w.ease += 5; reasons.push('Ease of setup counts a little more because you prefer clear steps.'); }
   if (brief.readiness.setupBy === 'nobody') { w.ease += 5; reasons.push('Nobody is lined up to set it up yet, so simple setup matters.'); }
   if (brief.stack.mustKeep.length) { w.stack += 10; reasons.push(`Working with ${brief.stack.mustKeep.join(', ')} counts more because you must keep ${brief.stack.mustKeep.length > 1 ? 'them' : 'it'}.`); }
-  if (brief.stack.status !== 'listed' || !brief.stack.tools.length) { w.stack = 0; reasons.push('Compatibility is not scored because you did not list existing software.'); }
+  if (brief.stack.status !== 'listed' || !brief.stack.tools.length) { w.stack = 0; reasons.push('Compatibility is not considered because you did not list existing software.'); }
   if (c.dataHandled.some(d => (SENSITIVE as readonly string[]).includes(d))) { w.security += 10; reasons.push('Security & control counts more because the tool would handle sensitive information.'); }
   if (c.autonomy === 'draft') { w.security += 5; reasons.push('You want to approve everything, so control matters more.'); }
   const total = Object.values(w).reduce((a, b) => a + b, 0);
@@ -180,7 +180,7 @@ export function review(brief: BusinessBrief, discovery: DiscoveryResult, reports
     const needReason = `${mainNeed.strength === 'primary' ? 'Main purpose' : 'Offers'}: ${mainNeed.label.toLowerCase()}${coversFocus ? ' (your #1 problem)' : ''}${coveredNeeds > 1 ? `; covers ${coveredNeeds} of your needs` : ''}${cov.total ? `; meets ${cov.met} of ${cov.total} requirements${cov.unknown ? ` (${cov.unknown} not verified)` : ''}` : ''}${coversFocus ? '' : '; does not address your #1 problem'}.`;
 
     let costScore: number | null = null;
-    let costReason = 'Price not verified, so cost cannot be scored.';
+    let costReason = 'Price not verified, so the total cost still needs confirmation.';
     if (cost.monthly !== null) {
       if (cost.monthly === 0) costScore = cost.lowerBound ? 85 : 100;
       else if (cap !== null && cap > 0) costScore = clamp(100 - (cost.monthly / cap) * 60);
@@ -277,7 +277,7 @@ export function review(brief: BusinessBrief, discovery: DiscoveryResult, reports
   const notes: string[] = [];
   if (!topPicks.length) notes.push(discovery.gaps.some(g => focusCaps.includes(g.capabilityId))
     ? 'No reviewed tool covers your #1 problem yet. We will not invent one; see the gaps below.'
-    : 'No tool scored high enough for your #1 problem; see “Worth a look” and what to check.');
+    : 'No tool has enough verified fit for your #1 problem; see “Worth a look” and what to check.');
   if (sensitive.length) notes.push('Compliance claims are vendor statements we have not audited. Always confirm before sharing sensitive data.');
   return {
     reviewVersion: REVIEW_VERSION,

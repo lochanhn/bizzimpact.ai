@@ -31,7 +31,7 @@ def test_invalid_onboarding_rejected_without_echoing_private_input(service,chang
  c,_=service;p=profile();p.update(change);r=c.post('/api/v1/businesses',json=p);assert r.status_code==400;assert 'residential lawn' not in r.text
 
 def test_baseline_zero_calls_and_no_budget_filter(service,monkeypatch):
- c,_=service;id=business(c);r=c.post('/api/v1/discovery/baseline',json={'business_id':id}).json();assert r['usage']=={'model_calls':0,'search_calls':0,'estimated_cost_usd':0};assert len(r['tools'])<=6;assert r['synthetic'];assert all(t['synthetic'] for t in r['tools'])
+ c,_=service;id=business(c);r=c.post('/api/v1/discovery/baseline',json={'business_id':id}).json();assert r['usage']=={'model_calls':0,'search_calls':0,'estimated_cost_usd':0};assert len(r['tools'])<=6;assert r['synthetic'];assert all(t['synthetic'] for t in r['tools']);assert all(t['guidance']['setup_steps'] and 'score' not in t['guidance'] for t in r['tools'])
 
 @pytest.mark.parametrize('case',range(5))
 def test_reference_problem_mappings(service,case):

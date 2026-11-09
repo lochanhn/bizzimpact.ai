@@ -27,7 +27,8 @@ test('owner describes a problem in their own words and sees explained, source-li
   await lib.waitFor(() => assert.ok(view.getByRole('heading', { name: /\d+ matching tools?$/ })));
   assert.ok(view.getByText('What we understood'));
   assert.ok(view.getAllByText('AI phone answering').length >= 1);
-  assert.ok(view.getByText(/not a quality rating/));
+  assert.ok(view.getByText(/Review the reasons and checks/));
+  assert.equal(/Need match \d+|out of 100/i.test(view.container.textContent??''),false);
   assert.ok(view.getAllByRole('link', { name: /opens in a new tab/ }).length > 0);
 });
 

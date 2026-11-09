@@ -85,7 +85,7 @@ test('onboarding Back preserves entered answers and always offers a route to the
 test('evidence links retain their source and direct links fall back to the dashboard',async()=>{
  const runPath='/discovery/11111111-1111-4111-8111-111111111111';
  const {view}=await setup(<CandidateCard tool={products[0] as ToolRecord} returnTo={runPath}/>);
- const href=view.getByRole('link',{name:/View evidence/}).getAttribute('href')!;
+ const href=view.getByRole('link',{name:/setup steps/}).getAttribute('href')!;
  assert.equal(new URL(href,'http://localhost').searchParams.get('returnTo'),runPath);
  assert.deepEqual(evidenceBackTarget(runPath),{href:runPath,label:'Back to discovery results'});
  assert.deepEqual(evidenceBackTarget('/catalog'),{href:'/catalog',label:'Back to catalogue'});
@@ -150,11 +150,11 @@ test('new guest workspace opens in the same tab and preserves browser Back',asyn
  Object.defineProperty(globalThis,'window',{configurable:true,value:{location:{assign:(path:string)=>{destination=path;}}}});
  try{await openWorkspace();assert.equal(destination,'/dashboard');assert.deepEqual(calls,['/api/v1/context','/api/v1/availability','/api/v1/trial']);assert.equal(sessionStorage.getItem('bizzimpact-search-draft:old'),null);}finally{Object.defineProperty(globalThis,'window',originalWindow);}
 });
-test('score UI exposes all weights and marks the index as experimental',async()=>{
+test('recommendation UI explains the evidence without exposing internal scores',async()=>{
  const {view}=await setup(<QualityDetails quality={{rubric_version:'evidence-match-v1',score:100,task_coverage_points:50,source_evidence_points:25,workflow_relevance_points:25,assessment_status:'passed',explanation:'Supports the requested tasks.',evidence_ids:[],source_urls:[],checks:[],limitations:['Exact integrations need verification.']}}/>);
- assert.ok(view.getByText('Match score: 100/100'));
- assert.ok(view.getByText('Requested task coverage: 50/50'));
- assert.ok(view.getByText(/Experimental rubric/));
+ assert.ok(view.getByText('Why it may fit'));
+ assert.ok(view.getByText('Supports the requested tasks.'));
+ assert.equal(/100|rubric|score/i.test(view.container.textContent??''),false);
 });
 test('returning to an existing workspace preserves the session and unfinished search',async()=>{
  const calls:string[]=[];let destination='';const originalWindow=Object.getOwnPropertyDescriptor(globalThis,'window')!;

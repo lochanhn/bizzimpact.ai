@@ -1,6 +1,6 @@
 # bizzimpact.ai
 
-**A neutral AI advisor for small businesses.** It finds the right AI tools for *your* problem, rates them on what matters to *you*, and hands you a plan that works with the software you already use.
+**A neutral AI advisor for small businesses.** It finds tools for *your* problem, explains why they may help, and hands you a setup plan that works with the software you already use.
 
 Built for the **AI for Small Business Hack-a-thon, Fall 2026** (Robert H. Smith School of Business). The challenge: *help small businesses discover, compare and adopt AI tools.*
 
@@ -21,9 +21,9 @@ npm run dev            # then open http://127.0.0.1:3000
 | `/start?demo=cafe` | A cafe with food waste: a catalogue gap, previously cached web finds, and documented free options for receipts and Instagram |
 | `/start` | The optional 7-step check-up, also linked from the dashboard |
 | `/discover` | Describe a problem in your own words |
-| `/architecture` · `/methodology` | How it's built · how we rate (published weights, neutrality policy) |
+| `/architecture` · `/methodology` | How it is built · how recommendations are checked and explained |
 
-The rules-based `/start` plan and bundled cached finds need no account or API key. Fresh web discovery and the AI fallback are optional and off by default in the frontend. They use a separate provider-limited key and local ledger; they do not share the FastAPI spend ledger. The existing paid FastAPI discovery configuration is unchanged.
+The rules-based `/start` plan and bundled cached finds need no account or API key. Fresh web discovery and the AI fallback are optional and off by default in the frontend. The FastAPI path can use server-only pgvector semantic retrieval alongside controlled capability and lexical matching; it falls back safely when embeddings are disabled.
 
 **Two journeys in one app:**
 - **`/start`** is the full **discover → review → integrate** plan. It runs inside the Next.js app.
@@ -35,14 +35,14 @@ To run both locally: `uv sync --project backend --frozen && npm ci --prefix webs
 | Others | bizzimpact.ai |
 |---|---|
 | Pick a software category, browse thousands of tools | **Check-up in plain language** → the needs we identify, or an honest "no good tool yet" |
-| Star ratings, the same for everyone | **Rating beyond reviews**, personalised: need fit, cost *at your usage*, works with your tools, **cited security and AI-training facts**, objective setup tier, and **results from owners like you** |
+| Star ratings or unexplained scores | **Plain-language reasons and checks**: task coverage, cost *at your usage*, current software, cited security facts, setup effort and available owner feedback |
 | "Integrates with" logos | **Graded, sourced connections** (built in / direct / via Zapier, verified in Zapier's directory) |
 | A list, then you're on your own | **AI stack within budget**, **workflow recipes**, calendar and spreadsheet hand-offs, send to your own Zapier/Make, adoption plan, free SBA advisor links |
-| Vendors pay for placement | **Published method; nobody can pay for ranking** |
+| Vendors pay for placement | **Published method; nobody can pay for ordering** |
 
 ## Evidence
 - Merge verification on the synthetic datasets: **30/30 tuning cases and 14/15 holdout cases passed rules-only checks**. Accepted-tool top-three hit rate was 100% under this dataset's labels. These are small developer-labelled examples, not real-owner accuracy. The branch reports 15/15 with its AI fallback; that paid evaluation was not rerun during the merge.
-- **121 frontend tests and 85 backend tests passed** during merge verification, plus TypeScript and the production build. Rules-based plans make no model calls. The contributor reports about $0.70 spent preparing its cached demo data; the existing backend paid evaluations are recorded separately in `backend/AI_DISCOVERY.md`.
+- **121 frontend tests and 87 backend tests pass**, plus TypeScript and the production build. Rules-based plans make no model calls. Paid backend evaluations and semantic-index costs are recorded separately in `backend/AI_DISCOVERY.md`.
 - **30** tools with cited security and privacy facts. **58** tools verified in Zapier's directory. **126** products found by live discovery.
 
 ## Documents
@@ -54,6 +54,7 @@ To run both locally: `uv sync --project backend --frozen && npm ci --prefix webs
 | [HANDOVER.md](HANDOVER.md) | Project handover notes |
 | [docs/RESEARCH.md](docs/RESEARCH.md) | Market, owner needs, existing products, gaps, our metrics (all sourced) |
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Three engines, data, safety, scaling path |
+| [docs/RECOMMENDATION_ROADMAP.md](docs/RECOMMENDATION_ROADMAP.md) | Hybrid catalogue retrieval, vector indexing, customer guidance and quality gates |
 | [docs/VIDEO_SCRIPT.md](docs/VIDEO_SCRIPT.md) | 10-minute demo script mapped to the judging rubric |
 | [docs/design/questionnaire.md](docs/design/questionnaire.md) | Master questionnaire design |
 | [docs/technical/discovery.md](docs/technical/discovery.md) | Discovery engine details and evaluation |
@@ -93,7 +94,7 @@ bizzimpact.ai/
 
 ## Honest limits
 - The catalog has 111 reviewed tools, 14 with verified plan prices. Live finds are unverified.
-- Weights are reasoned, not yet validated with owners. Owner-outcome data starts empty.
+- Internal ordering rules are reasoned, not yet validated with owners. Customers see reasons and checks rather than scores. Owner-outcome data starts empty.
 - No real owner has tested it yet; that's week 1 of the 16-week plan.
 
 Merge notes and checks: [docs/MERGE_VERIFICATION.md](docs/MERGE_VERIFICATION.md). Merging source does not update EC2; the deployed image tags remain documented in the deployment README.

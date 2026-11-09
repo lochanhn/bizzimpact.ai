@@ -9,32 +9,21 @@ import { planToCsv, planToIcs, planToWebhookPayload } from '@/lib/integration/ex
 
 const GRADE_CLASS: Record<string, string> = { 'built-in': 'ok', native: 'ok', 'via-zapier': '', 'not-supported': 'warn', unknown: 'muted' };
 
-function Bar({ value }: { value: number | null }) {
-  return <span className="dx-bar" aria-hidden="true"><span style={{ width: `${value ?? 0}%`, opacity: value === null ? 0 : 1 }} /></span>;
-}
-
-function ReviewCard({ r, rank }: { r: ToolReview; rank?: number }) {
+function ReviewCard({ r }: { r: ToolReview }) {
   return <article className="dx-card st-review" aria-labelledby={`rv-${r.toolId}`}>
     <div className="dx-card-head">
-      {rank && <span className="dx-rank" aria-hidden="true">{rank}</span>}
-      <div className="dx-card-title"><h3 id={`rv-${r.toolId}`}>{r.name}</h3><small>{r.category} · {r.quadrant}</small></div>
-      <div className="st-scores">
-        <div><small>Fit for you</small><strong>{r.fit ?? '—'}</strong></div>
-        <div><small>Confidence</small><strong className={`st-conf ${r.confidence.toLowerCase()}`}>{r.confidence}</strong></div>
-      </div>
+      <div className="dx-card-title"><h3 id={`rv-${r.toolId}`}>{r.name}</h3><small>{r.category} · {r.discovery.evidenceLevel === 'plan' ? 'plan details reviewed' : 'product overview reviewed'}</small></div>
     </div>
     {r.gates.length > 0 && <ul className="dx-warnings">{r.gates.map(g => <li key={g}><AlertTriangle size={14} aria-hidden="true" /> {g}</li>)}</ul>}
     <div className="dx-badges st-trustrow">
       <span className={`st-shield ${r.security.level}`}><ShieldCheck size={13} aria-hidden="true" /> {r.security.label}</span>
-      <span className="dx-badge">Setup: tier {r.ici.tier} of 4 · {r.ici.label}{r.ici.cited ? '' : ' (estimated)'}</span>
-      <span className={`dx-badge ${r.owners.reports ? 'ok' : 'muted'}`}>{r.owners.reports ? `${r.owners.label} · at least ${r.owners.fixedAtLeast ?? 0}% say fixed` : 'No owner results yet'}</span>
+      <span className="dx-badge">Setup: {r.ici.label}{r.ici.cited ? '' : ' (estimate)'}</span>
+      <span className={`dx-badge ${r.owners.reports ? 'ok' : 'muted'}`}>{r.owners.reports ? 'Owner feedback available' : 'No owner feedback yet'}</span>
     </div>
     <details className="st-check-list st-sec"><summary>Security &amp; privacy details</summary><ul>{r.security.points.map(p => <li key={p}>{p}</li>)}</ul>
       {r.security.citations.length > 0 && <p className="dx-sources">{r.security.citations.map(c => <a key={c.url + c.label} href={c.url} target="_blank" rel="noopener noreferrer">{c.label} <ExternalLink size={12} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a>)}</p>}</details>
     {r.missingLinks.length > 0 && <ul className="dx-warnings">{r.missingLinks.map(m => <li key={m}><AlertTriangle size={14} aria-hidden="true" /> {m}</li>)}</ul>}
-    <table className="st-pillars"><caption className="sr-only">How {r.name} scores for you</caption><tbody>
-      {r.pillars.map(p => <tr key={p.id}><th scope="row">{p.label}</th><td><Bar value={p.score} /> <span className="st-num">{p.score ?? 'n/a'}</span></td><td>{p.reason}</td></tr>)}
-    </tbody></table>
+    <div className="st-check-list"><strong>Why it may fit</strong><ul>{r.pillars.filter(p=>p.reason).slice(0,5).map(p=><li key={p.id}><strong>{p.label}:</strong> {p.reason}</li>)}</ul></div>
     <div className="dx-badges">
       <span className={`dx-badge ${r.cost.monthly !== null ? '' : 'muted'}`}>{r.cost.label}</span>
       {r.requirementsMet && <span className="dx-badge">Meets {r.requirementsMet} requirements</span>}
@@ -88,23 +77,21 @@ export function Results({ r, headingRef, onEdit, onRestart }: { r: PlanResult; h
     {/* ── Review: compare ── */}
     <section id="compare" className="st-section" aria-labelledby="compare-h">
       <h2 id="compare-h"><ShieldCheck size={20} aria-hidden="true" /> Compare tools for your #1 problem</h2>
-      <div className="st-weights"><strong>How we weighted this for you:</strong> {review.weights.filter(w => w.weight > 0).map(w => `${w.label} ${w.weight}%`).join(' · ')}<ul>{review.weightReasons.map(x => <li key={x}>{x}</li>)}</ul>
-        <p><strong>Fit</strong> is how well a tool suits your business. <strong>Confidence</strong> is how much of that we could verify; unknown facts lower confidence and are never guessed. <a href="/methodology">How we rate</a></p></div>
+      <div className="st-weights"><strong>What we considered:</strong> the task you described, cost, setup effort, your current software, security needs and available evidence.<ul>{review.weightReasons.map(x => <li key={x}>{x}</li>)}</ul><p>Unknown facts stay visible so you can check them before choosing a tool.</p></div>
       {review.notes.map(n => <p key={n} className="dx-notice"><Info size={15} aria-hidden="true" /> {n}</p>)}
-      {top.length > 1 && <div className="st-compare-wrap"><table className="st-compare"><caption>Top picks side by side</caption>
+      {top.length > 1 && <div className="st-compare-wrap"><table className="st-compare"><caption>Suggested tools side by side</caption>
         <thead><tr><th scope="col">Tool</th>{top.map(t => <th scope="col" key={t.toolId}>{t.name}</th>)}</tr></thead>
         <tbody>
-          <tr><th scope="row">Fit for you</th>{top.map(t => <td key={t.toolId}>{t.fit}</td>)}</tr>
-          <tr><th scope="row">Confidence</th>{top.map(t => <td key={t.toolId}>{t.confidence}</td>)}</tr>
           <tr><th scope="row">Monthly cost</th>{top.map(t => <td key={t.toolId}>{t.cost.label}</td>)}</tr>
           <tr><th scope="row">Your requirements</th>{top.map(t => <td key={t.toolId}>{t.requirementsMet ?? '—'}</td>)}</tr>
           <tr><th scope="row">Your software</th>{top.map(t => <td key={t.toolId}>{t.compatibility.summary}</td>)}</tr>
-          {(['security', 'ease'] as const).map(id => <tr key={id}><th scope="row">{top[0].pillars.find(p => p.id === id)!.label}</th>{top.map(t => <td key={t.toolId}>{t.pillars.find(p => p.id === id)!.score ?? 'n/a'}</td>)}</tr>)}
+          <tr><th scope="row">Setup</th>{top.map(t => <td key={t.toolId}>{t.ici.label}</td>)}</tr>
+          <tr><th scope="row">Check first</th>{top.map(t => <td key={t.toolId}>{t.checkBeforeBuying[0] ?? 'Confirm current vendor details.'}</td>)}</tr>
         </tbody></table></div>}
-      <div className="dx-list">{top.map((t, i) => <ReviewCard key={t.toolId} r={t} rank={i + 1} />)}</div>
+      <div className="dx-list">{top.map(t => <ReviewCard key={t.toolId} r={t} />)}</div>
       {more.length > 0 && <>
         <h3 className="st-sub">Worth a look ({more.length})</h3>
-        <p className="dx-notice">These address your needs but have lower confidence or fit. Check them before buying.</p>
+        <p className="dx-notice">These address part of your need, but more details should be checked before buying.</p>
         <div className="dx-list">{more.slice(0, showAll ? more.length : 4).map(t => <ReviewCard key={t.toolId} r={t} />)}</div>
         {more.length > 4 && !showAll && <button type="button" className="button secondary" onClick={() => setShowAll(true)}>Show {more.length - 4} more</button>}
       </>}

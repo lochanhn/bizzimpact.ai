@@ -1,4 +1,4 @@
-# Paid AI discovery, retrieval, scores and quality checks
+# Paid AI discovery, hybrid retrieval and quality checks
 
 The user authorized paid model and web calls on November 8, 2026. The deployed service uses `openai/gpt-4.1-mini` through OpenRouter, with shared budget controls. Credentials live only in ignored local/server backend configuration. This replaces the earlier catalogue-only runtime policy; the synthetic demo still never spends credits.
 
@@ -8,7 +8,7 @@ The user authorized paid model and web calls on November 8, 2026. The deployed s
 2. Land on the dashboard, then choose **Create business profile**. Use fictional business details for demonstrations.
 3. Describe a concrete task. Optional details capture the current workflow, desired outcome and requirements.
 4. Review the request. This is the explicit point at which the owner starts a paid search. The optional current-vendor checkbox can force a bounded web lookup.
-5. Inspect the interpreted tasks, candidates, score breakdowns, sources, unresolved requirements, planned/executed queries, model/prompt/rubric versions and usage.
+5. Inspect the interpreted tasks, plain-language reasons, setup steps, sources and unresolved requirements. Internal retrieval and rubric values remain in operator reports, not the customer UI.
 
 Trial workspaces expire after two hours and are lost on backend replacement. Each trial permits four searches. Account profiles remain in PostgreSQL; trial profiles/runs are isolated in temporary SQLite storage. Both use the same researched catalogue and PostgreSQL spend ledger.
 
@@ -18,14 +18,16 @@ Trial workspaces expire after two hours and are lost on backend replacement. Eac
 Reviewed owner request
   -> model interprets supported tasks (strict schema)
   -> local catalogue retrieval by controlled capabilities
+  -> optional pgvector semantic similarity + BM25 lexical ordering
   -> optional bounded web lookup for an empty catalogue result or explicit request
   -> source-backed candidate records (at most eight assessed)
   -> model assesses task applicability and cites claim IDs
   -> separate model call audits each explanation against the supplied evidence
-  -> code calculates the index, withholds failed/provisional scores, and orders results
+  -> code applies internal quality gates and orders results
+  -> UI explains why, setup steps and checks without numerical scores
 ```
 
-This is RAG over structured records and claim/source documents. With 111 catalogue records, direct structured retrieval is adequate for the demo and fits the existing small EC2 host. A vector database is not required for this catalogue size. MCP would expose tools to an external agent; it would not establish relevance or factual correctness. The app already calls its own backend and provider interfaces directly, so an MCP server is not part of this implementation.
+This is RAG over structured records and claim/source documents. Supabase PostgreSQL remains the source of truth and pgvector adds semantic recall without introducing a second database. Structured capability gates remain mandatory: vector similarity alone cannot prove suitability. MCP would expose tools to an external agent; it would not establish relevance or factual correctness, so an MCP server is not part of this implementation.
 
 ### Interpretation and search basis
 
@@ -33,7 +35,7 @@ The versioned system prompts and capability definitions are in [`app/prompts.py`
 
 Contact-channel clarification remains controlled by application rules. A raw-model clarification miss was observed in evaluation, and the application-level rule still asks the question when needed.
 
-The researched catalogue is examined before applying a result limit. Retrieval first selects records tagged with the requested capabilities and prioritizes coverage. A local BM25 lexical score over names, descriptions and feature/integration claims breaks ties using the task and desired outcome; this can surface a task-specific record later in the catalogue instead of merely taking alphabetical matches. The first eight candidates are supplied to the assessment model. Retrieval scores and the candidate pool are recorded separately from the visible 50/25/25 index. This is a small candidate pool; the model does not invent products or search its memory for an unrestricted list.
+The researched catalogue is examined before applying a result limit. Retrieval first selects records tagged with the requested capabilities and prioritizes coverage. When `EMBEDDINGS_ENABLED=true`, a query embedding from the pinned `openai/text-embedding-3-small` model is compared with the 111 reviewed tool documents in Supabase pgvector. BM25 lexical relevance remains available as a deterministic fallback and secondary signal. The first eight candidates are supplied to the assessment model. Similarity and rubric values are recorded for evaluation but are not shown to customers.
 
 Planned web queries combine supported task terms, allowlisted industry/subtype terms, and a relevant allowlisted existing tool. Private prose is not copied verbatim into external search queries. At most one planned query is executed per live run; model/web retries and extraction must fit the five-call model budget. If an interpretation retry consumes extra calls, web work is skipped to preserve capacity for quality checks.
 
@@ -41,7 +43,7 @@ Web search uses OpenRouter's documented Exa plugin with up to three results. Fet
 
 New web records remain **provisional**. They do not overwrite the curated catalogue, and public trials cannot mutate that catalogue. Provisional details are retrieved through the owner's run rather than an unauthenticated global record. Full scores are withheld until source review. Source fetch/extraction outcomes are recorded in the retrieval audit.
 
-## Experimental evidence match index
+## Internal experimental evidence match index
 
 Code, rather than a model-generated number, calculates the index in [`app/quality.py`](app/quality.py).
 
@@ -55,7 +57,7 @@ The total is rounded to one decimal. Ties retain retrieval order. A deterministi
 
 This is a chosen, experimental rubric. Its weights have not been calibrated against owner outcomes. A 100/100 means complete support under these three dimensions; it does **not** mean a product is perfect, affordable, compatible, secure, reliable, independently tested or guaranteed to improve revenue. Pricing, exact integration actions, usage limits, regional availability, setup effort and privacy terms remain separate verification tasks. Missing data is never converted into a positive finding.
 
-The UI exposes all three components, a limitation statement, and supporting URLs. The assessment model is never asked to output a score.
+The UI does not expose the numerical components. It shows the evidence-backed explanation, supporting URLs, setup guidance and limitations. The assessment model is never asked to output a score.
 
 ## Quality gates and prompt evaluation
 
@@ -99,7 +101,7 @@ This final HTTPS suite reported US$0.0183352 across its four searches. It also v
 
 - PostgreSQL stores an atomic shared reservation/spend ledger with a US$20 application stop target.
 - Before every paid call, the provider's key endpoint is checked. Calls stop before the remaining key credit would fall below the US$5 buffer plus a US$0.10 reservation.
-- Maximum five model calls per run; a normal catalogue RAG run uses three (interpret, assess, audit). An optional web search and extraction can use the other two.
+- Maximum five chat-model calls per run; a normal catalogue RAG run uses three (interpret, assess, audit). Semantic retrieval uses at most one additional embedding call, tracked separately. An optional web search and extraction can use the remaining chat calls.
 - Unknown cost keeps the reservation and blocks further calls in that run. Confirmed rejected non-search requests release unused reservations.
 - Public trials allow three session creations per backend client IP per minute, ten run starts per backend client IP per minute, and four searches per session. Because requests pass through the frontend proxy, IP limits are effectively shared across that proxy; this favors a small judged demo, not large public traffic.
 - No paid work occurs on dashboard load, baseline retrieval, availability checks, or merely creating a trial. Owners explicitly confirm the reviewed search.
@@ -118,6 +120,9 @@ uv run --directory backend --env-file .env.local python evaluate_live.py \
   --cases data/live-evaluation.json --limit 15 --budget-usd 1
 uv run --directory backend --env-file .env.local python smoke_live.py \
   --paid-authorized --cases calls invoices marketing
+# Rebuild only changed reviewed catalogue embeddings after the vector migration.
+uv run --directory backend --env-file .env.local python index_catalog_embeddings.py \
+  --paid-authorized
 # Add --web only when testing current vendor retrieval.
 
 # From the repository root: real HTTPS trial, isolation, four-run limit and demo checks.

@@ -5,6 +5,7 @@ from urllib.parse import urlsplit
 from .contracts import Intent,CAPABILITIES
 from .storage import now
 from .quality import assess_recommendations
+from .guidance import attach_guidance
 DATA=Path(__file__).resolve().parents[1]/'data'
 FIXTURES=json.loads((DATA/'synthetic-catalog.json').read_text())
 Q9='How do customers usually reach your business?'
@@ -69,7 +70,7 @@ def catalog(mode):
  if mode=='mock':return [fixture_product(p) for p in FIXTURES['products']]
  return json.loads((DATA/'researched-catalog.json').read_text())
 
-def search_catalog(products,capabilities,limit=15,query=''):
+def search_catalog(products,capabilities,limit=15,query='',semantic_scores=None):
  result=[]
  for product in products:
   matched=[cap for cap in product['matched_capabilities'] if cap in capabilities]
@@ -92,7 +93,17 @@ def search_catalog(products,capabilities,limit=15,query=''):
    frequency=sum(term in d for d in documents);idf=math.log(1+(len(documents)-frequency+0.5)/(frequency+0.5))
    score+=idf*tf*2.2/(tf+1.2*(0.25+0.75*length/average))
   p['_retrieval_bm25']=round(score,4)
- return sorted(result,key=lambda p:(-len(set(p['matched_capabilities'])),-p['_retrieval_bm25']))[:limit]
+ semantic_scores=semantic_scores or {}
+ for p in result:p['_retrieval_semantic']=round(semantic_scores.get(p.get('tool_id',''),0),6)
+ lexical_order=sorted(range(len(result)),key=lambda i:result[i]['_retrieval_bm25'],reverse=True)
+ lexical_rank={index:rank+1 for rank,index in enumerate(lexical_order)}
+ semantic_order=sorted(range(len(result)),key=lambda i:result[i]['_retrieval_semantic'],reverse=True)
+ semantic_rank={index:rank+1 for rank,index in enumerate(semantic_order)}
+ for index,p in enumerate(result):
+  # Reciprocal-rank fusion keeps exact wording and semantic meaning useful
+  # without pretending their raw scores are on the same scale.
+  p['_retrieval_hybrid']=round(1/(60+lexical_rank[index])+(1/(60+semantic_rank[index]) if semantic_scores else 0),8)
+ return sorted(result,key=lambda p:(-len(set(p['matched_capabilities'])),-p['_retrieval_hybrid'],-p['_retrieval_semantic'],-p['_retrieval_bm25']))[:limit]
 
 def baseline_capabilities(profile):
  priorities=profile['improvement_priorities'];caps=[]
@@ -147,7 +158,12 @@ class Orchestrator:
    if intent.clarification_needed:self.save(run,'needs_clarification');return
    run['queries']=plan_queries(profile,intent) if intent.required_capabilities else [];self.save(run,'catalog_search')
    retrieval_query=run['problem_text']+' '+(context.get('desired_outcome') or '')
-   run['tools']=search_catalog(self.store.catalog() if self.mode!='mock' and hasattr(self.store,'catalog') else catalog(self.mode),intent.required_capabilities,query=retrieval_query)
+   source_catalog=self.store.catalog() if self.mode!='mock' and hasattr(self.store,'catalog') else catalog(self.mode)
+   semantic_scores={}
+   if self.parser and hasattr(self.parser,'embed_query') and hasattr(self.store,'semantic_search'):
+    try:semantic_scores=self.store.semantic_search(self.parser.embed_query(retrieval_query,run['usage']),intent.required_capabilities)
+    except Exception:run['warnings'].append('Semantic retrieval was unavailable; source-backed catalogue matching continued normally.')
+   run['tools']=search_catalog(source_catalog,intent.required_capabilities,query=retrieval_query,semantic_scores=semantic_scores)
    wants_web=self.mode=='mock' or run.get('force_web') or not run['tools']
    if self.searcher and self.fetcher and wants_web and (self.mode=='mock' or run['usage']['model_calls']<=1):
     self.save(run,'web_search');seen=set();pages=0
@@ -173,18 +189,19 @@ class Orchestrator:
    if self.mode=='mock':run['warnings'].append('Synthetic demo: web results are simulated; no external request was made.')
    self.save(run,'enriching');run['tools']=dedupe(run['tools']);run['clarification_question']=None
    catalog_updates=copy.deepcopy([p for p in run['tools'] if 'web_search' in p['retrieval_channels']])
-   run['tools']=search_catalog(run['tools'],intent.required_capabilities,query=retrieval_query)
-   retrieval_pool=[{'tool_id':p['tool_id'],'matched_capabilities':p['matched_capabilities'],'bm25':p.get('_retrieval_bm25',0)} for p in run['tools']]
+   run['tools']=search_catalog(run['tools'],intent.required_capabilities,query=retrieval_query,semantic_scores=semantic_scores)
+   retrieval_pool=[{'tool_id':p['tool_id'],'matched_capabilities':p['matched_capabilities'],'hybrid_rrf':p.get('_retrieval_hybrid',0),'bm25':p.get('_retrieval_bm25',0),'semantic_similarity':p.get('_retrieval_semantic',0)} for p in run['tools']]
    if context.get('constraints'):
     for product in run['tools']:
      product['issues']=list(dict.fromkeys(product.get('issues',[])+['Your stated requirements still need to be checked against the vendor; a capability match does not confirm compatibility.']))
    if self.mode!='mock':
     assessor=self.parser if hasattr(self.parser,'assess_candidates') else None
     run['tools'],run['quality_report']=assess_recommendations(run['tools'],intent,assessor,profile,run['problem_text'],context,run['usage'])
-    run['quality_report'].update(interpretation_source=interpretation_source,model_id=getattr(self.parser,'model',None),retrieval_basis='Controlled task coverage first, local BM25 task-text relevance to break ties, then source-grounded AI assessment.',web_trigger='Explicit request or empty catalogue result',retrieval_audit=retrieval_audit,retrieval_pool=retrieval_pool)
+    run['quality_report'].update(interpretation_source=interpretation_source,model_id=getattr(self.parser,'model',None),retrieval_basis='Controlled task coverage first, optional semantic similarity and local BM25 relevance for ordering, then source-grounded AI assessment.',web_trigger='Explicit request or empty catalogue result',retrieval_audit=retrieval_audit,retrieval_pool=retrieval_pool)
     if run['quality_report'].get('assessment_warning'):run['warnings'].append(run['quality_report']['assessment_warning'])
    if not intent.required_capabilities:run['warnings'].append('We could not identify a supported task. Refine your request with the work you want done and the result you need.')
    if not run['tools']:run['warnings'].append('No evidenced catalogue candidate covers this need yet. No tools were invented to fill the result.')
+   attach_guidance(run['tools'],context)
    terminal='partial' if self.mode!='mock' and (self.mode=='catalog' and not self.searcher or not run['tools'] or any('failed' in w or 'unavailable' in w or 'withheld' in w for w in run['warnings'])) else 'completed'
    if self.mode!='mock' and hasattr(self.store,'upsert_catalog'):
     reviewed=[p for p in catalog_updates if p.get('catalog_status') in ('seeded','confirmed')]

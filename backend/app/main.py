@@ -12,6 +12,7 @@ from .contracts import BusinessProfile,DiscoveryRequest,BusinessRequest,Clarific
 from .storage import LocalStore,PostgresStore,TrialStore,now
 from .engine import DATA,Orchestrator,baseline_capabilities,catalog,search_catalog
 from .providers import OpenRouterProvider,OpenRouterSearchAdapter,SafePageFetcher,MockLLMProvider,MockSearchProvider,MockPageFetcher
+from .guidance import attach_guidance,build_guidance
 log=logging.getLogger('bizzimpact');logging.basicConfig(level=logging.INFO,format='%(message)s')
 logging.getLogger('httpx').setLevel(logging.WARNING)
 @dataclass
@@ -92,7 +93,8 @@ def create_app(local_path=None,db_url=None):
   if authorized:
    key=os.getenv('OPENROUTER_API_KEY');model=os.getenv('OPENROUTER_MODEL')
    if key and model:
-    provider=OpenRouterProvider(key,model,a.store,credit_floor=5)
+    embedding_model=os.getenv('EMBEDDING_MODEL','openai/text-embedding-3-small') if os.getenv('EMBEDDINGS_ENABLED')=='true' else None
+    provider=OpenRouterProvider(key,model,a.store,credit_floor=5,embedding_model=embedding_model)
     if os.getenv('LIVE_WEB_ENABLED')=='true':searcher=OpenRouterSearchAdapter(provider)
   return Orchestrator(a.store,a.mode,provider,searcher,SafePageFetcher() if searcher else None)
  @app.get('/health')
@@ -135,7 +137,8 @@ def create_app(local_path=None,db_url=None):
  @app.post('/api/v1/discovery/baseline',response_model=BaselineResult)
  def baseline(body:BusinessRequest,a:Actor=Depends(actor)):
   p=owned('business',body.business_id,a)['profile'];caps=baseline_capabilities(p)
-  return {'business_id':body.business_id,'capability_categories':caps,'tools':search_catalog(a.store.catalog() if a.mode!='mock' and hasattr(a.store,'catalog') else catalog(a.mode),caps,6),'is_baseline':True,'usage':{'model_calls':0,'search_calls':0,'estimated_cost_usd':0},'synthetic':a.mode=='mock'}
+  tools=search_catalog(a.store.catalog() if a.mode!='mock' and hasattr(a.store,'catalog') else catalog(a.mode),caps,6)
+  return {'business_id':body.business_id,'capability_categories':caps,'tools':attach_guidance(tools),'is_baseline':True,'usage':{'model_calls':0,'search_calls':0,'estimated_cost_usd':0},'synthetic':a.mode=='mock'}
  @app.post('/api/v1/discovery/runs',status_code=202,response_model=DiscoveryRunCreated)
  def create_run(body:DiscoveryRequest,background:BackgroundTasks,request:Request,a:Actor=Depends(actor)):
   if a.trial:
@@ -161,10 +164,11 @@ def create_app(local_path=None,db_url=None):
  @app.get('/api/v1/tools/{tool_id}',response_model=DiscoveredTool)
  def get_tool(tool_id:str):
   for product in (pg.catalog() if pg else catalog('catalog'))+catalog('mock'):
-   if product['tool_id']==tool_id:return product
+   if product['tool_id']==tool_id:
+    product=copy.deepcopy(product);product['guidance']=build_guidance(product);return product
   if tool_id=='00000000-0000-4000-8000-000000000005':
    from .engine import fixture_product,FIXTURES
-   return fixture_product(FIXTURES['mock_web_new_product'],'mock_web')
+   product=fixture_product(FIXTURES['mock_web_new_product'],'mock_web');product['guidance']=build_guidance(product);return product
   raise HTTPException(404,'Tool not found. A live provisional candidate is available in its owner’s discovery run only.')
  return app
 app=create_app()

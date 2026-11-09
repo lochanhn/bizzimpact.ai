@@ -57,6 +57,7 @@ class TrialStore:
  def reserve(self,*args,**kwargs):return self.shared.reserve(*args,**kwargs)
  def settle(self,*args):return self.shared.settle(*args)
  def upsert_catalog(self,records):return None  # Public trials cannot mutate the curated catalogue.
+ def semantic_search(self,*args,**kwargs):return self.shared.semantic_search(*args,**kwargs)
 class PostgresStore:
  """Private records use the supplied businesses/discovery_runs tables plus JSON wire snapshots."""
  def __init__(self,url):self.url=url
@@ -100,6 +101,13 @@ class PostgresStore:
  def catalog(self):
   with self.connect() as c:r=c.execute("SELECT api_payload FROM public.ai_tools WHERE catalog_status!='rejected' AND api_payload IS NOT NULL ORDER BY name").fetchall()
   return [x[0] for x in r]
+ def semantic_search(self,embedding,capabilities,limit=20):
+  vector='['+','.join(format(float(value),'.9g') for value in embedding)+']'
+  with self.connect() as c:
+   try:rows=c.execute('SELECT tool_id,semantic_similarity FROM public.match_tool_retrieval_documents(%s::extensions.vector,%s,%s)',(vector,capabilities,limit)).fetchall()
+   except Exception:
+    c.rollback();return {}
+  return {str(tool_id):float(score) for tool_id,score in rows}
  def upsert_catalog(self,products):
   from psycopg.types.json import Jsonb
   from urllib.parse import urlsplit

@@ -76,7 +76,7 @@ class SafePageFetcher:
   raise ValueError('Too many redirects')
 
 class OpenRouterProvider:
- def __init__(self,key,model,store,client=None,max_call_usd=0.1,credit_floor=None):self.key=key;self.model=model;self.store=store;self.client=client or httpx.Client(timeout=httpx.Timeout(35,connect=8));self.max_call_usd=max_call_usd;self.credit_floor=credit_floor
+ def __init__(self,key,model,store,client=None,max_call_usd=0.1,credit_floor=None,embedding_model=None):self.key=key;self.model=model;self.store=store;self.client=client or httpx.Client(timeout=httpx.Timeout(35,connect=8));self.max_call_usd=max_call_usd;self.credit_floor=credit_floor;self.embedding_model=embedding_model
  def call(self,messages,usage,web=False,schema=None,max_tokens=900):
   if usage['model_calls']>=5 or usage.get('cost_uncertain'):raise BudgetStopped()
   if self.credit_floor is not None:
@@ -98,6 +98,23 @@ class OpenRouterProvider:
   else:usage['cost_uncertain']=True
   for name,key in [('input_tokens','prompt_tokens'),('output_tokens','completion_tokens')]:usage[name]=usage.get(name,0)+max(0,int(meta.get(key,0)))
   return data['choices'][0]['message']
+ def embed_query(self,text,usage):
+  if not self.embedding_model or usage.get('embedding_calls',0)>=2:raise BudgetStopped('Semantic retrieval is unavailable')
+  reserve=0.02
+  if self.credit_floor is not None:
+   response=self.client.get('https://openrouter.ai/api/v1/key',headers={'Authorization':f'Bearer {self.key}'})
+   response.raise_for_status();remaining=response.json().get('data',{}).get('limit_remaining')
+   if not isinstance(remaining,(int,float)) or remaining<self.credit_floor+reserve:raise BudgetStopped('Shared credit buffer reached')
+  if not self.store.reserve(reserve):raise BudgetStopped()
+  response=self.client.post('https://openrouter.ai/api/v1/embeddings',headers={'Authorization':f'Bearer {self.key}'},json={'model':self.embedding_model,'dimensions':1536,'input':clean_text(text)[:4000],'input_type':'search_query','encoding_format':'float'})
+  if response.status_code in (400,401,402,403,404,408,413,422,429):self.store.settle(reserve,0)
+  response.raise_for_status();data=response.json();embedding=data['data'][0]['embedding']
+  if not isinstance(embedding,list) or len(embedding)!=1536:raise ValueError('Unexpected embedding dimensions')
+  cost=data.get('usage',{}).get('cost')
+  if isinstance(cost,(int,float)) and not isinstance(cost,bool) and math.isfinite(cost) and cost>=0:self.store.settle(reserve,cost);usage['estimated_cost_usd']+=cost
+  else:usage['estimated_cost_usd']+=reserve
+  usage['embedding_calls']=usage.get('embedding_calls',0)+1
+  return embedding
  def parse_problem(self,profile,problem,usage,context=None):
   business_context={'industry':clean_text(profile['industry']['category']),'business_type':clean_text(profile['industry']['subtype']),'description':clean_text(profile['business_description']),'customers':clean_text(profile.get('customer_description') or ''),'customer_type':profile.get('customer_type'),'region':{k:clean_text(v) if isinstance(v,str) else v for k,v in profile['operating_region'].items()},'software':[clean_text(s['raw_name']) for s in profile['existing_software']],'workflow':{k:clean_text(v) for k,v in (context or {}).items() if isinstance(v,str)}}
   business_context['contact_channels']=profile.get('customer_contact_channels') or []

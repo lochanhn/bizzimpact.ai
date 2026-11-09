@@ -105,6 +105,12 @@ class MatchQuality(BaseModel):
  checks:list[str]=Field(default_factory=list)
  limitations:list[str]=Field(default_factory=list)
 
+class ToolGuidance(BaseModel):
+ why_it_may_help:str
+ covers:list[str]=Field(default_factory=list)
+ setup_steps:list[str]=Field(default_factory=list)
+ verify_before_buying:list[str]=Field(default_factory=list)
+
 class ClaimEvidence(BaseModel):
  claim_key:str
  claim_value:object=None
@@ -126,6 +132,7 @@ class DiscoveredTool(BaseModel):
  issues:list[str]=Field(default_factory=list)
  synthetic:bool=False
  quality:MatchQuality|None=None
+ guidance:ToolGuidance|None=None
 class Usage(BaseModel):
  model_config=ConfigDict(extra='allow')
  model_calls:int=Field(ge=0)

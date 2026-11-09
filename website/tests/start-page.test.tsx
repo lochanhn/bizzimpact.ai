@@ -44,7 +44,8 @@ test('owner answers the check-up step by step and gets a plan, comparison and ad
   await lib.waitFor(() => assert.ok(view.getByRole('heading', { name: 'Your AI plan' })));
   assert.ok(view.getByRole('heading', { name: /Recommended plan/ }));
   assert.ok(view.getByRole('heading', { name: /Compare tools/ }));
-  assert.ok(view.getByText(/How we weighted this for you/));
+  assert.ok(view.getByText(/What we considered/));
+  assert.equal(/Fit for you|Confidence|How .* scores for you/i.test(view.container.textContent??''),false);
   assert.ok(view.getByRole('heading', { name: /Get started/ }));
 });
 
@@ -54,7 +55,7 @@ test('filled-in example jumps to review and produces a landscaping plan with loc
   assert.ok(view.getByText(/Landscaping \/ lawn care/));
   await user.click(view.getByRole('button', { name: /See my AI plan/ }));
   await lib.waitFor(() => assert.ok(view.getByRole('heading', { name: 'Your AI plan' })));
-  assert.ok(view.getByText('Top picks side by side'));
+  assert.ok(view.getByText('Suggested tools side by side'));
   assert.ok(view.getByText(/Free, neutral local help/));
   assert.ok(view.getAllByText(/Rosie/).length > 0);
 });

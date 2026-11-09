@@ -22,22 +22,13 @@ const EXAMPLES: { label: string; problem: string; profile: Profile }[] = [
 ];
 const STACK_LABEL = { 'in-your-stack': 'Already in your software', documented: 'Connection documented', 'needs-checking': 'Connection needs checking', 'not-on-plan': 'Not on reviewed plans' } as const;
 
-function Bar({ value }: { value: number }) {
-  return <span className="dx-bar" aria-hidden="true"><span style={{ width: `${value}%` }} /></span>;
-}
-
-function CandidateCard({ c, rank }: { c: Candidate; rank: number }) {
+function CandidateCard({ c }: { c: Candidate }) {
   return (
     <article className="dx-card" aria-labelledby={`tool-${c.toolId}`}>
       <div className="dx-card-head">
-        <span className="dx-rank" aria-hidden="true">{rank}</span>
         <div className="dx-card-title">
           <h3 id={`tool-${c.toolId}`}>{c.name}</h3>
           <small>{c.category}</small>
-        </div>
-        <div className="dx-match" aria-label={`Need match ${c.relevance} out of 100: ${c.relevanceLabel}`}>
-          <strong>{c.relevanceLabel}</strong>
-          <span><Bar value={c.relevance} /> {c.relevance}</span>
         </div>
       </div>
       <p className="dx-desc">{c.description}</p>
@@ -202,8 +193,8 @@ export default function DiscoverPage() {
             </div>}
 
             {r.candidates.length > 0 && <>
-              <p className="dx-legend"><strong>Need match</strong> shows how well a tool’s documented purpose fits what you described. It is not a quality rating or a recommendation.</p>
-              <div className="dx-list">{r.candidates.slice(0, shown).map((c, i) => <CandidateCard key={c.toolId} c={c} rank={i + 1} />)}</div>
+              <p className="dx-legend">These tools are ordered using your stated need and the available product evidence. Review the reasons and checks before choosing.</p>
+              <div className="dx-list">{r.candidates.slice(0, shown).map(c => <CandidateCard key={c.toolId} c={c} />)}</div>
               {shown < r.candidates.length && <button type="button" className="button secondary" onClick={() => setShown(r.candidates.length)}>Show {r.candidates.length - shown} more</button>}
               {r.totalCandidates > r.candidates.length && <p className="dx-notice">Showing the {r.candidates.length} closest of {r.totalCandidates} matches.</p>}
             </>}

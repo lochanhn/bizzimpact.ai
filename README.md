@@ -4,6 +4,8 @@
 
 Built for the **AI for Small Business Hack-a-thon, Fall 2026** (Robert H. Smith School of Business). The challenge: *help small businesses discover, compare and adopt AI tools.*
 
+For the complete research, catalogue, architecture, implementation, deployment, evaluation, limitations, and roadmap handoff, read [docs/PROJECT_COMPLETE_HANDOFF.md](docs/PROJECT_COMPLETE_HANDOFF.md).
+
 ---
 
 ## Live demo

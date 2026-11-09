@@ -1,5 +1,7 @@
 # bizzimpact.ai
 
+For a complete project narrative covering research, the 111-tool catalogue, recommendation architecture, implementation assistant, database, deployment, evaluation, limitations, and roadmap, see [`docs/PROJECT_COMPLETE_HANDOFF.md`](../docs/PROJECT_COMPLETE_HANDOFF.md).
+
 Small-business onboarding and evidence-backed discovery of existing AI tools. Next.js frontend in `website/`; FastAPI/Pydantic backend in `backend/`. The user-authorized live AI trial adds an experimental evidence match index with visible weights, citations and quality gates; it is not a validated product rating.
 
 ## Run the complete local demo

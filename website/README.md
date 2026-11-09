@@ -44,7 +44,9 @@ The earlier scored assessment is retained as source in `components/prototype.tsx
 
 ## Real accounts and live discovery
 
-[AUTH_SETUP.md](AUTH_SETUP.md) explains Supabase configuration. Both SQL migrations and the catalogue seed are required for the new business/discovery records. Account/DB credentials are not configured in this workspace.
+[AUTH_SETUP.md](AUTH_SETUP.md) explains Supabase configuration. The current project's schema, access grants, and 111-tool catalogue seed are applied, and private connection settings are configured locally and on EC2. Credentials are excluded from Git. Public Auth redirect configuration and genuine signup/session checks remain pending.
+
+[Docker packaging and EC2 deployment](../deploy/ec2/README.md) is the team's reference for building, deploying, checking, updating, and rolling back the hosted app.
 
 Backend default: `DISCOVERY_MODE=mock`, `OPENROUTER_ENABLED=false`, `LIVE_WEB_ENABLED=false`, `EXPLICIT_LIVE_AUTHORIZED=false`. No live credential is read from the repository’s saved key file. Real authenticated users can use `DISCOVERY_MODE=catalog` with the seeded SQL catalogue and no model/web charges. Only an explicitly authorised, configured `live` mode can enable OpenRouter parsing/search; demo identities always remain mock, even if flags change.
 

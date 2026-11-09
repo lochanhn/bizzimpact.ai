@@ -81,3 +81,48 @@ Observed: 41 backend tests and 44 frontend/matching/auth/DOM tests passed; TypeS
 ## Country and region controls
 
 Location choices use pinned `country-region-data` 4.1.0 ([source](https://github.com/country-regions/country-region-data)), bundled with the frontend rather than requested from a location API. The country list contains 249 entries. Country changes clear the old region; selected region codes remain compatible with stored profiles, while summaries show full names. Missing/custom regions can be entered manually. US postal-only military codes and sovereign-country postal destinations are omitted from US state/territory choices. Data changes require a dependency update and frontend rebuild. MIT attribution is served at `/third-party-notices.txt`.
+---
+
+## AI check-up: discover → review → integrate (`/start`)
+
+Runs inside Next.js (no backend needed). Architecture: [../docs/ARCHITECTURE.md](../docs/ARCHITECTURE.md). Optional AI features read `OPENROUTER_API_KEY`, `OPENROUTER_ENABLED`, `LIVE_WEB_ENABLED`, `PLAN_SIGNING_SECRET` and `OUTCOME_MIN_DAYS` (see `.env.example`).
+
+### Scripts
+| Command | Does |
+|---|---|
+| `npm test` | Automated engine, API, UI and security checks |
+| `npm run typecheck` | TypeScript |
+| `npm run eval:discovery` | Accuracy on tuning + held-out sets (`-- --ai` adds the AI fallback; costs cents) |
+| `npm run enrich:facts` | Extract cited security, privacy and setup facts from vendor sites (paid, ~$0.008/tool) |
+| `npm run verify:zapier` | Verify Zapier directory listings (free) |
+| `npm run warm:live` | Pre-run live discovery for every catalog gap (paid, ~$0.008/search) |
+
+## Pages and APIs
+| Route | Purpose |
+|---|---|
+| `/start` (`?demo=landscaper` / `?demo=cafe`) | AI check-up → optional full plan (dashboard action) |
+| `/discover` | Problem in your own words → needs → tools → hand-off to `/start` |
+| `/` | Homepage with one Get started action leading to the dashboard |
+| `/architecture`, `/methodology` | Built-vs-roadmap diagram; published rating method and neutrality policy |
+| `POST /api/plan` | Answers → Brief → Discover → Review → Integrate (+ signed plan token) |
+| `POST /api/discover`, `/api/discover/live` | Free-text discovery (rules + AI fallback); live web discovery for gaps |
+| `POST /api/outcomes` | Owner check-ins (signed plan token required) |
+| `POST /api/integrations/webhook` | Send plan to the owner's own Zapier/Make hook (allow-listed) |
+| `POST /api/assess`, `GET /api/catalog`, `/api/auth/*` | Lochan's V1 plan-level matching, catalog, Supabase accounts (see [AUTH_SETUP.md](AUTH_SETUP.md)) |
+
+## Code map
+```
+lib/intake/        bank.ts (questions, data) · brief.ts (validation → BusinessBrief)
+lib/discovery/     taxonomy · tool-tags · interpret (rules) · ai-interpret · live · discover · from-brief · evaluate
+lib/review/        review.ts (gates, pillars, weights, confidence) · facts.ts (cited facts, badges, setup tiers) · outcomes.ts · requirements.ts
+lib/integration/   graph.ts (apps, links, Zapier) · plan.ts (bundles, adoption) · recipes.ts · exports.ts (ics, csv, webhook)
+lib/ai/            openrouter.ts (server-only client, spend cap, ledger)
+lib/catalog.ts     111-tool reviewed catalog (Lochan)   lib/match.ts  V1 plan-level matching (Lochan)
+```
+
+## Data and privacy notes
+- **Owner answers and free text are never logged.** Logs are allow-listed counts, versions and costs.
+- **`data/runtime/`** (spend ledger, check-ins) is git-ignored. In production these move to Postgres.
+- **Tool facts come from vendor pages** checked Nov 7–8, 2026. Tools were not tested inside vendor accounts.
+
+Merge integration: the homepage keeps one Get started action and dashboard landing. The optional AI-plan journey is linked from the dashboard; both questionnaires use the shared country/region controls. All new POST endpoints require the configured same origin. Fresh frontend AI calls remain disabled by default and have separate accounting from the FastAPI backend. In production, set a private `PLAN_SIGNING_SECRET` of at least 32 characters before enabling check-ins; without it, plans still work and check-in controls remain hidden. `OUTCOME_MIN_DAYS` stays 14 by default. Runtime JSON remains temporary unless deployment provides persistent storage.

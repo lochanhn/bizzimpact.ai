@@ -1,0 +1,2285 @@
+{
+  "inventory-forecasting|food": {
+    "searchedAt": "2026-11-08T22:03:30.418Z",
+    "candidates": [
+      {
+        "name": "Cactus AI",
+        "url": "https://www.trycactus.ai",
+        "whatItDoes": "Tracks purchases, usage, waste and reorder points for restaurants, with inventory forecasting on higher tiers.",
+        "pricing": "$49/mo",
+        "smallBusinessFit": "The $49/mo per-location Starter plan suits single cafes, with invoice and POS integration reducing manual counting.",
+        "sources": [
+          {
+            "url": "https://www.trycactus.ai/",
+            "title": "Restaurant Inventory Management Software | Cactus AI"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:03:30.418Z"
+      },
+      {
+        "name": "Fudies",
+        "url": "https://fudies.ai",
+        "whatItDoes": "Forecasts covers and sales per branch two weeks out, and drafts prep lists and supplier orders.",
+        "pricing": "$49 USD / mo",
+        "smallBusinessFit": "The $49 Basic plan for one branch suits a small restaurant just getting started, with a 14-day free trial.",
+        "sources": [
+          {
+            "url": "https://fudies.ai/",
+            "title": "Fudies — The AI-powered operating system for your restaurant"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:03:30.418Z"
+      },
+      {
+        "name": "LootPilot",
+        "url": "https://lootpilot.ai",
+        "whatItDoes": "Deducts recipe ingredients from stock on each sale, sends low-stock alerts, and forecasts seasonal demand.",
+        "pricing": "$29–79/mo",
+        "smallBusinessFit": "Connects to Toast, Square and Clover without new hardware, and the $29 Starter plan suits one-location restaurants.",
+        "sources": [
+          {
+            "url": "https://lootpilot.ai/",
+            "title": "LootPilot — AI Inventory Autopilot"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:03:30.418Z"
+      },
+      {
+        "name": "RestoIQ",
+        "url": "https://myrestoiq.com",
+        "whatItDoes": "Generates 7-day AI sales forecasts from your history to guide ordering and reduce over-ordering waste.",
+        "pricing": "From $49/mo",
+        "smallBusinessFit": "Publicly priced from $49/mo without a sales call, so single-location operators can sign up themselves.",
+        "sources": [
+          {
+            "url": "https://myrestoiq.com/",
+            "title": "RestoIQ — AI Restaurant Inventory & Cost Control Software | From $49/mo"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:03:30.418Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0085528
+  },
+  "review-management|home": {
+    "searchedAt": "2026-11-08T22:03:29.907Z",
+    "candidates": [
+      {
+        "name": "CloutOwl",
+        "url": "https://cloutowl.com",
+        "whatItDoes": "Monitors Google, Yelp and Facebook reviews and drafts on-brand AI replies for owners to approve.",
+        "pricing": "$49/mo",
+        "smallBusinessFit": "Single-location Starter plan and HVAC-focused results suit small trades businesses.",
+        "sources": [
+          {
+            "url": "https://cloutowl.com/",
+            "title": "Win every review."
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:03:29.907Z"
+      },
+      {
+        "name": "ZiggyReviews",
+        "url": "https://ziggyreviews.com",
+        "whatItDoes": "Drafts AI responses to new reviews from Google, Yelp and Facebook, and sends automated review requests.",
+        "pricing": "$29/mo",
+        "smallBusinessFit": "Automatic post-job review requests and a one-location plan suit small trades businesses.",
+        "sources": [
+          {
+            "url": "https://ziggyreviews.com/",
+            "title": "ZiggyReviews — More 5-star reviews. Less chasing."
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:03:29.907Z"
+      },
+      {
+        "name": "RepBot",
+        "url": "https://repbot.dev",
+        "whatItDoes": "Monitors Google, Yelp and Facebook reviews and drafts contextual AI replies sent with one click.",
+        "pricing": "$49/mo",
+        "smallBusinessFit": "Lists HVAC and home services among its industries, with a single-location Starter plan.",
+        "sources": [
+          {
+            "url": "https://repbot.dev/",
+            "title": "RepBot – AI Review Management for Local Businesses"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:03:29.907Z"
+      },
+      {
+        "name": "TinyReviews",
+        "url": "https://www.tinyreviewsapp.com",
+        "whatItDoes": "Gathers Google and Facebook reviews into one dashboard with AI-drafted replies; Yelp is not yet supported.",
+        "pricing": "from $29/mo",
+        "smallBusinessFit": "Built around an HVAC owner's testimonial, with low-cost additional locations for small multi-site businesses.",
+        "sources": [
+          {
+            "url": "https://www.tinyreviewsapp.com/",
+            "title": "TinyReviews | Small Business Review Management Software (from $29/mo)"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:03:29.907Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0084751
+  },
+  "review-management|food": {
+    "searchedAt": "2026-11-08T22:03:31.745Z",
+    "candidates": [
+      {
+        "name": "GetSetReply",
+        "url": "https://getsetreply.com",
+        "whatItDoes": "Collects Google, Yelp, TripAdvisor and other reviews in one inbox and drafts replies for you to post.",
+        "pricing": "$29/mo",
+        "smallBusinessFit": "Self-serve setup with public pricing and a Starter plan for a single cafe or restaurant location.",
+        "sources": [
+          {
+            "url": "https://getsetreply.com/",
+            "title": "GetSetReply: One Inbox for Google, Yelp and TripAdvisor Reviews"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:03:31.745Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0086957
+  },
+  "inventory-forecasting|retail": {
+    "searchedAt": "2026-11-08T21:55:27.761Z",
+    "candidates": [
+      {
+        "name": "Forthcast",
+        "url": "https://www.forthcast.io",
+        "whatItDoes": "Forecasts Shopify demand per product, flags stockout risk, and drafts purchase orders for review.",
+        "pricing": "$19.99/month",
+        "smallBusinessFit": "Flat $19.99 monthly with no SKU tiers, plus a 14-day trial billed through Shopify.",
+        "sources": [
+          {
+            "url": "https://www.forthcast.io/",
+            "title": "Forthcast: AI Inventory Forecasting for Shopify — $19.99/mo"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:55:27.761Z"
+      },
+      {
+        "name": "Restock",
+        "url": "https://apps.shopify.com",
+        "whatItDoes": "Forecasts demand per product and ranks a reorder list with exact order quantities for Shopify stores.",
+        "pricing": "$19 / month",
+        "smallBusinessFit": "Free tier covers small catalogs, and a weekly email digest delivers reorder alerts.",
+        "sources": [
+          {
+            "url": "https://apps.shopify.com/restock-7",
+            "title": "Restock: Reorder Forecasting - Know what to reorder, before you run out | Shopify App Store"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:55:27.761Z"
+      },
+      {
+        "name": "Yeer",
+        "url": "https://yeer.ai",
+        "whatItDoes": "Generates a per-product AI demand forecast for Shopify stores and turns it into reorder suggestions.",
+        "pricing": "Free for up to 50 products; Growth is $49/month",
+        "smallBusinessFit": "Free plan covers up to 50 products, so small catalogs can start without paying.",
+        "sources": [
+          {
+            "url": "https://yeer.ai/demand-forecasting",
+            "title": "Demand Forecasting for Shopify — AI Forecasts for Every Product | Yeer"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:55:27.761Z"
+      },
+      {
+        "name": "Storekeeper",
+        "url": "https://storekeeper.ai",
+        "whatItDoes": "Provides per-SKU AI demand forecasting with reorder-point alerts and dead-stock detection.",
+        "pricing": "$49 a month for one location",
+        "smallBusinessFit": "Single-location plan with no setup fee, no per-order charges, and a live demo before paying.",
+        "sources": [
+          {
+            "url": "https://storekeeper.ai/pricing",
+            "title": "Inventory Management Software Pricing for Small Business | Storekeeper"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:55:27.761Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0085396
+  },
+  "inventory-forecasting|home": {
+    "searchedAt": "2026-11-08T21:55:28.368Z",
+    "candidates": [
+      {
+        "name": "InventoryQuick",
+        "url": "https://inventoryquick.com",
+        "whatItDoes": "Inventory software with barcode scanning, purchase orders, and demand forecasting on higher tiers.",
+        "pricing": "$19/mo",
+        "smallBusinessFit": "Flat pricing with 15 users included on Business, built for contractors and property managers.",
+        "sources": [
+          {
+            "url": "https://inventoryquick.com/",
+            "title": "InventoryQuick — Inventory Software, $19/mo Flat | Free Trial"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:55:28.368Z"
+      },
+      {
+        "name": "FieldServ AI Inventory Management",
+        "url": "https://www.fieldserv.ai",
+        "whatItDoes": "Tracks parts and tools across trucks and warehouses, with forecasting and automatic purchase orders.",
+        "pricing": null,
+        "smallBusinessFit": "Built for plumbing, HVAC, electrical, and landscaping trades, including single-truck operations.",
+        "sources": [
+          {
+            "url": "https://www.fieldserv.ai/solutions/inventory-management",
+            "title": "FieldServAi"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:55:28.368Z"
+      },
+      {
+        "name": "Supply Sense AI",
+        "url": "https://supplysense.ai",
+        "whatItDoes": "Tracks supplies across locations, predicts usage with AI, and auto-generates restock lists.",
+        "pricing": "$0/forever Starter; $5/month per location after your first 3",
+        "smallBusinessFit": "A free starter tier and low per-location pricing suit small residential cleaning and maid service teams.",
+        "sources": [
+          {
+            "url": "https://supplysense.ai/",
+            "title": "Supply Sense AI - Cleaning Inventory Automation"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:55:28.368Z"
+      },
+      {
+        "name": "Verve AI",
+        "url": "https://www.getverveai.com",
+        "whatItDoes": "Provides AI demand forecasts for every SKU, plus low-stock alerts and multi-location stock management.",
+        "pricing": "$19.99/Month",
+        "smallBusinessFit": "Low flat price with AI forecasting, though the results don't show a home-services focus.",
+        "sources": [
+          {
+            "url": "https://www.getverveai.com/pricing",
+            "title": "Verve AI Pricing — $19.99/Month, Everything Included"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:55:28.368Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0086192
+  },
+  "review-management|retail": {
+    "searchedAt": "2026-11-08T21:55:44.055Z",
+    "candidates": [
+      {
+        "name": "GetSetReply",
+        "url": "https://getsetreply.com",
+        "whatItDoes": "Collects reviews from Google, Yelp, Etsy and more into one inbox with drafted replies for you to post.",
+        "pricing": "$29/mo",
+        "smallBusinessFit": "Self-serve setup with no API keys, and Etsy coverage suits online sellers with one location.",
+        "sources": [
+          {
+            "url": "https://getsetreply.com/",
+            "title": "GetSetReply: One Inbox for Google, Yelp and TripAdvisor Reviews"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:55:44.055Z"
+      },
+      {
+        "name": "ZapReply",
+        "url": "https://zapreply.com",
+        "whatItDoes": "Writes three AI reply options for pasted Google, Yelp or TripAdvisor reviews in under 30 seconds.",
+        "pricing": "$29/mo",
+        "smallBusinessFit": "Simple copy-paste workflow with no integration needed, suited to small teams replying manually.",
+        "sources": [
+          {
+            "url": "https://zapreply.com/",
+            "title": "ZapReply – AI Review Responses for Local Businesses"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:55:44.055Z"
+      },
+      {
+        "name": "Typani",
+        "url": "https://www.typani.com",
+        "whatItDoes": "Connects to Google Business Profile and drafts replies in your voice, with optional auto-posting on Pro.",
+        "pricing": "Free: $0, 5 replies a month. Starter: $29/mo. Pro: $79/mo.",
+        "smallBusinessFit": "Free plan and one-tap approval suit a small retail team without a dedicated reply manager.",
+        "sources": [
+          {
+            "url": "https://www.typani.com/",
+            "title": "Typani — Your Google Reviews, Answered on Autopilot"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:55:44.055Z"
+      },
+      {
+        "name": "Responsly",
+        "url": "https://responsly.ai",
+        "whatItDoes": "Monitors Google reviews across locations and drafts AI replies in your brand voice for approval or auto-posting.",
+        "pricing": "$10/mo /location",
+        "smallBusinessFit": "Per-location pricing starting at $10 a month suits a single store, with no free tier.",
+        "sources": [
+          {
+            "url": "https://responsly.ai/",
+            "title": "Google Review Management Software with AI Replies | Responsly"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:55:44.055Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.008637
+  },
+  "staff-scheduling|food": {
+    "searchedAt": "2026-11-08T22:03:30.403Z",
+    "candidates": [
+      {
+        "name": "StaffApp.ai",
+        "url": "https://www.staffapp.ai",
+        "whatItDoes": "Drag-and-drop shift scheduling with templates, shift swaps, time-off requests and GPS clock-in.",
+        "pricing": "$19/mo",
+        "smallBusinessFit": "The Basic plan covers one location and up to 15 employees, suiting small single-site teams.",
+        "sources": [
+          {
+            "url": "https://www.staffapp.ai/pricing",
+            "title": "Pricing — StaffApp.ai | 1 Month Free, Plans from $19/mo · StaffApp.ai"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:03:30.403Z"
+      },
+      {
+        "name": "Kronto",
+        "url": "https://kronto.com",
+        "whatItDoes": "Builds schedules from sales, flags overtime and clopenings, and lets staff find shift cover from their phones.",
+        "pricing": "$5 per user per month",
+        "smallBusinessFit": "Used by coffee shop teams such as Birch Coffee, and billed per user so costs grow with staff.",
+        "sources": [
+          {
+            "url": "https://kronto.com/",
+            "title": "Build the Week in Minutes, Keep Labor on Budget | Kronto"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:03:30.403Z"
+      },
+      {
+        "name": "SavorCrew",
+        "url": "https://savorcrew.com",
+        "whatItDoes": "Drafts next week's schedule from your roster and availability, with shift swaps and mobile clock-in.",
+        "pricing": "$9.99 per venue per month",
+        "smallBusinessFit": "Built for independent restaurants and priced per venue, so a single-location owner pays one fee.",
+        "sources": [
+          {
+            "url": "https://savorcrew.com/",
+            "title": "Build the week inside your labor budget. — SavorCrew"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:03:30.403Z"
+      }
+    ],
+    "dropped": 1,
+    "costUsd": 0.0084931
+  },
+  "staff-scheduling|home": {
+    "searchedAt": "2026-11-08T21:56:05.678Z",
+    "candidates": [
+      {
+        "name": "ShiftPro",
+        "url": "https://shiftpro.io",
+        "whatItDoes": "Uses AI to build employee schedules, handle shift swaps, track time, and control overtime.",
+        "pricing": "$0.99 for first 30 days, then $49/month",
+        "smallBusinessFit": "Built for service teams with hourly staff, offers unlimited employees, and has no contract.",
+        "sources": [
+          {
+            "url": "https://shiftpro.io/employee-scheduling-software",
+            "title": "shiftpro.io"
+          },
+          {
+            "url": "https://shiftpro.io/",
+            "title": "shiftpro.io"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:56:05.678Z"
+      },
+      {
+        "name": "Clockin",
+        "url": "https://clockin-scheduler.com",
+        "whatItDoes": "Collects staff availability by SMS or WhatsApp, auto-builds rosters, and processes shift swap requests by text.",
+        "pricing": "Starter is $19/mo for up to 15 employees",
+        "smallBusinessFit": "Requires no staff app, suits small teams, and includes a 14-day free trial with no credit card.",
+        "sources": [
+          {
+            "url": "https://clockin-scheduler.com/",
+            "title": "Clockin — AI Rostering via SMS"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:56:05.678Z"
+      },
+      {
+        "name": "Crewii",
+        "url": "https://crewii.com",
+        "whatItDoes": "Provides drag-and-drop shift scheduling, finds eligible staff, and alerts managers when swaps or replacements are needed.",
+        "pricing": "Free Tier: 0 USD forever (1 admin, 5 staff); User based: 12.99 USD per month/staff",
+        "smallBusinessFit": "Free tier covers five staff members, and it offers location-based clock-ins for small crews.",
+        "sources": [
+          {
+            "url": "https://crewii.com/",
+            "title": "Shift Management, Scheduling, Invoicing & Payroll | Crewii"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:56:05.678Z"
+      },
+      {
+        "name": "FieldOS",
+        "url": "https://myfieldos.com",
+        "whatItDoes": "Auto-assigns field jobs to technicians based on location, availability, and skill, with a mobile schedule app.",
+        "pricing": "Starter free forever (up to 3 technicians); Growth $99 /month after trial",
+        "smallBusinessFit": "Built for HVAC, plumbing, electrical, and landscaping crews, though shift swap handling is not listed.",
+        "sources": [
+          {
+            "url": "https://myfieldos.com/",
+            "title": "FieldOS — AI Scheduling for Field Service Businesses"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:56:05.678Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0085072
+  },
+  "route-dispatch|food": {
+    "searchedAt": "2026-11-08T21:56:24.810Z",
+    "candidates": [
+      {
+        "name": "Routey",
+        "url": "https://getroutey.com",
+        "whatItDoes": "AI dispatcher that plans routes and assigns jobs to field teams, then tracks the day.",
+        "pricing": null,
+        "smallBusinessFit": "Field-team focus; no restaurant-specific features or public pricing shown in results.",
+        "sources": [
+          {
+            "url": "https://getroutey.com/",
+            "title": "Routey | AI dispatcher that plans and runs your field team's day"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:56:24.810Z"
+      },
+      {
+        "name": "Geofleet.ai",
+        "url": "https://geofleet.ai",
+        "whatItDoes": "AI agents that plan delivery routes, auto-dispatch orders, and track each stop live.",
+        "pricing": "Plans from $39/month",
+        "smallBusinessFit": "Lite plan covers one hub with drivers and orders, suiting a single restaurant's delivery.",
+        "sources": [
+          {
+            "url": "https://geofleet.ai/",
+            "title": "Delivery Management Software with AI Dispatch Agents & Copilot | Geofleet.ai"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:56:24.810Z"
+      },
+      {
+        "name": "CurbsideOps",
+        "url": "https://curbsideops.com",
+        "whatItDoes": "Food truck dispatch that checks live traffic and setup times to assign events to trucks.",
+        "pricing": "$79/mo Intelligent Dispatcher add-on on Professional",
+        "smallBusinessFit": "Built for food trucks; cafes with mobile events or catering can use its drive-time dispatching.",
+        "sources": [
+          {
+            "url": "https://curbsideops.com/features/dispatcher",
+            "title": "Food Truck Dispatch Software | CurbsideOps"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:56:24.810Z"
+      },
+      {
+        "name": "Routella",
+        "url": "https://routella.app",
+        "whatItDoes": "Optimizes multi-stop delivery routes, dispatches drivers, and sends live tracking to customers.",
+        "pricing": "$29/month",
+        "smallBusinessFit": "Free plan and $29 Growth tier suit small delivery operations with no per-driver fees.",
+        "sources": [
+          {
+            "url": "https://routella.app/",
+            "title": "Delivery route planning, dispatch & WhatsApp tracking — Routella"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:56:24.810Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0086463
+  },
+  "route-dispatch|home": {
+    "searchedAt": "2026-11-08T22:04:11.979Z",
+    "candidates": [
+      {
+        "name": "Hero365 AI Dispatcher",
+        "url": "https://hero365.ai",
+        "whatItDoes": "AI dispatcher proposes routes by drive time, skills, and priority, then confirms with customers.",
+        "pricing": "Starts at $19.99/mo",
+        "smallBusinessFit": "Per-business pricing, not per tech, suits one-person shops up to multi-crew operations.",
+        "sources": [
+          {
+            "url": "https://hero365.ai/service-dispatch-software",
+            "title": "Service Dispatch Software With an AI Dispatcher | Hero365"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:04:11.979Z"
+      },
+      {
+        "name": "ServeToro",
+        "url": "https://servetoro.com",
+        "whatItDoes": "Field service software with drag-drop scheduling, live crew GPS, and automatic route optimization.",
+        "pricing": "$49/month",
+        "smallBusinessFit": "Built for outdoor service pros like landscapers; the solo plan covers one technician.",
+        "sources": [
+          {
+            "url": "https://servetoro.com/",
+            "title": "ServeToro — service management software for every trade"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:04:11.979Z"
+      },
+      {
+        "name": "Sqyre",
+        "url": "https://sqyre.ai",
+        "whatItDoes": "AI-powered scheduling that assigns technicians by skill, location, and availability, and optimizes routes.",
+        "pricing": "Base $49/mo, Pro $399/mo, Max $599/mo. Yearly is 2 months free",
+        "smallBusinessFit": "Plans start at $49/month with unlimited seats on Pro and Max, suiting small crews.",
+        "sources": [
+          {
+            "url": "https://sqyre.ai/",
+            "title": "Sqyre | #1 Field Service Management Platform"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:04:11.979Z"
+      },
+      {
+        "name": "RouteTrak",
+        "url": "https://routetrak.com",
+        "whatItDoes": "Plans daily job routes with AI and dispatches the right tech, with live GPS and ETAs.",
+        "pricing": "$49/mo",
+        "smallBusinessFit": "Starter plan covers 1–3 truck crews with AI route optimization and 250 monthly texts.",
+        "sources": [
+          {
+            "url": "https://routetrak.com/",
+            "title": "RouteTrak — AI Route & Dispatch for HVAC, Plumbing & Field Service"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:04:11.979Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0085863
+  },
+  "route-dispatch|retail": {
+    "searchedAt": "2026-11-08T21:56:48.788Z",
+    "candidates": [
+      {
+        "name": "Geofleet Lite",
+        "url": "https://geofleet.ai",
+        "whatItDoes": "AI agents plan routes, dispatch orders to drivers, track deliveries live, and capture proof of delivery.",
+        "pricing": "Starts at $49/month or $39/month billed annually",
+        "smallBusinessFit": "Lite plan covers one hub with 3 drivers, suited to a single shop or warehouse.",
+        "sources": [
+          {
+            "url": "https://geofleet.ai/",
+            "title": "Delivery Management Software with AI Dispatch Agents & Copilot | Geofleet.ai"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:56:48.788Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0086917
+  },
+  "estimates-quotes|food": {
+    "searchedAt": "2026-11-08T21:56:57.973Z",
+    "candidates": [
+      {
+        "name": "EstimaIQ",
+        "url": "https://estimaiq.com",
+        "whatItDoes": "Creates contractor job estimates and proposals from chat, voice, or photos, priced with your own rates.",
+        "pricing": "$49/mo, or $39/mo billed annually ($468/yr).",
+        "smallBusinessFit": "Built for US contractors, not restaurants; little direct fit for catering or cafe quoting.",
+        "sources": [
+          {
+            "url": "https://estimaiq.com/",
+            "title": "EstimaIQ — AI Estimating Software for Contractors"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:56:57.973Z"
+      },
+      {
+        "name": "Renoz",
+        "url": "https://www.renoz.app",
+        "whatItDoes": "Generates itemized professional quotes from a short job description in seconds.",
+        "pricing": "$19/per month",
+        "smallBusinessFit": "Quote tool for general contractors; restaurant catering or repair quotes would need manual adjustment.",
+        "sources": [
+          {
+            "url": "https://www.renoz.app/",
+            "title": "Renoz - The Modern Way to Quote | AI Contractor Estimating Software | Renoz"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:56:57.973Z"
+      },
+      {
+        "name": "QuoteAnvil",
+        "url": "https://www.quoteanvil.com",
+        "whatItDoes": "Builds itemized estimates and invoices for trades, with connected job details and scheduling.",
+        "pricing": "$70/year",
+        "smallBusinessFit": "Trade-focused (flooring, plumbing, HVAC); no restaurant or food-service templates shown.",
+        "sources": [
+          {
+            "url": "https://www.quoteanvil.com/",
+            "title": "QuoteAnvil - Contractor Software for 150+ Trades"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:56:57.973Z"
+      },
+      {
+        "name": "QuoteCrew",
+        "url": "https://getquotecrew.com",
+        "whatItDoes": "Turns spoken job descriptions into itemized quotes sent by text or email.",
+        "pricing": "$29/month for individuals",
+        "smallBusinessFit": "Designed for on-site home-service trades like painting and cleaning, not restaurant or cafe operations.",
+        "sources": [
+          {
+            "url": "https://getquotecrew.com/",
+            "title": "Fast Quoting & Estimating App for Home-Service Pros | QuoteCrew"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:56:57.973Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0083195
+  },
+  "estimates-quotes|home": {
+    "searchedAt": "2026-11-08T22:04:42.092Z",
+    "candidates": [
+      {
+        "name": "PlanUpPro",
+        "url": "https://planuppro.com",
+        "whatItDoes": "Creates professional AI-built quotes, invoices and change orders from a voice or text description.",
+        "pricing": "$16.58/mo",
+        "smallBusinessFit": "Designed for solo contractors and small businesses, with reviews from 3,432 contractors.",
+        "sources": [
+          {
+            "url": "https://planuppro.com/",
+            "title": "AI-Powered Professional Quotes in Seconds - PlanUpPro"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:04:42.092Z"
+      },
+      {
+        "name": "QuoteIQ",
+        "url": "https://myquoteiq.com",
+        "whatItDoes": "AI estimator that generates market-priced quotes from property photos and job descriptions for home service contractors.",
+        "pricing": "$29.99/month",
+        "smallBusinessFit": "Built for home service contractors, with a $29.99/mo solo plan including 500 IQ Credits.",
+        "sources": [
+          {
+            "url": "https://myquoteiq.com/features/ai-assistant-package/",
+            "title": "AI Assistant Package For Contractors | QuoteIQ"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:04:42.092Z"
+      },
+      {
+        "name": "HollerUs",
+        "url": "https://www.hollerus.com",
+        "whatItDoes": "Lets trades send estimates and invoices, take payments, and use an AI estimate writer with catalog pricing.",
+        "pricing": "Paid plans start at $19/mo.",
+        "smallBusinessFit": "Made for solo operators and small crews in plumbing, HVAC, electrical and landscaping.",
+        "sources": [
+          {
+            "url": "https://www.hollerus.com/",
+            "title": "HollerUs — The AI Office for Every Trade"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:04:42.092Z"
+      },
+      {
+        "name": "QuoteCrew",
+        "url": "https://getquotecrew.com",
+        "whatItDoes": "Lets home-service pros speak a job description and receive an itemized, branded quote to send from their truck.",
+        "pricing": "$29/month for individuals",
+        "smallBusinessFit": "Built for on-site landscapers, lawn care and handyman businesses, in English or Spanish.",
+        "sources": [
+          {
+            "url": "https://getquotecrew.com/",
+            "title": "Fast Quoting & Estimating App for Home-Service Pros | QuoteCrew"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:04:42.092Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.008613
+  },
+  "estimates-quotes|retail": {
+    "searchedAt": "2026-11-08T21:57:15.669Z",
+    "candidates": [
+      {
+        "name": "Renoz",
+        "url": "https://www.renoz.app",
+        "whatItDoes": "Generates itemized construction quotes from a short job description, with edits available in a tap.",
+        "pricing": "$19/per month",
+        "smallBusinessFit": "Free tier and low-cost Pro plan suit small teams that quote jobs regularly without enterprise contracts.",
+        "sources": [
+          {
+            "url": "https://www.renoz.app/",
+            "title": "Renoz - The Modern Way to Quote | AI Contractor Estimating Software | Renoz"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:57:15.669Z"
+      },
+      {
+        "name": "EstimaIQ",
+        "url": "https://estimaiq.com",
+        "whatItDoes": "Builds priced estimates from chat descriptions or plan photos and emails branded proposals with online payment.",
+        "pricing": "$49/mo one plan, everything included",
+        "smallBusinessFit": "A single all-inclusive plan and 5 free quotes let a small contractor test it before paying.",
+        "sources": [
+          {
+            "url": "https://estimaiq.com/",
+            "title": "EstimaIQ — AI Estimating Software for Contractors"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:57:15.669Z"
+      },
+      {
+        "name": "Estimancer",
+        "url": "https://estimancer.com",
+        "whatItDoes": "Drafts priced, line-item estimates from job descriptions, photos, and plans for contractors across trades.",
+        "pricing": "Basic: $49.99/month, up to 20 estimates a month",
+        "smallBusinessFit": "Free plan and tiered monthly limits let small crews match spending to how many estimates they write.",
+        "sources": [
+          {
+            "url": "https://estimancer.com/",
+            "title": "Estimancer | AI Estimates for Contractors"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:57:15.669Z"
+      },
+      {
+        "name": "Setell",
+        "url": "https://setell.ai",
+        "whatItDoes": "Reads inbox messages, CAD files, and PDFs to draft quotes, and learns pricing from QuickBooks history.",
+        "pricing": "$49/month",
+        "smallBusinessFit": "Free tier and QuickBooks connection fit small shops already using accounting software for their books.",
+        "sources": [
+          {
+            "url": "https://setell.ai/pricing",
+            "title": "Pricing — Setell"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:57:15.669Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0081386
+  },
+  "cash-flow-forecasting|food": {
+    "searchedAt": "2026-11-08T21:57:29.136Z",
+    "candidates": [
+      {
+        "name": "Trezy",
+        "url": "https://www.trezy.io",
+        "whatItDoes": "AI cash flow forecasting for restaurants that predicts seasonal dips up to 12 months ahead and tracks daily cash.",
+        "pricing": "Starter Plan: 7.50 EUR",
+        "smallBusinessFit": "Built specifically for restaurant owners, with a 7-day free trial and seasonal forecasting for slow periods.",
+        "sources": [
+          {
+            "url": "https://www.trezy.io/en-us/cashflow-for-restaurants",
+            "title": "Master Your Restaurant's Cash Flow Through Every Season"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:57:29.136Z"
+      },
+      {
+        "name": "Postie AI (Poster POS add-on)",
+        "url": "https://joinposter.com",
+        "whatItDoes": "AI assistant that forecasts sales through month-end and warns of possible cash flow gaps.",
+        "pricing": "Prices start from $19 per month",
+        "smallBusinessFit": "Suits restaurants already using Poster POS, with 20 free actions monthly and forecasting from sales history.",
+        "sources": [
+          {
+            "url": "https://joinposter.com/en/tour/addons/postie",
+            "title": "Postie AI — AI Business Analyst and Document Assistant for Poster | Poster POS"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:57:29.136Z"
+      },
+      {
+        "name": "CFPilot",
+        "url": "https://www.cf-pilot.com",
+        "whatItDoes": "Rolling 13-week AI cash flow forecast with scenario planning, connected to QuickBooks or Xero and bank accounts.",
+        "pricing": "$199/mo",
+        "smallBusinessFit": "Designed for small businesses, with a free trial, 30-day money-back guarantee, and plain-English AI CFO chat.",
+        "sources": [
+          {
+            "url": "https://www.cf-pilot.com/",
+            "title": "AI cash-flow forecasting for businesses"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:57:29.136Z"
+      },
+      {
+        "name": "Cookstime",
+        "url": "https://www.cookstime.com",
+        "whatItDoes": "Restaurant accounting software with AI insights that can forecast cash flow and net income for next month.",
+        "pricing": null,
+        "smallBusinessFit": "Restaurant-specific bookkeeping that answers cash flow questions in plain language, aimed at US restaurants.",
+        "sources": [
+          {
+            "url": "https://www.cookstime.com/",
+            "title": "Cookstime restaurant bookkeeping | United States | Restaurant Accounting Software"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:57:29.136Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0085632
+  },
+  "cash-flow-forecasting|home": {
+    "searchedAt": "2026-11-08T22:04:31.760Z",
+    "candidates": [
+      {
+        "name": "Ando Forecast",
+        "url": "https://www.andosystems.com",
+        "whatItDoes": "Connects to QuickBooks or bank accounts for a 90-day cash view and AI-written next-step advice.",
+        "pricing": "$99/mo",
+        "smallBusinessFit": "Built specifically for pest control, HVAC, plumbing, lawn care, and cleaning businesses.",
+        "sources": [
+          {
+            "url": "https://app.andosystems.com/pricing",
+            "title": "Pricing: Ando Forecast for Home Service Businesses | Ando Forecast"
+          }
+        ],
+        "evidence": "third-party-mention",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:04:31.760Z"
+      },
+      {
+        "name": "Latch",
+        "url": "https://golatch.com",
+        "whatItDoes": "Provides a rolling 13-week cash forecast built from live AP, AR, and revenue, with low weeks flagged early.",
+        "pricing": "$299 / mo",
+        "smallBusinessFit": "Targets home service and construction firms, with self-setup in minutes and modeling for crew hires.",
+        "sources": [
+          {
+            "url": "https://golatch.com/services/financial-intelligence",
+            "title": "AI CFO built for Home Service and Construction | Latch"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:04:31.760Z"
+      },
+      {
+        "name": "Float Cashflow Forecasting",
+        "url": "https://apps.xero.com",
+        "whatItDoes": "Pulls Xero invoices, bills, and bank transactions into a live forecast projecting balances up to 36 months.",
+        "pricing": null,
+        "smallBusinessFit": "Established Xero app with 4.8 stars from 345 reviews and a free 14-day trial for small teams.",
+        "sources": [
+          {
+            "url": "https://apps.xero.com/us/app/float-cashflow-forecasting",
+            "title": "Float Cashflow Forecasting Xero Integration Reviews & Features — Xero App Store US"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:04:31.760Z"
+      },
+      {
+        "name": "Flocuity",
+        "url": "https://www.flocuity.com",
+        "whatItDoes": "Builds a rolling 13-week forecast from bank history and QuickBooks or Xero, alerting when cash gets tight.",
+        "pricing": "$49 / month, or $490 / year",
+        "smallBusinessFit": "Designed for owner-run businesses with a few dozen staff, with no per-user charge.",
+        "sources": [
+          {
+            "url": "https://www.flocuity.com/cash-flow-forecasting-software",
+            "title": "Cash Flow Forecasting Software for Small Business · Flocuity"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:04:31.760Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0082558
+  },
+  "cash-flow-forecasting|retail": {
+    "searchedAt": "2026-11-08T21:57:49.035Z",
+    "candidates": [
+      {
+        "name": "CFPilot",
+        "url": "https://www.cf-pilot.com",
+        "whatItDoes": "AI cash-flow forecasting with 13-week rolling forecasts, AR/AP timing cues and plain-English AI CFO chat.",
+        "pricing": "$199/mo",
+        "smallBusinessFit": "Read-only QuickBooks, Xero, Square and Stripe connections suit small retailers; plans start with 2 seats.",
+        "sources": [
+          {
+            "url": "https://www.cf-pilot.com/",
+            "title": "AI cash-flow forecasting for businesses"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:57:49.035Z"
+      },
+      {
+        "name": "Kesper",
+        "url": "https://kesper.io",
+        "whatItDoes": "Projects cash runway from your real sales, margins and obligations, delivered in a daily Slack brief.",
+        "pricing": "$49/month flat",
+        "smallBusinessFit": "Connects Shopify, Square, Toast, Clover and eBay, built for multi-channel retail stores at flat cost.",
+        "sources": [
+          {
+            "url": "https://kesper.io/solutions/cash-flow-forecasting-software",
+            "title": "Cash Flow Forecasting Software for Retail & Ecommerce | Kesper — $49/mo"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:57:49.035Z"
+      },
+      {
+        "name": "Flocuity",
+        "url": "https://www.flocuity.com",
+        "whatItDoes": "Builds a rolling 13-week cash forecast from bank, QuickBooks, Xero and Square data, flagging tight weeks early.",
+        "pricing": "$49 / month or $490 / year",
+        "smallBusinessFit": "Standard plan includes two editors and one viewer with no per-user charge, suiting small teams.",
+        "sources": [
+          {
+            "url": "https://www.flocuity.com/cash-flow-forecasting-software",
+            "title": "Cash Flow Forecasting Software for Small Business · Flocuity"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:57:49.035Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0087068
+  },
+  "collections-reminders|food": {
+    "searchedAt": "2026-11-08T21:57:57.911Z",
+    "candidates": [
+      {
+        "name": "Billwa",
+        "url": "https://billwa.ai",
+        "whatItDoes": "AI-powered invoice collections with email drafts, smart reminders, and a customer dashboard.",
+        "pricing": "$19/month",
+        "smallBusinessFit": "Low-cost plan covers 50 invoices a month, enough for a cafe's catering or wholesale accounts.",
+        "sources": [
+          {
+            "url": "https://billwa.ai/",
+            "title": "Billwa - Get Paid Faster | AI-Powered Invoice Collections"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:57:57.911Z"
+      },
+      {
+        "name": "Quorii",
+        "url": "https://quorii.com",
+        "whatItDoes": "AI payment agent that sends personalized, escalating follow-ups on overdue invoices.",
+        "pricing": "$39/mo",
+        "smallBusinessFit": "Starter plan handles up to 50 invoices monthly with email chasing and QuickBooks or Xero sync.",
+        "sources": [
+          {
+            "url": "https://quorii.com/",
+            "title": "Quorii — Stop Chasing Invoices. Let AI Chase Them For You."
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:57:57.911Z"
+      },
+      {
+        "name": "Recoura",
+        "url": "https://recoura.io",
+        "whatItDoes": "Automatically follows up on past-due invoices with reminders that stop once you mark them paid.",
+        "pricing": "$29 / month",
+        "smallBusinessFit": "Simple flat monthly fee with AI draft emails suits a small restaurant's occasional unpaid invoices.",
+        "sources": [
+          {
+            "url": "https://recoura.io/invoices",
+            "title": "Invoice Follow-Up Software for Businesses | Recoura"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:57:57.911Z"
+      },
+      {
+        "name": "MoneyHound",
+        "url": "https://www.getmoneyhound.com",
+        "whatItDoes": "AI follow-up on unpaid invoices by text, email, and phone calls, in your business's name.",
+        "pricing": "From $29 a month",
+        "smallBusinessFit": "Pays nothing until the first payment arrives, and it works with Square, which many restaurants already use.",
+        "sources": [
+          {
+            "url": "https://www.getmoneyhound.com/",
+            "title": "MoneyHound | AI invoice follow-up for small businesses"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:57:57.911Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0082746
+  },
+  "collections-reminders|home": {
+    "searchedAt": "2026-11-08T22:04:23.043Z",
+    "candidates": [
+      {
+        "name": "SOS Invoices",
+        "url": "https://sosinvoices.com",
+        "whatItDoes": "Automatically follows up on unpaid invoices by AI text and email, with payment links for customers.",
+        "pricing": "$ 49 /mo",
+        "smallBusinessFit": "Built for plumbers, HVAC, and roofers, with a 14-day free trial and no contracts.",
+        "sources": [
+          {
+            "url": "https://sosinvoices.com/",
+            "title": "SOS Invoices — Get Paid. No More Chasing."
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:04:23.043Z"
+      },
+      {
+        "name": "HollerUs",
+        "url": "https://www.hollerus.com",
+        "whatItDoes": "Handles quotes, invoices, and payments for trades, with AI reminders that escalate for overdue invoices.",
+        "pricing": "$19/mo",
+        "smallBusinessFit": "Designed for solo operators and small crews in plumbing, electrical, HVAC, and landscaping.",
+        "sources": [
+          {
+            "url": "https://www.hollerus.com/",
+            "title": "HollerUs — The AI Office for Every Trade"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:04:23.043Z"
+      },
+      {
+        "name": "ARMed",
+        "url": "https://get-arm.com",
+        "whatItDoes": "Connects to QuickBooks and sends AI-drafted payment reminders on a 5-step escalation schedule.",
+        "pricing": "$ 29/mo",
+        "smallBusinessFit": "Targets freelancers and small teams, with testimonials from general contractors and HVAC businesses.",
+        "sources": [
+          {
+            "url": "https://get-arm.com/",
+            "title": "ARMed — Stop Chasing Late Invoices. Let AI Do It."
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:04:23.043Z"
+      },
+      {
+        "name": "InvoBee",
+        "url": "https://www.invobee.com",
+        "whatItDoes": "Offers free invoicing, plus an Autopilot add-on that automatically follows up on overdue invoices.",
+        "pricing": "$29 /month",
+        "smallBusinessFit": "Built for landscapers, handymen, and cleaning crews, with a free tier of unlimited invoices.",
+        "sources": [
+          {
+            "url": "https://www.invobee.com/",
+            "title": "Free Invoicing for Cleaning & Home-Service Businesses\n     · InvoBee"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:04:23.043Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0086514
+  },
+  "collections-reminders|retail": {
+    "searchedAt": "2026-11-08T21:58:19.210Z",
+    "candidates": [
+      {
+        "name": "DunningOS",
+        "url": "https://dunningos.com",
+        "whatItDoes": "Automates payment reminders on a six-step overdue sequence, with AI-written follow-up messages you approve.",
+        "pricing": "$19/mo",
+        "smallBusinessFit": "The Starter plan suits small teams with up to 25 active invoices; Pro adds SMS and AI messages.",
+        "sources": [
+          {
+            "url": "https://dunningos.com/",
+            "title": "DunningOS — Get Paid Faster. Stop Chasing Invoices."
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:58:19.210Z"
+      },
+      {
+        "name": "Saldetto",
+        "url": "https://saldetto.com",
+        "whatItDoes": "AI invoice management that extracts invoice details from uploads and sends scheduled payment reminders.",
+        "pricing": "$19/mo",
+        "smallBusinessFit": "Batch PDF upload and scheduled reminders suit small teams that want no manual invoice follow-up.",
+        "sources": [
+          {
+            "url": "https://saldetto.com/",
+            "title": "Saldetto - AI-Powered Invoice Management & Automated Payment Reminders"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:58:19.210Z"
+      },
+      {
+        "name": "ARPilot",
+        "url": "https://arpilot.ai",
+        "whatItDoes": "AI writes per-invoice follow-ups with payment links, with tone matched to how overdue each invoice is.",
+        "pricing": "Free on 10 invoices a month, $99 a month after",
+        "smallBusinessFit": "A free tier of 10 invoices a month lets a small store test it before paying, and it connects to QuickBooks.",
+        "sources": [
+          {
+            "url": "https://arpilot.ai/",
+            "title": "ARPilot - AI-Powered Accounts Receivable Automation"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:58:19.210Z"
+      },
+      {
+        "name": "MoneyHound",
+        "url": "https://www.getmoneyhound.com",
+        "whatItDoes": "AI follows up on unpaid invoices with friendly texts, emails, and phone calls in your business's name.",
+        "pricing": "From $29 a month",
+        "smallBusinessFit": "You pay nothing until your first payment arrives, which lowers risk for small businesses trying it.",
+        "sources": [
+          {
+            "url": "https://www.getmoneyhound.com/",
+            "title": "MoneyHound | AI invoice follow-up for small businesses"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:58:19.210Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0084456
+  },
+  "supplier-comparison|food": {
+    "searchedAt": "2026-11-08T21:58:27.067Z",
+    "candidates": [
+      {
+        "name": "Parstock",
+        "url": "https://www.parstock.app",
+        "whatItDoes": "Upload any vendor price sheet, enter your order list, and see the cheapest split across suppliers.",
+        "pricing": "$49/month",
+        "smallBusinessFit": "Self-serve with a 14-day free trial and no credit card, built for single-location food operations.",
+        "sources": [
+          {
+            "url": "https://www.parstock.app/",
+            "title": "Parstock — Stop Overpaying Your Food Vendors"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:58:27.067Z"
+      },
+      {
+        "name": "Pancho",
+        "url": "https://www.hipancho.com",
+        "whatItDoes": "Uploads invoices, benchmarks item prices against similar restaurants, and compares vendors side by side.",
+        "pricing": "Paid plans start at $250/mo per location",
+        "smallBusinessFit": "Free for the first 50 invoices, so restaurants can test value before paying.",
+        "sources": [
+          {
+            "url": "https://www.hipancho.com/",
+            "title": "Pancho turns your data into better profit margins"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:58:27.067Z"
+      },
+      {
+        "name": "Order Optix",
+        "url": "https://orderoptix.app",
+        "whatItDoes": "Compares products across distributors from uploaded invoices or price lists and flags price increases.",
+        "pricing": "$100/month",
+        "smallBusinessFit": "Built for independent restaurants, with per-location pricing and a 7-day trial.",
+        "sources": [
+          {
+            "url": "https://orderoptix.app/",
+            "title": "Stop overpaying your food DISTRIBUTORS."
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:58:27.067Z"
+      },
+      {
+        "name": "Costara",
+        "url": "https://trycostara.com",
+        "whatItDoes": "Parses vendor PDFs with AI, compares every item across vendors, and lets staff place approved orders.",
+        "pricing": "$ 149 /mo per location",
+        "smallBusinessFit": "Flat per-location pricing with a 2-week free trial, suited to restaurants that want in-app ordering.",
+        "sources": [
+          {
+            "url": "https://trycostara.com/",
+            "title": "Costara — Stop Overpaying Your Vendors — Costara"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:58:27.067Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0081909
+  },
+  "supplier-comparison|home": {
+    "searchedAt": "2026-11-08T21:58:37.744Z",
+    "candidates": [
+      {
+        "name": "PriceHarbor",
+        "url": "https://priceharbor.io",
+        "whatItDoes": "Reads supplier invoices and price lists, compares vendors item by item, and flags overcharges.",
+        "pricing": "$19/mo",
+        "smallBusinessFit": "Flat self-serve plan with a $1 trial, suited to small purchasing budgets and cancel-anytime use.",
+        "sources": [
+          {
+            "url": "https://priceharbor.io/",
+            "title": "PriceHarbor"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:58:37.744Z"
+      },
+      {
+        "name": "QuoteComparePro",
+        "url": "https://quotecomparepro.com",
+        "whatItDoes": "Upload supplier quotes in any format and AI compares pricing, line items, and hidden fees.",
+        "pricing": null,
+        "smallBusinessFit": "Free self-serve start, plus vendor search and direct quote requests for local service businesses.",
+        "sources": [
+          {
+            "url": "https://quotecomparepro.com/",
+            "title": "QuoteComparePro - AI-Powered Quote Comparison & Supplier Intelligence"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:58:37.744Z"
+      },
+      {
+        "name": "Arbor Scout",
+        "url": "https://scout.superarbor.com",
+        "whatItDoes": "An AI agent texts your material list, calls local suppliers, and returns quotes with delivery included.",
+        "pricing": null,
+        "smallBusinessFit": "Free trial with no ordering or payment, so owners get supplier quotes without making calls.",
+        "sources": [
+          {
+            "url": "https://scout.superarbor.com/",
+            "title": "Arbor Scout — AI sourcing for building materials"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:58:37.744Z"
+      },
+      {
+        "name": "EstimateHawk",
+        "url": "https://estimatehawk.com",
+        "whatItDoes": "Compares 2–3 contractor or subcontractor bids, showing scope gaps and a true-cost ranking.",
+        "pricing": "$ 9/report",
+        "smallBusinessFit": "Pay-per-report option with no contracts, suited to one-off comparisons at small firms.",
+        "sources": [
+          {
+            "url": "https://estimatehawk.com/",
+            "title": "EstimateHawk: AI Bid Comparison & Bid Leveling Software"
+          },
+          {
+            "url": "https://estimatehawk.com/pricing/",
+            "title": "Pricing — Bid Comparison Plans for Contractors | EstimateHawk"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:58:37.744Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0085053
+  },
+  "supplier-comparison|retail": {
+    "searchedAt": "2026-11-08T21:58:49.623Z",
+    "candidates": [
+      {
+        "name": "Paisán",
+        "url": "https://paisan.net",
+        "whatItDoes": "Searches for suppliers, lets you request quotes, and compares replies side by side with an AI sourcing assistant.",
+        "pricing": "Free $0/month; Starter $5/month; Pro $19/month",
+        "smallBusinessFit": "Free plan and low monthly tiers suit small retailers; unlimited side-by-side quote comparisons on every account.",
+        "sources": [
+          {
+            "url": "https://paisan.net/us/pricing?audience=buyer",
+            "title": "Pricing for buyers · Paisán · US"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:58:49.623Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0087107
+  },
+  "contract-review|food": {
+    "searchedAt": "2026-11-08T21:58:58.884Z",
+    "candidates": [
+      {
+        "name": "SignSafe",
+        "url": "https://sign-safe.app",
+        "whatItDoes": "Scans contracts for risks, hidden fees, and personal guarantees, then translates clauses into plain English.",
+        "pricing": "$14.99/month",
+        "smallBusinessFit": "Suits owners reviewing occasional leases and vendor agreements; renewal reminders come with the paid plan.",
+        "sources": [
+          {
+            "url": "https://sign-safe.app/small-business",
+            "title": "Small Business Contract Review: Catch Hidden Fees | SignSafe"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:58:58.884Z"
+      },
+      {
+        "name": "Klausula",
+        "url": "https://klausula.com",
+        "whatItDoes": "Summarizes agreements, flags risky terms, and extracts renewal, payment, and termination deadlines automatically.",
+        "pricing": "$49/mo",
+        "smallBusinessFit": "Pay-as-you-go option suits occasional reviews; the Pro plan adds negotiation emails and follow-up questions.",
+        "sources": [
+          {
+            "url": "https://klausula.com/",
+            "title": "Review contracts in minutes,not billable hours."
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:58:58.884Z"
+      },
+      {
+        "name": "Renewal Pilot",
+        "url": "https://renewalpilot.io",
+        "whatItDoes": "Reviews contracts, summarizes them, and detects auto-renewal language with alerts before deadlines.",
+        "pricing": "$49/mo",
+        "smallBusinessFit": "Solo plan covers up to 25 contracts, with click-to-source verification and email renewal alerts.",
+        "sources": [
+          {
+            "url": "https://renewalpilot.io/",
+            "title": "AI Contract Review and Renewal Tracking | Renewal Pilot"
+          },
+          {
+            "url": "https://renewalpilot.io/pricing",
+            "title": "Pricing — AI Contract Review from $49/month | Renewal Pilot"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:58:58.884Z"
+      },
+      {
+        "name": "ContractsIQ",
+        "url": "https://contractsiq.app",
+        "whatItDoes": "Reads uploaded contracts, rates clause risks as high, medium, or low, and drafts suggested fixes.",
+        "pricing": "$9.99 /mo",
+        "smallBusinessFit": "Basic tier handles up to 10 contracts monthly, and a free trial lets you test one contract first.",
+        "sources": [
+          {
+            "url": "https://contractsiq.app/",
+            "title": "AI Contract Review Software for Small Businesses | ContractsIQ"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:58:58.884Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0083752
+  },
+  "contract-review|home": {
+    "searchedAt": "2026-11-08T22:04:54.072Z",
+    "candidates": [
+      {
+        "name": "360 ContractReview",
+        "url": "https://www.360intelligentsolutions.com",
+        "whatItDoes": "Upload a contract and it identifies the agreement type, highlights key terms and risks, and recommends next steps.",
+        "pricing": "No monthly fee; first 3 contracts free; $3 per contract over 25 per month",
+        "smallBusinessFit": "Covers home improvement and contractor agreements; a mechanical contracting firm reports using it in its workflow.",
+        "sources": [
+          {
+            "url": "https://www.360intelligentsolutions.com/document-intelligence/contract-review",
+            "title": "360 ContractReview | AI Contract Review Software"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:04:54.072Z"
+      },
+      {
+        "name": "Justee",
+        "url": "https://justee.ai",
+        "whatItDoes": "Reviews vendor, client, and lease contracts in minutes, with plain-English findings on risky or unfavorable terms.",
+        "pricing": "Free to start; paid plans start at $16/month billed annually",
+        "smallBusinessFit": "Built for small business owners who regularly sign vendor agreements, leases, and client contracts.",
+        "sources": [
+          {
+            "url": "https://justee.ai/solutions/small-business-contract-review",
+            "title": "Fast AI Contract Review for Small Business Owners | Justee"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:04:54.072Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0087082
+  },
+  "contract-review|retail": {
+    "searchedAt": "2026-11-08T21:59:17.953Z",
+    "candidates": [
+      {
+        "name": "Renewal Pilot",
+        "url": "https://renewalpilot.io",
+        "whatItDoes": "Analyzes contracts and tracks renewal, cancellation, and auto-renewal dates with alerts.",
+        "pricing": "$49/mo (Solo plan)",
+        "smallBusinessFit": "Built for small business owners handling vendor agreements, leases, and SaaS subscriptions.",
+        "sources": [
+          {
+            "url": "https://renewalpilot.io/",
+            "title": "AI Contract Review and Renewal Tracking | Renewal Pilot"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:59:17.953Z"
+      },
+      {
+        "name": "Klausula",
+        "url": "https://klausula.com",
+        "whatItDoes": "Reviews agreements for risky clauses and extracts renewal, notice, and termination dates.",
+        "pricing": "$49/mo (Pro); $19.99/contract pay-as-you-go",
+        "smallBusinessFit": "Pay-as-you-go option suits businesses without legal teams reviewing occasional contracts.",
+        "sources": [
+          {
+            "url": "https://klausula.com/",
+            "title": "Review contracts in minutes,not billable hours."
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:59:17.953Z"
+      },
+      {
+        "name": "ContractsIQ",
+        "url": "https://contractsiq.app",
+        "whatItDoes": "Reads contracts, flags risky clauses including sneaky renewal clauses, and suggests fixes.",
+        "pricing": "$9.99 /mo (Basic)",
+        "smallBusinessFit": "Low-cost monthly plans suit small businesses reviewing contracts without a legal team.",
+        "sources": [
+          {
+            "url": "https://contractsiq.app/",
+            "title": "AI Contract Review Software for Small Businesses | ContractsIQ"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:59:17.953Z"
+      },
+      {
+        "name": "SignSafe",
+        "url": "https://sign-safe.app",
+        "whatItDoes": "Scans contracts for hidden fees and risky terms, with renewal reminders on paid plans.",
+        "pricing": "$14.99/month",
+        "smallBusinessFit": "Affordable plan with renewal reminders and negotiation scripts for active small businesses.",
+        "sources": [
+          {
+            "url": "https://sign-safe.app/small-business",
+            "title": "Small Business Contract Review: Catch Hidden Fees | SignSafe"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:59:17.953Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0083988
+  },
+  "market-research|food": {
+    "searchedAt": "2026-11-08T21:59:28.712Z",
+    "candidates": [
+      {
+        "name": "Nooshi.ai",
+        "url": "https://nooshi.ai",
+        "whatItDoes": "Weekly brief tracking rivals' menus, prices, reviews and promotions, plus drafted social posts.",
+        "pricing": "$29/month",
+        "smallBusinessFit": "Setup takes about 90 seconds with no integrations, and one flat plan suits independent restaurants.",
+        "sources": [
+          {
+            "url": "https://nooshi.ai/",
+            "title": "Nooshi.ai — Restaurant marketing, done for you every week"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:59:28.712Z"
+      },
+      {
+        "name": "Ticket",
+        "url": "https://www.getticket.ai",
+        "whatItDoes": "Watches nearby competitor menus and reviews, ranks meaningful changes, and delivers a plain-language action brief.",
+        "pricing": null,
+        "smallBusinessFit": "Self-serve with a 14-day free trial and no card needed, suited to owners short on research time.",
+        "sources": [
+          {
+            "url": "https://www.getticket.ai/",
+            "title": "Ticket | Competitive intelligence for restaurant operators"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:59:28.712Z"
+      },
+      {
+        "name": "CFO AI",
+        "url": "https://cfoai.tech",
+        "whatItDoes": "Maps nearby venues' dish prices and summarises review themes behind competitors' ratings.",
+        "pricing": "$15/month",
+        "smallBusinessFit": "Single flat plan with no POS integration needed, suited to single-location cafés and restaurants.",
+        "sources": [
+          {
+            "url": "https://cfoai.tech/",
+            "title": "See what is changing in your business before profit slips."
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:59:28.712Z"
+      },
+      {
+        "name": "Butter",
+        "url": "https://butterme.ai",
+        "whatItDoes": "Analyses competitive pricing and Google Places and Yelp data to optimize your menu.",
+        "pricing": "$29.99/mo per location",
+        "smallBusinessFit": "A free tier plus a per-location menu plan suits small single-site restaurants.",
+        "sources": [
+          {
+            "url": "https://butterme.ai/pricing",
+            "title": "Pricing — Free, $29.99, or $99.99 per Month | Butter"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:59:28.712Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0084514
+  },
+  "market-research|home": {
+    "searchedAt": "2026-11-08T22:03:59.313Z",
+    "candidates": [],
+    "dropped": 0,
+    "costUsd": 0.0078128
+  },
+  "market-research|retail": {
+    "searchedAt": "2026-11-08T21:59:42.958Z",
+    "candidates": [
+      {
+        "name": "Vervix",
+        "url": "https://vervix.ai",
+        "whatItDoes": "Analyzes uploaded CSV market, competitor, and customer feedback data to surface gaps and opportunities.",
+        "pricing": "$39/month (Starter); $99/month (Pro)",
+        "smallBusinessFit": "Starter suits solo operators; Pro adds reports and API access for growing small businesses.",
+        "sources": [
+          {
+            "url": "https://vervix.ai/",
+            "title": "vervix — Automated Market Research"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:59:42.958Z"
+      },
+      {
+        "name": "Competely",
+        "url": "https://competely.ai",
+        "whatItDoes": "Monitors competitor sites and emails briefs on pricing, feature, and messaging changes, plus full competitor analysis.",
+        "pricing": "Paid plans run from $39 to $99 a month",
+        "smallBusinessFit": "Free tier covers two competitors, and paid plans are priced for small teams.",
+        "sources": [
+          {
+            "url": "https://competely.ai/",
+            "title": "AI Competitive Analysis & Monitoring Tool - Competely"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:59:42.958Z"
+      },
+      {
+        "name": "Shelf",
+        "url": "https://shelfplugin.com",
+        "whatItDoes": "Shopify app delivering daily AI observations on competitor promotions, pricing moves, and launches.",
+        "pricing": "Basic ($10/month, 50 products, 3× weekly updates) or Pro ($25/month, unlimited everything, daily updates)",
+        "smallBusinessFit": "Installs inside Shopify admin with a free tier, fitting small online retail stores.",
+        "sources": [
+          {
+            "url": "https://shelfplugin.com/",
+            "title": "Shelf — Shopify Competitor Tracking & Promo Intelligence"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:59:42.958Z"
+      },
+      {
+        "name": "Felvor",
+        "url": "https://felvor.com",
+        "whatItDoes": "Shows how ChatGPT, Perplexity, and Gemini answer customer questions, including which competitors they recommend.",
+        "pricing": "$19 / per month (Starter); $49 / per month (Pro)",
+        "smallBusinessFit": "Starter plan with one brand and weekly scans suits small brands tracking competitor visibility.",
+        "sources": [
+          {
+            "url": "https://felvor.com/",
+            "title": "Felvor — Is your brand invisible to AI?"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:59:42.958Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0084379
+  },
+  "code-generation|food": {
+    "searchedAt": "2026-11-08T21:59:50.784Z",
+    "candidates": [
+      {
+        "name": "Mousepad",
+        "url": "https://mousepad.app",
+        "whatItDoes": "Describe your business in a sentence and it builds the website, booking and order tools, and publishes it.",
+        "pricing": "Plus $20 a month, billed yearly",
+        "smallBusinessFit": "Built for bakeries and similar businesses, with bookings, orders, and Stripe payments included.",
+        "sources": [
+          {
+            "url": "https://mousepad.app/",
+            "title": "Mousepad builds websites and apps in minutes."
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:59:50.784Z"
+      },
+      {
+        "name": "Macaly",
+        "url": "https://www.macaly.com",
+        "whatItDoes": "Lets you build websites and web apps by chatting with AI, with databases, sign-in, and publishing included.",
+        "pricing": "$30 /mo",
+        "smallBusinessFit": "Suits small businesses that need customer sign-in, forms, and Stripe or Google Sheets connections without coding.",
+        "sources": [
+          {
+            "url": "https://www.macaly.com/",
+            "title": "Macaly | AI Website & Web App Platform for Founders & Small Businesses"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:59:50.784Z"
+      },
+      {
+        "name": "BrainHalf",
+        "url": "https://brainhalf.com",
+        "whatItDoes": "Turns a plain-language description into a working web app with screens, saved data, and sign-in.",
+        "pricing": "$1 first month Then $9/month",
+        "smallBusinessFit": "Low-cost option for simple tools like booking, inventory, or customer follow-up, with custom domain publishing.",
+        "sources": [
+          {
+            "url": "https://brainhalf.com/",
+            "title": "AI App Builder for Small Business — BrainHalf"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:59:50.784Z"
+      },
+      {
+        "name": "Repaint",
+        "url": "https://repaint.com",
+        "whatItDoes": "Builds custom apps and websites by chatting with AI, including accounts, payments, email, and data storage.",
+        "pricing": "Paid plans start at $25 per month",
+        "smallBusinessFit": "Offers custom dashboards and payments for tracking revenue and customers, with a 14-day free trial.",
+        "sources": [
+          {
+            "url": "https://repaint.com/app-builder",
+            "title": "AI App Builder — Build Custom Apps Without Coding | Repaint"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T21:59:50.784Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0081952
+  },
+  "code-generation|home": {
+    "searchedAt": "2026-11-08T22:00:03.969Z",
+    "candidates": [
+      {
+        "name": "Plumso",
+        "url": "https://plumso.com",
+        "whatItDoes": "AI website builder for local businesses that writes pages, takes leads and bookings, and sends follow-ups.",
+        "pricing": "$29 month to month",
+        "smallBusinessFit": "Built for home-service trades such as plumbers, electricians and HVAC companies.",
+        "sources": [
+          {
+            "url": "https://plumso.com/",
+            "title": "Plumso: build a website for your business that grows itself"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:00:03.969Z"
+      },
+      {
+        "name": "Zibster",
+        "url": "https://www.zibster.com",
+        "whatItDoes": "AI website builder that creates a small business site, writes SEO content, and adds booking and payments.",
+        "pricing": "$29 /mo",
+        "smallBusinessFit": "Targets service providers and local retailers, with booking, invoices and CRM included.",
+        "sources": [
+          {
+            "url": "https://www.zibster.com/",
+            "title": "AI Website Builder for Small Businesses | Zibster"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:00:03.969Z"
+      },
+      {
+        "name": "Amelia's Agent",
+        "url": "https://ameliasagent.com",
+        "whatItDoes": "Builds websites, apps and automations from a plain-language description, then keeps them online.",
+        "pricing": "$10 a month, billed yearly",
+        "smallBusinessFit": "Offers home services website designs and keeps a site online for $10/mo billed yearly.",
+        "sources": [
+          {
+            "url": "https://ameliasagent.com/",
+            "title": "Amelia's Agent — describe it, watch it build, put it online"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:00:03.969Z"
+      },
+      {
+        "name": "Homespun",
+        "url": "https://homespun.dev",
+        "whatItDoes": "Lets an AI assistant like Claude build live apps with sign-in and a database in minutes.",
+        "pricing": "Free while we're in early access",
+        "smallBusinessFit": "Turns booking pages, order forms and rotas into live apps staff can use right away.",
+        "sources": [
+          {
+            "url": "https://homespun.dev/",
+            "title": "Homespun: real apps from Claude, online in 10 minutes"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:00:03.969Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0085404
+  },
+  "code-generation|retail": {
+    "searchedAt": "2026-11-08T22:00:15.012Z",
+    "candidates": [
+      {
+        "name": "Vyck Code",
+        "url": "https://vyck.ai",
+        "whatItDoes": "Describe an app and an AI agent writes, tests, and previews it in your browser.",
+        "pricing": "Pro from $12/month",
+        "smallBusinessFit": "No install needed; 50 free credits to try, so a small team can test before paying.",
+        "sources": [
+          {
+            "url": "https://vyck.ai/en",
+            "title": "Vyck Code — describe the app, Vyck builds it"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:00:15.012Z"
+      },
+      {
+        "name": "WebDIY",
+        "url": "https://web.diy",
+        "whatItDoes": "Turns one chat message into a working web app with its own database and user sign-in.",
+        "pricing": "$19.99 a month",
+        "smallBusinessFit": "Free plan with 500 credits monthly suits booking sites, online stores, and client portals.",
+        "sources": [
+          {
+            "url": "https://web.diy/",
+            "title": "What will you build?"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:00:15.012Z"
+      },
+      {
+        "name": "Macaly",
+        "url": "https://www.macaly.com",
+        "whatItDoes": "Builds websites and apps from chat, including the database, sign-in, and hosting.",
+        "pricing": "$30 /mo",
+        "smallBusinessFit": "Publishes live on a free secure address and audits sites for Google visibility, useful for storefronts.",
+        "sources": [
+          {
+            "url": "https://www.macaly.com/",
+            "title": "Macaly | AI Website & Web App Platform for Founders & Small Businesses"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:00:15.012Z"
+      },
+      {
+        "name": "Buildful",
+        "url": "https://buildful.ai",
+        "whatItDoes": "AI coding agent that picks open-weight models per task, tests UI changes in a browser, opens pull requests.",
+        "pricing": "$10/month",
+        "smallBusinessFit": "Flat $10 monthly plan with GitHub pull requests suits a small team's website changes.",
+        "sources": [
+          {
+            "url": "https://buildful.ai/",
+            "title": "Buildful: AI coding agent, 1,000 tasks for $10 a month"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:00:15.012Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0086525
+  },
+  "hiring-hr|food": {
+    "searchedAt": "2026-11-08T22:00:25.814Z",
+    "candidates": [
+      {
+        "name": "MDML RoleCall",
+        "url": "https://mdmltechnologies.com",
+        "whatItDoes": "Restaurant hiring software where applicants answer your questions by phone and AI ranks them against open shifts.",
+        "pricing": "Team $79/ location / mo",
+        "smallBusinessFit": "Built for cafés and restaurants, with a free tier for up to 5 people and single-location pricing.",
+        "sources": [
+          {
+            "url": "https://mdmltechnologies.com/hiring",
+            "title": "Hiring software for restaurants and shops | MDML"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:00:25.814Z"
+      },
+      {
+        "name": "Emcue",
+        "url": "https://emcue.io",
+        "whatItDoes": "An AI applicant tracking system for restaurants that organizes applicants, screens the pool and coordinates interviews.",
+        "pricing": "$10a month",
+        "smallBusinessFit": "Built for restaurant operators who run their own hiring, with pricing that drops in quiet months.",
+        "sources": [
+          {
+            "url": "https://emcue.io/",
+            "title": "Every applicant, understood."
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:00:25.814Z"
+      },
+      {
+        "name": "Homebase Hiring Assistant",
+        "url": "https://www.joinhomebase.com",
+        "whatItDoes": "Free hiring software that posts jobs to boards, screens applicants with AI and schedules interviews.",
+        "pricing": "$99 per month, billed annually · $199 month to month",
+        "smallBusinessFit": "Built for small hourly businesses, with free manual hiring and AI screening on the Unlimited plan.",
+        "sources": [
+          {
+            "url": "https://www.joinhomebase.com/hiring-and-onboarding",
+            "title": "Hiring & Onboarding Software for Small Businesses | Homebase"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:00:25.814Z"
+      },
+      {
+        "name": "HRGP",
+        "url": "https://hrgp.io",
+        "whatItDoes": "HRIS and applicant tracking that covers hiring, onboarding, employee records and payroll preparation for small businesses.",
+        "pricing": "$99 a month",
+        "smallBusinessFit": "Flat monthly fee with no per-seat charges, and it handles new-hire forms and HR paperwork.",
+        "sources": [
+          {
+            "url": "https://hrgp.io/",
+            "title": "HRIS and Applicant Tracking for Small Business | HRGP"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:00:25.814Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0084572
+  },
+  "hiring-hr|retail": {
+    "searchedAt": "2026-11-08T22:00:44.196Z",
+    "candidates": [
+      {
+        "name": "HRBlade",
+        "url": "https://hrblade.com",
+        "whatItDoes": "AI hiring platform with built-in ATS, AI resume screening, AI interviews, scheduling, and email templates.",
+        "pricing": "$99/month or $79/month billed annually",
+        "smallBusinessFit": "Built for companies where one person runs hiring, with 3 users and 10 active jobs.",
+        "sources": [
+          {
+            "url": "https://hrblade.com/pricing/",
+            "title": "Simple, transparent pricing | HRBlade"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:00:44.196Z"
+      },
+      {
+        "name": "HRGP",
+        "url": "https://hrgp.io",
+        "whatItDoes": "HRIS and applicant tracking that handles job posts, AI interviews, onboarding forms, and employee records.",
+        "pricing": "$99 a month",
+        "smallBusinessFit": "Flat monthly price with no per-seat fees, covering hiring, I-9 and W-4 onboarding, and records.",
+        "sources": [
+          {
+            "url": "https://hrgp.io/",
+            "title": "HRIS and Applicant Tracking for Small Business | HRGP"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:00:44.196Z"
+      },
+      {
+        "name": "Scout Talent",
+        "url": "https://scouttalent.com",
+        "whatItDoes": "Recruiting software that generates job ads with AI, screens applications, and tracks candidates in one pipeline.",
+        "pricing": "$150 a month",
+        "smallBusinessFit": "Flat monthly rate with no per-user fees, designed specifically for small business recruitment.",
+        "sources": [
+          {
+            "url": "https://scouttalent.com/us/recruitment-software/small-business-recruitment-software/",
+            "title": "Small Business Recruitment Software | Scout Talent"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:00:44.196Z"
+      },
+      {
+        "name": "JuggleHire",
+        "url": "https://jugglehire.com",
+        "whatItDoes": "AI-native applicant tracking system that ranks applicants, schedules interviews, and sends e-signed offer letters.",
+        "pricing": "Plans from $15/month",
+        "smallBusinessFit": "Built for companies with 1–50 employees, with flat per-company pricing and a 14-day free trial.",
+        "sources": [
+          {
+            "url": "https://jugglehire.com/llms.txt",
+            "title": "jugglehire.com"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:00:44.196Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0082691
+  },
+  "staff-scheduling|retail": {
+    "searchedAt": "2026-11-08T22:03:43.854Z",
+    "candidates": [
+      {
+        "name": "HourCue",
+        "url": "https://www.hourcue.com",
+        "whatItDoes": "AI scheduling where staff text their availability and the AI builds the week's rota for managers.",
+        "pricing": "$49/month",
+        "smallBusinessFit": "Free Starter plan covers up to 10 employees, and Pro adds shift swaps and unlimited employees.",
+        "sources": [
+          {
+            "url": "https://www.hourcue.com/",
+            "title": "HourCue — AI-powered employee scheduling"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:03:43.854Z"
+      },
+      {
+        "name": "CrewHR",
+        "url": "https://crewhr.com",
+        "whatItDoes": "AI drafts conflict-free weekly rosters, fills coverage gaps, and publishes them in one click.",
+        "pricing": "$9/ mo",
+        "smallBusinessFit": "Starter plan suits teams up to 10 employees at one location; shift swap handling is not stated.",
+        "sources": [
+          {
+            "url": "https://crewhr.com/",
+            "title": "CrewHR — Automated Employee Scheduling Software"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:03:43.854Z"
+      },
+      {
+        "name": "Shiftlab",
+        "url": "https://www.shiftlab.io",
+        "whatItDoes": "Builds optimized schedules around labor rules and availability, with shift swaps and open shifts managed in-app.",
+        "pricing": null,
+        "smallBusinessFit": "Pricing is not listed in the results, and fit for teams under 50 staff is unverified.",
+        "sources": [
+          {
+            "url": "https://www.shiftlab.io/",
+            "title": "Shiftlab: Workforce Management, AI-Optimized Scheduling & Compliance"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:03:43.854Z"
+      }
+    ],
+    "dropped": 1,
+    "costUsd": 0.0083414
+  },
+  "hiring-hr|home": {
+    "searchedAt": "2026-11-08T22:03:53.524Z",
+    "candidates": [
+      {
+        "name": "Propel People",
+        "url": "https://propelpeople.ai",
+        "whatItDoes": "Hiring tool that screens resumes, posts jobs and handles SMS applications for HVAC and trades employers.",
+        "pricing": "$250/monthly/user",
+        "smallBusinessFit": "Built for HVAC contractors with per-job posting and same-day resume scoring to hire technicians quickly.",
+        "sources": [
+          {
+            "url": "https://propelpeople.ai/who-its-for/hvac-contractors",
+            "title": "Hiring Tool for HVAC Contractors - Propel People"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:03:53.524Z"
+      },
+      {
+        "name": "HRGP",
+        "url": "https://hrgp.io",
+        "whatItDoes": "HRIS and applicant tracking system covering hiring, AI interviews, onboarding forms, employee records and payroll prep.",
+        "pricing": "$99 a month",
+        "smallBusinessFit": "Flat-fee system with no per-seat charges, including a field-service hiring option for HVAC and plumbing firms.",
+        "sources": [
+          {
+            "url": "https://hrgp.io/",
+            "title": "HRGP | Applicant Tracking System for Small Businesses"
+          },
+          {
+            "url": "https://hrgp.io/field-service-hiring-software/",
+            "title": "Field-Service Hiring Software for Small Businesses | HRGP"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:03:53.524Z"
+      },
+      {
+        "name": "AvaHR",
+        "url": "https://avahr.com",
+        "whatItDoes": "Applicant tracking system that suggests pay, ranks candidates and manages job postings and follow-ups.",
+        "pricing": "$99 /mo",
+        "smallBusinessFit": "Designed for busy owners, lists HVAC and plumbing among supported industries, with a one-truck Lite plan.",
+        "sources": [
+          {
+            "url": "https://avahr.com/pricing/",
+            "title": "AvaHR Plans & Pricing | Affordable Applicant Tracking System for SMBs"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:03:53.524Z"
+      },
+      {
+        "name": "HireBus",
+        "url": "https://hirebus.com",
+        "whatItDoes": "AI recruiter that writes job ads, runs the ad campaign, texts applicants and phone-interviews them for hiring.",
+        "pricing": "$297 a month",
+        "smallBusinessFit": "Targets home service businesses, handling applicant follow-up and screening so owners only meet top candidates.",
+        "sources": [
+          {
+            "url": "https://hirebus.com/",
+            "title": "AI Recruiter for Home Service Businesses · HireBus"
+          }
+        ],
+        "evidence": "vendor-page-cited",
+        "status": "unverified",
+        "foundAt": "2026-11-08T22:03:53.524Z"
+      }
+    ],
+    "dropped": 0,
+    "costUsd": 0.0083794
+  }
+}

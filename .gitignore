@@ -7,6 +7,9 @@ node_modules/
 website/coverage/
 
 !website/.env.example
+
+# Per-machine AI spend ledger
+website/data/runtime/
 backend/.venv/
 backend/.runtime/
 __pycache__/

@@ -8,6 +8,10 @@
     "start": "next start --hostname 127.0.0.1",
     "typecheck": "tsc --noEmit",
     "test": "tsx --test tests/*.test.ts tests/*.test.tsx",
+    "eval:discovery": "tsx scripts/eval-discovery.mts",
+    "warm:live": "tsx scripts/warm-live-discovery.mts",
+    "enrich:facts": "tsx scripts/enrich-tool-facts.mts",
+    "verify:zapier": "tsx scripts/verify-zapier-listings.mts",
     "dev:full": "node scripts/dev-full.mjs"
   },
   "dependencies": {

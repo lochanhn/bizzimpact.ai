@@ -1,0 +1,3229 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-11-08T22:42:09.922Z",
+  "tools": {
+    "frontdesk": {
+      "soc2": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "iso27001": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "trustCenter": {
+        "url": "https://www.myaifrontdesk.com/trust-center"
+      },
+      "trainsOnData": {
+        "status": "no",
+        "quote": "Customer call recordings and transcripts are not used to train shared AI models.",
+        "url": "https://www.myaifrontdesk.com/trust-center/security-overview"
+      },
+      "retention": {
+        "status": "stated",
+        "summary": "Admin-configurable retention windows, hard deletion from primary storage and backups, bulk export via dashboard and API, and clear contract termination handling.",
+        "quote": "Admin-configurable retention windows, hard deletion from primary storage and backups, bulk export via dashboard and API, and clear contract termination handling.",
+        "url": "https://www.myaifrontdesk.com/trust-center"
+      },
+      "hipaaBaa": {
+        "status": "not-found",
+        "note": "The API developer guide states HIPAA certification is not offered by default and suggests evaluating Custom/enterprise options for sensitive medical use cases. No BAA availability is stated.",
+        "quote": "HIPAA certification is not offered by default; sensitive medical use cases should evaluate compliance needs or Custom/enterprise options.",
+        "url": "https://llms.myaifrontdesk.com/api-developer-integration-guide"
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "Self-serve signup with 7-day free trial and no credit card needed for the Free p",
+            "quote": "Free ($0/mo) is for trying things out. ... No credit card, no commitment. Just sign up and start testing",
+            "url": "https://www.myaifrontdesk.com/tutorials/how-does-billing-pricing-work-for-my-ai-front-desk"
+          },
+          {
+            "fact": "Phone call forwarding from existing number, no porting or hardware",
+            "quote": "Forward it to Frontdesk from any carrier or cloud phone system, either for every call or only when nobody picks up, after hours, or on weekends. No porting, no new hardware",
+            "url": "https://www.myaifrontdesk.com/ai-receptionist"
+          },
+          {
+            "fact": "Website snippet for embedded chatbot",
+            "quote": "You can go live with a forwarded phone number and embedded chatbot the same day, no engineers, no agencies, no waiting.",
+            "url": "https://www.myaifrontdesk.com/"
+          },
+          {
+            "fact": "Setup time under 5 minutes, AI builds receptionist from website URL",
+            "quote": "Less than 5 minutes. Enter your website URL or describe your business, and our AI builds your receptionist automatically.",
+            "url": "https://www.myaifrontdesk.com/"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "HubSpot",
+          "quote": "Native integrations push contact details, full transcripts, AI summaries, and structured fields ... directly into HubSpot, Salesforce, Pipedrive, or your own CRM via webhooks.",
+          "url": "https://www.myaifrontdesk.com/ai-receptionist"
+        },
+        {
+          "app": "Salesforce",
+          "quote": "Native integrations push contact details, full transcripts, AI summaries, and structured fields ... directly into HubSpot, Salesforce, Pipedrive, or your own CRM via webhooks.",
+          "url": "https://www.myaifrontdesk.com/ai-receptionist"
+        },
+        {
+          "app": "Zapier",
+          "quote": "6,000+ integrations via Zapier, plus native Salesforce, HubSpot, ServiceTitan, and other CRM connectors.",
+          "url": "https://www.myaifrontdesk.com/trust-center/data-flow-integrations"
+        },
+        {
+          "app": "Google Calendar",
+          "quote": "checks real availability on Google Calendar, Outlook or Calendly, books the slot and confirms by SMS.",
+          "url": "https://www.myaifrontdesk.com/ai-receptionist"
+        }
+      ],
+      "pricing": {
+        "summary": "Free ($0/mo) with limited usage; Business-in-a-Box $99/mo ($79/mo billed annually); Partner/Enterprise custom pricing with API access.",
+        "quote": "Business-in-a-Box ($99/mo) is where most small businesses land.",
+        "url": "https://www.myaifrontdesk.com/tutorials/how-does-billing-pricing-work-for-my-ai-front-desk"
+      },
+      "toolId": "frontdesk",
+      "domain": "myaifrontdesk.com",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    },
+    "dialzara": {
+      "soc2": {
+        "status": "stated",
+        "quote": "a strong option for SMBs in regulated industries such as healthcare, finance, and law... compliance with standards like SOC 2 Type II, HIPAA, FINRA, PCI-DSS, and GDPR",
+        "url": "https://dialzara.com/blog/ai-phone-agent-security-key-features"
+      },
+      "iso27001": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "trustCenter": {
+        "url": null
+      },
+      "trainsOnData": {
+        "status": "no",
+        "quote": "explicit guarantee that customer data is never used to train public AI models",
+        "url": "https://dialzara.com/blog/ai-phone-agent-security-key-features"
+      },
+      "retention": {
+        "status": "not-found",
+        "summary": null,
+        "quote": null,
+        "url": null
+      },
+      "hipaaBaa": {
+        "status": "available",
+        "note": "Offers Business Associate Agreements (BAAs) for regulated industries",
+        "quote": "Dialzara offers Business Associate Agreements (BAAs) for regulated industries",
+        "url": "https://dialzara.com/blog/ai-phone-agent-security-key-features"
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "Self-serve account creation and website-based training",
+            "quote": "Create an account then add your website. We'll tackle the hard part by automatically transforming the details you provide into a customized prompt",
+            "url": "https://dialzara.com/"
+          },
+          {
+            "fact": "Setup is no-code",
+            "quote": "No technical skills required. Add your website, test your agent, and forward your number.",
+            "url": "https://dialzara.com/solutions/ai-answering-service"
+          },
+          {
+            "fact": "Phone call forwarding to go live",
+            "quote": "simply enable call forwarding from your carrier",
+            "url": "https://dialzara.com/"
+          },
+          {
+            "fact": "Most businesses live in about 15 minutes",
+            "quote": "Most businesses are live in about 15 minutes",
+            "url": "https://dialzara.com/"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "Zapier",
+          "quote": "Connect your tools through Zapier and Make",
+          "url": "https://dialzara.com/solutions/ai-answering-service"
+        },
+        {
+          "app": "Make",
+          "quote": "Connect your tools through Zapier and Make",
+          "url": "https://dialzara.com/solutions/ai-answering-service"
+        },
+        {
+          "app": "Google Calendar",
+          "quote": "Native integration with Google Calendar.",
+          "url": "https://dialzara.com/solutions/ai-appointment-scheduling"
+        },
+        {
+          "app": "Salesforce",
+          "quote": "☁️Salesforce",
+          "url": "https://dialzara.com/solutions/ai-answering-service"
+        },
+        {
+          "app": "HubSpot",
+          "quote": "🧡HubSpot",
+          "url": "https://dialzara.com/solutions/ai-answering-service"
+        },
+        {
+          "app": "Slack",
+          "quote": "💬Slack",
+          "url": "https://dialzara.com/solutions/ai-answering-service"
+        },
+        {
+          "app": "Microsoft Teams",
+          "quote": "👥Microsoft Teams",
+          "url": "https://dialzara.com/solutions/ai-answering-service"
+        }
+      ],
+      "pricing": {
+        "summary": "Inbound plans from $29/month (Lite), $99 (Pro), $199 (Plus), $349 (Elite), Done for You from $1,500/month; outbound plans from $750/month; no contract, 7-day free trial",
+        "quote": "AI receptionist plans from $29/month — plus outbound voice, SMS, and website chat add-ons priced separately. No contract. Cancel anytime.",
+        "url": "https://dialzara.com/pricing"
+      },
+      "toolId": "dialzara",
+      "domain": "dialzara.com",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    },
+    "goodcall": {
+      "soc2": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "iso27001": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "trustCenter": {
+        "url": null
+      },
+      "trainsOnData": {
+        "status": "opt-out",
+        "quote": "Any training data saved by Goodcall is used only for improving Goodcall's language models and is processed primarily by automated systems. A small fraction of training data may be manually reviewed. You may opt out of manual review at any time by contacting support@goodcall.com.",
+        "url": "https://help.goodcall.com/en/articles/8007565-privacy"
+      },
+      "retention": {
+        "status": "stated",
+        "summary": "Call history retention depends on plan: 30 days (Starter), 90 days (Growth), unlimited (Scale).",
+        "quote": "30-day call history",
+        "url": "https://www.goodcall.com/pricing"
+      },
+      "hipaaBaa": {
+        "status": "available",
+        "note": "BAA available on Scale plan and Enterprise; HIPAA compliance stated on homepage.",
+        "quote": "Yes, on the Scale plan ($299 a month) and on Enterprise. We have a standard Business Associate Agreement ready to sign.",
+        "url": "https://www.goodcall.com/faq"
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "Self-serve build with no code required",
+            "quote": "There's no code and nothing to configure. Tell Gabi what you want in plain words, by typing or talking, and Gabi does the work.",
+            "url": "https://www.goodcall.com/"
+          },
+          {
+            "fact": "Phone call forwarding supported",
+            "quote": "Your carrier's conditional call forwarding can send busy or unanswered calls to your Goodcall number.",
+            "url": "https://www.goodcall.com/faq"
+          },
+          {
+            "fact": "Month-to-month plans with a local number included",
+            "quote": "Every plan is month to month and includes a local phone number. Bigger teams can talk to us about Enterprise volume pricing.",
+            "url": "https://www.goodcall.com/faq"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "Google Calendar",
+          "quote": "Google Calendar, Google Sheets, and HighLevel connect natively.",
+          "url": "https://www.goodcall.com/faq"
+        },
+        {
+          "app": "Google Sheets",
+          "quote": "Google Calendar, Google Sheets, and HighLevel connect natively.",
+          "url": "https://www.goodcall.com/faq"
+        },
+        {
+          "app": "HighLevel",
+          "quote": "Google Calendar, Google Sheets, and HighLevel connect natively.",
+          "url": "https://www.goodcall.com/faq"
+        },
+        {
+          "app": "Zapier",
+          "quote": "Zapier connects Goodcall to your CRM and more than 10,000 other apps",
+          "url": "https://www.goodcall.com/faq"
+        }
+      ],
+      "pricing": {
+        "summary": "Starter $79/month (100 customers), Growth $129/month (500 customers), Scale $299/month (2,000 customers); Enterprise custom. Month to month with a local number included.",
+        "quote": "Starter is $79 a month for 100 customers, Growth is $129 a month for 500 customers, Scale is $299 a month for 2,000 customers.",
+        "url": "https://www.goodcall.com/faq"
+      },
+      "toolId": "goodcall",
+      "domain": "goodcall.com",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    },
+    "smith": {
+      "soc2": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "iso27001": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "trustCenter": {
+        "url": null
+      },
+      "trainsOnData": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "retention": {
+        "status": "stated",
+        "summary": "Call recordings are deleted after three months.",
+        "quote": "Call data is encrypted and stored within the dashboard, protected by your logged-in credentials, to protect your privacy and confidentiality. Call recordings are deleted after three months.",
+        "url": "https://smith.ai/"
+      },
+      "hipaaBaa": {
+        "status": "not-found",
+        "note": null,
+        "quote": null,
+        "url": null
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "Self-serve signup with a dedicated number live immediately (Free plan).",
+            "quote": "Create your free account. Sign up and your dedicated phone number is live right away.",
+            "url": "https://smith.ai/blog/smith-ai-free-plan-what-you-get-free-forever"
+          },
+          {
+            "fact": "Phone call forwarding from existing business line.",
+            "quote": "Turn on call forwarding. Forward your existing business line to your new number, usually a one-minute change with your carrier or VOIP provider.",
+            "url": "https://smith.ai/blog/smith-ai-free-plan-what-you-get-free-forever"
+          },
+          {
+            "fact": "Conditional call forwarding offered.",
+            "quote": "Set your phone to only forward certain calls to Smith.ai. Works with all major carriers.",
+            "url": "https://smith.ai/all-features/what-we-do"
+          },
+          {
+            "fact": "Zapier connection uses an API key from the dashboard, self-configured.",
+            "quote": "You will then be asked for an API key. This can be found in your Call Dashboard or Chat Dashboard under “Integrations.”",
+            "url": "https://smith.ai/blog/new-connect-1000s-of-apps-with-smith-ais-public-zapier-integration"
+          },
+          {
+            "fact": "Free plan setup is self-serve and configured at the customer's own pace.",
+            "quote": "everything past that is configuration you control yourself, at your own pace, in whatever order makes sense for your business.",
+            "url": "https://smith.ai/blog/smith-ai-free-plan-what-you-get-free-forever"
+          },
+          {
+            "fact": "Pro plan includes dedicated onboarding; Enterprise is built by Smith.ai team.",
+            "quote": "Dedicated onboarding setup",
+            "url": "https://smith.ai/pricing/ai-receptionist"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "Clio",
+          "quote": "Integrations include Clio, Filevine, Lawmatics, MyCase, PracticePanther, Smokeball, Litify and Rocket Matter.",
+          "url": "https://smith.ai/"
+        },
+        {
+          "app": "Filevine",
+          "quote": "Link Acuity, Calendly, Filevine, Lawmatics, Make, or Zapier",
+          "url": "https://smith.ai/blog/smith-ai-free-plan-what-you-get-free-forever"
+        },
+        {
+          "app": "Lawmatics",
+          "quote": "Integrations include Clio, Filevine, Lawmatics, MyCase, PracticePanther, Smokeball, Litify and Rocket Matter.",
+          "url": "https://smith.ai/"
+        },
+        {
+          "app": "MyCase",
+          "quote": "8am™ MyCase",
+          "url": "https://smith.ai/integrations"
+        },
+        {
+          "app": "Calendly",
+          "quote": "Calendly helps you schedule meetings without the back-and-forth emails.",
+          "url": "https://smith.ai/integrations"
+        },
+        {
+          "app": "Acuity Scheduling",
+          "quote": "Online appointment scheduling software. Clients schedule appointments, pay, and complete intake forms online 24/7.",
+          "url": "https://smith.ai/integrations"
+        },
+        {
+          "app": "Zapier",
+          "quote": "Build custom automations to more than 5,000 apps with our Zapier integration.",
+          "url": "https://smith.ai/all-features/what-we-do"
+        },
+        {
+          "app": "ActiveCampaign",
+          "quote": "### ActiveCampaign",
+          "url": "https://smith.ai/integrations"
+        },
+        {
+          "app": "Airtable",
+          "quote": "Airtable is a low‒code platform to build next‒gen apps",
+          "url": "https://smith.ai/integrations"
+        },
+        {
+          "app": "CallRail",
+          "quote": "CallRail is the lead intelligence platform that makes it easy for businesses of all sizes to market with confidence.",
+          "url": "https://smith.ai/integrations"
+        }
+      ],
+      "pricing": {
+        "summary": "Free: $0/mo, 25 calls/mo ($3.00/call after). Pro: $150/mo, $2.00/call, 75 calls/mo. Enterprise: $500/mo, $1.67/call, 300 calls/mo. Custom plans available. Law firm estimate: AI Receptionist about $1–2",
+        "quote": "Free $0 mo 25 calls/mo ($3.00/call after that)",
+        "url": "https://smith.ai/pricing/ai-receptionist"
+      },
+      "toolId": "smith",
+      "domain": "smith.ai",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    },
+    "rosie": {
+      "soc2": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "iso27001": {
+        "status": "stated",
+        "quote": "Data center is ISO 27001, 27017, and 27018 certified.",
+        "url": "https://heyrosie.com/legal/data-processing"
+      },
+      "trustCenter": {
+        "url": null
+      },
+      "trainsOnData": {
+        "status": "yes",
+        "quote": "Any processing of data by Rosie to train or develop AI technologies is governed by contracts with our Subscribers, not this Privacy Notice.",
+        "url": "https://heyrosie.com/legal/privacy"
+      },
+      "retention": {
+        "status": "stated",
+        "summary": "Rosie retains Personal Information about Callers until the Subscriber deletes it or instructs us to do so; Subscriber account data is deleted 30 days after subscription cancellation; backups are retai",
+        "quote": "We delete Subscriber account data 30 days after the Subscriber’s subscription is cancelled.",
+        "url": "https://heyrosie.com/legal/privacy"
+      },
+      "hipaaBaa": {
+        "status": "available",
+        "note": "Covered entities must execute and comply with a HIPAA Business Associate Agreement with Rosie.",
+        "quote": "it is your responsibility to ensure that you have executed and at all times comply with a HIPAA Business Associate Agreement with Rosie.",
+        "url": "https://heyrosie.com/legal/terms"
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "Self-serve signup with a free trial",
+            "quote": "Join 2,000+ small businesses using Rosie to answer calls, book appointments, and capture leads 24/7. Start your 7-day free trial.",
+            "url": "https://heyrosie.com/pricing"
+          },
+          {
+            "fact": "Phone call forwarding is used to route calls to Rosie",
+            "quote": "Once you’re happy with the setup, forward your calls to Rosie and she’ll start right away",
+            "url": "https://heyrosie.com/?ref_type=adv"
+          },
+          {
+            "fact": "Setup from Google Business Profile or website address",
+            "quote": "Use your Google Business profile, website address, or basic business details, such as your company name, industry, and services, to quickly set up Rosie",
+            "url": "https://heyrosie.com/solutions"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "Shopify",
+          "quote": "Connect your Shopify store with a single click.",
+          "url": "https://heyrosie.com/features/shopify-app"
+        },
+        {
+          "app": "Zapier",
+          "quote": "Zapier integration — connect to 1,000+ apps",
+          "url": "https://heyrosie.com/pricing"
+        }
+      ],
+      "pricing": {
+        "summary": "Professional $49/month (250 minutes); Scale $149/month (1,000 minutes); Growth $299/month (2,000 minutes); pay annually gets 2 months free.",
+        "quote": "Professional, $49, per month",
+        "url": "https://heyrosie.com/pricing"
+      },
+      "toolId": "rosie",
+      "domain": "heyrosie.com",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    },
+    "housecall": {
+      "soc2": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "iso27001": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "trustCenter": {
+        "url": null
+      },
+      "trainsOnData": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "retention": {
+        "status": "stated",
+        "summary": "Following termination or deactivation of account, Housecall Pro may retain Personal Information for purposes including marketing, backup, archival, protection of rights, audit, or as otherwise permitt",
+        "quote": "Following termination or deactivation of your user account, Housecall Pro may retain your Personal Information for any purpose set forth in this Privacy Policy, including but not limited to marketing, backup, archival, protection of the rights of Housecall Pro and its customers and third parties, audit purposes, or as otherwise permitted by law.",
+        "url": "https://www.housecallpro.com/privacy/"
+      },
+      "hipaaBaa": {
+        "status": "not-found",
+        "note": null,
+        "quote": null,
+        "url": null
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "Self-serve signup available",
+            "quote": "sign up through the self-serve process",
+            "url": "https://help.housecallpro.com/en/articles/9740104-csr-ai-overview"
+          },
+          {
+            "fact": "Phone call forwarding required",
+            "quote": "We will provide you with a call forwarding number to use so calls are routed directly to CSR AI for calls and chats.",
+            "url": "https://help.housecallpro.com/en/articles/9740104-csr-ai-overview"
+          },
+          {
+            "fact": "No extra apps needed; setup guided",
+            "quote": "Set up fast – no additional apps required.",
+            "url": "https://www.housecallpro.com/features/ai-team/csr-ai/"
+          },
+          {
+            "fact": "Text-based onboarding after attaching product",
+            "quote": "after you attach the CSR AI product, an hour later you will get a text message guiding you through setting up call forwarding!",
+            "url": "https://help.housecallpro.com/en/articles/12996637-getting-started-with-csr-ai"
+          },
+          {
+            "fact": "Demo optional via sales call",
+            "quote": "If you’d like a demo, schedule a brief call with our team",
+            "url": "https://help.housecallpro.com/en/articles/9740104-csr-ai-overview"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "QuickBooks",
+          "quote": "Sync invoice data from Housecall Pro to QuickBooks Desktop",
+          "url": "https://www.housecallpro.com/integrations/"
+        },
+        {
+          "app": "Google Local Services",
+          "quote": "Get booked directly from Google Business search results",
+          "url": "https://www.housecallpro.com/integrations/"
+        },
+        {
+          "app": "Thumbtack",
+          "quote": "Organize your leads and get them converted into a job",
+          "url": "https://www.housecallpro.com/integrations/"
+        },
+        {
+          "app": "Mailchimp",
+          "quote": "Promote your business across email, social, landing pages, postcards, and more",
+          "url": "https://www.housecallpro.com/integrations/"
+        },
+        {
+          "app": "Gusto",
+          "quote": "Payroll, benefits, and HR built for small business",
+          "url": "https://www.housecallpro.com/integrations/"
+        },
+        {
+          "app": "CallRail",
+          "quote": "Tracking and analytics for phone calls and web forms",
+          "url": "https://www.housecallpro.com/integrations/"
+        }
+      ],
+      "pricing": {
+        "summary": "Pricing built for home service Pros; MAX plan includes Zapier and open API access. CSR AI pricing details not stated on fetched pages.",
+        "quote": "For even more flexibility, our MAX plan offers access to Zapier and our open API, allowing you to create custom integrations to fit your specific workflows.",
+        "url": "https://www.housecallpro.com/pricing/"
+      },
+      "toolId": "housecall",
+      "domain": "housecallpro.com",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    },
+    "slang": {
+      "soc2": {
+        "status": "stated",
+        "quote": "SOC 2 Type II attestation supports the security and reliability requirements of enterprise restaurant groups.",
+        "url": "https://www.slang.ai/post/superhost"
+      },
+      "iso27001": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "trustCenter": {
+        "url": null
+      },
+      "trainsOnData": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "retention": {
+        "status": "stated",
+        "summary": "Retains profile information and credentials while the account is active, payment data as long as needed to process purchase or subscription, and device/IP data as long as needed for system operation.",
+        "quote": "We retain your profile information and credentials for as long as you have an account with us.",
+        "url": "https://www.slang.ai/privacy-policy"
+      },
+      "hipaaBaa": {
+        "status": "not-found",
+        "note": null,
+        "quote": null,
+        "url": null
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "Setup time is under 30 minutes and the agent can go live the same day.",
+            "quote": "Slang AI requires less than 30 minutes of your time to set up and can go live the very same day.",
+            "url": "https://www.slang.ai/pricing"
+          },
+          {
+            "fact": "Call forwarding can be set up as part of flexible call handling.",
+            "quote": "Whether it's setting up call forwarding or telling Slang AI how you want to route VIP calls during or after business hours, we've got you covered with easy-to-use call scheduling.",
+            "url": "https://www.slang.ai/product"
+          },
+          {
+            "fact": "If a question is not recognized, the agent forwards to a human.",
+            "quote": "If a question is not recognized, Slang AI will automatically forward to a human or text a link with your email and other contact information (you can customize this).",
+            "url": "https://www.slang.ai/pricing"
+          },
+          {
+            "fact": "A new phone number is provided for the website and Google Business Profile; keep",
+            "quote": "We provide you with a new phone number to put on your website and your Google Business Profile.",
+            "url": "https://www.slang.ai/pricing"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "OpenTable",
+          "quote": "Slang AI and OpenTable are partnering to create a seamless restaurant booking experience.",
+          "url": "https://www.slang.ai/opentable"
+        },
+        {
+          "app": "SevenRooms",
+          "quote": "SevenRooms users can automate phone reservations while maintaining full control of their guest data.",
+          "url": "https://www.slang.ai/ai-restaurant-reservations"
+        },
+        {
+          "app": "Tripleseat",
+          "quote": "Integrate with premier private events management platforms Tripleseat and Perfect Venue to capture leads around-the-clock.",
+          "url": "https://www.slang.ai/pricing"
+        },
+        {
+          "app": "Yelp",
+          "quote": "Restaurants using Yelp Reservations can allow guests to book tables through phone calls answered by AI.",
+          "url": "https://www.slang.ai/ai-restaurant-reservations"
+        },
+        {
+          "app": "Resy",
+          "quote": "Integrate with leading reservation platforms (including OpenTable, SevenRooms, Yelp, and Resy) to power end-to-end voice booking.",
+          "url": "https://www.slang.ai/pricing"
+        }
+      ],
+      "pricing": {
+        "summary": "Core starts at $399 per location; Superhost starts at $599 per location.",
+        "quote": "Starting at $399 *per location",
+        "url": "https://www.slang.ai/pricing"
+      },
+      "toolId": "slang",
+      "domain": "slang.ai",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    },
+    "tidio": {
+      "soc2": {
+        "status": "type2",
+        "quote": "SOC 2 Type II Report",
+        "url": "https://trust.tidio.com/"
+      },
+      "iso27001": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "trustCenter": {
+        "url": "https://trust.tidio.com/"
+      },
+      "trainsOnData": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "retention": {
+        "status": "not-found",
+        "summary": null,
+        "quote": null,
+        "url": null
+      },
+      "hipaaBaa": {
+        "status": "not-available",
+        "note": "Tidio does not currently provide official HIPAA certification or compliance documentation, though it has taken steps toward achieving compliance. The Lyro Tailored solution page lists \"SOC 2 & HIPAA c",
+        "quote": "While Tidio adheres to data protection rules, it does not currently provide official HIPAA certification or compliance documentation.",
+        "url": "https://www.tidio.com/faq/"
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "Self-serve signup with free account and no credit card",
+            "quote": "You can create a free Tidio account (without credit card input) by registering a new Tidio account.",
+            "url": "https://www.tidio.com/faq/"
+          },
+          {
+            "fact": "Installation via pasting a single line of code",
+            "quote": "The installation process is simple—just copy and paste a single line of code into your website’s code.",
+            "url": "https://www.tidio.com/faq/"
+          },
+          {
+            "fact": "Lyro setup requires no coding",
+            "quote": "Add Lyro to your website in a few clicks, without technical knowledge.",
+            "url": "https://www.tidio.com/ai-agent/"
+          },
+          {
+            "fact": "Launch possible on free plan without contacting sales",
+            "quote": "Today! You can launch with our free plan or contact sales to fast-track advanced deployments.",
+            "url": "https://www.tidio.com/ai-agent/build-and-integrate/"
+          },
+          {
+            "fact": "Lyro setup requires no coding",
+            "quote": "Lyro, setup requires no coding.",
+            "url": "https://www.tidio.com/faq/"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "Zendesk",
+          "quote": "Empower Lyro to reply to emails in Zendesk, convert chats into tickets automatically",
+          "url": "https://www.tidio.com/ai-agent/build-and-integrate/"
+        },
+        {
+          "app": "Intercom",
+          "quote": "Easily migrate Intercom knowledge base and chats to keep your AI agents accurate",
+          "url": "https://www.tidio.com/ai-agent/build-and-integrate/"
+        },
+        {
+          "app": "Salesforce",
+          "quote": "Automatically sync contacts and transcripts with Salesforce.",
+          "url": "https://www.tidio.com/ai-agent/build-and-integrate/"
+        },
+        {
+          "app": "Shopify",
+          "quote": "Bring Tidio to Shopify to answer product questions, recover carts, and build trust through authentic support.",
+          "url": "https://www.tidio.com/integrations/"
+        },
+        {
+          "app": "WordPress",
+          "quote": "Deliver authentic, efficient support on WordPress with Tidio’s trustworthy AI and human-centred tools.",
+          "url": "https://www.tidio.com/integrations/"
+        },
+        {
+          "app": "Zapier",
+          "quote": "Use Zapier to sync Tidio chats, leads, and customer details instantly across your entire tool stack.",
+          "url": "https://www.tidio.com/integrations/"
+        },
+        {
+          "app": "HubSpot",
+          "quote": "Tidio integrates with Messenger, Instagram, WhatsApp, Zapier, Zendesk, HubSpot, Salesforce",
+          "url": "https://www.tidio.com/faq/"
+        }
+      ],
+      "pricing": {
+        "summary": "Starter from $24.17/mo (annual billing, 100 billable conversations, 50 Lyro AI conversations); Growth from $49.17/mo (250 billable conversations); Plus from $300/mo plus usage; Premium custom pricing ",
+        "quote": "Starter $ 24.17 /mo. 100 Billable conversations 7-day free trial",
+        "url": "https://www.tidio.com/pricing/"
+      },
+      "toolId": "tidio",
+      "domain": "tidio.com",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    },
+    "crisp": {
+      "soc2": {
+        "status": "not-found",
+        "quote": "Please note that Crisp hasn't been over any SOC2 audit but we wish to show we are fully compliant with these specific needs.",
+        "url": "https://help.crisp.chat/en/article/crisp-compliance-status-with-soc2-1xet2vz/"
+      },
+      "iso27001": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "trustCenter": {
+        "url": null
+      },
+      "trainsOnData": {
+        "status": "no",
+        "quote": "No. We never use customer conversations, prompts, or knowledge sources to train or fine-tune any model.",
+        "url": "https://crisp.chat/en/chatbot/crisp-self-hosted/"
+      },
+      "retention": {
+        "status": "stated",
+        "summary": "Account data deleted on request; account info kept max 12 months if inactive; contracts up to 10 years; payment data up to 15 months; system logs up to 1 year; encrypted backups up to one week; market",
+        "quote": "We delete your account and all related customer data upon your request.",
+        "url": "https://crisp.chat/en/privacy/"
+      },
+      "hipaaBaa": {
+        "status": "not-found",
+        "note": null,
+        "quote": null,
+        "url": null
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "Free trial with self-serve plan start",
+            "quote": "Try any plan for free for 14 days",
+            "url": "https://crisp.chat/en/pricing/"
+          },
+          {
+            "fact": "Phone calls can be answered and triggered from Crisp",
+            "quote": "Answer phone calls and trigger outbound calls right from Crisp.",
+            "url": "https://crisp.chat/en/pricing/"
+          },
+          {
+            "fact": "Hugo installable via REST API for deletion of contacts",
+            "quote": "you can delete any contact or conversation at any time via the dashboard or the REST API",
+            "url": "https://crisp.chat/en/chatbot/crisp-self-hosted/"
+          },
+          {
+            "fact": "Easy install of chat widget on WordPress",
+            "quote": "Easily install the Crisp chat widget on your WordPress website.",
+            "url": "https://crisp.chat/en/pricing/"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "Shopify",
+          "quote": "Sync each Crisp conversation with your e-commerce platform: Shopify, Adobe, WooCommerce, and Prestashop.",
+          "url": "https://crisp.chat/en/pricing/"
+        },
+        {
+          "app": "WordPress",
+          "quote": "Easily install the Crisp chat widget on your WordPress website.",
+          "url": "https://crisp.chat/en/pricing/"
+        },
+        {
+          "app": "Slack",
+          "quote": "Reply to any of your incoming messages straight from your Slack Workspace.",
+          "url": "https://crisp.chat/en/pricing/"
+        },
+        {
+          "app": "HubSpot",
+          "quote": "Synchronize Crisp with your Hubspot account.",
+          "url": "https://crisp.chat/en/pricing/"
+        },
+        {
+          "app": "Pipedrive",
+          "quote": "Synchronize Crisp with your Pipedrive account.",
+          "url": "https://crisp.chat/en/pricing/"
+        },
+        {
+          "app": "Zoho CRM",
+          "quote": "Synchronize Crisp with your Zoho account.",
+          "url": "https://crisp.chat/en/pricing/"
+        },
+        {
+          "app": "Salesforce",
+          "quote": "Synchronize Crisp with your Salesforce account.",
+          "url": "https://crisp.chat/en/pricing/"
+        },
+        {
+          "app": "Stripe",
+          "quote": "Synchronize revenue details from Stripe straight in your Crisp inbox.",
+          "url": "https://crisp.chat/en/pricing/"
+        },
+        {
+          "app": "Zapier",
+          "quote": "Connect Crisp with more than 2000+ other apps without writing a line of code.",
+          "url": "https://crisp.chat/en/pricing/"
+        },
+        {
+          "app": "Make",
+          "quote": "Automate your workflows by connecting Crisp to hundreds of other apps with Make (formerly Integromat).",
+          "url": "https://crisp.chat/en/pricing/"
+        },
+        {
+          "app": "n8n",
+          "quote": "Integrate Crisp with your no-code automation workflows using n8n.",
+          "url": "https://crisp.chat/en/pricing/"
+        },
+        {
+          "app": "Segment",
+          "quote": "Connect Crisp as a source and collect customer data from 200 platforms, effortlessly.",
+          "url": "https://crisp.chat/en/pricing/"
+        },
+        {
+          "app": "Adobe Commerce",
+          "quote": "Integrate Crisp with Adobe Commerce to centralize your customer communications.",
+          "url": "https://crisp.chat/en/pricing/"
+        },
+        {
+          "app": "WooCommerce",
+          "quote": "Sync WooCommerce orders and customer data with Crisp for better support.",
+          "url": "https://crisp.chat/en/pricing/"
+        },
+        {
+          "app": "Prestashop",
+          "quote": "Integrate Crisp with Prestashop to sync orders and customer data.",
+          "url": "https://crisp.chat/en/pricing/"
+        }
+      ],
+      "pricing": {
+        "summary": "Free forever (Free plan); Mini $45/month per workspace; Essentials $95/month per workspace; Plus $295/month per workspace; 14-day free trial on any plan.",
+        "quote": "Try any plan for free for 14 days",
+        "url": "https://crisp.chat/en/pricing/"
+      },
+      "toolId": "crisp",
+      "domain": "crisp.chat",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    },
+    "chatbase": {
+      "soc2": {
+        "status": "type2",
+        "quote": "Chatbase is SOC 2 Type II compliant, supports GDPR requirements, and provides HIPAA-eligible Enterprise workspaces.",
+        "url": "https://www.chatbase.co/security"
+      },
+      "iso27001": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "trustCenter": {
+        "url": "https://www.chatbase.co/security"
+      },
+      "trainsOnData": {
+        "status": "no",
+        "quote": "Chatbase does not use customer data to train, retrain, fine-tune, or otherwise improve any AI model, and this applies to all accounts regardless of plan.",
+        "url": "https://www.chatbase.co/llm-info"
+      },
+      "retention": {
+        "status": "stated",
+        "summary": "Personal data processed on a customer's behalf is deleted within 30 days of a written deletion request or termination; HIPAA workspaces use Zero Data Retention and auto-end conversations after 24 hour",
+        "quote": "Chatbase deletes this data within thirty (30) days of receiving the customer's written deletion request or termination of the agreement, whichever occurs first.",
+        "url": "https://www.chatbase.co/legal/privacy"
+      },
+      "hipaaBaa": {
+        "status": "available",
+        "note": "Available on the Enterprise plan only; workspace becomes HIPAA compliant once a BAA is signed and Zero Data Retention is enabled.",
+        "quote": "HIPAA support is available on the Enterprise plan. To request a BAA, contact your account representative or get in touch with the Chatbase sales team.",
+        "url": "https://www.chatbase.co/docs/user-guides/workspace/hipaa-compliance"
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "Website platforms are added by copying an embed code from the Chatbase dashboard",
+            "quote": "Put your AI agent on your website. Most of these work by copying an embed code from your Chatbase dashboard and pasting it into your site builder.",
+            "url": "https://www.chatbase.co/docs/user-guides/integrations/integrations-overview"
+          },
+          {
+            "fact": "API keys are created in the dashboard under Workspace settings.",
+            "quote": "Go to Workspace settings → API keys. Click Create API Key and copy the generated key",
+            "url": "https://www.chatbase.co/docs/api-reference/v2/overview"
+          },
+          {
+            "fact": "HIPAA BAA requests go through account representative or sales team.",
+            "quote": "To request a BAA, contact your account representative or get in touch with the Chatbase sales team.",
+            "url": "https://www.chatbase.co/docs/user-guides/workspace/hipaa-compliance"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "HubSpot",
+          "quote": "Let your AI agent create HubSpot tickets and keep",
+          "url": "https://www.chatbase.co/integrations"
+        },
+        {
+          "app": "Twilio",
+          "quote": "Import a Twilio number and let your AI agent answer inbound phone calls.",
+          "url": "https://www.chatbase.co/integrations"
+        },
+        {
+          "app": "Shopify",
+          "quote": "Let your AI agent look up orders, manage carts, and handle exchanges in the conversation.",
+          "url": "https://www.chatbase.co/integrations"
+        },
+        {
+          "app": "Adobe Commerce (Magento)",
+          "quote": "Let your AI agent handle order, product, and payment questions on your Magento store.",
+          "url": "https://www.chatbase.co/integrations"
+        },
+        {
+          "app": "Stripe",
+          "quote": "Let your AI agent resolve billing and subscription questions without a ticket.",
+          "url": "https://www.chatbase.co/integrations"
+        },
+        {
+          "app": "WordPress",
+          "quote": "Add your AI agent to WordPress with the official plugin, no code required.",
+          "url": "https://www.chatbase.co/integrations"
+        },
+        {
+          "app": "Webflow",
+          "quote": "Add your AI agent to a Webflow site with one embed script.",
+          "url": "https://www.chatbase.co/integrations"
+        },
+        {
+          "app": "Wix",
+          "quote": "Add your AI agent to a Wix site with one embed script.",
+          "url": "https://www.chatbase.co/integrations"
+        },
+        {
+          "app": "Weebly",
+          "quote": "Add your AI agent to a Weebly site with one embed script.",
+          "url": "https://www.chatbase.co/integrations"
+        },
+        {
+          "app": "Framer",
+          "quote": "Add your AI agent to a Framer site with one embed script.",
+          "url": "https://www.chatbase.co/integrations"
+        },
+        {
+          "app": "Bubble",
+          "quote": "Add your AI agent to a Bubble app with one embed script.",
+          "url": "https://www.chatbase.co/integrations"
+        },
+        {
+          "app": "Vercel",
+          "quote": "Install Chatbase from the Vercel Marketplace and add an AI agent in one click.",
+          "url": "https://www.chatbase.co/integrations"
+        },
+        {
+          "app": "Notion",
+          "quote": "Train your AI agent on your Notion pages and keep it in sync automatically.",
+          "url": "https://www.chatbase.co/integrations"
+        },
+        {
+          "app": "Zendesk",
+          "quote": "Train your AI agent on past Zendesk tickets, not just your help centre.",
+          "url": "https://www.chatbase.co/integrations"
+        },
+        {
+          "app": "Salesforce",
+          "quote": "Train your AI agent on past Salesforce tickets, not just your documentation.",
+          "url": "https://www.chatbase.co/integrations"
+        },
+        {
+          "app": "Zapier",
+          "quote": "Connect your AI agent to thousands of apps through Zapier, with no code.",
+          "url": "https://www.chatbase.co/integrations"
+        },
+        {
+          "app": "Make",
+          "quote": "Build visual multi-step workflows connecting your AI agent to the rest of your stack.",
+          "url": "https://www.chatbase.co/integrations"
+        },
+        {
+          "app": "ViaSocket",
+          "quote": "Connect your AI agent to other tools through ViaSocket workflow automation.",
+          "url": "https://www.chatbase.co/integrations"
+        },
+        {
+          "app": "Calendly",
+          "quote": "Let your AI agent offer real availability and book Calendly meetings in the chat.",
+          "url": "https://www.chatbase.co/integrations"
+        }
+      ],
+      "pricing": {
+        "summary": "Hobby $32/month billed yearly ($40 monthly); Basic $120/month billed yearly ($150 monthly); Enterprise custom pricing.",
+        "quote": "Hobby $32 $40 /month billed yearly. Basic $120 $150 /month billed yearly. Enterprise Custom pricing.",
+        "url": "https://www.chatbase.co/pricing"
+      },
+      "toolId": "chatbase",
+      "domain": "chatbase.co",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    },
+    "intercom-fin": {
+      "soc2": {
+        "status": "type2",
+        "quote": "Intercom and Fin hold SOC 2 Type II and HIPAA compliance along with ISO 27001, ISO 27018, ISO 27701, and ISO 42001 certification",
+        "url": "https://www.intercom.com/security"
+      },
+      "iso27001": {
+        "status": "stated",
+        "quote": "ISO 27001:2022",
+        "url": "https://www.intercom.com/help/en/articles/7053674-accessing-security-and-compliance-documents"
+      },
+      "trustCenter": {
+        "url": "https://trust.intercom.com"
+      },
+      "trainsOnData": {
+        "status": "opt-out",
+        "quote": "Fin can use anonymized customer data for model fine-tuning, and you can opt out at any time, with data deleted within 30 days.",
+        "url": "https://www.intercom.com/security"
+      },
+      "retention": {
+        "status": "stated",
+        "summary": "Data is deleted within 30 days when a customer opts out of fine-tuning; third-party LLM providers do not store conversation data.",
+        "quote": "Customer data is only temporarily used to generate responses before being deleted.",
+        "url": "https://www.intercom.com/blog/data-privacy-security-ai-chatbots"
+      },
+      "hipaaBaa": {
+        "status": "available",
+        "note": "BAAs are in place with third-party LLM providers for HIPAA-compliant customers; HIPAA support is listed on the Expert plan.",
+        "quote": "Business Associate Agreements (BAAs) are in place with all third-party LLM providers we use for HIPAA-compliant customers.",
+        "url": "https://www.intercom.com/blog/data-privacy-security-ai-chatbots"
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "Fin set up time",
+            "quote": "Set up in under an hour on your current helpdesk",
+            "url": "https://www.intercom.com/pricing"
+          },
+          {
+            "fact": "Fin can be deployed over API on any helpdesk",
+            "quote": "Deploy Fin on any helpdesk over API. No migration required.",
+            "url": "https://www.intercom.com/integrations"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "Intercom Helpdesk",
+          "quote": "Fin is natively integrated into Intercom, the only helpdesk designed for the AI Agent era.",
+          "url": "https://www.intercom.com/integrations"
+        },
+        {
+          "app": "Zendesk",
+          "quote": "Fin resolves Zendesk tickets and messaging conversations, keeping Zendesk as your system of record.",
+          "url": "https://www.intercom.com/integrations"
+        },
+        {
+          "app": "Freshdesk",
+          "quote": "Fin resolves Freshdesk tickets and Freshchat conversations, keeping Freshworks as your system of record.",
+          "url": "https://www.intercom.com/integrations"
+        },
+        {
+          "app": "Salesforce Service Cloud",
+          "quote": "Fin resolves Salesforce cases across email, web forms, and live chat without migration.",
+          "url": "https://www.intercom.com/integrations"
+        },
+        {
+          "app": "HubSpot Service Hub",
+          "quote": "Fin resolves HubSpot email tickets and live chat conversations, keeping HubSpot as your system of record.",
+          "url": "https://www.intercom.com/integrations"
+        },
+        {
+          "app": "Shopify",
+          "quote": "Fin uses your Shopify store data to answer customer questions automatically.",
+          "url": "https://www.intercom.com/integrations"
+        },
+        {
+          "app": "Stripe",
+          "quote": "Fin pulls billing and subscription details to answer payment questions.",
+          "url": "https://www.intercom.com/integrations"
+        },
+        {
+          "app": "Slack",
+          "quote": "Slack",
+          "url": "https://www.intercom.com/integrations"
+        }
+      ],
+      "pricing": {
+        "summary": "Fin AI Agent is priced at $0.99 per outcome with no seats required; Expert seat plan listed from $132 per seat/mo.",
+        "quote": "Fin is priced at $0.99 per outcome.",
+        "url": "https://www.intercom.com/pricing"
+      },
+      "toolId": "intercom-fin",
+      "domain": "intercom.com",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    },
+    "buffer": {
+      "soc2": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "iso27001": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "trustCenter": {
+        "url": null
+      },
+      "trainsOnData": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "retention": {
+        "status": "not-found",
+        "summary": null,
+        "quote": null,
+        "url": null
+      },
+      "hipaaBaa": {
+        "status": "not-found",
+        "note": null,
+        "quote": null,
+        "url": null
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "Self-serve signup with a free plan and 14-day free trial on paid plans",
+            "quote": "Free forever Connect up to 3 channels",
+            "url": "https://buffer.com/pricing"
+          },
+          {
+            "fact": "Browser extension is included on all plans",
+            "quote": "Open Buffer on any web page and add content directly to your queue.",
+            "url": "https://buffer.com/pricing"
+          },
+          {
+            "fact": "API keys are used only for connections that need them; most tools use OAuth",
+            "quote": "Most of these connect over OAuth, a one-click \"Approve access\" flow with no API key required.",
+            "url": "https://support.buffer.com/en-us/articles/connecting-buffer-to-automation-tools-and-ai-assistants-MMoXpjDEEo"
+          },
+          {
+            "fact": "API access requires a verified account and personal key",
+            "quote": "API access requires email verification.",
+            "url": "https://support.buffer.com/en-us/articles/how-to-create-your-buffer-api-key-ShIgYVwM6j"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "Bitly",
+          "quote": "Shorten and track links in your Buffer posts automatically",
+          "url": "https://buffer.com/integrations"
+        },
+        {
+          "app": "Canva",
+          "quote": "Design stunning social media graphics without leaving Buffer",
+          "url": "https://buffer.com/integrations"
+        },
+        {
+          "app": "ChatGPT",
+          "quote": "Manage your content from ChatGPT and Codex",
+          "url": "https://buffer.com/integrations"
+        },
+        {
+          "app": "Claude",
+          "quote": "Analyze your social data, draft posts, and manage your queue",
+          "url": "https://buffer.com/integrations"
+        },
+        {
+          "app": "Cursor",
+          "quote": "Automate Buffer workflows from the Cursor code editor",
+          "url": "https://buffer.com/integrations"
+        },
+        {
+          "app": "Dropbox",
+          "quote": "Attach images and files from your Dropbox to any post",
+          "url": "https://buffer.com/integrations"
+        },
+        {
+          "app": "Google Drive",
+          "quote": "Pull images and files from Google Drive into your posts",
+          "url": "https://buffer.com/integrations"
+        },
+        {
+          "app": "Google Photos",
+          "quote": "Browse and attach your Google Photos to social media posts",
+          "url": "https://buffer.com/integrations"
+        },
+        {
+          "app": "Grok",
+          "quote": "Draft and schedule Buffer posts from Grok",
+          "url": "https://buffer.com/integrations"
+        },
+        {
+          "app": "IFTTT",
+          "quote": "Automate simple social media tasks with if-this-then-that logic",
+          "url": "https://buffer.com/integrations"
+        },
+        {
+          "app": "Make",
+          "quote": "Build powerful visual automations between Buffer and hundreds of apps",
+          "url": "https://buffer.com/integrations"
+        },
+        {
+          "app": "Microsoft Power Automate",
+          "quote": "Connect Buffer to the Microsoft ecosystem with enterprise-grade automation",
+          "url": "https://buffer.com/integrations"
+        },
+        {
+          "app": "n8n",
+          "quote": "Build self-hosted, open-source automations with Buffer",
+          "url": "https://buffer.com/integrations"
+        },
+        {
+          "app": "Nelio Content",
+          "quote": "Plan your editorial calendar and auto-share posts to Buffer from WordPress",
+          "url": "https://buffer.com/integrations"
+        },
+        {
+          "app": "OneDrive",
+          "quote": "Attach files and images from Microsoft OneDrive to your posts",
+          "url": "https://buffer.com/integrations"
+        },
+        {
+          "app": "OpenAI (AI Assistant)",
+          "quote": "Generate, repurpose, and refine social media copy with AI",
+          "url": "https://buffer.com/integrations"
+        },
+        {
+          "app": "Perplexity Web",
+          "quote": "Research and publish social media content from Perplexity",
+          "url": "https://buffer.com/integrations"
+        },
+        {
+          "app": "Quuu",
+          "quote": "Get hand-curated content suggestions delivered to your Buffer queue",
+          "url": "https://buffer.com/integrations"
+        },
+        {
+          "app": "Raycast",
+          "quote": "Create and schedule Buffer posts from your Mac menu bar",
+          "url": "https://buffer.com/integrations"
+        },
+        {
+          "app": "Unsplash",
+          "quote": "Add beautiful, free stock photos to your posts instantly",
+          "url": "https://buffer.com/integrations"
+        },
+        {
+          "app": "WordPress",
+          "quote": "Automatically share new blog posts to your social media channels",
+          "url": "https://buffer.com/integrations"
+        },
+        {
+          "app": "WriteStack",
+          "quote": "Schedule Substack Notes and cross-post to your Buffer channels",
+          "url": "https://buffer.com/integrations"
+        },
+        {
+          "app": "Zapier",
+          "quote": "Connect Buffer to 7,000+ apps with automated workflows",
+          "url": "https://buffer.com/integrations"
+        }
+      ],
+      "pricing": {
+        "summary": "Free forever plan (connect up to 3 channels, 10 scheduled posts per channel); Essentials at $5/month per channel ($60 billed yearly); Team at $10/month per channel ($120 billed yearly); 14-day free tr",
+        "quote": "Only pay for the channels you use",
+        "url": "https://buffer.com/pricing"
+      },
+      "toolId": "buffer",
+      "domain": "buffer.com",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    },
+    "canva": {
+      "soc2": {
+        "status": "stated",
+        "quote": "Canva has attained SOC2 Type II compliance and is ISO 27001 certified.",
+        "url": "https://www.canva.com/security/"
+      },
+      "iso27001": {
+        "status": "stated",
+        "quote": "Canva has attained SOC2 Type II compliance and is ISO 27001 certified.",
+        "url": "https://www.canva.com/security/"
+      },
+      "trustCenter": {
+        "url": "https://trust.canva.com/"
+      },
+      "trainsOnData": {
+        "status": "opt-out",
+        "quote": "Canva won’t use your user content to improve AI-powered features unless this is consistent with your Privacy Settings",
+        "url": "https://www.canva.com/trust/privacy/"
+      },
+      "retention": {
+        "status": "not-found",
+        "summary": null,
+        "quote": null,
+        "url": null
+      },
+      "hipaaBaa": {
+        "status": "not-found",
+        "note": "No HIPAA BAA information found in the provided pages. Not confirmed for Magic Write specifically.",
+        "quote": null,
+        "url": null
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "Enterprise pricing is based on team size; contact sales for a custom quote.",
+            "quote": "Contact our sales team for a custom quote.",
+            "url": "https://www.canva.com/en_in/solutions/it/"
+          },
+          {
+            "fact": "Magic Write is listed among AI Products covered by the AI Product Terms.",
+            "quote": "including, but not limited to, Magic Media™, Magic Write™, Magic Edit, Magic Design, and Translate",
+            "url": "https://www.canva.com/policies/ai-product-terms-2023-10-04/"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "Microsoft 365",
+          "quote": "Connect Canva to Microsoft 365, Google, Slack, and identity providers-securely.",
+          "url": "https://www.canva.com/en_in/solutions/it/"
+        },
+        {
+          "app": "Google Workspace",
+          "quote": "Canva integrates with your essential workplace systems including Microsoft 365, Google Workspace, and leading identity providers.",
+          "url": "https://www.canva.com/en_in/solutions/it/"
+        },
+        {
+          "app": "Slack",
+          "quote": "Connect Canva to Microsoft 365, Google, Slack, and identity providers-securely.",
+          "url": "https://www.canva.com/en_in/solutions/it/"
+        }
+      ],
+      "pricing": {
+        "summary": "Enterprise pricing is based on team size and needs, with flexible plans and volume discounts; custom quotes via sales. No Magic Write-specific pricing found.",
+        "quote": "Enterprise pricing is based on your team size and needs. We offer flexible plans that scale with your organisation, including volume discounts.",
+        "url": "https://www.canva.com/en_in/solutions/it/"
+      },
+      "toolId": "canva",
+      "domain": "canva.com",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    },
+    "predis": {
+      "soc2": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "iso27001": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "trustCenter": {
+        "url": null
+      },
+      "trainsOnData": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "retention": {
+        "status": "not-found",
+        "summary": null,
+        "quote": null,
+        "url": null
+      },
+      "hipaaBaa": {
+        "status": "not-found",
+        "note": null,
+        "quote": null,
+        "url": null
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "Self-serve signup with a 3-day free trial; sign up by entering email and passwor",
+            "quote": "Enter your email address; Create a new password; Click Sign Up",
+            "url": "https://help.predis.ai/knowledgebase/en/article/how-to-sign-up-for-predis"
+          },
+          {
+            "fact": "Browser app availability and mobile apps",
+            "quote": "Predis.ai runs in your browser at app.predis.ai, and there are apps on Google Play and the Apple App Store",
+            "url": "https://predis.ai/pricing/"
+          },
+          {
+            "fact": "API key required for API access, generated in the account menu",
+            "quote": "Navigate to Pricing & Account -> Rest API to generate a new API key",
+            "url": "https://predis.ai/developers/docs/predis-api/quick-start/"
+          },
+          {
+            "fact": "SDK embed requires an App ID and copy-paste code; API integration requires imple",
+            "quote": "Just sign up for an App ID, copy and paste some code, and start giving your users the best possible content generation experience.",
+            "url": "https://predis.ai/developers/docs/intro/"
+          },
+          {
+            "fact": "Claude/ChatGPT connection via MCP requires no API key, signing in with Predis.ai",
+            "quote": "There's no API key to copy, and your brand kit and saved products come with you.",
+            "url": "https://predis.ai/mcp/"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "Instagram",
+          "quote": "Predis.ai integrates with Instagram, Facebook, LinkedIn, X, Pinterest, Google My Business, and TikTok",
+          "url": "https://predis.ai/auto-post/"
+        },
+        {
+          "app": "Facebook",
+          "quote": "Predis.ai integrates with Instagram, Facebook, LinkedIn, X, Pinterest, Google My Business, and TikTok",
+          "url": "https://predis.ai/auto-post/"
+        },
+        {
+          "app": "LinkedIn",
+          "quote": "Predis.ai integrates with Instagram, Facebook, LinkedIn, X, Pinterest, Google My Business, and TikTok",
+          "url": "https://predis.ai/auto-post/"
+        },
+        {
+          "app": "X (Twitter)",
+          "quote": "Predis.ai integrates with Instagram, Facebook, LinkedIn, X, Pinterest, Google My Business, and TikTok",
+          "url": "https://predis.ai/auto-post/"
+        },
+        {
+          "app": "Pinterest",
+          "quote": "Predis.ai integrates with Instagram, Facebook, LinkedIn, X, Pinterest, Google My Business, and TikTok",
+          "url": "https://predis.ai/auto-post/"
+        },
+        {
+          "app": "Google My Business",
+          "quote": "Predis.ai integrates with Instagram, Facebook, LinkedIn, X, Pinterest, Google My Business, and TikTok",
+          "url": "https://predis.ai/auto-post/"
+        },
+        {
+          "app": "TikTok",
+          "quote": "Predis.ai integrates with Instagram, Facebook, LinkedIn, X, Pinterest, Google My Business, and TikTok",
+          "url": "https://predis.ai/auto-post/"
+        },
+        {
+          "app": "Shopify",
+          "quote": "Integrations: Shopify, WooCommerce, Wix, Squarespace, Generic E-Commerce",
+          "url": "https://predis.ai/pricing/"
+        },
+        {
+          "app": "WooCommerce",
+          "quote": "Integrations: Shopify, WooCommerce, Wix, Squarespace, Generic E-Commerce",
+          "url": "https://predis.ai/pricing/"
+        },
+        {
+          "app": "Wix",
+          "quote": "Integrations: Shopify, WooCommerce, Wix, Squarespace, Generic E-Commerce",
+          "url": "https://predis.ai/pricing/"
+        },
+        {
+          "app": "Squarespace",
+          "quote": "Integrations: Shopify, WooCommerce, Wix, Squarespace, Generic E-Commerce",
+          "url": "https://predis.ai/pricing/"
+        },
+        {
+          "app": "Claude",
+          "quote": "Claude on the web and desktop, ChatGPT and Claude Code.",
+          "url": "https://predis.ai/mcp/"
+        },
+        {
+          "app": "ChatGPT",
+          "quote": "Claude on the web and desktop, ChatGPT and Claude Code.",
+          "url": "https://predis.ai/mcp/"
+        }
+      ],
+      "pricing": {
+        "summary": "Core $19/month, Rise $40/month, Enterprise+ $212/month (per plan comparison); SDK embed $498/month, Whitelabel SDK $949/month; every plan starts with a 3-day free trial with card required",
+        "quote": "Every plan starts with 3 days free. We take a card to start the trial and charge it when day 3 ends",
+        "url": "https://predis.ai/pricing/"
+      },
+      "toolId": "predis",
+      "domain": "predis.ai",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    },
+    "simplified": {
+      "soc2": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "iso27001": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "trustCenter": {
+        "url": null
+      },
+      "trainsOnData": {
+        "status": "no",
+        "quote": "Your designs, captions, videos, and brand assets are never fed into AI models — ours or anyone else's. Written explicitly into our policy.",
+        "url": "https://simplified.com/privacy"
+      },
+      "retention": {
+        "status": "stated",
+        "summary": "Active account data kept while account is active; usage logs retained for a rolling period; billing records retained as required by regulations; deleted account data removed within 30 days of a deleti",
+        "quote": "Deleted account data: Removed within 30 days of a deletion request",
+        "url": "https://simplified.com/privacy"
+      },
+      "hipaaBaa": {
+        "status": "not-available",
+        "note": "Terms state the Site is not tailored to HIPAA compliance and HIPAA-regulated interactions are not permitted; no BAA found.",
+        "quote": "The Site is not tailored to comply with industry-specific regulations (Health Insurance Portability and Accountability Act (HIPAA), Federal Information Security Management Act (FISMA), etc.), so if your interactions would be subjected to such laws, you may not use this Site.",
+        "url": "https://simplified.com/termsofservice"
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "Self-serve account signup is available; Starter plan can be purchased directly.",
+            "quote": "Simplified Starter, 5 campaigns a month $79 per month",
+            "url": "https://simplified.com/pricing"
+          },
+          {
+            "fact": "API access requires upgrading the account and obtaining a key from the dashboard",
+            "quote": "Your key is available immediately in your dashboard.",
+            "url": "https://simplified.com/ai-content-api"
+          },
+          {
+            "fact": "Coding is needed only for API use; MCP setup is available across several AI clie",
+            "quote": "For terminal scripts, use CLI installation. For direct integrations, start with API authentication.",
+            "url": "https://docs.simplified.com/setup.md"
+          },
+          {
+            "fact": "Connecting to Riley requires no MCP server install or config file edit.",
+            "quote": "There is no MCP server to install and no config file to edit.",
+            "url": "https://simplified.com/integrations"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "HubSpot",
+          "quote": "HubSpot Riley updates CRM records and drafts campaign emails for your review.",
+          "url": "https://simplified.com/integrations"
+        },
+        {
+          "app": "Shopify",
+          "quote": "Shopify Riley writes product listings and pulls sales data to fuel campaigns.",
+          "url": "https://simplified.com/integrations"
+        },
+        {
+          "app": "Stripe",
+          "quote": "Stripe Riley pulls revenue and churn metrics, and drafts payment links.",
+          "url": "https://simplified.com/integrations"
+        },
+        {
+          "app": "Slack",
+          "quote": "Slack Riley posts updates and shares work for approval in your channels.",
+          "url": "https://simplified.com/integrations"
+        },
+        {
+          "app": "Google Ads",
+          "quote": "Google Ads Riley watches ad spend and drafts new campaigns for your sign-off.",
+          "url": "https://simplified.com/integrations"
+        },
+        {
+          "app": "WordPress",
+          "quote": "WordPress Riley drafts and publishes blog posts, with category and featured image set.",
+          "url": "https://simplified.com/integrations"
+        },
+        {
+          "app": "Notion",
+          "quote": "Notion Riley reads your content calendar and writes updates back.",
+          "url": "https://simplified.com/integrations"
+        },
+        {
+          "app": "Airtable",
+          "quote": "Airtable Riley creates and updates records, and flags rows that need attention.",
+          "url": "https://simplified.com/integrations"
+        }
+      ],
+      "pricing": {
+        "summary": "Starter at $79/month (5 campaigns a month); Growth at $85/mo billed annually includes API access; Pro and Business add campaigns and seats; a free plan includes 3 connected social accounts.",
+        "quote": "Simplified Starter, 5 campaigns a month $79 per month",
+        "url": "https://simplified.com/pricing"
+      },
+      "toolId": "simplified",
+      "domain": "simplified.com",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    },
+    "hootsuite": {
+      "soc2": {
+        "status": "type2",
+        "quote": "Hootsuite undergoes a SOC 2 Type II audit annually which is performed by an independent third party auditor.",
+        "url": "https://www.hootsuite.com/legal/security-practices"
+      },
+      "iso27001": {
+        "status": "stated",
+        "quote": "ISO/IEC 27001: Framework for managing information security",
+        "url": "https://www.hootsuite.com/legal/security-practices"
+      },
+      "trustCenter": {
+        "url": "https://trustcenter.hootsuite.com/"
+      },
+      "trainsOnData": {
+        "status": "opt-out",
+        "quote": "Customer agrees and instructs that we may use Customer Content and Outputs to develop and improve the features of the AI-Powered Services (including our machine-learning technologies), both during and after the term of the Agreement, provided that the Customer Content and Outputs (1) will not be used to train any AI Functionality of a third-party AI Service Provider",
+        "url": "https://www.hootsuite.com/legal/ai-terms"
+      },
+      "retention": {
+        "status": "stated",
+        "summary": "Information retained only as long as necessary to provide Services and for financial/legal purposes; disposed of securely or anonymized afterward; aggregated data retained for analysis.",
+        "quote": "We retain information about you only for as long as necessary to provide and manage our Services, to manage our business, and for financial and legal purposes.",
+        "url": "https://www.hootsuite.com/privacy"
+      },
+      "hipaaBaa": {
+        "status": "not-found",
+        "note": "Pages state Hootsuite is 'HIPAA-friendly' and has adopted safeguards 'for consistency with HIPAA standards', but no BAA availability is stated.",
+        "quote": "We have adopted various administrative, physical and technical safeguards relevant to our environment for consistency with HIPAA standards.",
+        "url": "https://www.hootsuite.com/pages/enterprise-faq"
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "Self-serve signup available",
+            "quote": "First things first: sign up for a Hootsuite account. If you’re a brand-new user, the dashboard will walk you through the setup process.",
+            "url": "https://www.hootsuite.com/pages/enterprise-faq"
+          },
+          {
+            "fact": "Free trial to start",
+            "quote": "Free 14-day trial Includes: Schedule unlimited social posts* Generate posts and images",
+            "url": "https://www.hootsuite.com/lp/plans"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "Google My Business",
+          "quote": "Hootsuite has a Google My Business app that lets you manage your Google My Business page right from your Hootsuite dashboard.",
+          "url": "https://www.hootsuite.com/pages/enterprise-faq"
+        },
+        {
+          "app": "ReviewTrackers",
+          "quote": "you can still monitor and manage your Tripadvisor reviews from your dashboard if you have a ReviewTrackers account. Install the ReviewTrackers app",
+          "url": "https://www.hootsuite.com/pages/enterprise-faq"
+        },
+        {
+          "app": "Reddit",
+          "quote": "install the Reddit app for Hootsuite. This app allows you to set up a Stream to monitor brand mentions",
+          "url": "https://www.hootsuite.com/pages/enterprise-faq"
+        },
+        {
+          "app": "Google Analytics",
+          "quote": "Hootsuite Advanced Analytics users can connect a Google Analytics account",
+          "url": "https://www.hootsuite.com/pages/enterprise-faq"
+        },
+        {
+          "app": "Salesforce",
+          "quote": "Hootsuite Enterprise customers can add the Hootsuite Salesforce integration to bring social media interactions into Salesforce.",
+          "url": "https://www.hootsuite.com/pages/enterprise-faq"
+        },
+        {
+          "app": "monday.com",
+          "quote": "The monday.com app for Hootsuite helps you streamline your social media workflow across two of your most-used tools.",
+          "url": "https://www.hootsuite.com/pages/enterprise-faq"
+        },
+        {
+          "app": "Asana",
+          "quote": "If you use Asana to manage your workstreams, you’ll want to add it to your Hootsuite dashboard with our Asana integration.",
+          "url": "https://www.hootsuite.com/pages/enterprise-faq"
+        },
+        {
+          "app": "Wrike",
+          "quote": "The Hootsuite Wrike app is a must-add for teams and individuals who use Wrike to plan social media content and strategizing.",
+          "url": "https://www.hootsuite.com/pages/enterprise-faq"
+        },
+        {
+          "app": "HubSpot",
+          "quote": "You can quickly link your social media management and CRM with the Hootsuite app for HubSpot.",
+          "url": "https://www.hootsuite.com/pages/enterprise-faq"
+        },
+        {
+          "app": "Slack",
+          "quote": "Install the Slack for Hootsuite app to better collaborate with team members on your social media campaigns and strategies.",
+          "url": "https://www.hootsuite.com/pages/enterprise-faq"
+        },
+        {
+          "app": "Dropbox",
+          "quote": "You can connect your Dropbox account to Hootsuite to get easy access to your cloud-based files, images, and videos.",
+          "url": "https://www.hootsuite.com/pages/enterprise-faq"
+        },
+        {
+          "app": "Google Drive (Cloudview)",
+          "quote": "Cloudview, the Google Drive app for Hootsuite, lets you add images, files, and videos to your social media posts",
+          "url": "https://www.hootsuite.com/pages/enterprise-faq"
+        },
+        {
+          "app": "Shopify (Shopview)",
+          "quote": "The Shopview for Shopify app makes it a breeze to share products from your Shopify stores to social media.",
+          "url": "https://www.hootsuite.com/pages/enterprise-faq"
+        }
+      ],
+      "pricing": {
+        "summary": "Paid plans start at $99 for Standard, $199 for Professional, up to $399 for Advanced; Enterprise is custom-priced; free 14-day trial.",
+        "quote": "Paid plans start at $99 for a Standard plan, $199 for a Professional plan, and range up to $399 for an Advanced plan.",
+        "url": "https://www.hootsuite.com/pricing"
+      },
+      "toolId": "hootsuite",
+      "domain": "hootsuite.com",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    },
+    "later": {
+      "soc2": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "iso27001": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "trustCenter": {
+        "url": "http://trust.later.com/"
+      },
+      "trainsOnData": {
+        "status": "yes",
+        "quote": "We may use your content, engagement data, and platform interactions to train and improve our AI models, including for content analysis, trend prediction, and service enhancement.",
+        "url": "https://later.com/privacy/"
+      },
+      "retention": {
+        "status": "stated",
+        "summary": "Personal information retained only as long as necessary; account data kept while account is active; deleted account data removed from core systems immediately and from all systems within 90 days; anon",
+        "quote": "When you delete your Later account, personal and sensitive information is immediately removed from Later's core and transactional systems. Within 90 days, all remaining data is removed from Later's systems and third-party services",
+        "url": "https://help.later.com/hc/en-us/articles/29780709560343-Third-Party-Partner-Data-Safety-Compliance"
+      },
+      "hipaaBaa": {
+        "status": "not-found",
+        "note": null,
+        "quote": null,
+        "url": null
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "Self-serve access via web app and mobile apps",
+            "quote": "You can access Later on desktop through app.later.com, or through Later’s iOS and Android apps available for download on your mobile device",
+            "url": "https://help.later.com/hc/en-us/articles/360043246993-Getting-Started-With-Later-Social"
+          },
+          {
+            "fact": "Social profiles are connected through platform APIs (OAuth-style connection, not",
+            "quote": "Later connects to your social profiles through their respective APIs.",
+            "url": "https://help.later.com/hc/en-us/articles/360043246993-Getting-Started-With-Later-Social"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "Instagram",
+          "quote": "Later communicates with Instagram through their API to post to your profile securely on your behalf.",
+          "url": "https://help.later.com/hc/en-us/articles/360043246993-Getting-Started-With-Later-Social"
+        },
+        {
+          "app": "Facebook",
+          "quote": "Schedule posts to Instagram, Facebook, Pinterest, TikTok, LinkedIn, Threads, YouTube Shorts, and Snapchat",
+          "url": "https://help.later.com/hc/en-us/articles/360043246993-Getting-Started-With-Later-Social"
+        },
+        {
+          "app": "TikTok",
+          "quote": "Schedule posts to Instagram, Facebook, Pinterest, TikTok, LinkedIn, Threads, YouTube Shorts, and Snapchat",
+          "url": "https://help.later.com/hc/en-us/articles/360043246993-Getting-Started-With-Later-Social"
+        },
+        {
+          "app": "Pinterest",
+          "quote": "Schedule posts to Instagram, Facebook, Pinterest, TikTok, LinkedIn, Threads, YouTube Shorts, and Snapchat",
+          "url": "https://help.later.com/hc/en-us/articles/360043246993-Getting-Started-With-Later-Social"
+        },
+        {
+          "app": "LinkedIn",
+          "quote": "Schedule posts to Instagram, Facebook, Pinterest, TikTok, LinkedIn, Threads, YouTube Shorts, and Snapchat",
+          "url": "https://help.later.com/hc/en-us/articles/360043246993-Getting-Started-With-Later-Social"
+        },
+        {
+          "app": "Snapchat",
+          "quote": "Schedule posts to Instagram, Facebook, Pinterest, TikTok, LinkedIn, Threads, YouTube Shorts, and Snapchat",
+          "url": "https://help.later.com/hc/en-us/articles/360043246993-Getting-Started-With-Later-Social"
+        }
+      ],
+      "pricing": {
+        "summary": "Plans billed monthly or yearly in USD; Starter, Growth, and Scale tiers; extra Social Sets ($11.25/month each), extra users ($3.75/month each), extra AI credits ($3.75/month per 100 credits); taxes ex",
+        "quote": "Extra Social Sets ($11.25 USD/month each)",
+        "url": "https://later.com/pricing/"
+      },
+      "toolId": "later",
+      "domain": "later.com",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    },
+    "mailchimp": {
+      "soc2": {
+        "status": "stated",
+        "quote": "Our SOC 2 reports cover controls around security and availability of customer data.",
+        "url": "https://mailchimp.com/about/security/"
+      },
+      "iso27001": {
+        "status": "stated",
+        "quote": "The International Organization for Standardization 27001 Standard (ISO 27001) is an information security standard that ensures office sites, development centers, support centers, and data centers are securely managed.",
+        "url": "https://mailchimp.com/about/security/"
+      },
+      "trustCenter": {
+        "url": "https://mailchimp.com/about/security/"
+      },
+      "trainsOnData": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "retention": {
+        "status": "not-found",
+        "summary": null,
+        "quote": null,
+        "url": null
+      },
+      "hipaaBaa": {
+        "status": "not-found",
+        "note": null,
+        "quote": null,
+        "url": null
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "Self-serve signup with free account, no credit card required",
+            "quote": "Create a free account: Sign up at Mailchimp.com — no credit card required.",
+            "url": "https://mailchimp.com/features/"
+          },
+          {
+            "fact": "API keys can be generated by users with Manager permissions for integrations",
+            "quote": "Users with Manager permissions can generate their own API keys.",
+            "url": "https://mailchimp.com/help/about-api-keys/"
+          },
+          {
+            "fact": "Onboarding assistance included with paid plans",
+            "quote": "Paid plans include onboarding assistance to help you get set up and make the most of the tools available to you.",
+            "url": "https://mailchimp.com/features/"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "Canva",
+          "quote": "Create compelling visuals for your marketing.",
+          "url": "https://mailchimp.com/features/"
+        },
+        {
+          "app": "Mailchimp for Salesforce",
+          "quote": "Sync your Mailchimp subscribers and Salesforce® leads across platforms.",
+          "url": "https://mailchimp.com/features/"
+        },
+        {
+          "app": "Instagram",
+          "quote": "Promote and share your Instagram posts in email campaigns.",
+          "url": "https://mailchimp.com/features/"
+        },
+        {
+          "app": "Shopify",
+          "quote": "Sync Shopify customers, products, and purchase data to Mailchimp.",
+          "url": "https://mailchimp.com/features/"
+        },
+        {
+          "app": "Google Analytics",
+          "quote": "Unlock powerful insights with campaign, website, or landing page data.",
+          "url": "https://mailchimp.com/features/"
+        },
+        {
+          "app": "WooCommerce",
+          "quote": "Power your ecommerce store with smart marketing features.",
+          "url": "https://mailchimp.com/features/"
+        },
+        {
+          "app": "QuickBooks Online",
+          "quote": "Bring together your marketing tools and invoice data.",
+          "url": "https://mailchimp.com/features/"
+        },
+        {
+          "app": "Squarespace Commerce",
+          "quote": "Market your ecommerce business and drive sales.",
+          "url": "https://mailchimp.com/features/"
+        },
+        {
+          "app": "Zapier",
+          "quote": "Automatically pass data between web services without a single line of code.",
+          "url": "https://mailchimp.com/features/"
+        }
+      ],
+      "pricing": {
+        "summary": "Standard plan: send up to 6,000 emails each month, free for 14 days; larger lists require contacting sales for custom pricing, annual plans, and demos. Premium plan includes 300+ integrations and open",
+        "quote": "Send up to 6,000 emails each month.",
+        "url": "https://mailchimp.com/pricing/marketing/"
+      },
+      "toolId": "mailchimp",
+      "domain": "mailchimp.com",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    },
+    "klaviyo": {
+      "soc2": {
+        "status": "type2",
+        "quote": "Klaviyo 2025 Type 2 SOC 2",
+        "url": "https://trust.klaviyo.com/subprocessors"
+      },
+      "iso27001": {
+        "status": "stated",
+        "quote": "ISO 27001 and SOC 2 Type II certified, built to meet GDPR, CCPA, PDPA, and HIPAA.",
+        "url": "https://www.klaviyo.com/platform"
+      },
+      "trustCenter": {
+        "url": "https://trust.klaviyo.com/subprocessors"
+      },
+      "trainsOnData": {
+        "status": "opt-out",
+        "quote": "Klaviyo does not train AI models that allow other customers to replicate your proprietary content, brand voice, or strategy. Klaviyo uses aggregated or de-identified data to improve and train our proprietary models.",
+        "url": "https://www.klaviyo.com/legal/ai-faqs"
+      },
+      "retention": {
+        "status": "stated",
+        "summary": "Data collected in Klaviyo is retained with no expiration dates.",
+        "quote": "Data you collect in Klaviyo stays in Klaviyo: no expiration dates",
+        "url": "https://www.klaviyo.com/solutions/customer-data-platform"
+      },
+      "hipaaBaa": {
+        "status": "not-found",
+        "note": "HIPAA is mentioned only as a compliance standard the platform is built to meet; no BAA availability is stated.",
+        "quote": "built to meet GDPR, CCPA, PDPA, and HIPAA",
+        "url": "https://www.klaviyo.com/platform"
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "Built-in web tracking captures browsing activity from your website.",
+            "quote": "Capture browsing activity, add-to-carts, and purchase intent directly from your website",
+            "url": "https://www.klaviyo.com/integrate"
+          },
+          {
+            "fact": "Open APIs and flexible webhooks are available for custom integrations.",
+            "quote": "With our open APIs and flexible webhooks, you can integrate any tool in your tech stack.",
+            "url": "https://www.klaviyo.com/integrate"
+          },
+          {
+            "fact": "API key and OAuth authentication mechanisms are provided.",
+            "quote": "providing both API key and OAuth authentication mechanisms",
+            "url": "https://www.klaviyo.com/trust"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "ChatGPT (OpenAI connector)",
+          "quote": "Frequently Asked Questions for the Klaviyo app for ChatGPT",
+          "url": "https://help.klaviyo.com/hc/en-us/articles/46281487065243"
+        }
+      ],
+      "pricing": {
+        "summary": "Free plan for up to 250 active profiles; Email from $20/month (500 active profiles); Marketing from $25 ($1 first month promo) per month; Custom enterprise plans for over 150,000 active profiles.",
+        "quote": "Email $20/month ... Marketing $25 $1/month ... Custom Talk to sales Over 150,000 active profiles",
+        "url": "https://www.klaviyo.com/pricing"
+      },
+      "toolId": "klaviyo",
+      "domain": "klaviyo.com",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    },
+    "quickbooks": {
+      "soc2": {
+        "status": "stated",
+        "quote": "The SOC 2 report is now available and you can access it.",
+        "url": "https://quickbooks.intuit.com/community/other-questions-9/2024-soc-88067"
+      },
+      "iso27001": {
+        "status": "not-found"
+      },
+      "trustCenter": {
+        "url": "https://compliance-portal.app.intuit.com/app/SOC2"
+      },
+      "trainsOnData": {
+        "status": "yes",
+        "quote": "Improve and develop our products and services by analyzing how they are used and interacted with, by training our artificial intelligence models and other machine learning models",
+        "url": "https://www.intuit.com/privacy/statement/"
+      },
+      "retention": {
+        "status": "stated",
+        "summary": "Personal information is retained as long as necessary to comply with legal/regulatory needs and provide services; some data may be kept after deletion requests for legal claims or fraud protection.",
+        "quote": "Unless you specifically ask us to delete your personal information, we retain your personal information as long as it is necessary to comply with our data retention requirements and provide you with services",
+        "url": "https://www.intuit.com/privacy/statement/"
+      },
+      "hipaaBaa": {
+        "status": "not-found",
+        "note": null,
+        "quote": null,
+        "url": null
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "Self-serve signup: getting started takes minutes after connecting a bank account",
+            "quote": "It only takes a few minutes to get up and running once you connect your bank account to QuickBooks.",
+            "url": "https://quickbooks.intuit.com/online/"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "Mailchimp",
+          "quote": "we may use your bookkeeping details from QuickBooks, contact and purchase history details from Mailchimp",
+          "url": "https://www.intuit.com/privacy/statement/"
+        },
+        {
+          "app": "TurboTax",
+          "quote": "certain information from TurboTax (with your consent where it's required)",
+          "url": "https://www.intuit.com/privacy/statement/"
+        },
+        {
+          "app": "Credit Karma",
+          "quote": "recommendations from Credit Karma",
+          "url": "https://www.intuit.com/privacy/statement/"
+        }
+      ],
+      "pricing": {
+        "summary": "Simple Start $19/mo (50% off for 3 months, list $38); Plus/Scale tier $70/mo (list $140, 5 users); Advanced tier $170/mo (list $340, 25 users); Intuit Intelligence chat add-on $10/month for more promp",
+        "quote": "Simple Start $38 $19/mo 50% off for 3 months*",
+        "url": "https://quickbooks.intuit.com/online/"
+      },
+      "toolId": "quickbooks",
+      "domain": "intuit.com",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    },
+    "xero": {
+      "soc2": {
+        "status": "type2",
+        "quote": "SOC 2 REPORT FOR CLOUD BASED ACCOUNTING A TYPE 2 INDEPENDENT SERVICE AUDITOR'S REPORT ON CONTROLS RELEVANT TO SECURITY, AVAILABILITY, AND CONFIDENTIALITY",
+        "url": "https://brandfolder.xero.com/W2K0UFY7/at/78bv6f5bbt2bh79rxtbmj7ct/Xero_-_2024_SOC_2_Type_II_report.pdf"
+      },
+      "iso27001": {
+        "status": "stated",
+        "quote": "Xero is certified as compliant with ISO/IEC ISO27001:2022, the premier global information security management system (ISMS) standard.",
+        "url": "https://www.xero.com/security/"
+      },
+      "trustCenter": {
+        "url": "https://www.xero.com/security/"
+      },
+      "trainsOnData": {
+        "status": "no",
+        "quote": "No, JAX chat doesn't use your data to train the LLMs it uses.",
+        "url": "https://www.xero.com/us/ai-in-accounting/jax/"
+      },
+      "retention": {
+        "status": "stated",
+        "summary": "Xero retains customer data for seven years following termination of a customer agreement, then removes it at the end of that period or upon customer request.",
+        "quote": "Xero retains customer data for a period of seven years following the termination of a customer agreement and removes customer data at the end of the seven-year retention period or upon customer request.",
+        "url": "https://brandfolder.xero.com/W2K0UFY7/at/78bv6f5bbt2bh79rxtbmj7ct/Xero_-_2024_SOC_2_Type_II_report.pdf"
+      },
+      "hipaaBaa": {
+        "status": "not-found",
+        "note": null,
+        "quote": null,
+        "url": null
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "JAX is available to all Xero subscribers without any setup step beyond opening J",
+            "quote": "Yes, JAX chat is available to all Xero subscribers and users. You don't need to do anything to get started, just open JAX in your navigation bar and ask a question.",
+            "url": "https://www.xero.com/us/ai-in-accounting/jax/"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "Claude",
+          "quote": "The Xero connector in Claude gives you answers based on your live Xero data, wherever you work.",
+          "url": "https://www.xero.com/nz/ai-in-accounting/"
+        },
+        {
+          "app": "Excel",
+          "quote": "It plugs into the tools you already use, like Claude and Excel, so your numbers stay up to date.",
+          "url": "https://www.xero.com/nz/ai-in-accounting/"
+        },
+        {
+          "app": "SMS",
+          "quote": "we've brought JAX to you, seamlessly integrated into SMS, email, and WhatsApp* so that we meet you where you are.",
+          "url": "https://blog.xero.com/product-updates/jax-beta-expands/"
+        },
+        {
+          "app": "WhatsApp",
+          "quote": "we've brought JAX to you, seamlessly integrated into SMS, email, and WhatsApp* so that we meet you where you are.",
+          "url": "https://blog.xero.com/product-updates/jax-beta-expands/"
+        }
+      ],
+      "pricing": {
+        "summary": "No additional charge to Xero subscribers for JAX chat as of the FAQ (US); UK plans listed with introductory pricing (Ignite £1.80/month excl. VAT for 6 months, then £18/month; Grow £3.90 then £39; Com",
+        "quote": "There's currently no additional charge to Xero subscribers to use JAX chat experience. However, we reserve the right to change the terms and conditions of using JAX, including the pricing.",
+        "url": "https://www.xero.com/us/ai-in-accounting/jax/"
+      },
+      "toolId": "xero",
+      "domain": "xero.com",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    },
+    "dext": {
+      "soc2": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "iso27001": {
+        "status": "stated",
+        "quote": "Dext is certified to ISO/IEC 27001:2022.",
+        "url": "https://help.dext.com/en/articles/861255-how-does-the-dext-ai-connector-keep-your-data-secure"
+      },
+      "trustCenter": {
+        "url": "https://dext.com/en/information-security"
+      },
+      "trainsOnData": {
+        "status": "no",
+        "quote": "No. Dext doesn't use your data to train AI models, and doesn't train foundation models of its own.",
+        "url": "https://help.dext.com/en/articles/861255-how-does-the-dext-ai-connector-keep-your-data-secure"
+      },
+      "retention": {
+        "status": "stated",
+        "summary": "Basic customer information is kept for six years after customers cease being customers or after last contact; documents are retained for 10 years.",
+        "quote": "By law we have to keep basic information about our customers (including Contact, Identity and Transaction Data) for six years after they cease being customers for tax purposes or after we were last in contact with you.",
+        "url": "https://dext.com/en/privacy-policy"
+      },
+      "hipaaBaa": {
+        "status": "not-available",
+        "note": "Dext does not act as a Business Associate and the products may not be used to store PHI.",
+        "quote": "the Dext Products may not be used to store, maintain, process or transmit protected health information (“PHI”)",
+        "url": "https://dext.com/en/data-processor-agreement"
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "Browser extension available",
+            "quote": "Dextension (Chrome Extension)",
+            "url": "https://dext.com/us/partner/build-plan"
+          },
+          {
+            "fact": "Free trial period of 14 days",
+            "quote": "Connections are included, during the 14-day trial and on every paid plan after it",
+            "url": "https://dext.com/us/partner/product/integrate-with-accounting-software"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "QuickBooks Online",
+          "quote": "Yes! Dext integrates with major accounting software like QuickBooks Online, Xero, Sage, Zoho and more.",
+          "url": "https://dext.com/us"
+        },
+        {
+          "app": "Xero",
+          "quote": "Yes! Dext integrates with major accounting software like QuickBooks Online, Xero, Sage, Zoho and more.",
+          "url": "https://dext.com/us"
+        },
+        {
+          "app": "Sage",
+          "quote": "Yes! Dext integrates with major accounting software like QuickBooks Online, Xero, Sage, Zoho and more.",
+          "url": "https://dext.com/us"
+        },
+        {
+          "app": "Zoho",
+          "quote": "Yes! Dext integrates with major accounting software like QuickBooks Online, Xero, Sage, Zoho and more.",
+          "url": "https://dext.com/us"
+        },
+        {
+          "app": "Shopify",
+          "quote": "ecommerce platforms including Shopify, Stripe and PayPal",
+          "url": "https://dext.com/us/partner/product/integrate-with-accounting-software"
+        },
+        {
+          "app": "Stripe",
+          "quote": "ecommerce platforms including Shopify, Stripe and PayPal",
+          "url": "https://dext.com/us/partner/product/integrate-with-accounting-software"
+        },
+        {
+          "app": "PayPal",
+          "quote": "ecommerce platforms including Shopify, Stripe and PayPal",
+          "url": "https://dext.com/us/partner/product/integrate-with-accounting-software"
+        }
+      ],
+      "pricing": {
+        "summary": "Plans start at $25.21 per month (USD, excludes tax) or $302.50 billed annually for a 250-document plan; add-ons include AI Assist ($10.5/month until 31 Jan 2027), Line Item Extraction (from $20.50/mon",
+        "quote": "Per Month USD, Excludes Tax $25.21 billed annually $302.50",
+        "url": "https://dext.com/us/business/pricing"
+      },
+      "toolId": "dext",
+      "domain": "dext.com",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    },
+    "otter": {
+      "soc2": {
+        "status": "type2",
+        "quote": "Otter utilizes best practices to protect our customers' data and works with independent experts to verify its security measures, and has achieved SOC 2 Type 2 report against stringent standards.",
+        "url": "https://otter.ai/privacy-security"
+      },
+      "iso27001": {
+        "status": "stated",
+        "quote": "Our security policies are created based on the ISO 27001/2 framework.",
+        "url": "https://otter.ai/privacy-security"
+      },
+      "trustCenter": {
+        "url": "https://otter.ai/privacy-security"
+      },
+      "trainsOnData": {
+        "status": "opt-out",
+        "quote": "No customer data will be used to train or improve our AI Service Provider(s)' artificial intelligence models/algorithms.",
+        "url": "https://otter.ai/privacy-security"
+      },
+      "retention": {
+        "status": "stated",
+        "summary": "Deleted conversations are moved to Trash and automatically deleted after 30 days; admins can set a custom retention policy on Enterprise plans.",
+        "quote": "Otter automatically deletes conversations from the trash after 30 days.",
+        "url": "https://otter.ai/privacy-security"
+      },
+      "hipaaBaa": {
+        "status": "available",
+        "note": "HIPAA compliance is only available for the Enterprise plan; a BAA must be signed before handling PHI.",
+        "quote": "Otter.ai is now HIPAA compliant... Getting Started: HIPAA compliance is only available for the Enterprise plan.",
+        "url": "https://help.otter.ai/hc/en-us/articles/33975072019991-HIPAA-Otter-ai"
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "Browser extension is available for capturing Google Meet calls and transcribing ",
+            "quote": "Capture impromptu Google Meet calls without a bot present, or transcribe any media from every website.",
+            "url": "https://otter.ai/integrations"
+          },
+          {
+            "fact": "Enterprise setup involves adding connectors and using Webhooks or the API.",
+            "quote": "Use Webhooks or the API to programmatically access your Otter Conversations",
+            "url": "https://help.otter.ai/hc/en-us/articles/41500228419479-Getting-Started-with-Enterprise"
+          },
+          {
+            "fact": "Enterprise access requires contacting an account executive to start the BAA proc",
+            "quote": "Reach out to your account manager to start the Business Associate Agreement (BAA) process or contact our Sales team to learn more.",
+            "url": "https://help.otter.ai/hc/en-us/articles/33975072019991-HIPAA-Otter-ai"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "Airtable",
+          "quote": "Otter automatically sends transcripts, summaries, and meeting metadata to Airtable.",
+          "url": "https://otter.ai/integrations"
+        },
+        {
+          "app": "Asana",
+          "quote": "Stay on track by automatically turning your meeting notes into simple action items with deadlines.",
+          "url": "https://otter.ai/integrations"
+        },
+        {
+          "app": "ClickUp",
+          "quote": "Send meeting summaries and action items from Otter to ClickUp to manage everything in one place.",
+          "url": "https://otter.ai/integrations"
+        },
+        {
+          "app": "Dropbox",
+          "quote": "Upload any audio and video files, and they'll be automatically transcribed into searchable and shareable text.",
+          "url": "https://otter.ai/integrations"
+        },
+        {
+          "app": "Google Calendar",
+          "quote": "Schedule your AI Meeting Notetaker to automatically join all your Zoom, Microsoft Teams, and Google Meet meetings.",
+          "url": "https://otter.ai/integrations"
+        },
+        {
+          "app": "Google Docs",
+          "quote": "Sync transcriptions and meeting notes for easy editing, sharing, and collaboration with all your teammates.",
+          "url": "https://otter.ai/integrations"
+        },
+        {
+          "app": "Google Drive",
+          "quote": "Sync transcripts and meeting content directly to your Google Drive for easy access and backup.",
+          "url": "https://otter.ai/integrations"
+        },
+        {
+          "app": "HubSpot",
+          "quote": "Log meeting transcripts and notes to automatically push sales insights to your CRM.",
+          "url": "https://otter.ai/integrations"
+        },
+        {
+          "app": "JIRA",
+          "quote": "Keep projects moving forward by automatically sending key takeaways and action items from every conversation.",
+          "url": "https://otter.ai/integrations"
+        },
+        {
+          "app": "Microsoft Teams",
+          "quote": "Get real-time transcriptions, key takeaways, and action items from every Teams meeting.",
+          "url": "https://otter.ai/integrations"
+        },
+        {
+          "app": "Microsoft OneDrive",
+          "quote": "Export transcripts, summaries, insights, and more directly to your Microsoft OneDrive.",
+          "url": "https://otter.ai/integrations"
+        },
+        {
+          "app": "Notion",
+          "quote": "Seamlessly sync your transcripts, notes, and key takeaways for easy organization and collaboration.",
+          "url": "https://otter.ai/integrations"
+        },
+        {
+          "app": "Salesforce",
+          "quote": "Automatically log transcripts and insights ensuring your teams always have the latest customer interactions.",
+          "url": "https://otter.ai/integrations"
+        },
+        {
+          "app": "Slack",
+          "quote": "Instantly share meeting transcripts, summaries, and key takeaways making sure your team is always on the same page.",
+          "url": "https://otter.ai/integrations"
+        },
+        {
+          "app": "Zapier",
+          "quote": "Easily connect to your other favorite tools to automate repetitive tasks.",
+          "url": "https://otter.ai/integrations"
+        },
+        {
+          "app": "Zoom",
+          "quote": "Invite your AI Meeting Notetaker for automatic real-time transcription, key takeaways and action items.",
+          "url": "https://otter.ai/integrations"
+        }
+      ],
+      "pricing": {
+        "summary": "Plans include Basic, Pro-tier features with 1200 in-app recording minutes and advanced AI workflows; Enterprise adds user management, activity logs, custom data retention, and SSO, requiring a minimum",
+        "quote": "minimum 100-user license required",
+        "url": "https://otter.ai/pricing"
+      },
+      "toolId": "otter",
+      "domain": "otter.ai",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    },
+    "fireflies": {
+      "soc2": {
+        "status": "type2",
+        "quote": "Certified for GDPR, SOC 2 Type II, and HIPAA compliance, ensuring top security and privacy standards.",
+        "url": "https://fireflies.ai/security"
+      },
+      "iso27001": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "trustCenter": {
+        "url": "https://fireflies.ai/security"
+      },
+      "trainsOnData": {
+        "status": "no",
+        "quote": "Fireflies.ai does not use customer data to train any AI models.",
+        "url": "https://fireflies.ai/"
+      },
+      "retention": {
+        "status": "stated",
+        "summary": "Zero-day retention policy with all vendors and partners; customers can set automatic deletion of recordings, transcripts, and notes after a defined period, separately per media type.",
+        "quote": "You can set one time for everything, or give Video, Audio, Transcript, and Summary each their own retention period.",
+        "url": "https://guide.fireflies.ai/articles/7434774675-responsible-and-secure-meeting-notetaking-with-fireflies"
+      },
+      "hipaaBaa": {
+        "status": "available",
+        "note": "Provided on request; BAA for healthcare is listed on Enterprise with Private Storage.",
+        "quote": "BAA for healthcare and DSA for education, available on Enterprise with Private Storage.",
+        "url": "https://fireflies.ai/security"
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "Self-serve signup via calendar account; free plan with no credit card required t",
+            "quote": "No credit card required to start.",
+            "url": "https://fireflies.ai/"
+          },
+          {
+            "fact": "Sign-in is via Google or Outlook auth",
+            "quote": "Today sign in is only possible via Google Auth or Outlook Auth.",
+            "url": "https://fireflies.ai/pricing"
+          },
+          {
+            "fact": "Chrome extension records Google Meet without a bot joining",
+            "quote": "Instantly record, transcribe, and summarize Google Meet calls without a bot joining the meeting.",
+            "url": "https://fireflies.ai/product/chrome-extension"
+          },
+          {
+            "fact": "API keys are available for developers who choose to build on the API (optional)",
+            "quote": "Replace your_api_key with the key from your Fireflies integrations page.",
+            "url": "https://fireflies.ai/api"
+          },
+          {
+            "fact": "SSO contact required for enterprise sign-in",
+            "quote": "Contact us for info on SSO.",
+            "url": "https://fireflies.ai/pricing"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "Zoom",
+          "quote": "Automate Zoom Transcriptions with Fireflies.ai for Effortless Note-Taking",
+          "url": "https://fireflies.ai/integrations"
+        },
+        {
+          "app": "Google Meet",
+          "quote": "Capture, Transcribe, and Organize Google Meet Conversations Seamlessly",
+          "url": "https://fireflies.ai/integrations"
+        },
+        {
+          "app": "Microsoft Teams",
+          "quote": "Record, transcribe, search Teams meetings",
+          "url": "https://fireflies.ai/integrations"
+        },
+        {
+          "app": "Slack",
+          "quote": "Send transcripts, recordings, notes from meetings to a Slack channel",
+          "url": "https://fireflies.ai/integrations"
+        },
+        {
+          "app": "HubSpot",
+          "quote": "Automate Your CRM Workflow with HubSpot and Fireflies.ai",
+          "url": "https://fireflies.ai/integrations"
+        },
+        {
+          "app": "Salesforce",
+          "quote": "Seamlessly Sync Meeting Notes with Salesforce and Fireflies.ai",
+          "url": "https://fireflies.ai/integrations"
+        },
+        {
+          "app": "Dropbox",
+          "quote": "Seamlessly Sync and Retrieve Meeting Notes with Dropbox and Fireflies.ai",
+          "url": "https://fireflies.ai/integrations"
+        },
+        {
+          "app": "Zapier",
+          "quote": "Starting on the Pro tier, you can send audio through the Zapier integration to get transcribed.",
+          "url": "https://fireflies.ai/pricing"
+        }
+      ],
+      "pricing": {
+        "summary": "Free plan includes transcription, summaries, and search; paid plans unlock AI Skills, Voice Agents, and app/CRM integrations (App & CRM integrations on premium tiers; Zapier audio transcription from P",
+        "quote": "Yes. Fireflies has a free plan that includes transcription, summaries, and search. Paid plans unlock AI Skills, Voice Agents, and advanced features.",
+        "url": "https://fireflies.ai/"
+      },
+      "toolId": "fireflies",
+      "domain": "fireflies.ai",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    },
+    "fathom": {
+      "soc2": {
+        "status": "type2",
+        "quote": "SOC 2 Type II audited",
+        "url": "https://www.fathom.ai/solutions/teams"
+      },
+      "iso27001": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "trustCenter": {
+        "url": "https://www.fathom.ai/solutions/teams"
+      },
+      "trainsOnData": {
+        "status": "opt-out",
+        "quote": "Based on how you configure your account settings, we may use and create de-identified data generated from Meeting Content Information to improve our Service by training, improving, and customizing our in-house artificial intelligence models. You can opt out from this use of your data in your account settings.",
+        "url": "https://www.fathom.ai/privacy"
+      },
+      "retention": {
+        "status": "stated",
+        "summary": "Personal information is kept as long as necessary for the stated purposes or as required by law; on account deletion requests, recordings and personal information are deleted within 30 days where comm",
+        "quote": "If we receive an account deletion request, we will use commercially reasonable efforts to delete your recordings and personal information within 30 days of your account deletion request",
+        "url": "https://www.fathom.ai/privacy"
+      },
+      "hipaaBaa": {
+        "status": "available",
+        "note": "Team plan includes HIPAA compliance with a standard BAA; Enterprise is eligible for a custom BAA.",
+        "quote": "Team security controls & HIPAA compliance with a standard BAA",
+        "url": "https://www.fathom.ai/pricing"
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "Free plan available; Team and Business plans are sold per user with a 90 day gua",
+            "quote": "Hands-on implementation via \"Launch Assist\"",
+            "url": "https://www.fathom.ai/pricing"
+          },
+          {
+            "fact": "API keys are generated by the user in User Settings; API access is included on a",
+            "quote": "Yes. API access—keys and webhooks— are included on all plans. Generate a key in User Settings → API Access.",
+            "url": "https://developers.fathom.ai/faq"
+          },
+          {
+            "fact": "Fathom can join meetings as a bot-free or bot-based notetaker",
+            "quote": "Capture notes your way – bot or no bot – so you can stay focused on the meeting",
+            "url": "https://www.fathom.ai/"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "Zoom",
+          "quote": "Lets Fathom join your Zoom meetings to create transcripts, summaries, and action items automatically.",
+          "url": "https://www.fathom.ai/integrations"
+        },
+        {
+          "app": "Google Meet",
+          "quote": "Lets Fathom join your Google Meet meetings to create transcripts, summaries, and action items automatically.",
+          "url": "https://www.fathom.ai/integrations"
+        },
+        {
+          "app": "Microsoft Teams",
+          "quote": "Lets Fathom join your Microsoft Teams meetings to create transcripts, summaries, and action items automatically.",
+          "url": "https://www.fathom.ai/integrations"
+        },
+        {
+          "app": "Slack",
+          "quote": "Capture Slack Huddles and send meeting highlights to Slack, automatically.",
+          "url": "https://www.fathom.ai/integrations"
+        },
+        {
+          "app": "Salesforce",
+          "quote": "Sync call summaries & highlights to matching Contacts, Accounts, and open Opportunities.",
+          "url": "https://www.fathom.ai/integrations"
+        },
+        {
+          "app": "HubSpot",
+          "quote": "Give your team clean, structured CRM data without lifting a finger.",
+          "url": "https://www.fathom.ai/integrations"
+        },
+        {
+          "app": "Zapier",
+          "quote": "Zapier and Make turn a captured call into a trigger for any workflow you build",
+          "url": "https://www.fathom.ai/integrations-workflow-automation?9f94bae4_page=2"
+        }
+      ],
+      "pricing": {
+        "summary": "Free plan (unlimited recordings, instant call summaries). Team $15/user/month (2 user min, billed annually); Business $25/user/month; Enterprise custom. 90 day guarantee on paid team plans.",
+        "quote": "Team $ 19 $15 /month / per user (2 user min)",
+        "url": "https://www.fathom.ai/pricing"
+      },
+      "toolId": "fathom",
+      "domain": "fathom.ai",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    },
+    "zapier": {
+      "soc2": {
+        "status": "type2",
+        "quote": "Zapier's latest SOC 2 Type II report and SOC 3 report — covering June 1, 2025, through May 31, 2026 — are now available.",
+        "url": "https://trust.zapier.com/"
+      },
+      "iso27001": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "trustCenter": {
+        "url": "https://trust.zapier.com/"
+      },
+      "trainsOnData": {
+        "status": "no",
+        "quote": "We don't train on the data that runs through your workflows, on any plan.",
+        "url": "https://zapier.com/security-compliance"
+      },
+      "retention": {
+        "status": "stated",
+        "summary": "Enterprise accounts support configurable data retention; Zapier's retention periods for Workflows/Zaps are intentionally short, and custom retention is available on Enterprise.",
+        "quote": "Our shorter data retention and deletion timelines, located here: https://zapier.com/legal/data-retention-deletion, are intentional.",
+        "url": "https://zapier.com/legal/enterprise-agreement-faq"
+      },
+      "hipaaBaa": {
+        "status": "not-available",
+        "note": "Zapier has not undergone HIPAA certification and does not offer a BAA.",
+        "quote": "Zapier hasn't undergone the HIPAA certification process, and we therefore don't offer a BAA.",
+        "url": "https://zapier.com/legal/enterprise-agreement-faq"
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "Self-serve signup with instant free trial, no credit card required",
+            "quote": "When you create a new Zapier account, you're instantly enrolled in a free 14-day trial of the Zapier Professional plan. No credit card is required.",
+            "url": "https://zapier.com/pricing"
+          },
+          {
+            "fact": "No coding required",
+            "quote": "Nope! Zapier makes it easy for you to move data between your apps without being a developer.",
+            "url": "https://zapier.com/pricing"
+          },
+          {
+            "fact": "Sales contact needed only for Team/Enterprise trials and demos",
+            "quote": "Please contact our Sales team if you want to enroll in a free trial of the Zapier Team and Enterprise plans",
+            "url": "https://zapier.com/pricing"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "Gmail",
+          "quote": "team collaboration tools like Gmail and Slack",
+          "url": "https://zapier.com/legal/enterprise-agreement-faq"
+        },
+        {
+          "app": "Slack",
+          "quote": "team collaboration tools like Gmail and Slack",
+          "url": "https://zapier.com/legal/enterprise-agreement-faq"
+        },
+        {
+          "app": "HubSpot",
+          "quote": "databases and CRMs like HubSpot and Salesforce",
+          "url": "https://zapier.com/legal/enterprise-agreement-faq"
+        },
+        {
+          "app": "Salesforce",
+          "quote": "databases and CRMs like HubSpot and Salesforce",
+          "url": "https://zapier.com/legal/enterprise-agreement-faq"
+        },
+        {
+          "app": "BambooHR",
+          "quote": "ERP and HRIS systems like BambooHR",
+          "url": "https://zapier.com/legal/enterprise-agreement-faq"
+        },
+        {
+          "app": "Facebook",
+          "quote": "if your team is using Zapier to take new leads from Facebook to HubSpot",
+          "url": "https://zapier.com/legal/enterprise-agreement-faq"
+        }
+      ],
+      "pricing": {
+        "summary": "Free 14-day trial of Professional plan with no credit card required; task-based pricing across paid plans (Professional, Team, Enterprise); Zaps, Tables, and Forms included with 100 tasks per month to",
+        "quote": "Start automating with AI. Zaps, Tables, and Forms included (100 tasks per month).",
+        "url": "https://zapier.com/pricing"
+      },
+      "toolId": "zapier",
+      "domain": "zapier.com",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    },
+    "hubspot": {
+      "soc2": {
+        "status": "type2",
+        "quote": "Yes. HubSpot's Trust Center provides access to SOC 2 Type II, SOC 3, and other compliance materials. No NDA is required for the SOC 3 report.",
+        "url": "https://www.hubspot.com/security-and-compliance"
+      },
+      "iso27001": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "trustCenter": {
+        "url": "https://trust.hubspot.com"
+      },
+      "trainsOnData": {
+        "status": "opt-out",
+        "quote": "Third-party AI providers cannot train their models on HubSpot customer data. Admins can also control whether HubSpot uses account data to improve its own models, and opting out is always available.",
+        "url": "https://www.hubspot.com/security-and-compliance"
+      },
+      "retention": {
+        "status": "stated",
+        "summary": "HubSpot limits third-party AI provider retention to zero-day retention where possible.",
+        "quote": "In our agreements with AI service providers, we also have commitments to minimize data retention, including zero-day data retention where possible.",
+        "url": "https://knowledge.hubspot.com/account-security/hubspot-ai-cloud-infrastructure-frequently-asked-questions"
+      },
+      "hipaaBaa": {
+        "status": "not-found",
+        "note": "HubSpot states it obtained independent HIPAA attestation, but no page on hubspot.com found states that a BAA is available.",
+        "quote": "We are pleased to announce that HubSpot has obtained independent HIPAA attestation, now available for customers on the HubSpot Trust Center.",
+        "url": "https://trust.hubspot.com/d/hub-spot-ai-trust-fa-qs/dncFvX?src=bl-po"
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "Agent Builder requires no coding.",
+            "quote": "Yes. Agent builder lets you create custom agents and workflows on one canvas, using your own prompts, knowledge, and the data already in your CRM. No coding required.",
+            "url": "https://www.hubspot.com/products/artificial-intelligence"
+          },
+          {
+            "fact": "Agents can be activated in one click.",
+            "quote": "Activate or configure any agent in one click",
+            "url": "https://www.hubspot.com/products/artificial-intelligence"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "CRM and third-party apps",
+          "quote": "Connects with your CRM and the third-party apps your team already uses",
+          "url": "https://www.hubspot.com/products/artificial-intelligence"
+        }
+      ],
+      "pricing": {
+        "summary": "Agent Hub is included for all Starter, Professional, and Enterprise customers. Custom agents consume HubSpot Credits, purchasable in packs or pay-as-you-go.",
+        "quote": "Agent Hub is included for all Starter, Professional, and Enterprise customers. Custom agents built in agent builder consume HubSpot Credits.",
+        "url": "https://www.hubspot.com/products/artificial-intelligence"
+      },
+      "toolId": "hubspot",
+      "domain": "hubspot.com",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    },
+    "wordtune": {
+      "soc2": {
+        "status": "stated",
+        "quote": "Wordtune is SOC2 compliant.",
+        "url": "https://wordtune.com/business/privacy-policy"
+      },
+      "iso27001": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "trustCenter": {
+        "url": null
+      },
+      "trainsOnData": {
+        "status": "opt-out",
+        "quote": "Unless stated otherwise in the Subscription Plan, Wordtune may use the Input and Output on an anonymized basis to train its algorithms and improve the Service quality.",
+        "url": "https://wordtune.com/business/terms-of-use"
+      },
+      "retention": {
+        "status": "stated",
+        "summary": "Personal Data is stored until Wordtune proactively deletes it or a valid deletion request is received, with exceptions for legal/regulatory requirements, dispute records, and anticipated litigation. U",
+        "quote": "Your Personal Data will be stored until we proactively delete it or you send a valid deletion request.",
+        "url": "https://wordtune.com/privacy-policy"
+      },
+      "hipaaBaa": {
+        "status": "not-found",
+        "note": null,
+        "quote": null,
+        "url": null
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "Self-serve team account signup is available, with sales contact optional for a t",
+            "quote": "You can open an account for your team in our self-served platform here or contact our sales team for getting a tailored offer for your team's needs",
+            "url": "https://www.wordtune.com/faq"
+          },
+          {
+            "fact": "Browser extension can be installed from browser add-in stores.",
+            "quote": "Download the extension from your browser add-in store of choice.",
+            "url": "https://www.wordtune.com/extension"
+          },
+          {
+            "fact": "Wordtune API is only accessible through the AI21 Studio Website.",
+            "quote": "Our Wordtune API is only accessible through the AI21 Studio Website, our platform for building NLP-powered apps and services.",
+            "url": "https://support.wordtune.com/en/articles/6898838-all-your-ai-questions-answered"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "Google Docs",
+          "quote": "You can use Wordtune in just about all places you do your writing! Google Docs, Gmail, Slack, Facebook, Twitter, Web Outlook, Facebook, Twitter, LinkedIn, Whatsapp Web, frase.io… you name it!",
+          "url": "https://www.wordtune.com/faq"
+        },
+        {
+          "app": "Gmail",
+          "quote": "Google Docs, Gmail, Slack, Facebook, Twitter, Web Outlook, Facebook, Twitter, LinkedIn, Whatsapp Web, frase.io… you name it!",
+          "url": "https://www.wordtune.com/faq"
+        },
+        {
+          "app": "Slack",
+          "quote": "Google Docs, Gmail, Slack, Facebook, Twitter, Web Outlook, Facebook, Twitter, LinkedIn, Whatsapp Web, frase.io… you name it!",
+          "url": "https://www.wordtune.com/faq"
+        }
+      ],
+      "pricing": {
+        "summary": "Basic $0.00 (limited use); Advanced $6.99 or $4.89 per month billed annually (limited daily use); Unlimited (plan price not stated on page).",
+        "quote": "Basic $0.00.00 For those looking to fix spelling and grammatical errors — for limited use only. Advanced $6.99 $4.89 per month/ billed annually",
+        "url": "https://wordtune.com/plans"
+      },
+      "toolId": "wordtune",
+      "domain": "wordtune.com",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    },
+    "photoroom": {
+      "soc2": {
+        "status": "type2",
+        "quote": "Photoroom holds a SOC 2 Type 2 attestation scoped to our API service.",
+        "url": "https://www.photoroom.com/platform/security"
+      },
+      "iso27001": {
+        "status": "not-found",
+        "quote": null,
+        "url": null
+      },
+      "trustCenter": {
+        "url": "https://trust.photoroom.com/"
+      },
+      "trainsOnData": {
+        "status": "opt-out",
+        "quote": "By default, we use the images you upload to help improve Photoroom's services, including training the AI. But you can opt out of contributing your images for service improvement if you wish.",
+        "url": "https://help.photoroom.com/en/articles/10067660-does-the-ai-learn-from-your-images"
+      },
+      "retention": {
+        "status": "stated",
+        "summary": "Sync API images are discarded after the response returns; async API images are discarded after the job; operational logs deleted after 15 days; API access logs retained one year.",
+        "quote": "Operational logs are deleted after 15 days. API access logs are retained for one year, available to support security investigations and audit requests.",
+        "url": "https://www.photoroom.com/platform/security"
+      },
+      "hipaaBaa": {
+        "status": "not-found",
+        "note": "No HIPAA or Business Associate Agreement information was found on photoroom.com pages reviewed.",
+        "quote": null,
+        "url": null
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "Self-serve signup without credit card for API trial",
+            "quote": "Yes, and you don't need a card. There are two free ways to test before you commit",
+            "url": "https://www.photoroom.com/api/pricing"
+          },
+          {
+            "fact": "API key required, passed in header",
+            "quote": "The key must be passed in the `x-api-key` HTTP header on every request.",
+            "url": "https://www.photoroom.com/api"
+          },
+          {
+            "fact": "Integration uses standard HTTP calls",
+            "quote": "The Photoroom API uses standard HTTP calls, so it works with any programming language or framework.",
+            "url": "https://www.photoroom.com/api"
+          },
+          {
+            "fact": "Enterprise onboarding with Solutions Engineering",
+            "quote": "Your CSM walks you through your integration setup, with Solutions Engineering",
+            "url": "https://www.photoroom.com/platform/custom-sla"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "Photoroom API with PIM/DAM, CMS, and e-commerce tools",
+          "quote": "Photoroom works with the tools you already use.",
+          "url": "https://www.photoroom.com/api"
+        }
+      ],
+      "pricing": {
+        "summary": "Pro $7.50/month billed yearly; Max and Ultra plans (Ultra $82.50/month billed yearly); Enterprise custom pricing; API has Basic, Plus, and Enterprise plans; free sandbox of 1,000 calls/month on Image ",
+        "quote": "Test free with 1,000 sandbox calls a month",
+        "url": "https://www.photoroom.com/pricing"
+      },
+      "toolId": "photoroom",
+      "domain": "photoroom.com",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    },
+    "adobe-express": {
+      "soc2": {
+        "status": "stated",
+        "quote": "SOC 2–Type 2 (Security, Availability, & Confidentiality)",
+        "url": "https://www.adobe.com/trust/compliance/compliance-list.html"
+      },
+      "iso27001": {
+        "status": "stated",
+        "quote": "ISO 27001:2022",
+        "url": "https://www.adobe.com/trust/compliance/compliance-list.html"
+      },
+      "trustCenter": {
+        "url": "https://www.adobe.com/trust/compliance/compliance-list.html"
+      },
+      "trainsOnData": {
+        "status": "no",
+        "quote": "Adobe does not use customer content to train Adobe Firefly models.",
+        "url": "https://www.adobe.com/cc-shared/assets/pdf/trust-center/ungated/whitepapers/creative-cloud/adobe-express-for-enterprise-security-overview.pdf"
+      },
+      "retention": {
+        "status": "stated",
+        "summary": "Deleted files moved to Deleted folder and permanently removed after 30 days; document version history retained up to 180 days unless bookmarked; content logs show a 90-day rolling history.",
+        "quote": "If a user deletes a file, it is moved to the user’s Deleted folder and permanently removed after 30 days.",
+        "url": "https://www.adobe.com/cc-shared/assets/pdf/trust-center/ungated/whitepapers/creative-cloud/adobe-express-for-enterprise-security-overview.pdf"
+      },
+      "hipaaBaa": {
+        "status": "not-found",
+        "note": "Adobe Express pages mention 'HIPAA ready' only as a footnote definition for Creative Cloud services; no BAA availability statement found.",
+        "quote": null,
+        "url": null
+      },
+      "setup": {
+        "selfServe": null,
+        "browserExtension": null,
+        "phoneForwarding": null,
+        "websiteSnippet": null,
+        "apiKeyRequired": null,
+        "codeRequired": null,
+        "salesCallRequired": null,
+        "evidence": [
+          {
+            "fact": "Express API access requires Firefly Services provisioning and credentials from A",
+            "quote": "If you're already a Firefly Services customer and your administrator has provisioned you, you can create your credentials in the Adobe Developer Console",
+            "url": "https://developer.adobe.com/express/"
+          },
+          {
+            "fact": "Enterprise plans handled via sales contact",
+            "quote": "For our enterprise plans and offerings, contact our Sales team and they will help get you and your organization started",
+            "url": "https://www.adobe.com/express/pricing"
+          },
+          {
+            "fact": "Small/medium businesses can buy the Adobe Express for teams plan directly",
+            "quote": "For small and medium businesses, buy our Adobe Express for teams plan above.",
+            "url": "https://www.adobe.com/express/pricing"
+          }
+        ]
+      },
+      "integrations": [
+        {
+          "app": "Acrobat",
+          "quote": "Adobe Express for business offers built-in integrations with core Adobe applications, such as Creative Cloud, Acrobat, Experience Manager Assets, Workfront",
+          "url": "https://business.adobe.com/products/express-business/integrations.html"
+        },
+        {
+          "app": "Creative Cloud",
+          "quote": "Create Adobe Express templates from your Adobe Creative Cloud files and share them across creative, marketing, HR, and sales teams.",
+          "url": "https://business.adobe.com/products/express-business/integrations.html"
+        },
+        {
+          "app": "Experience Manager Assets",
+          "quote": "Seamlessly drag and drop assets from Adobe Experience Manager Assets into Adobe Express files",
+          "url": "https://business.adobe.com/products/express-business/integrations.html"
+        },
+        {
+          "app": "Workfront",
+          "quote": "Adobe Express for business offers built-in integrations with core Adobe applications, such as Creative Cloud, Acrobat, Experience Manager Assets, Workfront",
+          "url": "https://business.adobe.com/products/express-business/integrations.html"
+        }
+      ],
+      "pricing": {
+        "summary": "Free plan available; Adobe Express for teams plan for small/medium businesses; enterprise plans via sales; volume licensing and custom bundles available for Express for Business.",
+        "quote": "Yes. Adobe provides volume licensing and custom bundle pricing for Adobe Express for Business through the Value",
+        "url": "https://business.adobe.com/products/express-business/pricing.html"
+      },
+      "toolId": "adobe-express",
+      "domain": "adobe.com",
+      "checkedAt": "2026-11-08",
+      "sourcesSeen": 8
+    }
+  }
+}

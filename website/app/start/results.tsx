@@ -26,7 +26,7 @@ function ReviewCard({ r }: { r: ToolReview }) {
     <div className="st-check-list"><strong>Why it may fit</strong><ul>{r.pillars.filter(p=>p.reason).slice(0,5).map(p=><li key={p.id}><strong>{p.label}:</strong> {p.reason}</li>)}</ul></div>
     <div className="dx-badges">
       <span className={`dx-badge ${r.cost.monthly !== null ? '' : 'muted'}`}>{r.cost.label}</span>
-      {r.requirementsMet && <span className="dx-badge">Meets {r.requirementsMet} requirements</span>}
+      {r.requirementsMet && <span className="dx-badge">Meets {r.requirementsMet}</span>}
       {r.compatibility.items.map(i => <span key={i.app} className={`dx-badge ${GRADE_CLASS[i.grade]}`} title={i.action ?? ''}>{i.app}: {i.label}</span>)}
     </div>
     {r.cost.assumptions.length > 0 && <p className="dx-missing">{r.cost.assumptions.join(' ')}</p>}

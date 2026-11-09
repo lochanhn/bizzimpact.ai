@@ -143,8 +143,13 @@ export function compatibility(toolId: string, software: string[], mustKeep: stri
   const keep = new Set(resolveApps(mustKeep).map(r => r.app?.id).filter(Boolean));
   const mustKeepConflict = items.some(i => i.appId && keep.has(i.appId) && i.grade === 'not-supported');
   const good = items.filter(i => i.grade === 'built-in' || i.grade === 'native').length;
-  const summary = !items.length ? 'No existing software to check against.'
-    : good ? `Works with ${good} of your ${items.length} app${items.length === 1 ? '' : 's'}` : known.length ? 'No documented connection to your apps' : 'Connections to your apps not yet verified';
+  const viaZ = items.filter(i => i.grade === 'via-zapier').length;
+  const n = items.length, apps = (k: number) => `${k} of your ${n} app${n === 1 ? '' : 's'}`;
+  const summary = !n ? 'No existing software to check against.'
+    : good && viaZ ? `Works with ${apps(good)} directly; ${viaZ} more through Zapier`
+    : good ? `Works with ${apps(good)} directly`
+    : viaZ ? `Reaches ${apps(viaZ)} through Zapier; no direct connection documented`
+    : known.length ? 'Not supported by your apps on the reviewed plans' : 'Connections to your apps not yet verified';
   return { toolId, items, score, summary, mustKeepConflict };
 }
 

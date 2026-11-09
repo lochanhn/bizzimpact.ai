@@ -4,7 +4,7 @@ The user authorized paid model and web calls on November 8, 2026. The deployed s
 
 ## How to demonstrate it
 
-1. Open the live website and choose **Try AI recommendations**. No signup or email confirmation is needed for this temporary trial.
+1. Open the live website and choose **Get started**. No signup or email confirmation is needed for this temporary trial.
 2. Land on the dashboard, then choose **Create business profile**. Use fictional business details for demonstrations.
 3. Describe a concrete task. Optional details capture the current workflow, desired outcome and requirements.
 4. Review the request. This is the explicit point at which the owner starts a paid search. The optional current-vendor checkbox can force a bounded web lookup.

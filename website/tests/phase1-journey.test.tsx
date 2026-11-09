@@ -6,8 +6,8 @@ import OnboardingForm from '../components/phase1/onboarding-form';
 import Landing from '../app/page';
 import Dashboard from '../app/dashboard/page';
 import DiscoveryForm from '../components/phase1/discovery-form';
-import { CandidateCard,QualityDetails,StartLiveButton } from '../components/phase1/shared';
-import { startDemo,startTrial } from '../lib/phase1/api';
+import { CandidateCard,QualityDetails,GetStartedButton,PhaseHeader } from '../components/phase1/shared';
+import { startDemo,openWorkspace } from '../lib/phase1/api';
 import { evidenceBackTarget } from '../lib/phase1/navigation';
 import products from '../data/discovery-catalog.json';
 import type { ToolRecord } from '../lib/phase1/types';
@@ -42,9 +42,9 @@ test('required first-screen fields cannot be skipped',async()=>{
  globalThis.fetch=async input=>String(input).endsWith('/context')?context():Response.json([]);
  const{view,user}=await setup(<OnboardingForm/>);await view.findByRole('heading',{name:'Tell us about your business'});await user.click(view.getByRole('button',{name:'Next'}));assert.ok(view.getByRole('alert').textContent?.includes('business type'));assert.ok(view.getByRole('heading',{name:'Tell us about your business'}));
 });
-test('primary landing opens the dashboard and keeps scores out of Phase 1',async()=>{
+test('homepage has one clear starting action and no trial or credit messaging',async()=>{
  globalThis.fetch=async()=>Response.json({detail:'Not signed in'},{status:401});const{view}=await setup(<Landing/>);
- assert.equal(view.getByRole('link',{name:'Start with my business'}).getAttribute('href'),'/dashboard');assert.ok(view.getByRole('button',{name:'Try the synthetic demo'}));assert.equal(view.queryByText(/\/100/),null);
+ assert.equal(view.getAllByRole('button',{name:'Get started'}).length,1);assert.equal(/Try AI|synthetic demo|shared.*credits|No paid calls|No AI experience/i.test(view.container.textContent??''),false);assert.equal(view.queryByRole('link',{name:'Start with my business'}),null);for(const link of view.container.querySelectorAll('a[href^="/"]'))assert.notEqual(link.getAttribute('target'),'_blank');
 });
 for(const demo of [false,true])test(`${demo?'demo':'signed-in'} users without profiles stay on the dashboard with an optional setup action`,async()=>{
  const calls:string[]=[];sessionStorage.setItem('bizzimpact-phase1-business','stale-business');
@@ -138,29 +138,46 @@ test('search drafts survive returning to the dashboard and remain separate by bu
  next.view.rerender(<DiscoveryForm business={searchBusiness('22222222-2222-4222-8222-222222222222')} synthetic={false}/>);
  assert.equal((next.view.getByLabelText('What task would you like help with?') as HTMLTextAreaElement).value,'');
 });
-test('AI trial entry is shown only when the backend enables it',async()=>{
+test('workspace entry uses one plain label without promotional helper text',async()=>{
  globalThis.fetch=async()=>Response.json({live_trial:true});
- const {view}=await setup(<StartLiveButton/>);
- await view.findByRole('button',{name:'Try AI recommendations'});
- assert.ok(view.getByText(/No signup required/));
+ const {view}=await setup(<GetStartedButton/>);
+ await view.findByRole('button',{name:'Get started'});
+ assert.equal(view.queryByText(/No signup required|shared AI credits/),null);
 });
-test('starting an AI trial clears prior workspace drafts and lands on the dashboard',async()=>{
+test('new guest workspace opens in the same tab and preserves browser Back',async()=>{
  let destination='';const originalWindow=Object.getOwnPropertyDescriptor(globalThis,'window')!;
- globalThis.fetch=async()=>Response.json({trial:true});sessionStorage.setItem('bizzimpact-search-draft:old','private draft');
- Object.defineProperty(globalThis,'window',{configurable:true,value:{location:{replace:(path:string)=>{destination=path;}}}});
- try{await startTrial();assert.equal(destination,'/dashboard');assert.equal(sessionStorage.getItem('bizzimpact-search-draft:old'),null);}finally{Object.defineProperty(globalThis,'window',originalWindow);}
+ const calls:string[]=[];globalThis.fetch=async input=>{const path=String(input);calls.push(path);return path.endsWith('/context')?Response.json({},{status:401}):Response.json({live_trial:true});};sessionStorage.setItem('bizzimpact-search-draft:old','private draft');
+ Object.defineProperty(globalThis,'window',{configurable:true,value:{location:{assign:(path:string)=>{destination=path;}}}});
+ try{await openWorkspace();assert.equal(destination,'/dashboard');assert.deepEqual(calls,['/api/v1/context','/api/v1/availability','/api/v1/trial']);assert.equal(sessionStorage.getItem('bizzimpact-search-draft:old'),null);}finally{Object.defineProperty(globalThis,'window',originalWindow);}
 });
 test('score UI exposes all weights and marks the index as experimental',async()=>{
  const {view}=await setup(<QualityDetails quality={{rubric_version:'evidence-match-v1',score:100,task_coverage_points:50,source_evidence_points:25,workflow_relevance_points:25,assessment_status:'passed',explanation:'Supports the requested tasks.',evidence_ids:[],source_urls:[],checks:[],limitations:['Exact integrations need verification.']}}/>);
- assert.ok(view.getByText('Evidence match index: 100/100'));
+ assert.ok(view.getByText('Match score: 100/100'));
  assert.ok(view.getByText('Requested task coverage: 50/50'));
  assert.ok(view.getByText(/Experimental rubric/));
+});
+test('returning to an existing workspace preserves the session and unfinished search',async()=>{
+ const calls:string[]=[];let destination='';const originalWindow=Object.getOwnPropertyDescriptor(globalThis,'window')!;
+ globalThis.fetch=async input=>{calls.push(String(input));return Response.json({trial:true,mode:'live'});};sessionStorage.setItem('bizzimpact-search-draft:mine','unfinished search');
+ Object.defineProperty(globalThis,'window',{configurable:true,value:{location:{assign:(path:string)=>{destination=path;}}}});
+ try{await openWorkspace();assert.equal(destination,'/dashboard');assert.deepEqual(calls,['/api/v1/context']);assert.equal(sessionStorage.getItem('bizzimpact-search-draft:mine'),'unfinished search');}finally{Object.defineProperty(globalThis,'window',originalWindow);}
+});
+test('guest navigation has no trial banner or end-trial control',async()=>{
+ globalThis.fetch=async()=>Response.json({trial:true,demo:false,synthetic:false});const {view}=await setup(<PhaseHeader/>);
+ await new Promise(resolve=>setTimeout(resolve,0));assert.equal(/AI trial|shared project|four searches|End AI/i.test(view.container.textContent??''),false);
+ assert.ok(view.getByRole('link',{name:'Dashboard'}));assert.ok(view.getByRole('link',{name:'Sign in'}));
+});
+test('Get started switches an old fictional demo session to real recommendations',async()=>{
+ const calls:string[]=[];let destination='';const originalWindow=Object.getOwnPropertyDescriptor(globalThis,'window')!;
+ globalThis.fetch=async input=>{const path=String(input);calls.push(path);return Response.json(path.endsWith('/context')?{demo:true,synthetic:true}:{live_trial:true});};
+ Object.defineProperty(globalThis,'window',{configurable:true,value:{location:{assign:(path:string)=>{destination=path;}}}});
+ try{await openWorkspace();assert.equal(destination,'/dashboard');assert.deepEqual(calls,['/api/v1/context','/api/v1/availability','/api/v1/trial']);}finally{Object.defineProperty(globalThis,'window',originalWindow);}
 });
 test('live review requires explicit confirmation and can request additional source checking',async()=>{
  const sent:any[]=[];globalThis.fetch=async(_input,init)=>{sent.push(JSON.parse(String(init?.body)));return Response.json({run_id:'live-run'});};
  const {view,user}=await setup(<DiscoveryForm business={searchBusiness()} synthetic={false} live trial onStarted={()=>{}}/>);
  await user.type(view.getByLabelText('What task would you like help with?'),'Handle incoming phone calls.');
- assert.ok(view.getByText(/Confirming this search uses shared project AI credits/));
+ assert.equal(view.queryByText(/shared project AI credits|temporary trial|four searches/i),null);
  await user.click(view.getByRole('button',{name:'Review my search'}));assert.equal(sent.length,0);
  await user.click(view.getByRole('checkbox',{name:/Also check current vendor pages/}));
  await user.click(view.getByRole('button',{name:'Search for candidate tools'}));

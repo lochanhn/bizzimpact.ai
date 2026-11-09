@@ -102,7 +102,7 @@ test('account screen makes missing configuration clear and preserves guest acces
  await view.findByText('Accounts aren’t connected yet.');
  assert.equal((view.getByLabelText('Email') as HTMLInputElement).disabled,true);
  assert.equal((view.getByLabelText('Password') as HTMLInputElement).disabled,true);
- assert.equal(view.getByRole('link',{name:/Continue as a guest/}).getAttribute('href'),'/');
+ assert.ok(view.getByRole('button',{name:'Continue as guest'}));
  await user.click(view.getByRole('button',{name:'Create account'}));
  assert.ok(view.getByRole('heading',{name:'Let’s get you set up.'}));
 });

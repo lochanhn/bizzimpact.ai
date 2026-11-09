@@ -15,7 +15,7 @@ cd website
 npm run dev:full
 ```
 
-Open `http://localhost:3000` yourself and choose **Try the synthetic demo**. No application opens automatically. The demo uses an isolated temporary workspace, exact eight-question onboarding, a catalogue baseline, natural-language problem parsing, actual run statuses, conditional Q9, and fictional candidates clearly labelled synthetic. No account, LLM key or paid call is needed.
+Open `http://localhost:3000` yourself. No application opens automatically. **Get started** reuses an existing workspace, starts a real guest workspace when enabled, or opens sign-in when guest access is disabled. The fictional synthetic demo remains available through the developer API and automated tests; it is not a customer-facing homepage option.
 
 Alternatively use two terminals:
 
@@ -44,7 +44,7 @@ The earlier scored assessment is retained as source in `components/prototype.tsx
 
 ## Real accounts and live discovery
 
-[Paid AI discovery and quality checks](../backend/AI_DISCOVERY.md) explains the RAG pipeline, prompts, scoring formula, provider evaluation, public trial, cost controls and remaining limitations. Choose **Try AI recommendations** on the deployed site for real catalogue/model results without signup. The separate synthetic demo remains free of paid calls.
+[Paid AI discovery and quality checks](../backend/AI_DISCOVERY.md) explains the RAG pipeline, prompts, scoring formula, provider evaluation, public trial, cost controls and remaining limitations. Choose **Get started** on the deployed site for real catalogue/model results without signup. The developer synthetic demo remains free of paid calls.
 
 [AUTH_SETUP.md](AUTH_SETUP.md) explains Supabase configuration. The current project's schema, access grants, and 111-tool catalogue seed are applied, and private connection settings are configured locally and on EC2. Credentials are excluded from Git. Public Auth redirect configuration and genuine signup/session checks remain pending.
 

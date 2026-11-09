@@ -1,5 +1,11 @@
 # Shared EC2 deployment
 
+Live URL: https://bizzimpact.3-92-95-188.sslip.io (deployed November 8, 2026).
+
+Verified over public HTTPS: temporary guest session, profile creation, baseline retrieval, completed landscaping discovery, logout/data cleanup, and rejection of an unrelated Origin. The guest scenario used zero model/search calls. Backend database connectivity and all 111 researched catalogue records were verified inside EC2. NourishNet returned HTTP 200 after deployment. All 45 frontend tests and TypeScript checking passed; both Docker image builds passed in GitHub Actions.
+
+Running image tags: frontend `200dda57d6bc860b9ca513992a8636f2346be968`; backend `1e98ed592516d0a597ebac3fa7965d0aafe52b55`. The stopped `bizzimpact-website-before-proxy-fix` container is retained for inspection, but its submission check predates the HTTPS fix. Supabase Auth URL configuration and genuine email/session checks remain pending; see `website/AUTH_SETUP.md`.
+
 Target: existing Amazon Linux host `3.92.95.188` (`i-0c83c7fa3551b554c`). NourishNet already uses Caddy and localhost port 8010. BizzImpact uses its own Docker network, a private backend, and localhost port 3100. The Caddy snippet adds a separate hostname; preserve the existing configuration.
 
 The host is a t2.micro with about 1 GiB RAM and 2 GiB swap. Build images in GitHub Actions using **Build EC2 images**, then download its image archive and copy it to the host. Do not run the Next.js build on the shared server. Runtime limits are 256 MiB for the website and 128 MiB for the backend, with bounded swap and lower CPU shares than the existing app. These limits are for a small demo and do not establish production capacity.
@@ -14,6 +20,8 @@ The host is a t2.micro with about 1 GiB RAM and 2 GiB swap. Build images in GitH
 6. In Supabase Auth, set Site URL to `https://bizzimpact.3-92-95-188.sslip.io` and allow `/auth/callback` and `/auth/confirm` on that origin. Local development can remain in the allowed redirect list. Verify signup email, sign-in, refresh, and logout with genuine accounts before claiming those flows verified.
 
 The temporary hostname uses sslip.io. Replace it with a domain you control for a longer deployment, updating Caddy, frontend `SITE_URL`, and Supabase Auth URLs together.
+
+Production form submissions compare Origin to the configured HTTPS `SITE_URL`. Keep that setting synchronized with the public hostname; the internal Docker URL is HTTP because Caddy terminates TLS.
 
 ## Isolation and rollback
 

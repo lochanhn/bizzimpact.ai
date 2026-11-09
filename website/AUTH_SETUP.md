@@ -1,5 +1,13 @@
 # Connect real accounts and private Phase 1 storage
 
+## EC2 hosting
+
+The app is hosted on the existing EC2 instance alongside NourishNet at `https://bizzimpact.3-92-95-188.sslip.io`. Its frontend and backend run in separate Docker containers; Caddy routes this hostname to loopback port 3100. The private database connection is supplied only to the backend container. Deployment and rollback instructions are in [`deploy/ec2/README.md`](../deploy/ec2/README.md).
+
+Supabase Auth redirect settings have not been updated for this hostname. Set Site URL to the HTTPS origin above and allow `https://bizzimpact.3-92-95-188.sslip.io/auth/callback` and `https://bizzimpact.3-92-95-188.sslip.io/auth/confirm`. Genuine signup email, confirmation, sign-in, refresh and logout need a final check after that configuration. The user requested that browser applications remain closed during deployment.
+
+## Database connection
+
 The `bizzimpact` Supabase project (`zqtndgqyaibgrholekxu`, US East) is connected locally through its session pooler. The normalized Phase 1 discovery schema and authenticated table grants are applied. All 12 public tables have RLS enabled; the legacy `business_profiles` ownership policies were inspected. A comment-only migration named `discovery_phase1` was accidentally recorded before the actual `discovery_phase1_schema` migration; it made no schema changes.
 
 Local `website/.env.local` and `backend/.env.local` contain the project URL and publishable key. The backend file also contains the private SSL database connection and has owner-only file permissions. Both files are ignored by Git. Paid AI flags are disabled and backend mode is `catalog`. The database contains 111 researched tools, 117 source records, 209 claims, and 11 capabilities. PostgreSQL profile round-trip and two-owner RLS isolation passed using temporary records that were rolled back. Local services were restarted to load these settings. Email login and confirmation are enabled, but signup delivery, sign-in/session refresh, and Auth redirect configuration still need verification. The Supabase integration is currently unavailable; direct database administration works through the local backend connection.

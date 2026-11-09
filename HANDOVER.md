@@ -2,6 +2,17 @@
 
 **Purpose:** Paste this file into the next chat before continuing work. It is a factual project snapshot as of **November 8, 2026**.
 
+## EC2 deployment update — November 8, 2026
+
+- Hosting target is the user's existing EC2 instance `i-0c83c7fa3551b554c` at `3.92.95.188`, an Amazon Linux t2.micro shared with NourishNet.
+- BizzImpact hostname: `https://bizzimpact.3-92-95-188.sslip.io`. NourishNet remains at `https://3-92-95-188.sslip.io`.
+- Images build through `.github/workflows/ec2-images.yml`, avoiding builds on the small EC2 host. Dockerfiles exclude local environment files.
+- Containers `bizzimpact-website` and `bizzimpact-backend` use a separate `bizzimpact` network. The frontend binds only `127.0.0.1:3100`; the backend has no public port. Existing Caddy handles HTTPS. Its original configuration was backed up to `/home/ec2-user/bizzimpact/Caddyfile.before-bizzimpact`.
+- The server deployment directory is `/home/ec2-user/bizzimpact`; private environment files have permissions 600. No credential values are committed. Runtime memory limits are 256 MiB frontend and 128 MiB backend, with bounded swap and lower CPU shares. This is a constrained demo, not a capacity-tested production deployment.
+- Deployment instructions and rollback scope are in `deploy/ec2/README.md`. The shared Caddy and NourishNet containers must remain running.
+- Supabase public Auth callback configuration and genuine signup/session verification remain pending. The user declined browser access during deployment. Paid AI and web retrieval remain disabled.
+- Public HTTPS verification passed: guest session, profile save, baseline, completed landscaping discovery, logout cleanup, and cross-origin rejection. Zero model/search calls were used. Backend database/catalogue reads passed from EC2; NourishNet remained HTTP 200. All 45 frontend tests, type checking, and both Docker builds passed. The production Origin check now uses configured HTTPS `SITE_URL` because Caddy terminates TLS before forwarding internally over HTTP.
+
 ## 1. Project in one sentence
 
 ### Supabase setup update — November 8, 2026

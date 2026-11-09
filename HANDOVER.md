@@ -4,6 +4,15 @@
 
 ## 1. Project in one sentence
 
+### Supabase setup update — November 8, 2026
+
+- Connected to existing `bizzimpact`, project ref `zqtndgqyaibgrholekxu`, region `us-east-1`, status `ACTIVE_HEALTHY`.
+- Applied the normalized Phase 1 discovery schema via migration `discovery_phase1_schema`. All 12 public tables were observed with RLS enabled. The legacy `business_profiles` table pre-existed; its policies have not yet been audited. A preceding accidental comment-only migration `discovery_phase1` made no schema changes.
+- Local ignored `website/.env.local` and `backend/.env.local` contain the project URL and publishable key. Backend mode is `catalog`; all paid/live flags are off.
+- The combined development launcher now loads `backend/.env.local` only for the Python child; exported variables take precedence.
+- Still required: private `DATABASE_URL`, researched catalogue seed, Auth URL configuration, and real account/ownership verification. The Supabase integration became unavailable during this session; restore it before further database administration. GitHub CLI access to `lochanhn/bizzimpact.ai` is confirmed.
+- The original snapshot below describes the state before this setup update. See `website/AUTH_SETUP.md` for current setup details.
+
 BizzImpact.ai is a hackathon web application that helps a small-business owner describe their business and problem, then gives them an evidence-backed starting list of suitable AI tools and a safe path to investigate them.
 
 It is **not** meant to be a generic chatbot or a tool that blindly claims one vendor is “best.” Phase 1 is a discovery product: gather context, search a catalogue/evidence sources, show what is known and unknown, and make it easy to continue.

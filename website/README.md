@@ -77,3 +77,7 @@ Observed: 41 backend tests and 44 frontend/matching/auth/DOM tests passed; TypeS
 - Private profile/run data: local demo SQLite, or PostgreSQL for authenticated users after setup. Runs preserve an immutable profile snapshot.
 - Diagnostic logs: allowlisted JSON metadata, request IDs, durations, statuses and usage; no body, password, token, email or original problem text. Hosting log retention/URL redaction must be configured separately.
 - OpenRouter application target: $20 reservation ledger, preserving $5 of the supplied credit. This is not a guaranteed provider hard cap; missing usage conservatively pauses further calls. Live search can include provider-managed internal operations beyond our explicit query count.
+
+## Country and region controls
+
+Location choices use pinned `country-region-data` 4.1.0 ([source](https://github.com/country-regions/country-region-data)), bundled with the frontend rather than requested from a location API. The country list contains 249 entries. Country changes clear the old region; selected region codes remain compatible with stored profiles, while summaries show full names. Missing/custom regions can be entered manually. US postal-only military codes and sovereign-country postal destinations are omitted from US state/territory choices. Data changes require a dependency update and frontend rebuild. MIT attribution is served at `/third-party-notices.txt`.

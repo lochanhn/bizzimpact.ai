@@ -41,7 +41,7 @@ def assess_recommendations(products,intent,provider,profile,problem,context,usag
    report['assessed_candidates']=len(assessments)
   except Exception:report['assessment_warning']='AI assessment or evidence audit was unavailable or invalid; unapproved explanations and full scores are withheld.'
  wanted=set(intent.required_capabilities)
- report['assessment_audit']=[{'tool_id':id,'applicability':a.applicability,'audit_passed':bool(verdicts.get(id) and verdicts[id].supported),'audit_reason':verdicts[id].reason if id in verdicts else 'No approved evidence audit'} for id,a in assessments.items()]
+ report['assessment_audit']=[{'tool_id':id,'applicability':a.applicability,'proposed_explanation':a.explanation,'evidence_ids':a.evidence_ids,'audit_passed':bool(verdicts.get(id) and verdicts[id].supported),'audit_reason':verdicts[id].reason if id in verdicts else 'No approved evidence audit'} for id,a in assessments.items()]
  for product,packet in zip(result,packets):
   matched=set(product['matched_capabilities'])&wanted
   backed={e['value'] for e in packet['claims'] if e['kind']=='capability' and isinstance(e['value'],str) and e.get('observed_at') and e['verification'] in ('vendor_documented','third_party_reported','independently_tested')}

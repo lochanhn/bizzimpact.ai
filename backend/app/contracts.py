@@ -88,7 +88,7 @@ class AssessmentBatch(StrictModel):
  assessments:list[CandidateAssessment]=Field(max_length=8)
 class CandidateVerdict(StrictModel):
  tool_id:str=Field(min_length=1,max_length=100)
- supported:bool
+ supported:bool=Field(description='True if the explanation is factually grounded in its cited evidence, including honest partial relevance with explicit unknowns. This does NOT mean the product satisfies every requirement.')
  reason:str=Field(max_length=300)
 class VerdictBatch(StrictModel):
  verdicts:list[CandidateVerdict]=Field(max_length=8)

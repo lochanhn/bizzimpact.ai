@@ -67,7 +67,7 @@ The UI exposes all three components, a limitation statement, and supporting URLs
 - Numerical weights and bounds are deterministic. The model cannot supply arbitrary scores or override source/provisional gates.
 - Prompt injection and unsupported-claim cases are included in tests and paid evaluations.
 
-Prompts are versioned as `discovery-rag-v1.2`; the index is `evidence-match-v1`. The assessment/audit receive recorded limitations and distinguish broad appointment/capture tags from exact actions such as confirmed bookings or automatic sending. Evaluation artifacts record model, prompt, costs/tokens, latency, expected/predicted tasks, and candidate checks in [`evaluations/`](evaluations/). Synthetic evaluation examples are not real-owner accuracy evidence. Once failures are examined or prompts are tuned using a dataset, treat it as development data and create a new held-out set for a future study.
+Prompts are versioned as `discovery-rag-v1.4`; the index is `evidence-match-v1`. The assessment/audit receive recorded limitations and distinguish broad appointment/capture tags from exact actions such as confirmed bookings or automatic sending. Evaluation artifacts record model, prompt, costs/tokens, latency, expected/predicted tasks, and candidate checks in [`evaluations/`](evaluations/). Synthetic evaluation examples are not real-owner accuracy evidence. Once failures are examined or prompts are tuned using a dataset, treat it as development data and create a new held-out set for a future study.
 
 Model applicability labels and audit decisions can vary across repeated runs, even at low temperature. Each run stores its profile/context snapshot, retrieved evidence, model/prompt/rubric versions and results; refreshing an existing run does not trigger new model calls. The deterministic index is conditional on those stored assessments, not a claim of universal model reproducibility.
 
@@ -78,6 +78,7 @@ Model applicability labels and audit decisions can vary across repeated runs, ev
 - An earlier evaluation mistakenly used a landscaping profile for a bakery request. That contradictory fixture was corrected and the original report retained.
 - Real RAG calls produced source-audited catalogue recommendations for phone handling, invoice work and marketing. A restaurant inventory search initially returned no accepted candidates, exposing a capability-ID extraction defect. After fixing that prompt/validator contract, it produced a provisional source-backed lead and correctly withheld a full score.
 - Early provider rejections left conservative spend reservations. Those were reconciled once confirmed as rejected requests; original evaluation accounting is annotated. Provider-reported costs and conservative reservations must not be confused.
+- HTTPS testing exposed another failure mode: the audit sometimes rejected an accurately limited partial explanation because the product did not fully meet the request. Later prompts explicitly distinguish factual support from full compatibility, provide positive/negative audit examples, and request shorter explanations. Rejected proposed explanations and audit reasons are retained for operator review; the audit can still make mistakes.
 
 The key's usage increased by about US$0.083 through these implementation tests before deployment verification. Later calls add to that amount; check the current key usage rather than treating this snapshot as a permanent balance.
 
@@ -105,9 +106,15 @@ uv run --directory backend --env-file .env.local python evaluate_live.py \
 uv run --directory backend --env-file .env.local python smoke_live.py \
   --paid-authorized --cases calls invoices marketing
 # Add --web only when testing current vendor retrieval.
+
+# From the repository root: real HTTPS trial, isolation, four-run limit and demo checks.
+# Starts four bounded paid runs using fictional profiles; requires the live trial flag.
+node backend/verify_deployment.mjs --paid-authorized
 ```
 
 The interpretation evaluator enforces its explicit test budget conservatively. The RAG smoke script has four fixed synthetic cases and a five-call bound per case, sharing the application ledger and credit floor; it has no separate trial-budget option. Do not use it as an unrestricted traffic generator.
+
+The HTTPS verifier checks API behavior and client route shells without launching a browser. It does not claim visual or interactive browser verification. Automated backend and DOM tests cover the component behavior separately.
 
 ## Runtime configuration and disabling paid use
 

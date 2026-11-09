@@ -7,10 +7,11 @@
 ### Supabase setup update — November 8, 2026
 
 - Connected to existing `bizzimpact`, project ref `zqtndgqyaibgrholekxu`, region `us-east-1`, status `ACTIVE_HEALTHY`.
-- Applied the normalized Phase 1 discovery schema via migration `discovery_phase1_schema`. All 12 public tables were observed with RLS enabled. The legacy `business_profiles` table pre-existed; its policies have not yet been audited. A preceding accidental comment-only migration `discovery_phase1` made no schema changes.
+- Applied the normalized Phase 1 discovery schema via migration `discovery_phase1_schema` and recorded `authenticated_access` to grant only operations covered by ownership policies. All 12 public tables have RLS enabled. The legacy `business_profiles` table pre-existed and its ownership policies were inspected. A preceding accidental comment-only migration `discovery_phase1` made no schema changes.
 - Local ignored `website/.env.local` and `backend/.env.local` contain the project URL and publishable key. Backend mode is `catalog`; all paid/live flags are off.
 - The combined development launcher now loads `backend/.env.local` only for the Python child; exported variables take precedence.
-- Still required: private `DATABASE_URL`, researched catalogue seed, Auth URL configuration, and real account/ownership verification. The Supabase integration became unavailable during this session; restore it before further database administration. GitHub CLI access to `lochanhn/bizzimpact.ai` is confirmed.
+- The private SSL `DATABASE_URL` is configured locally through the session pooler; the backend environment file has owner-only permissions. Seeded 111 tools, 117 sources, 209 claims, and 11 capabilities. PostgreSQL profile round-trip and two-owner RLS isolation passed with temporary records rolled back. Local services were restarted with these settings.
+- Still required: verify Auth redirect configuration and real signup email/sign-in/session refresh. The Supabase integration became unavailable during this session, but direct PostgreSQL administration works. GitHub CLI access to `lochanhn/bizzimpact.ai` is confirmed.
 - The original snapshot below describes the state before this setup update. See `website/AUTH_SETUP.md` for current setup details.
 
 BizzImpact.ai is a hackathon web application that helps a small-business owner describe their business and problem, then gives them an evidence-backed starting list of suitable AI tools and a safe path to investigate them.

@@ -5,7 +5,7 @@ from fastapi.testclient import TestClient
 
 def test_required_api_routes_are_present(tmp_path):
  app=create_app(tmp_path/'contract.sqlite');actual={(method,route.path) for route in app.routes if hasattr(route,'methods') for method in route.methods}
- expected={('GET','/api/v1/onboarding/schema'),('GET','/api/v1/businesses'),('POST','/api/v1/businesses'),('GET','/api/v1/businesses/{business_id}/profile'),('PUT','/api/v1/businesses/{business_id}/profile'),('POST','/api/v1/discovery/baseline'),('POST','/api/v1/discovery/runs'),('GET','/api/v1/discovery/runs/{run_id}'),('POST','/api/v1/discovery/runs/{run_id}/clarification'),('GET','/api/v1/tools/{tool_id}'),('GET','/api/v1/tools/{tool_id}/implementation-guide'),('POST','/api/v1/tools/{tool_id}/implementation-plan')}
+ expected={('GET','/api/v1/onboarding/schema'),('GET','/api/v1/businesses'),('POST','/api/v1/businesses'),('GET','/api/v1/businesses/{business_id}/profile'),('PUT','/api/v1/businesses/{business_id}/profile'),('POST','/api/v1/discovery/baseline'),('POST','/api/v1/discovery/runs'),('GET','/api/v1/businesses/{business_id}/discovery-runs'),('GET','/api/v1/discovery/runs/{run_id}'),('POST','/api/v1/discovery/runs/{run_id}/clarification'),('GET','/api/v1/tools/{tool_id}'),('GET','/api/v1/tools/{tool_id}/implementation-guide'),('POST','/api/v1/tools/{tool_id}/implementation-plan')}
  assert expected<=actual
 
 def test_catalogue_mirror_and_claim_provenance_are_consistent():

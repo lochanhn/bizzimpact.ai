@@ -191,6 +191,14 @@ class DiscoveryRunCreated(BaseModel):
  status:Literal['queued']='queued'
  poll_url:str
  estimated_duration_note:str|None=None
+class DiscoveryRunSummary(BaseModel):
+ run_id:str
+ business_id:str
+ status:Literal['queued','parsing','needs_clarification','catalog_search','web_search','enriching','completed','partial','failed']
+ summary:str
+ tool_count:int=Field(ge=0)
+ created_at:str
+ updated_at:str
 class DiscoveryRun(BaseModel):
  run_id:str
  business_id:str

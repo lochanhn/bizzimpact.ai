@@ -112,6 +112,13 @@ test('customer questions use everyday language while keeping existing stored IDs
 function searchBusiness(id='11111111-1111-4111-8111-111111111111'){
  return {business_id:id,industry_subtype:'Landscaping',profile:profileSchema.parse({industry:{category:'Home Services',subtype:'Landscaping'},business_description:'We maintain gardens.',employee_band:'solo',operating_region:{country:'US'},existing_software_status:'none',existing_software:[]})};
 }
+test('returning owners see a new search workspace and previous searches instead of onboarding',async()=>{
+ const business=searchBusiness();const history=[{run_id:'22222222-2222-4222-8222-222222222222',business_id:business.business_id,status:'completed',summary:'Handle missed customer calls',tool_count:3,created_at:'2026-11-08T20:00:00Z',updated_at:'2026-11-08T20:01:00Z'}];
+ globalThis.fetch=async input=>{const path=String(input);if(path.endsWith('/context'))return Response.json({synthetic:false,mode:'catalog'});if(path.endsWith('/businesses'))return Response.json([business]);if(path.endsWith('/discovery/baseline'))return Response.json({tools:[]});if(path.endsWith('/discovery-runs'))return Response.json(history);throw new Error('Unexpected request: '+path);};
+ const{view}=await setup(<Dashboard/>);await view.findByRole('heading',{name:'Start a new search'});await view.findByText('Handle missed customer calls');
+ assert.equal(view.getByRole('link',{name:/Handle missed customer calls/}).getAttribute('href'),'/discovery/22222222-2222-4222-8222-222222222222');
+ assert.equal(view.getByRole('link',{name:'Edit business profile'}).getAttribute('href'),'/profile');assert.equal(view.queryByText('We maintain gardens.'),null);assert.equal(view.queryByRole('link',{name:/Create business profile/}),null);
+});
 test('owners review and edit workflow details before a single discovery request is sent',async()=>{
  const sent:any[]=[];let started='';
  globalThis.fetch=async(_input,init)=>{sent.push(JSON.parse(String(init?.body)));return Response.json({run_id:'test-run'});};

@@ -8,7 +8,7 @@ from fastapi import FastAPI,BackgroundTasks,Depends,HTTPException,Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.security import HTTPBearer,HTTPAuthorizationCredentials
 from fastapi.responses import JSONResponse
-from .contracts import BusinessProfile,DiscoveryRequest,BusinessRequest,Clarification,DiscoveredTool,DiscoveryRunCreated,DiscoveryRun,BaselineResult,BusinessCreated,ImplementationRequest,ImplementationGuide,ImplementationPlan
+from .contracts import BusinessProfile,DiscoveryRequest,BusinessRequest,Clarification,DiscoveredTool,DiscoveryRunCreated,DiscoveryRunSummary,DiscoveryRun,BaselineResult,BusinessCreated,ImplementationRequest,ImplementationGuide,ImplementationPlan
 from .storage import LocalStore,PostgresStore,TrialStore,now
 from .engine import DATA,Orchestrator,baseline_capabilities,catalog,search_catalog
 from .providers import OpenRouterProvider,OpenRouterSearchAdapter,SafePageFetcher,MockLLMProvider,MockSearchProvider,MockPageFetcher
@@ -161,6 +161,12 @@ def create_app(local_path=None,db_url=None):
   run={'run_id':id,'business_id':body.business_id,'owner':a.owner,'status':'queued','mode':'problem_search','profile_snapshot':copy.deepcopy(p),'discovery_context':body.context.model_dump(),'problem_text':body.problem_text,'force_web':body.force_web,'requirements':None,'clarification_question':None,'tools':[],'warnings':[],'error_code':None,'usage':{'search_calls':0,'model_calls':0,'estimated_cost_usd':0},'queries':[],'state_history':[{'status':'queued','at':now()}],'synthetic':a.mode=='mock','created_at':now(),'updated_at':now()}
   a.store.put('run',id,a.owner,run);background.add_task(orchestrator(a).execute,run)
   return {'run_id':id,'status':'queued','poll_url':f'/api/v1/discovery/runs/{id}','estimated_duration_note':'The status page shows the actual discovery progress.'}
+ @app.get('/api/v1/businesses/{business_id}/discovery-runs',response_model=list[DiscoveryRunSummary])
+ def list_runs(business_id:str,a:Actor=Depends(actor)):
+  owned('business',business_id,a)
+  runs=[run for run in a.store.list('run',a.owner) if run.get('business_id')==business_id]
+  runs.sort(key=lambda run:run.get('created_at',''),reverse=True)
+  return [{'run_id':run['run_id'],'business_id':business_id,'status':run['status'],'summary':((run.get('requirements') or {}).get('problem_summary') or run.get('problem_text') or 'Search in progress')[:240],'tool_count':len(run.get('tools') or []),'created_at':run['created_at'],'updated_at':run['updated_at']} for run in runs[:30]]
  @app.get('/api/v1/discovery/runs/{run_id}',response_model=DiscoveryRun)
  def get_run(run_id:str,a:Actor=Depends(actor)):
   run=owned('run',run_id,a);run.pop('owner',None);run.pop('problem_text',None)

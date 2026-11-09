@@ -62,6 +62,14 @@ def test_snapshots_edit_history_and_dedupe(service):
  new=run(c,id,'We miss phone calls and need appointments booked.');assert new['profile_snapshot']['industry']['subtype']=='HVAC'
  assert len(r['state_history'])>=5
 
+def test_search_history_is_newest_first_and_owner_isolated(service):
+ c,_=service;id=business(c);first=run(c,id,'We miss calls and need a reliable way to respond.');second=run(c,id,'We need help preparing and tracking customer invoices.')
+ history=c.get(f'/api/v1/businesses/{id}/discovery-runs');assert history.status_code==200
+ items=history.json();assert [item['run_id'] for item in items[:2]]==[second['run_id'],first['run_id']]
+ assert all(item['business_id']==id and 'problem_text' not in item for item in items)
+ other=c.post('/api/v1/demo').json()['token'];c.headers['Authorization']='Bearer '+other
+ assert c.get(f'/api/v1/businesses/{id}/discovery-runs').status_code==404
+
 def test_other_demo_cannot_read_profile_or_run(service):
  c,_=service;id=business(c);r=run(c,id,'We need help with phone calls.');other=c.post('/api/v1/demo').json()['token'];c.headers['Authorization']='Bearer '+other
  for path in [f'/api/v1/businesses/{id}/profile',f"/api/v1/discovery/runs/{r['run_id']}"]:assert c.get(path).status_code==404

@@ -42,7 +42,7 @@ To run both locally: `uv sync --project backend --frozen && npm ci --prefix webs
 
 ## Evidence
 - Merge verification on the synthetic datasets: **30/30 tuning cases and 14/15 holdout cases passed rules-only checks**. Accepted-tool top-three hit rate was 100% under this dataset's labels. These are small developer-labelled examples, not real-owner accuracy. The branch reports 15/15 with its AI fallback; that paid evaluation was not rerun during the merge.
-- **128 frontend tests and 90 backend tests pass**, plus TypeScript and the production build. Rules-based plans make no model calls. Paid backend evaluations and semantic-index costs are recorded separately in `backend/AI_DISCOVERY.md`.
+- **129 frontend tests and 91 backend tests pass**, plus TypeScript and the production build. Rules-based plans make no model calls. Paid backend evaluations and semantic-index costs are recorded separately in `backend/AI_DISCOVERY.md`.
 - **30** tools with cited security and privacy facts. **58** tools verified in Zapier's directory. **126** products found by live discovery.
 
 ## Documents
@@ -55,6 +55,7 @@ To run both locally: `uv sync --project backend --frozen && npm ci --prefix webs
 | [docs/RESEARCH.md](docs/RESEARCH.md) | Market, owner needs, existing products, gaps, our metrics (all sourced) |
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Three engines, data, safety, scaling path |
 | [docs/RECOMMENDATION_ROADMAP.md](docs/RECOMMENDATION_ROADMAP.md) | Hybrid catalogue retrieval, vector indexing, customer guidance and quality gates |
+| [docs/SEARCH_WORKSPACE_PLAN.md](docs/SEARCH_WORKSPACE_PLAN.md) | Returning-user dashboard, owner-isolated search history and profile flow |
 | [docs/VIDEO_SCRIPT.md](docs/VIDEO_SCRIPT.md) | 10-minute demo script mapped to the judging rubric |
 | [docs/design/questionnaire.md](docs/design/questionnaire.md) | Master questionnaire design |
 | [docs/technical/discovery.md](docs/technical/discovery.md) | Discovery engine details and evaluation |

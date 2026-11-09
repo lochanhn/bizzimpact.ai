@@ -101,6 +101,12 @@ class PostgresStore:
  def catalog(self):
   with self.connect() as c:r=c.execute("SELECT api_payload FROM public.ai_tools WHERE catalog_status!='rejected' AND api_payload IS NOT NULL ORDER BY name").fetchall()
   return [x[0] for x in r]
+ def implementation_guide(self,tool_id):
+  with self.connect() as c:
+   try:row=c.execute('SELECT verified_content FROM public.tool_implementation_guides WHERE tool_id=%s',(tool_id,)).fetchone()
+   except Exception:
+    c.rollback();return None
+  return row[0] if row else None
  def semantic_search(self,embedding,capabilities,limit=20):
   vector='['+','.join(format(float(value),'.9g') for value in embedding)+']'
   with self.connect() as c:

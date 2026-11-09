@@ -7,6 +7,7 @@ import Landing from '../app/page';
 import Dashboard from '../app/dashboard/page';
 import DiscoveryForm from '../components/phase1/discovery-form';
 import { CandidateCard,QualityDetails,GetStartedButton,PhaseHeader } from '../components/phase1/shared';
+import { ImplementationAssistant } from '../components/implementation-assistant';
 import { startDemo,openWorkspace } from '../lib/phase1/api';
 import { evidenceBackTarget } from '../lib/phase1/navigation';
 import products from '../data/discovery-catalog.json';
@@ -155,6 +156,12 @@ test('recommendation UI explains the evidence without exposing internal scores',
  assert.ok(view.getByText('Why it may fit'));
  assert.ok(view.getByText('Supports the requested tasks.'));
  assert.equal(/100|rubric|score/i.test(view.container.textContent??''),false);
+});
+test('implementation assistant collects the owner setup and renders grounded steps',async()=>{
+ let sent:any=null;globalThis.fetch=async(_input,init)=>{sent=JSON.parse(String(init?.body));return Response.json({tool_id:'tool-1',tool_name:'Anyword',summary:'Pilot Anyword for approved weekly email drafts.',personalization_source:'openrouter_grounded',steps:[{step_id:'confirm',title:'Confirm the plan',action:'Check the current plan on the official site.',why:'Plans can change.',source_url:'https://anyword.com/',needs_confirmation:true}],checks:['Keep final approval with the owner.'],official_links:['https://anyword.com/'],usage:{model_calls:1,search_calls:0,estimated_cost_usd:0.001}});};
+ const{view,user}=await setup(<ImplementationAssistant toolId="tool-1" toolName="Anyword"/>);await user.click(view.getByRole('button',{name:'Build my plan'}));
+ await user.type(view.getByLabelText('What should this tool help you accomplish first?'),'Draft and approve weekly emails.');await user.type(view.getByLabelText(/Which software must it work with/),'HubSpot, Gmail');await user.selectOptions(view.getByLabelText('What information will it handle?'),'customer');await user.click(view.getByRole('button',{name:'Create implementation plan'}));
+ await view.findByRole('heading',{name:'Your first implementation map'});assert.deepEqual(sent.existing_software,['HubSpot','Gmail']);assert.equal(sent.data_sensitivity,'customer');assert.ok(view.getByText('Confirm before continuing'));
 });
 test('returning to an existing workspace preserves the session and unfinished search',async()=>{
  const calls:string[]=[];let destination='';const originalWindow=Object.getOwnPropertyDescriptor(globalThis,'window')!;

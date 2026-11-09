@@ -87,12 +87,26 @@ owner constraints merely because its text is semantically similar.
 
 ### Phase E — deeper setup guides
 
-- Store reviewed, tool-specific setup modules for the most frequently selected
-  products first.
+- Store a versioned, server-only implementation-guide record beside every
+  reviewed catalogue tool. The initial records provide grounded capability
+  modules; vendor-specific modules can replace them as they are reviewed.
+- Ask the owner about the first goal, required software, working environment,
+  information sensitivity, administrator access, team size and preferred level
+  of technical help.
 - Include prerequisites, a small pilot workflow, approval points, success
-  measures, rollback steps and official documentation links.
+  measures, rollback steps and allowlisted official documentation links.
+- OpenRouter may personalize the overview and order only known step IDs. It
+  cannot generate new installation commands, integrations, pricing or vendor
+  claims. If the call is unavailable, the same verified rules produce a useful
+  plan with zero model calls.
 - Never claim that an account, integration or automation was created unless the
   customer explicitly authorizes and completes that action.
+
+The foundation is implemented in `app/implementation.py`, the
+`tool_implementation_guides` migration, the explicit indexing command and the
+tool-page **Build my implementation plan** experience. The next research pass
+should replace capability-level modules with reviewed vendor-specific details
+for the most frequently selected tools first.
 
 ## Production gates
 
@@ -105,8 +119,10 @@ owner constraints merely because its text is semantically similar.
 - Internal retrieval and quality metrics stay available in test/evaluation
   reports, not in customer-facing pages.
 
-## Current completion target
+## Current completion
 
-The first delivery removes visible scores, adds universal evidence-based setup
-guidance, creates the pgvector schema and indexing path, wires optional hybrid
-retrieval into the backend, and adds regression tests for the new behavior.
+The delivered system removes visible scores, adds universal evidence-based
+setup guidance, uses the pgvector hybrid index, and provides a grounded
+implementation assistant. The database has separate server-only retrieval and
+implementation-guide tables so customer answers are never mixed into catalogue
+embeddings.

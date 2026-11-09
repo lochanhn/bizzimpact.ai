@@ -37,12 +37,12 @@ To run both locally: `uv sync --project backend --frozen && npm ci --prefix webs
 | Pick a software category, browse thousands of tools | **Check-up in plain language** → the needs we identify, or an honest "no good tool yet" |
 | Star ratings or unexplained scores | **Plain-language reasons and checks**: task coverage, cost *at your usage*, current software, cited security facts, setup effort and available owner feedback |
 | "Integrates with" logos | **Graded, sourced connections** (built in / direct / via Zapier, verified in Zapier's directory) |
-| A list, then you're on your own | **AI stack within budget**, **workflow recipes**, calendar and spreadsheet hand-offs, send to your own Zapier/Make, adoption plan, free SBA advisor links |
+| A list, then you're on your own | **Grounded implementation assistant**, workflow recipes, calendar and spreadsheet hand-offs, adoption plan and free SBA advisor links |
 | Vendors pay for placement | **Published method; nobody can pay for ordering** |
 
 ## Evidence
 - Merge verification on the synthetic datasets: **30/30 tuning cases and 14/15 holdout cases passed rules-only checks**. Accepted-tool top-three hit rate was 100% under this dataset's labels. These are small developer-labelled examples, not real-owner accuracy. The branch reports 15/15 with its AI fallback; that paid evaluation was not rerun during the merge.
-- **121 frontend tests and 87 backend tests pass**, plus TypeScript and the production build. Rules-based plans make no model calls. Paid backend evaluations and semantic-index costs are recorded separately in `backend/AI_DISCOVERY.md`.
+- **128 frontend tests and 90 backend tests pass**, plus TypeScript and the production build. Rules-based plans make no model calls. Paid backend evaluations and semantic-index costs are recorded separately in `backend/AI_DISCOVERY.md`.
 - **30** tools with cited security and privacy facts. **58** tools verified in Zapier's directory. **126** products found by live discovery.
 
 ## Documents

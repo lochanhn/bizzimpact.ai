@@ -8,11 +8,12 @@ from fastapi import FastAPI,BackgroundTasks,Depends,HTTPException,Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.security import HTTPBearer,HTTPAuthorizationCredentials
 from fastapi.responses import JSONResponse
-from .contracts import BusinessProfile,DiscoveryRequest,BusinessRequest,Clarification,DiscoveredTool,DiscoveryRunCreated,DiscoveryRun,BaselineResult,BusinessCreated
+from .contracts import BusinessProfile,DiscoveryRequest,BusinessRequest,Clarification,DiscoveredTool,DiscoveryRunCreated,DiscoveryRun,BaselineResult,BusinessCreated,ImplementationRequest,ImplementationGuide,ImplementationPlan
 from .storage import LocalStore,PostgresStore,TrialStore,now
 from .engine import DATA,Orchestrator,baseline_capabilities,catalog,search_catalog
 from .providers import OpenRouterProvider,OpenRouterSearchAdapter,SafePageFetcher,MockLLMProvider,MockSearchProvider,MockPageFetcher
 from .guidance import attach_guidance,build_guidance
+from .implementation import guide_for,build_plan
 log=logging.getLogger('bizzimpact');logging.basicConfig(level=logging.INFO,format='%(message)s')
 logging.getLogger('httpx').setLevel(logging.WARNING)
 @dataclass
@@ -97,6 +98,18 @@ def create_app(local_path=None,db_url=None):
     provider=OpenRouterProvider(key,model,a.store,credit_floor=5,embedding_model=embedding_model)
     if os.getenv('LIVE_WEB_ENABLED')=='true':searcher=OpenRouterSearchAdapter(provider)
   return Orchestrator(a.store,a.mode,provider,searcher,SafePageFetcher() if searcher else None)
+ def find_tool(tool_id):
+  for product in (pg.catalog() if pg else catalog('catalog'))+catalog('mock'):
+   if product['tool_id']==tool_id:return copy.deepcopy(product)
+  if tool_id=='00000000-0000-4000-8000-000000000005':
+   from .engine import fixture_product,FIXTURES
+   return fixture_product(FIXTURES['mock_web_new_product'],'mock_web')
+  return None
+ def stored_guide(product):
+  if pg and hasattr(pg,'implementation_guide'):
+   saved=pg.implementation_guide(product['tool_id'])
+   if saved:return saved
+  return guide_for(product)
  @app.get('/health')
  def health():return {'ok':True,'default_mode':os.getenv('DISCOVERY_MODE','mock'),'paid_calls_enabled_by_default':live_enabled()}
  @app.get('/api/v1/availability')
@@ -163,12 +176,19 @@ def create_app(local_path=None,db_url=None):
   return {'run_id':run_id,'status':'queued','poll_url':f'/api/v1/discovery/runs/{run_id}'}
  @app.get('/api/v1/tools/{tool_id}',response_model=DiscoveredTool)
  def get_tool(tool_id:str):
-  for product in (pg.catalog() if pg else catalog('catalog'))+catalog('mock'):
-   if product['tool_id']==tool_id:
-    product=copy.deepcopy(product);product['guidance']=build_guidance(product);return product
-  if tool_id=='00000000-0000-4000-8000-000000000005':
-   from .engine import fixture_product,FIXTURES
-   product=fixture_product(FIXTURES['mock_web_new_product'],'mock_web');product['guidance']=build_guidance(product);return product
-  raise HTTPException(404,'Tool not found. A live provisional candidate is available in its owner’s discovery run only.')
+  product=find_tool(tool_id)
+  if not product:raise HTTPException(404,'Tool not found. A live provisional candidate is available in its owner’s discovery run only.')
+  product['guidance']=build_guidance(product);return product
+ @app.get('/api/v1/tools/{tool_id}/implementation-guide',response_model=ImplementationGuide)
+ def implementation_guide(tool_id:str):
+  product=find_tool(tool_id)
+  if not product:raise HTTPException(404,'Tool not found.')
+  return stored_guide(product)
+ @app.post('/api/v1/tools/{tool_id}/implementation-plan',response_model=ImplementationPlan)
+ def implementation_plan(tool_id:str,body:ImplementationRequest,a:Actor=Depends(actor)):
+  rate(a.owner+':implementation',8);product=find_tool(tool_id)
+  if not product:raise HTTPException(404,'Tool not found.')
+  service=orchestrator(a);provider=service.parser if isinstance(service.parser,OpenRouterProvider) else None
+  return build_plan(product,body.model_dump(),provider,stored_guide(product))
  return app
 app=create_app()

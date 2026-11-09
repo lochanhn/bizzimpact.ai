@@ -2,6 +2,8 @@ import type { Profile } from './profile';
 export type Evidence={claim_key:string;claim_value:unknown;verification_state:string;source_url:string|null;observed_at:string|null;evidence_excerpt?:string|null};
 export type MatchQuality={rubric_version:string;score:number|null;task_coverage_points:number;source_evidence_points:number;workflow_relevance_points:number|null;assessment_status:string;explanation:string|null;evidence_ids:string[];source_urls:string[];checks:string[];limitations:string[]};
 export type ToolGuidance={why_it_may_help:string;covers:string[];setup_steps:string[];verify_before_buying:string[]};
+export type ImplementationStep={step_id:string;title:string;action:string;why:string;source_url:string|null;needs_confirmation:boolean};
+export type ImplementationPlan={tool_id:string;tool_name:string;summary:string;personalization_source:'verified_rules'|'openrouter_grounded';steps:ImplementationStep[];checks:string[];official_links:string[];usage:{model_calls:number;search_calls:number;estimated_cost_usd:number}};
 export type ToolRecord={tool_id:string;name:string;official_url:string;short_description:string|null;ai_classification:string;catalog_status:string;matched_capabilities:string[];retrieval_channels:string[];discovery_status:string;evidence:Evidence[];issues:string[];synthetic:boolean;quality?:MatchQuality|null;guidance?:ToolGuidance|null};
 export type Business={business_id:string;industry_subtype:string;profile:Profile};
 export type DiscoveryContext={current_workflow:string|null;desired_outcome:string|null;constraints:string|null};

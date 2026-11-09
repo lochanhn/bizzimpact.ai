@@ -123,6 +123,9 @@ uv run --directory backend --env-file .env.local python smoke_live.py \
 # Rebuild only changed reviewed catalogue embeddings after the vector migration.
 uv run --directory backend --env-file .env.local python index_catalog_embeddings.py \
   --paid-authorized
+# Populate versioned implementation guides after applying migration 004.
+# This command makes no model or embedding calls.
+uv run --directory backend --env-file .env.local python index_implementation_guides.py
 # Add --web only when testing current vendor retrieval.
 
 # From the repository root: real HTTPS trial, isolation, four-run limit and demo checks.
@@ -133,6 +136,25 @@ node backend/verify_deployment.mjs --paid-authorized
 The interpretation evaluator enforces its explicit test budget conservatively. The RAG smoke script has four fixed synthetic cases and a five-call bound per case, sharing the application ledger and credit floor; it has no separate trial-budget option. Do not use it as an unrestricted traffic generator.
 
 The HTTPS verifier checks API behavior and client route shells without launching a browser. It does not claim visual or interactive browser verification. Automated backend and DOM tests cover the component behavior separately.
+
+## Grounded implementation assistant
+
+Every reviewed tool can expose a versioned implementation guide containing
+prerequisites, approved source URLs, review date and questions needed to tailor
+a rollout. The tool page asks about the owner's first goal, required software,
+platform, information sensitivity, administrator access, team size and desired
+technical support. The deterministic planner then builds a reversible test,
+capability checks, permission/privacy checks, pilot measurement and rollout or
+rollback decision.
+
+In an authorized live session, OpenRouter receives only the owner answers and
+the already-built step packet. Its strict-schema response may provide an
+overview, reorder existing step IDs and add questions to confirm. Unknown step
+IDs are discarded. It cannot create commands, assert an integration, invent a
+price or alter the underlying actions. Provider failure or budget limits fall
+back to the zero-call verified plan. `tool_implementation_guides` and its source
+URLs are server-only; credentials and customer prose are never stored in that
+catalogue table.
 
 ## Runtime configuration and disabling paid use
 

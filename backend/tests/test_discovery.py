@@ -33,6 +33,14 @@ def test_invalid_onboarding_rejected_without_echoing_private_input(service,chang
 def test_baseline_zero_calls_and_no_budget_filter(service,monkeypatch):
  c,_=service;id=business(c);r=c.post('/api/v1/discovery/baseline',json={'business_id':id}).json();assert r['usage']=={'model_calls':0,'search_calls':0,'estimated_cost_usd':0};assert len(r['tools'])<=6;assert r['synthetic'];assert all(t['synthetic'] for t in r['tools']);assert all(t['guidance']['setup_steps'] and 'score' not in t['guidance'] for t in r['tools'])
 
+def test_owner_can_build_grounded_tool_implementation_plan(service):
+ c,_=service;id=business(c);tool=c.post('/api/v1/discovery/baseline',json={'business_id':id}).json()['tools'][0]
+ guide=c.get(f"/api/v1/tools/{tool['tool_id']}/implementation-guide");assert guide.status_code==200 and guide.json()['questions']
+ payload={'goal':'Set up one safe pilot for our customer enquiries.','existing_software':['Google Calendar'],'platform':'browser','data_sensitivity':'customer','technical_comfort':'guided','admin_access':'not_sure','team_size':'2_10'}
+ response=c.post(f"/api/v1/tools/{tool['tool_id']}/implementation-plan",json=payload);assert response.status_code==200,response.text
+ plan=response.json();assert plan['steps'] and plan['personalization_source']=='verified_rules' and plan['usage']['model_calls']==0
+ assert any(step['step_id']=='integration' and step['needs_confirmation'] for step in plan['steps'])
+
 @pytest.mark.parametrize('case',range(5))
 def test_reference_problem_mappings(service,case):
  c,_=service;fixture=json.loads((DATA/'scenarios.json').read_text())['cases'][case];id=business(c,profile(case));r=run(c,id,fixture['problem']);caps=r['requirements']['required_capabilities'];assert set(fixture['expected_capabilities'])<=set(caps);assert (r['status']=='needs_clarification')==fixture['should_ask_q9'];assert r['usage']['model_calls']==0;assert r['usage']['search_calls']==0

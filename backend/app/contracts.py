@@ -111,6 +111,54 @@ class ToolGuidance(BaseModel):
  setup_steps:list[str]=Field(default_factory=list)
  verify_before_buying:list[str]=Field(default_factory=list)
 
+class ImplementationRequest(StrictModel):
+ goal:str=Field(min_length=10,max_length=500)
+ existing_software:list[str]=Field(default_factory=list,max_length=15)
+ platform:Literal['browser','windows','mac','mobile','mixed','not_sure']='not_sure'
+ data_sensitivity:Literal['public','internal','customer','financial','health','not_sure']='not_sure'
+ technical_comfort:Literal['guided','no_code','technical']='guided'
+ admin_access:Literal['yes','no','not_sure']='not_sure'
+ team_size:Literal['just_me','2_10','11_50','51_plus']='just_me'
+ @field_validator('existing_software')
+ @classmethod
+ def clean_software(cls,values):
+  cleaned=[value.strip() for value in values if value.strip()]
+  if len({value.casefold() for value in cleaned})!=len(cleaned):raise ValueError('Software selections must be unique.')
+  return cleaned
+
+class ImplementationStep(BaseModel):
+ step_id:str
+ title:str
+ action:str
+ why:str
+ source_url:str|None=None
+ needs_confirmation:bool=False
+
+class ImplementationGuide(BaseModel):
+ tool_id:str
+ tool_name:str
+ guide_version:str
+ installation_type:Literal['web_service','desktop_app','mobile_app','browser_extension','api_or_developer','mixed','unknown']='web_service'
+ questions:list[str]
+ prerequisites:list[str]
+ source_urls:list[str]
+ last_reviewed_at:str|None=None
+
+class ImplementationPersonalization(StrictModel):
+ overview:str=Field(min_length=1,max_length=500)
+ ordered_step_ids:list[str]=Field(min_length=1,max_length=12)
+ questions_to_confirm:list[str]=Field(default_factory=list,max_length=6)
+
+class ImplementationPlan(BaseModel):
+ tool_id:str
+ tool_name:str
+ summary:str
+ personalization_source:Literal['verified_rules','openrouter_grounded']
+ steps:list[ImplementationStep]
+ checks:list[str]
+ official_links:list[str]
+ usage:dict
+
 class ClaimEvidence(BaseModel):
  claim_key:str
  claim_value:object=None

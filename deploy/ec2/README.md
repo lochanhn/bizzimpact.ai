@@ -2,9 +2,9 @@
 
 Current paid-AI update: the user authorized live calls on November 8. The separate AI trial, shared credit controls, model/prompt versions, hybrid retrieval and internal quality gates are described in [AI_DISCOVERY.md](../../backend/AI_DISCOVERY.md). Preserve the deployed private backend environment during updates. New-environment templates deliberately keep paid flags off until explicitly configured.
 
-The current frontend and backend image tag is `638e5f7fdda0499509c807fedf7a93754104935d`. This release retains score-free hybrid recommendations and adds a grounded implementation assistant. Supabase holds 111 reviewed retrieval documents and 111 versioned implementation guides. Owners can describe their goal, existing software, platform, information sensitivity, administrator access, team and preferred setup style; OpenRouter may reorder only verified step IDs and cannot invent commands or integrations. The frontend runtime data directory remains bind-mounted at `/app/data/runtime`; private signing, database and model settings remain only in server environment files. Stopped rollback containers are `bizzimpact-website-before-638e5f7` and `bizzimpact-backend-before-638e5f7`. NourishNet and Caddy were preserved.
+The current frontend and backend image tag is `6bbbbaf0f0620c1138aa6f58b6f84e4a1db2b5be`. This release makes the saved business profile one-time onboarding context rather than the returning destination. The dashboard now starts with a new-search workspace, displays up to 30 owner-isolated previous searches, reopens stored results without paid calls, and keeps profile editing secondary. Score-free hybrid recommendations and the grounded implementation assistant remain active. The frontend runtime data directory remains bind-mounted at `/app/data/runtime`; private signing, database and model settings remain only in server environment files. Stopped rollback containers are `bizzimpact-website-before-6bbbbaf` and `bizzimpact-backend-before-6bbbbaf`. NourishNet and Caddy were preserved.
 
-Release checks: 128 frontend tests, 90 backend tests, TypeScript and the production build passed. The GitHub image build passed. A bounded live Anyword implementation test returned eight unique grounded steps, ten checks and one official link using one OpenRouter call, no search calls and about US$0.000713 reported cost. Public HTTPS returned HTTP 200 for BizzImpact and NourishNet; both new containers reported zero restarts and no OOM kill. Browser visual checking remains unperformed; these checks used HTTP, DOM tests and source inspection.
+Release checks: 129 frontend tests, 91 backend tests, TypeScript and the production build passed. The GitHub image build passed. Production verified the dashboard shell, owner-scoped empty-history endpoint, ephemeral cleanup, and HTTP 200 for BizzImpact and NourishNet without a paid call. Both new containers reported zero restarts and no OOM kill. Browser visual checking remains unperformed; these checks used HTTP, DOM tests and source inspection.
 
 This README explains how teammates can package BizzImpact, deploy a release, check it, and roll it back. Commands use Bash. Run **local** commands from the repository root; commands marked **EC2** run after SSH. A Git push saves source but does **not** automatically deploy the application.
 
@@ -24,11 +24,11 @@ This README explains how teammates can package BizzImpact, deploy a release, che
 | Backend / Docker network | `bizzimpact-backend` / `bizzimpact` |
 | Permanent database / Auth | Supabase project `zqtndgqyaibgrholekxu` |
 
-Deployment was verified November 8, 2026 with image tag `638e5f7fdda0499509c807fedf7a93754104935d` for both services. Inspect running containers before every release rather than assuming documentation still matches the host.
+Deployment was verified November 8, 2026 with image tag `6bbbbaf0f0620c1138aa6f58b6f84e4a1db2b5be` for both services. Inspect running containers before every release rather than assuming documentation still matches the host.
 
-Verified: HTTPS, live trial creation, grounded Anyword implementation-plan generation, logout, and backend access to 111 researched tools, embeddings and implementation guides. NourishNet returned HTTP 200 afterward.
+Verified: HTTPS, live trial creation, business creation, the owner-scoped search-history endpoint, logout, and the returning-user dashboard shell. NourishNet returned HTTP 200 afterward.
 
-**Pending:** public Supabase Auth redirect configuration and genuine signup email, confirmation, login, refresh, and logout checks. Browser visual/mobile checks have not been performed. See [Auth setup](../../website/AUTH_SETUP.md).
+**Pending:** genuine signup email, confirmation, login, refresh, and logout checks using a newly issued message. Supabase production Auth redirect URLs are configured. Browser visual/mobile checks have not been performed. See [Auth setup](../../website/AUTH_SETUP.md).
 
 ## Architecture and files
 

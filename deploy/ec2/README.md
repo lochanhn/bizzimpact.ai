@@ -1,10 +1,10 @@
 # Docker packaging and EC2 deployment
 
-Current paid-AI update: the user authorized live calls on November 8. The separate AI trial, shared credit controls, model/prompt versions and scoring are described in [AI_DISCOVERY.md](../../backend/AI_DISCOVERY.md). Preserve the deployed private backend environment during updates. New-environment templates below deliberately keep paid flags off until explicitly configured; the earlier initial-deployment snapshot records a catalogue-only setup.
+Current paid-AI update: the user authorized live calls on November 8. The separate AI trial, shared credit controls, model/prompt versions, hybrid retrieval and internal quality gates are described in [AI_DISCOVERY.md](../../backend/AI_DISCOVERY.md). Preserve the deployed private backend environment during updates. New-environment templates deliberately keep paid flags off until explicitly configured.
 
-The current frontend image is `8a9978815c92a2a0ec8013af7a5fb10f29ff89f8`; the backend remains `f5c652834963584f19ad354df1f78552c91cd406`. The frontend-only release removes trial/credit messaging and duplicate entry actions, adds one **Get started** action, preserves existing workspaces and same-tab browser history, and prevents onboarding redirect loops. Search progress now follows actual backend stages, with an indeterminate animated indicator, elapsed time, loading cards and a final review step. Polling continues for longer searches and retries interrupted status reads; terminal results remove the loading display. The repeated vendor-documentation badge was removed from catalogue cards. Country and dependent region selectors now use searchable lists in document flow, with keyboard support, country-change region reset, optional/manual region entry, full-name summaries and larger responsive form controls. The backend was kept running to preserve current guest records. NourishNet and Caddy were preserved.
+The current frontend and backend image tag is `1a22b26bf2eefdd385c76d28560f3f8512f81a22`. This release removes customer-facing numerical match, fit, confidence and pillar scores; adds plain-language reasons, setup steps and checks; and enables server-only hybrid retrieval over 111 reviewed catalogue documents using controlled capabilities, BM25 and Supabase pgvector. The frontend runtime data directory is bind-mounted at `/app/data/runtime`; the private signing secret and embedding settings remain only in server environment files. Stopped rollback containers are `bizzimpact-website-before-1a22b26` and `bizzimpact-backend-before-1a22b26`. NourishNet and Caddy were preserved.
 
-Release checks: all 70 frontend tests and TypeScript checking passed; Docker builds passed; live HTTP checks confirmed one homepage start button, no trial/credit copy, same-tab internal links, five working page routes, and a workspace surviving the frontend replacement. Additional live checks confirmed the catalogue badge is absent, the search route serves its progress indicator and three loading placeholders, and animation/reduced-motion styles are served. DOM tests cover stage transitions, elapsed time, paused updates and loading-to-results behavior. Location verification also checked onboarding/profile HTTP responses, served country/region bundles, menu/spacing CSS and the data licence notice. Tests cover country selection, US-to-Canada region reset, keyboard codes/aliases, custom regions and saved-profile compatibility. No paid calls were made for this UI verification. Browser visual checking was attempted with permission but blocked by the browser-control host/capture failure; layout changes were checked through source and automated DOM checks, not a successful visual browser session. See the [earlier paid HTTPS report](../../backend/evaluations/20261109T014132Z-deployment.json) for the unchanged backend. Documentation-only commits after the image tags do not require rebuilding.
+Release checks: 121 frontend tests, 87 backend tests, TypeScript and the production build passed. Supabase contains 111 reviewed tools and 111 retrieval documents from one pinned embedding model. A bounded live fictional marketing search completed with one embedding call, three chat-model calls, no web search, customer guidance on every result and about US$0.00568 reported cost; Anyword was first. Public HTTPS checks passed for the home, dashboard, plan, discovery and methodology routes, and customer-facing score copy was absent. Both BizzImpact and NourishNet returned HTTP 200. All four shared containers reported zero restarts and no OOM kill; recent frontend/backend error scans were empty. Browser visual checking remains unperformed; these checks used HTTP, DOM tests and source inspection.
 
 This README explains how teammates can package BizzImpact, deploy a release, check it, and roll it back. Commands use Bash. Run **local** commands from the repository root; commands marked **EC2** run after SSH. A Git push saves source but does **not** automatically deploy the application.
 
@@ -24,9 +24,9 @@ This README explains how teammates can package BizzImpact, deploy a release, che
 | Backend / Docker network | `bizzimpact-backend` / `bizzimpact` |
 | Permanent database / Auth | Supabase project `zqtndgqyaibgrholekxu` |
 
-Deployment was verified November 8, 2026. At that time the frontend image tag was `200dda57d6bc860b9ca513992a8636f2346be968`; the backend tag was `1e98ed592516d0a597ebac3fa7965d0aafe52b55`. Inspect running containers for current tags rather than assuming these remain current.
+Deployment was verified November 8, 2026 with image tag `1a22b26bf2eefdd385c76d28560f3f8512f81a22` for both services. Inspect running containers before every release rather than assuming documentation still matches the host.
 
-Verified: HTTPS, guest session, profile save, baseline retrieval, completed landscaping discovery, logout/data cleanup, cross-origin rejection, and backend access to 111 researched tools. The guest scenario made zero model/search calls. NourishNet returned HTTP 200 afterward. Both image builds, all 45 frontend tests, and TypeScript checking passed.
+Verified: HTTPS, live trial creation, profile save, zero-call baseline with setup guidance, completed hybrid marketing discovery, logout/data cleanup, and backend access to 111 researched tools and embeddings. NourishNet returned HTTP 200 afterward.
 
 **Pending:** public Supabase Auth redirect configuration and genuine signup email, confirmation, login, refresh, and logout checks. Browser visual/mobile checks have not been performed. See [Auth setup](../../website/AUTH_SETUP.md).
 
@@ -156,7 +156,7 @@ DATABASE_URL=YOUR_PRIVATE_POSTGRESQL_CONNECTION_STRING
 
 Use Supabase's **session pooler** URL with `sslmode=require`; the direct database hostname was not reachable during setup. Its username includes the project ref, for example `postgres.PROJECT_REF`. URL-encode special characters in the password if constructing a URL. Keep private values out of screenshots, logs, frontend variables, and Git.
 
-The frontend template uses `DISCOVERY_BACKEND_URL=http://bizzimpact-backend:8001` and sets `SITE_URL` to the public HTTPS origin. Fill its public Supabase key. It needs no database password or service-role key. Production submissions compare Origin to `SITE_URL` because Caddy terminates TLS before forwarding internally over HTTP.
+The frontend template uses `DISCOVERY_BACKEND_URL=http://bizzimpact-backend:8001`, sets `SITE_URL` to the public HTTPS origin and stores runtime plan/check-in data at `/app/data/runtime`. Generate `PLAN_SIGNING_SECRET` privately. Fill the public Supabase key; the frontend needs no database password or service-role key. Production submissions compare Origin to `SITE_URL` because Caddy terminates TLS before forwarding internally over HTTP.
 
 ## 4. Transfer and load a release
 
@@ -215,7 +215,7 @@ sudo docker inspect bizzimpact-website bizzimpact-backend \
   --format '{{.Name}} image={{.Config.Image}} oom={{.State.OOMKilled}} restarts={{.RestartCount}}'
 ```
 
-Expect HTTP 200, backend mode `catalog`, paid calls disabled, and 111 researched catalogue records. Guest sessions deliberately use fictional fixtures; authenticated users use permanent database storage and the researched catalogue.
+Expect HTTP 200 and 111 researched catalogue records. The current authorized live environment also has `EMBEDDINGS_ENABLED=true` and 111 server-only retrieval documents. New deployments should keep paid features disabled until deliberately authorized.
 
 The current Supabase schema and catalogue are already configured. Do not rerun schema migrations on every deployment. For a different empty database, follow [Auth setup](../../website/AUTH_SETUP.md). If reviewed catalogue changes need reseeding explicitly:
 

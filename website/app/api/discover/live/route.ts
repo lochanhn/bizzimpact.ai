@@ -3,7 +3,7 @@ import { z } from 'zod';
 import { CAPABILITY_IDS } from '@/lib/discovery/taxonomy';
 import { INDUSTRIES } from '@/lib/discovery/discover';
 import { liveDiscover } from '@/lib/discovery/live';
-import { loggedRoute, readJSON } from '@/lib/server/http';
+import { loggedRoute, readJSON, requireSameOrigin } from '@/lib/server/http';
 
 const schema = z.object({
   capabilityId: z.string().refine(id => CAPABILITY_IDS.has(id), 'Unknown need.'),
@@ -15,6 +15,7 @@ const recent: number[] = [];
 const MAX_PER_HOUR = 30;
 
 export const POST = loggedRoute('/api/discover/live', async (request, trace) => {
+  requireSameOrigin(request);
   const parsed = schema.safeParse(await readJSON(request, 2000));
   if (!parsed.success) { trace.details.reasonCode = 'invalid_input'; return NextResponse.json({ error: parsed.error.issues[0]?.message ?? 'Invalid request.' }, { status: 400 }); }
   const now = Date.now();

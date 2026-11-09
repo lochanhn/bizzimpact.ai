@@ -44,7 +44,7 @@ test('required first-screen fields cannot be skipped',async()=>{
 });
 test('homepage has one clear starting action and no trial or credit messaging',async()=>{
  globalThis.fetch=async()=>Response.json({detail:'Not signed in'},{status:401});const{view}=await setup(<Landing/>);
- assert.equal(view.getAllByRole('link',{name:/Start your AI check-up/}).length,1);assert.equal(view.getByRole('link',{name:/Start your AI check-up/}).getAttribute('href'),'/start');assert.equal(view.getAllByRole('button',{name:'Sign in / save my profile'}).length,1);assert.equal(/Try AI|synthetic demo|shared.*credits|No paid calls|No AI experience/i.test(view.container.textContent??''),false);assert.equal(view.queryByRole('link',{name:'Start with my business'}),null);for(const link of view.container.querySelectorAll('a[href^="/"]'))assert.notEqual(link.getAttribute('target'),'_blank');
+ assert.equal(view.getAllByRole('button',{name:'Get started'}).length,1);assert.equal(/Try AI|synthetic demo|shared.*credits|No paid calls|No AI experience/i.test(view.container.textContent??''),false);assert.equal(view.queryByRole('link',{name:'Start with my business'}),null);for(const link of view.container.querySelectorAll('a[href^="/"]'))assert.notEqual(link.getAttribute('target'),'_blank');
 });
 for(const demo of [false,true])test(`${demo?'demo':'signed-in'} users without profiles stay on the dashboard with an optional setup action`,async()=>{
  const calls:string[]=[];sessionStorage.setItem('bizzimpact-phase1-business','stale-business');

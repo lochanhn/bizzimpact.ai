@@ -10,7 +10,7 @@ import { POST } from '../app/api/discover/route';
 
 const ids = (r: ReturnType<typeof discover>) => r.candidates.map(c => c.toolId);
 const req = (body: unknown, headers: Record<string, string> = { 'Content-Type': 'application/json' }) =>
-  POST(new Request('http://localhost/api/discover', { method: 'POST', headers, body: JSON.stringify(body) }));
+  POST(new Request('http://localhost/api/discover', { method: 'POST', headers:{Origin:'http://localhost',...headers}, body: JSON.stringify(body) }));
 
 test('every catalogue tool is tagged, and every tag uses a controlled capability ID', () => {
   for (const t of tools) assert.ok(TOOL_TAGS[t.id], `untagged tool ${t.id}`);

@@ -62,7 +62,7 @@ test('webhook hand-off only reaches the owner’s own Zapier/Make endpoints (no 
   const original = globalThis.fetch; let sentTo = '';
   globalThis.fetch = (async (u: string | URL) => { sentTo = String(u); return new Response('ok'); }) as typeof fetch;
   try {
-    const call = (url: string) => POST(new Request('http://localhost/api/integrations/webhook', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ url, payload: { a: 1 } }) }));
+    const call = (url: string) => POST(new Request('http://localhost/api/integrations/webhook', { method: 'POST', headers: { 'Content-Type': 'application/json', Origin: 'http://localhost' }, body: JSON.stringify({ url, payload: { a: 1 } }) }));
     assert.equal((await call('https://evil.com/steal')).status, 400);
     assert.equal(sentTo, '', 'nothing sent for disallowed hosts');
     const ok = await call('https://hooks.zapier.com/hooks/catch/123/abc/');

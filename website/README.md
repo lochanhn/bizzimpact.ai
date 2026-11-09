@@ -78,6 +78,9 @@ Observed: 41 backend tests and 44 frontend/matching/auth/DOM tests passed; TypeS
 - Diagnostic logs: allowlisted JSON metadata, request IDs, durations, statuses and usage; no body, password, token, email or original problem text. Hosting log retention/URL redaction must be configured separately.
 - OpenRouter application target: $20 reservation ledger, preserving $5 of the supplied credit. This is not a guaranteed provider hard cap; missing usage conservatively pauses further calls. Live search can include provider-managed internal operations beyond our explicit query count.
 
+## Country and region controls
+
+Location choices use pinned `country-region-data` 4.1.0 ([source](https://github.com/country-regions/country-region-data)), bundled with the frontend rather than requested from a location API. The country list contains 249 entries. Country changes clear the old region; selected region codes remain compatible with stored profiles, while summaries show full names. Missing/custom regions can be entered manually. US postal-only military codes and sovereign-country postal destinations are omitted from US state/territory choices. Data changes require a dependency update and frontend rebuild. MIT attribution is served at `/third-party-notices.txt`.
 ---
 
 ## AI check-up: discover → review → integrate (`/start`)
@@ -87,7 +90,7 @@ Runs inside Next.js (no backend needed). Architecture: [../docs/ARCHITECTURE.md]
 ### Scripts
 | Command | Does |
 |---|---|
-| `npm test` | 87 tests (engines, APIs, UI journeys, security rules) |
+| `npm test` | Automated engine, API, UI and security checks |
 | `npm run typecheck` | TypeScript |
 | `npm run eval:discovery` | Accuracy on tuning + held-out sets (`-- --ai` adds the AI fallback; costs cents) |
 | `npm run enrich:facts` | Extract cited security, privacy and setup facts from vendor sites (paid, ~$0.008/tool) |
@@ -97,9 +100,9 @@ Runs inside Next.js (no backend needed). Architecture: [../docs/ARCHITECTURE.md]
 ## Pages and APIs
 | Route | Purpose |
 |---|---|
-| `/start` (`?demo=landscaper` / `?demo=cafe`) | AI check-up → full plan (main journey) |
+| `/start` (`?demo=landscaper` / `?demo=cafe`) | AI check-up → optional full plan (dashboard action) |
 | `/discover` | Problem in your own words → needs → tools → hand-off to `/start` |
-| `/` | Home, catalog browser, Lochan's plan-level quick check |
+| `/` | Homepage with one Get started action leading to the dashboard |
 | `/architecture`, `/methodology` | Built-vs-roadmap diagram; published rating method and neutrality policy |
 | `POST /api/plan` | Answers → Brief → Discover → Review → Integrate (+ signed plan token) |
 | `POST /api/discover`, `/api/discover/live` | Free-text discovery (rules + AI fallback); live web discovery for gaps |
@@ -121,3 +124,5 @@ lib/catalog.ts     111-tool reviewed catalog (Lochan)   lib/match.ts  V1 plan-le
 - **Owner answers and free text are never logged.** Logs are allow-listed counts, versions and costs.
 - **`data/runtime/`** (spend ledger, check-ins) is git-ignored. In production these move to Postgres.
 - **Tool facts come from vendor pages** checked Nov 7–8, 2026. Tools were not tested inside vendor accounts.
+
+Merge integration: the homepage keeps one Get started action and dashboard landing. The optional AI-plan journey is linked from the dashboard; both questionnaires use the shared country/region controls. All new POST endpoints require the configured same origin. Fresh frontend AI calls remain disabled by default and have separate accounting from the FastAPI backend. In production, set a private `PLAN_SIGNING_SECRET` of at least 32 characters before enabling check-ins; without it, plans still work and check-in controls remain hidden. `OUTCOME_MIN_DAYS` stays 14 by default. Runtime JSON remains temporary unless deployment provides persistent storage.

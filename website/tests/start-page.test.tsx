@@ -14,7 +14,7 @@ afterEach(() => { cleanup(); sessionStorage.clear(); globalThis.fetch = original
 async function setup() {
   const lib = await import('@testing-library/react'); cleanup = lib.cleanup;
   const { default: userEvent } = await import('@testing-library/user-event');
-  globalThis.fetch = async (input, init) => POST(new Request(`http://localhost${String(input)}`, init));
+  globalThis.fetch = async (input, init) => { const headers=new Headers(init?.headers);headers.set('Origin','http://localhost');return POST(new Request(`http://localhost${String(input)}`, {...init,headers})); };
   return { view: lib.render(<StartPage />), user: userEvent.setup({ document: dom.window.document }), lib };
 }
 
@@ -57,4 +57,9 @@ test('filled-in example jumps to review and produces a landscaping plan with loc
   assert.ok(view.getByText('Top picks side by side'));
   assert.ok(view.getByText(/Free, neutral local help/));
   assert.ok(view.getAllByText(/Rosie/).length > 0);
+});
+test('new plan journey keeps dashboard return navigation and the shared country picker',async()=>{
+ const {view,user}=await setup();assert.equal(view.getByRole('link',{name:'Back to dashboard'}).getAttribute('href'),'/dashboard');
+ await user.click(view.getByRole('combobox',{name:'Country'}));await user.type(view.getByRole('combobox',{name:'Country'}),'Canada');await user.click(view.getByRole('option',{name:'Canada'}));
+ await user.click(view.getByRole('combobox',{name:/State/}));assert.ok(view.getByRole('option',{name:'Ontario'}));assert.equal(view.queryByRole('option',{name:'Maryland'}),null);
 });

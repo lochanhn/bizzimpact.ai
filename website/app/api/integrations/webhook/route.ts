@@ -1,13 +1,14 @@
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
 import { allowedWebhook } from '@/lib/integration/exports';
-import { loggedRoute, readJSON } from '@/lib/server/http';
+import { loggedRoute, readJSON, requireSameOrigin } from '@/lib/server/http';
 
 // Forwards the owner's plan to THEIR OWN Zapier or Make webhook. Allow-listed hosts only; nothing is stored.
 const schema = z.object({ url: z.string().max(500), payload: z.record(z.string(), z.unknown()) }).strict();
 const recent: number[] = [];
 
 export const POST = loggedRoute('/api/integrations/webhook', async (request, trace) => {
+  requireSameOrigin(request);
   const parsed = schema.safeParse(await readJSON(request, 64000));
   if (!parsed.success) { trace.details.reasonCode = 'invalid_input'; return NextResponse.json({ error: 'Invalid request.' }, { status: 400 }); }
   const url = allowedWebhook(parsed.data.url);

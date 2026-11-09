@@ -120,11 +120,11 @@ export function Results({ r, headingRef, onEdit, onRestart }: { r: PlanResult; h
         <summary><span className="dx-rank">{a.order}</span> {a.name} <em>{a.effort}</em></summary>
         <ol>{a.steps.map(s => <li key={s.title + s.detail}><strong>{s.title}.</strong> {s.detail}</li>)}</ol>
       </details>)}
-      {integration.advisor && <div className="st-advisor"><strong>Free, neutral local help</strong><p>{integration.advisor.reason}{brief.business.state ? ` Advisors serve ${brief.business.state}.` : ''} These are public programmes; they do not sell software.</p>
+      {integration.advisor && <div className="st-advisor"><strong>Free, neutral local help</strong><p>{integration.advisor.reason} Use the official directories to find help near you.</p>
         <ul>{integration.advisor.links.map(l => <li key={l.url}><a href={l.url} target="_blank" rel="noopener noreferrer">{l.label} <ExternalLink size={12} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a></li>)}</ul></div>}
     </section>
 
-    <CheckIn token={r.planToken} tools={r.checkInTools} />
+    {r.planToken&&<CheckIn token={r.planToken} tools={r.checkInTools} />}
 
     <section id="unknowns" className="st-section" aria-labelledby="unk-h">
       <h2 id="unk-h"><Info size={20} aria-hidden="true" /> What we don’t know yet</h2>

@@ -14,7 +14,7 @@ afterEach(() => { cleanup(); globalThis.fetch = originalFetch; });
 async function setup() {
   const lib = await import('@testing-library/react'); cleanup = lib.cleanup;
   const { default: userEvent } = await import('@testing-library/user-event');
-  globalThis.fetch = async (input, init) => POST(new Request(`http://localhost${String(input)}`, init));
+  globalThis.fetch = async (input, init) => { const headers=new Headers(init?.headers);headers.set('Origin','http://localhost');return POST(new Request(`http://localhost${String(input)}`, {...init,headers})); };
   return { view: lib.render(<DiscoverPage />), user: userEvent.setup({ document: dom.window.document }), lib };
 }
 

@@ -82,7 +82,7 @@ Target: 9:30–9:50. Three speakers: **S** = Salman (engines), **L** = Lochan (r
 
 ### 8:00–9:00 · Evidence it works, and the 16-week plan — **A** + **L**
 **Screen:** `/architecture` roadmap table, or a slide with the numbers.
-> **A:** "Proof: on 15 owner problems we had never seen, it identified the right needs 15 out of 15 and put an acceptable tool in the top three every time. 87 automated tests. And when our own data was wrong (3 of 30 facts), we changed the rules: blog posts never count, and red badges need a human-reviewed quote."
+> **A:** "On 15 synthetic holdout prompts, rules-only matching passed 14 cases and put a labelled acceptable tool in the top three every time. We also passed 121 frontend tests and 85 backend tests. These checks demonstrate technical feasibility; they do not establish real-owner outcomes. Owner testing is our first pilot milestone."
 > **L:** "In 16 weeks:
 > - Weeks 1–3: move data to Postgres, with accounts.
 > - Weeks 4–6: 500 plan-verified tools and a human approval queue.

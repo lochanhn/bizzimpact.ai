@@ -79,7 +79,7 @@ export default async function Architecture() {
           <tr><td>Questions, needs and tags are data</td><td>New industries and needs are data edits; tests enforce integrity</td></tr>
           <tr><td>Rules at the core, AI at the edges</td><td>About $0 per plan; AI around $0.008 per live search; capped spend; fully testable</td></tr>
           <tr><td>Provenance on every fact, unknowns never guessed</td><td>Trust, and a clear path to automated re-checking</td></tr>
-          <tr><td>Measured</td><td>Held-out test: 100% need recall with AI fallback (93% rules only); 100% right tool in top 3</td></tr>
+          <tr><td>Measured</td><td>Synthetic holdout: 14/15 rules-only cases passed; accepted tool in the top three for all labelled cases. AI-fallback results are contributor-reported.</td></tr>
         </tbody></table>
       </section>
 

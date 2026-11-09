@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { AlertTriangle, ArrowRight, Check, ChevronDown, Download, ExternalLink, Info, Layers3, Search, ShieldCheck, Sprout } from 'lucide-react';
+import { AlertTriangle, LoaderCircle, ArrowRight, Check, ChevronDown, Download, ExternalLink, Info, Layers3, Search, ShieldCheck, Sprout } from 'lucide-react';
 import type { Candidate, DiscoveryResult } from '@/lib/discovery/discover';
 import { LiveSearch } from '@/components/live-search';
 import { STRUGGLES, type AreaId } from '@/lib/intake/bank';
@@ -124,7 +124,7 @@ export default function DiscoverPage() {
       <a className="skip-link" href="#discover-main">Skip to content</a>
       <header><div className="nav-wrap">
         <a className="brand" href="/" aria-label="bizzimpact.ai home"><span className="brand-mark"><Sprout size={23} /></span><span>bizzimpact<span className="brand-ai">.ai</span></span></a>
-        <nav aria-label="Main"><a className="dx-nav-link" href="/">Guided questions &amp; catalogue</a></nav>
+        <nav aria-label="Main"><a className="dx-nav-link" href="/dashboard">Back to dashboard</a></nav>
       </div></header>
 
       <main id="discover-main" className="wrap dx">
@@ -159,7 +159,7 @@ export default function DiscoverPage() {
           </details>
 
           {error && <p className="dx-error" role="alert">{error}</p>}
-          <button className="button primary large" type="submit" disabled={busy}>{busy ? 'Searching…' : <>Find matching tools <Search size={18} /></>}</button>
+          <button className="button primary large" type="submit" disabled={busy}>{busy ? <><LoaderCircle className="search-spinner" size={16} aria-hidden="true"/>Searching…</> : <>Find matching tools <Search size={18} /></>}</button>
         </form>
 
         <section aria-live="polite" className="dx-results">

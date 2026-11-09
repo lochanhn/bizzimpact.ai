@@ -1,24 +1,26 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { ArrowLeft, ArrowRight, Check, ExternalLink, Info, Sprout } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Check, ExternalLink, Info, Sprout, LoaderCircle } from 'lucide-react';
 import {
   ADVISOR, ANNUAL, AREAS, AREA_ORDER, AUTONOMY, BUDGETS, CUSTOMERS, DATA_HANDLED, DEEP_DIVE, INDUSTRIES, INDUSTRY_SOFTWARE,
-  SETUP_BY, SOFTWARE_GROUPS, TEAM_SIZES, TECH_COMFORT, TIMELINE, US_STATES, triggeredFollowups, visibleStruggles,
+  SETUP_BY, SOFTWARE_GROUPS, TEAM_SIZES, TECH_COMFORT, TIMELINE, triggeredFollowups, visibleStruggles,
   type AreaId, type IndustryId,
 } from '@/lib/intake/bank';
 import type { Answers } from '@/lib/intake/brief';
 import type { PlanResult } from '@/lib/pipeline';
 import { Results } from './results';
+import LocationFields from '@/components/phase1/location-fields';
+import { locationLabel } from '@/lib/phase1/locations';
 
 type Draft = {
-  industry?: IndustryId; subtype?: string; description?: string; customers?: string; teamSize?: string; state?: string;
+  industry?: IndustryId; subtype?: string; description?: string; customers?: string; teamSize?: string; country?: string; state?: string;
   software: string[]; softwareStatus: 'listed' | 'none' | 'not-sure'; mustKeep: string[]; techComfort?: string; setupBy?: string;
   areas: AreaId[]; struggles: string[]; focus?: string; followups: Record<string, string | string[]>;
   deepDive: { W1?: string; W2?: { value: number; per: 'day' | 'week' | 'month' }; W3?: string; W4?: string; W5?: string };
   budget?: string; annual?: string; dataHandled: string[]; autonomy?: string; timeline?: string; advisor?: string; extra?: string;
 };
-const EMPTY: Draft = { software: [], softwareStatus: 'listed', mustKeep: [], areas: [], struggles: [], followups: {}, deepDive: {}, dataHandled: [] };
+const EMPTY: Draft = { country: 'US', software: [], softwareStatus: 'listed', mustKeep: [], areas: [], struggles: [], followups: {}, deepDive: {}, dataHandled: [] };
 const KEY = 'bizzimpact-checkup-v1';
 const STEPS = ['Your business', 'Your current setup', 'Where it hurts', 'What exactly', 'A few details', 'Budget & guardrails', 'Review'];
 const DEMO: Draft = {
@@ -97,7 +99,7 @@ export default function StartPage() {
     const live = triggeredFollowups(x.struggles, x.areas).map(f => f.id);
     return {
       industry: x.industry!, subtype: x.subtype || undefined, description: x.description || undefined, customers: x.customers as Answers['customers'],
-      teamSize: x.teamSize as Answers['teamSize'], country: 'US', state: x.state as Answers['state'],
+      teamSize: x.teamSize as Answers['teamSize'], country: x.country ?? 'US', state: x.state as Answers['state'],
       software: x.softwareStatus === 'listed' ? x.software : [], softwareStatus: x.softwareStatus, mustKeep: x.mustKeep.filter(m => x.software.includes(m)),
       techComfort: x.techComfort as Answers['techComfort'], setupBy: x.setupBy as Answers['setupBy'],
       areas: x.areas, struggles: x.struggles, focus: x.focus!,
@@ -122,10 +124,10 @@ export default function StartPage() {
 
   const header = <header><div className="nav-wrap">
     <a className="brand" href="/" aria-label="bizzimpact.ai home"><span className="brand-mark"><Sprout size={23} /></span><span>bizzimpact<span className="brand-ai">.ai</span></span></a>
-    <nav aria-label="Main"><a className="dx-nav-link" href="/methodology">How we rate</a><a className="dx-nav-link" href="/architecture">Architecture</a><a className="dx-nav-link" href="/discover">Describe it in your own words</a></nav>
+    <nav aria-label="Main"><a className="dx-nav-link" href="/methodology">How we rate</a><a className="dx-nav-link" href="/dashboard">Dashboard</a><a className="dx-nav-link" href="/discover">Describe it in your own words</a></nav>
   </div></header>;
 
-  if (result) return <>{header}<main className="wrap st" id="main"><Results r={result} headingRef={heading} onEdit={() => { setResult(null); setStep(STEPS.length - 1); }} onRestart={restart} /></main></>;
+  if (result) return <>{header}<main className="wrap st" id="main"><a className="text-button" href="/dashboard"><ArrowLeft size={15}/>Back to dashboard</a><Results r={result} headingRef={heading} onEdit={() => { setResult(null); setStep(STEPS.length - 1); }} onRestart={restart} /></main></>;
 
   const subtypes = d.industry ? INDUSTRIES[d.industry].subtypes : [];
   const suggested = (d.industry && INDUSTRY_SOFTWARE[d.industry]) || [];
@@ -134,6 +136,7 @@ export default function StartPage() {
     <a className="skip-link" href="#main">Skip to content</a>
     {header}
     <main className="wrap st" id="main">
+      <a className="text-button" href="/dashboard"><ArrowLeft size={15}/>Back to dashboard</a>
       <div className="st-top">
         <div className="eyebrow"><span className="tiny-star">✦</span> AI CHECK-UP · STEP {step + 1} OF {STEPS.length}</div>
         {step === 0 && <button type="button" className="text-button" onClick={demo}>Try a filled-in example (landscaping business) <ArrowRight size={14} /></button>}
@@ -147,8 +150,7 @@ export default function StartPage() {
         {subtypes.length > 0 && <Single legend="Which best describes it?" options={Object.fromEntries(subtypes.map(s => [s, s]))} value={d.subtype} onChange={v => set('subtype', v)} />}
         <Single legend="Who are your customers?" options={CUSTOMERS} value={d.customers} onChange={v => set('customers', v)} />
         <Single legend="How many people work in the business, including you?" required options={TEAM_SIZES} value={d.teamSize} onChange={v => set('teamSize', v)} />
-        <label className="st-field">Which US state are you in? <span className="st-optional">Optional · helps us find free local help</span>
-          <select value={d.state ?? ''} onChange={e => set('state', e.target.value || undefined)}><option value="">Prefer not to say</option>{US_STATES.map(s => <option key={s}>{s}</option>)}</select></label>
+        <LocationFields label="Where does your business operate?" value={{country:d.country??'US',region:d.state??null}} onChange={v=>setD(x=>({...x,country:v.country,state:v.region??undefined}))}/>
         <label className="st-field">In one sentence, what does your business do? <span className="st-optional">Optional</span>
           <input value={d.description ?? ''} maxLength={150} placeholder="e.g. We maintain residential yards and do seasonal cleanups." onChange={e => set('description', e.target.value)} /></label>
       </>}
@@ -207,7 +209,7 @@ export default function StartPage() {
       </>}
 
       {step === 5 && <>
-        <Single legend="What could you spend per month on new AI tools, in total?" required hint="Across all tools together, not per tool." options={BUDGETS} value={d.budget} onChange={v => set('budget', v)} />
+        <Single legend="What could you spend per month on new AI tools, in total?" required hint="In US dollars, across all tools together." options={BUDGETS} value={d.budget} onChange={v => set('budget', v)} />
         <Single legend="Would you pay yearly upfront for a discount?" options={ANNUAL} value={d.annual} onChange={v => set('annual', v)} />
         <Multi legend="What information would the tool handle?" required hint="We use this to flag privacy and compliance checks (like HIPAA or card-data rules)." options={DATA_HANDLED} value={d.dataHandled} onChange={v => set('dataHandled', v)} exclusive={['unsure']} />
         <Single legend="What may the tool do on its own?" required options={AUTONOMY} value={d.autonomy} onChange={v => set('autonomy', v)} />
@@ -223,7 +225,7 @@ export default function StartPage() {
       <div className="st-nav">
         {step > 0 && <button type="button" className="button secondary" onClick={back}><ArrowLeft size={16} /> Back</button>}
         {step < STEPS.length - 1 && <button type="button" className="button primary" onClick={next}>Continue <ArrowRight size={16} /></button>}
-        {step === STEPS.length - 1 && <button type="button" className="button primary large" disabled={busy} onClick={() => { for (let s = 0; s < STEPS.length - 1; s++) { const e = validate(s); if (e) { setStep(s); setError(e); return; } } submit(); }}>{busy ? 'Building your plan…' : <>See my AI plan <ArrowRight size={17} /></>}</button>}
+        {step === STEPS.length - 1 && <button type="button" className="button primary large" disabled={busy} onClick={() => { for (let s = 0; s < STEPS.length - 1; s++) { const e = validate(s); if (e) { setStep(s); setError(e); return; } } submit(); }}>{busy ? <><LoaderCircle className="search-spinner" size={16} aria-hidden="true"/>Building your plan…</> : <>See my AI plan <ArrowRight size={17} /></>}</button>}
       </div>
     </main>
   </>;
@@ -237,7 +239,7 @@ function ReviewBrief({ d, goto }: { d: Draft; goto: (s: number) => void }) {
     <dl>{rows.map(([k, v]) => <div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}</dl></section>;
   return <>
     <p className="st-why"><Info size={14} aria-hidden="true" /> Check this is right. Everything below is used to find, rate and plan your tools.</p>
-    {block('Your business', 0, [['Business', `${d.industry ? INDUSTRIES[d.industry].label : 'Not answered'}${d.subtype ? ` · ${d.subtype}` : ''}`], ['Team', label(TEAM_SIZES, d.teamSize)], ['State', d.state ?? 'Not given']])}
+    {block('Your business', 0, [['Business', `${d.industry ? INDUSTRIES[d.industry].label : 'Not answered'}${d.subtype ? ` · ${d.subtype}` : ''}`], ['Team', label(TEAM_SIZES, d.teamSize)], ['Location', locationLabel(d.country??'US',d.state??null)]])}
     {block('Your setup', 1, [['Software', d.softwareStatus === 'listed' ? d.software.join(', ') || 'None listed' : d.softwareStatus === 'none' ? 'None' : 'Not sure'], ['Must keep', d.mustKeep.join(', ') || 'Nothing specific'], ['Setup comfort', label(TECH_COMFORT, d.techComfort)], ['Set up by', label(SETUP_BY, d.setupBy)]])}
     {block('What to fix', 3, [['Areas', d.areas.map(a => AREAS.find(x => x.id === a)!.title).join(', ') || 'None'], ['Struggles', struggles.map(s => `${s.id === d.focus ? '★ ' : ''}${s.label}`).join(' · ') || 'None']])}
     {block('Must-haves', 5, [['Budget', label(BUDGETS, d.budget)], ['Yearly billing', label(ANNUAL, d.annual)], ['Information handled', d.dataHandled.map(x => DATA_HANDLED[x as keyof typeof DATA_HANDLED]).join(', ') || 'Not answered'], ['On its own it may', label(AUTONOMY, d.autonomy)]])}

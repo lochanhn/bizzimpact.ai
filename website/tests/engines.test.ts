@@ -141,7 +141,7 @@ test('integration: when the #1 problem is a catalogue gap, the plan says so and 
 });
 
 test('plan API validates answers and returns all three engines', async () => {
-  const req = (body: unknown) => POST(new Request('http://localhost/api/plan', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }));
+  const req = (body: unknown) => POST(new Request('http://localhost/api/plan', { method: 'POST', headers: { 'Content-Type': 'application/json', Origin: 'http://localhost' }, body: JSON.stringify(body) }));
   assert.equal((await req({ ...landscaper, focus: 'M9' })).status, 400);
   assert.equal((await req({ ...landscaper, secret: 1 })).status, 400);
   const ok = await req(landscaper);
@@ -149,6 +149,17 @@ test('plan API validates answers and returns all three engines', async () => {
   const body = await ok.json();
   assert.ok(body.brief && body.discovery && body.review && body.integration);
   assert.deepEqual(runPlan(landscaper).review.topPicks, body.review.topPicks, 'deterministic');
+});
+test('merged plan intake preserves international location codes and does not offer US-local help abroad',()=>{
+ const answer={...landscaper,country:'ca',state:'ON',advisor:'yes' as const};
+ const parsed=answersSchema.parse(answer);assert.equal(parsed.country,'CA');assert.equal(parsed.state,'ON');
+ const plan=runPlan(answer);assert.equal(plan.brief.business.country,'CA');assert.equal(plan.integration.advisor,null);
+ assert.equal(answersSchema.safeParse({...answer,country:'ZZ'}).success,false);
+});
+test('production plans do not issue unusable check-in tokens without a configured signing secret',()=>{
+ const previousMode=process.env.NODE_ENV,previousSecret=process.env.PLAN_SIGNING_SECRET;
+ try{Reflect.set(process.env,'NODE_ENV','production');delete process.env.PLAN_SIGNING_SECRET;assert.equal(runPlan(landscaper).planToken,'');process.env.PLAN_SIGNING_SECRET='GENERATE_WITH_openssl_rand_-hex_32';assert.equal(runPlan(landscaper).planToken,'');}
+ finally{if(previousMode===undefined)Reflect.deleteProperty(process.env,'NODE_ENV');else Reflect.set(process.env,'NODE_ENV',previousMode);if(previousSecret===undefined)delete process.env.PLAN_SIGNING_SECRET;else process.env.PLAN_SIGNING_SECRET=previousSecret;}
 });
 
 test('trust facts: only quotes from the vendor\'s own policy pages count; missing evidence is grey, never red', () => {

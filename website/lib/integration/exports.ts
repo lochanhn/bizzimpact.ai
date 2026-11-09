@@ -45,7 +45,7 @@ export function planToCsv(p: PlanResult): string {
 export function planToWebhookPayload(p: PlanResult) {
   return {
     source: 'bizzimpact.ai', schema: 'bizzimpact.plan/1.0', generatedAt: p.generatedAt,
-    business: { industry: p.brief.business.industryLabel, teamSize: p.brief.business.teamSize, state: p.brief.business.state ?? null },
+    business: { industry: p.brief.business.industryLabel, teamSize: p.brief.business.teamSize, country: p.brief.business.country, state: p.brief.business.state ?? null },
     focusProblem: p.brief.focus.label,
     plan: { label: p.integration.recommended?.label ?? null, monthlyCost: p.integration.recommended?.costLabel ?? null, tools: p.integration.recommended?.tools.map(t => t.name) ?? [] },
     tasks: p.integration.adoption.flatMap(a => a.steps.map((s, i) => ({ tool: a.name, order: i + 1, title: s.title, detail: s.detail }))),

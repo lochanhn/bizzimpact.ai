@@ -177,7 +177,7 @@ export function integrate(brief: BusinessBrief, rev: ReviewResult): IntegrationR
   const checkIn = `After 30 days, ask: “${successMeasure}”. Is it better than before? If not, use the undo steps and try the alternative.`;
 
   const wantsHelp = brief.constraints.advisor === 'yes' || brief.constraints.advisor === 'later' || brief.readiness.setupBy === 'nobody' || brief.readiness.techComfort === 'avoid';
-  const advisor = wantsHelp ? {
+  const advisor = wantsHelp && brief.business.country==='US' ? {
     reason: brief.constraints.advisor === 'yes' ? 'You asked for free local help.' : 'Free, neutral local advisors can help you set this up.',
     links: ADVISOR_LINKS,
   } : null;

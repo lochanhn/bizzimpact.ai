@@ -3,10 +3,11 @@
 import { z } from 'zod';
 import {
   ADVISOR, ANNUAL, AREAS, AUTONOMY, BUDGETS, CUSTOMERS, DATA_HANDLED, DEEP_DIVE, FOLLOWUPS, INDUSTRIES, QUESTIONNAIRE_VERSION,
-  SETUP_BY, STRUGGLES, TEAM_SIZES, TECH_COMFORT, TIMELINE, US_STATES, triggeredFollowups, visibleStruggles, type AreaId,
+  SETUP_BY, STRUGGLES, TEAM_SIZES, TECH_COMFORT, TIMELINE, triggeredFollowups, visibleStruggles, type AreaId,
 } from './bank';
 import { CHANNEL_CAPABILITIES, capabilityById, type Channel } from '../discovery/taxonomy';
 import { defaultInterpreter } from '../discovery/interpret';
+import { countryFor } from '../phase1/locations';
 
 const keys = <T extends Record<string, unknown>>(o: T) => Object.keys(o) as [keyof T & string, ...(keyof T & string)[]];
 const struggleById = new Map(STRUGGLES.map(s => [s.id, s]));
@@ -17,8 +18,8 @@ export const answersSchema = z.object({
   description: z.string().trim().max(150).optional(),
   customers: z.enum(keys(CUSTOMERS)).optional(),
   teamSize: z.enum(keys(TEAM_SIZES)),
-  country: z.enum(['US', 'other']).default('US'),
-  state: z.enum(US_STATES).optional(),
+  country: z.string().trim().regex(/^(?:[A-Za-z]{2}|other)$/).transform(v=>v==='other'?v:v.toUpperCase()).refine(v=>v==='other'||!!countryFor(v),'Choose a country from the list.').default('US'),
+  state: z.string().trim().min(1).max(100).optional(),
   software: z.array(z.string().trim().min(1).max(60)).max(25).default([]),
   softwareStatus: z.enum(['listed', 'none', 'not-sure']).default('listed'),
   mustKeep: z.array(z.string().trim().min(1).max(60)).max(3).default([]),

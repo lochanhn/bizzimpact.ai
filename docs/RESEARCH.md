@@ -103,7 +103,7 @@ How this shaped the product:
 
 | Metric | Result | How to reproduce |
 |---|---|---|
-| Need recognition on **15 unseen owner problems** (rules + AI fallback) | **15/15 · 100% recall · 100% precision · 100% right tool in top 3** | `npm run eval:discovery -- --ai` |
+| Contributor-reported recognition on **15 synthetic holdout prompts** (rules + AI fallback; not rerun during merge) | **15/15 · 100% recall · 100% precision · 100% right tool in top 3** | `npm run eval:discovery -- --ai` |
 | Same, rules only (no AI) | 14/15 · 93.3% recall | `npm run eval:discovery` |
 | Tuning set (30 problems) | 30/30 | same |
 | Cost per plan | **$0** (rules-based core); AI fallback ≈ $0.0005; live web search ≈ $0.008 | `data/runtime/ai-ledger.json` |
@@ -111,7 +111,7 @@ How this shaped the product:
 | Tools with cited security/privacy/setup facts | **30** (4 red-badge quotes reviewed by a person) | `data/reviewed/tool-facts.json` |
 | Tools verified in Zapier's directory | **58 tools, 27 everyday apps** | `npm run verify:zapier` |
 | Products found by live discovery (unverified) | **126** across 12 needs with no reviewed tool (3 industries each) | `data/discovered/live-candidates.json` |
-| Automated tests | **87 passing** | `npm test` |
+| Automated tests at merge verification | **121 frontend and 85 backend passing** | `npm test --prefix website`; `uv run --directory backend pytest -q` |
 
 **Accuracy check of our own data:** in manual review, 3 of 30 automatically extracted facts were wrong (blog-sourced or misread). We changed the rules: blog pages never count as evidence, and red badges require a quote reviewed by a person.
 

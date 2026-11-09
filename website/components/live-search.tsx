@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ExternalLink, Globe, Info } from 'lucide-react';
+import { ExternalLink, Globe, Info, LoaderCircle } from 'lucide-react';
 import type { LiveResult } from '@/lib/discovery/live';
 
 /** "Search the web" for a need our reviewed catalogue does not cover yet. */
@@ -19,7 +19,7 @@ export function LiveSearch({ capabilityId, label, industry }: { capabilityId: st
     } catch (e) { setError(e instanceof Error && e.name !== 'TimeoutError' ? e.message : 'Live search took too long. Please try again.'); setState('idle'); }
   }
   if (state !== 'done') return <div className="lv">
-    <button type="button" className="button secondary" onClick={run} disabled={state === 'busy'}><Globe size={16} aria-hidden="true" /> {state === 'busy' ? 'Searching the web…' : `Search the web for ${label.toLowerCase()} tools`}</button>
+    <button type="button" className="button secondary" onClick={run} disabled={state === 'busy'}>{state==='busy'?<LoaderCircle className="search-spinner" size={16} aria-hidden="true"/>:<Globe size={16} aria-hidden="true"/>} {state === 'busy' ? 'Searching the web…' : `Search the web for ${label.toLowerCase()} tools`}</button>
     {error && <p className="dx-error" role="alert">{error}</p>}
   </div>;
   const r = result!;

@@ -1,6 +1,7 @@
 // Server-only OpenRouter client with an app-level spend cap.
 // - Key is read from the server environment only (never NEXT_PUBLIC_, never sent to the browser).
-// - Every call is recorded in a local ledger; calls stop before the budget is reached.
+// - A local ledger provides a best-effort spend check, separate from the FastAPI ledger.
+// - Enable only with a separate provider-limited key; concurrent/container-restarted calls need stronger shared accounting.
 // - Bounded: timeout, one retry on 429/5xx, max tokens.
 // - Only purpose, model, token counts and cost are logged; prompts and responses are not.
 // Imported only by API routes and server libraries; node:fs keeps it out of any client bundle.
@@ -9,7 +10,7 @@ import { logEvent } from '../server/logger';
 
 export const AI_MODEL = process.env.OPENROUTER_MODEL || 'anthropic/claude-haiku-5.5';
 const LEDGER = () => process.env.AI_LEDGER_PATH || 'ai-ledger.json';
-const RESERVE_PER_CALL = 0.05; // conservative pre-call estimate so a call can never overshoot the cap
+const RESERVE_PER_CALL = 0.05; // pre-call estimate; not an atomic reservation or guaranteed billing cap
 
 export class AiUnavailable extends Error { constructor(public reason: 'disabled' | 'budget' | 'error', message: string) { super(message); } }
 export type Annotation = { url: string; title: string };

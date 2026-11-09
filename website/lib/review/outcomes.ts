@@ -14,6 +14,7 @@ import { z } from 'zod';
 export const OUTCOMES_VERSION = '1.0.0';
 const DEV_SECRET = randomBytes(32).toString('hex');
 const secret = () => process.env.PLAN_SIGNING_SECRET || DEV_SECRET;
+const signingReady = () => process.env.NODE_ENV !== 'production' || !!(process.env.PLAN_SIGNING_SECRET && process.env.PLAN_SIGNING_SECRET.length >= 32 && !process.env.PLAN_SIGNING_SECRET.startsWith('GENERATE_WITH_'));
 const storePath = () => process.env.OUTCOMES_PATH || 'outcomes.json';
 const minDays = () => { const n = Number(process.env.OUTCOME_MIN_DAYS ?? '14'); return Number.isFinite(n) && n >= 0 ? n : 14; };
 const PRIOR = 50, PRIOR_WEIGHT = 5, DECAY_PER_MONTH = 0.03, BURST_PER_HOUR = 5;
@@ -23,11 +24,13 @@ export type PlanClaims = { planId: string; toolIds: string[]; industry: string; 
 const b64 = (s: string) => Buffer.from(s).toString('base64url');
 const sign = (payload: string) => createHmac('sha256', secret()).update(payload).digest('base64url');
 export function issuePlanToken(c: Omit<PlanClaims, 'planId' | 'issuedAt'>, now = new Date()): string {
+  if (!signingReady()) return '';
   const claims: PlanClaims = { ...c, planId: randomBytes(9).toString('base64url'), issuedAt: now.toISOString() };
   const payload = b64(JSON.stringify(claims));
   return `${payload}.${sign(payload)}`;
 }
 export function verifyPlanToken(token: string): PlanClaims | null {
+  if (!signingReady()) return null;
   const [payload, sig] = token.split('.');
   if (!payload || !sig) return null;
   const expected = Buffer.from(sign(payload)), got = Buffer.from(sig);

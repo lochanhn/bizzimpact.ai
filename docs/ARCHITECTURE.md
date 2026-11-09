@@ -17,7 +17,7 @@ The live diagram, with "built" vs "16-week" for each part, is at **`/architectur
 | **Integrate** | How do they work together, and how do I start? | Integration graph (32 apps; links from plan data, vendor pages and **Zapier's directory**) · **bundle builder** · **workflow recipes** · calendar, spreadsheet and owner's-own-Zapier/Make hand-offs · adoption plan · SBA advisor links | `lib/integration/*` |
 
 ## Records passed between engines
-`BusinessBrief` → `DiscoveryResult` → `ReviewResult` → `IntegrationResult` (+ signed `planToken` for check-ins). All are versioned, deterministic for the same input, and downloadable from the results page.
+`BusinessBrief` → `DiscoveryResult` → `ReviewResult` → `IntegrationResult` (+ signed `planToken` for check-ins). Records are versioned and downloadable. The core rules use the supplied inputs and evidence; timestamps, plan tokens, outcome data and optional AI calls can change the full response.
 
 ## Data (all versioned, all with sources)
 | File | What | How it's produced |
@@ -32,8 +32,8 @@ The live diagram, with "built" vs "16-week" for each part, is at **`/architectur
 
 ## Safety and cost controls
 - **API key:** server-only, git-ignored, never in the client bundle (verified).
-- **Spending:** app-level cap (`AI_BUDGET_USD`) checked before every call, with a local ledger, timeout, one retry and an hourly limit on fresh searches. Total demo spend ≈ $0.70.
-- **No hallucinated facts:**
+- **Spending:** best-effort local cap (`AI_BUDGET_USD`), timeout, one retry and an hourly search limit. This Next.js ledger is separate from the shared FastAPI ledger and is not an atomic provider billing cap. Keep fresh frontend AI off until configured with a separate provider-limited key. The contributor reports demo-data preparation spend of about $0.70.
+- **Evidence checks (not a guarantee that claims are correct):**
   - Live finds must appear in the returned citations.
   - Extracted facts need an exact quote from the vendor's own policy pages.
   - Red badges need human review.

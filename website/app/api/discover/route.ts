@@ -2,11 +2,12 @@ import { NextResponse } from 'next/server';
 import { discover, discoverWithIntent, discoveryRequestSchema } from '@/lib/discovery/discover';
 import { aiInterpret } from '@/lib/discovery/ai-interpret';
 import { AI_MODEL, aiEnabled } from '@/lib/ai/openrouter';
-import { loggedRoute, readJSON } from '@/lib/server/http';
+import { loggedRoute, readJSON, requireSameOrigin } from '@/lib/server/http';
 
 // Problem-first discovery. Rules first (free, deterministic); AI fallback only when rules find no need.
 // The owner's text is never logged; only counts and versions are.
 export const POST = loggedRoute('/api/discover', async (request, trace) => {
+  requireSameOrigin(request);
   const parsed = discoveryRequestSchema.safeParse(await readJSON(request));
   if (!parsed.success) {
     trace.details.reasonCode = 'invalid_input';

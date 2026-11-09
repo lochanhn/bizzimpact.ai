@@ -1,0 +1,454 @@
+{
+  "timestamp": "2026-11-09T01:09:48.685506+00:00",
+  "prompt_version": "discovery-rag-v1",
+  "dataset": "live-evaluation.json",
+  "profile_context": "Neutral small-business profile; scenarios specify the task without a contradictory landscaping profile.",
+  "limitations": "Synthetic operator-labelled regression examples; no claim of real-owner accuracy. Reusing these cases for prompt tuning makes them development data. Cost fields are provider-reported when present, otherwise conservative reservations.",
+  "budget_usd": 1,
+  "total_cost_usd": 0.006186,
+  "summaries": [
+    {
+      "model": "openai/gpt-4.1-mini",
+      "cases": 15,
+      "exact_matches": 15,
+      "semantic_passes": 14,
+      "precision": 1,
+      "recall": 1,
+      "cost_usd": 0.006186,
+      "mean_latency_seconds": 1.505
+    }
+  ],
+  "cases": [
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "groomer_calls",
+      "expected": [
+        "ai_voice_receptionist",
+        "lead_capture",
+        "appointment_scheduling"
+      ],
+      "predicted": [
+        "ai_voice_receptionist",
+        "appointment_scheduling",
+        "lead_capture"
+      ],
+      "summary": "The user runs a dog grooming small business and needs to answer incoming phone calls, capture caller details, and book appointments.",
+      "inferred_attributes": [
+        "caller details are used for lead capture",
+        "appointment booking is for dog grooming services"
+      ],
+      "exact_match": true,
+      "semantic_pass": true,
+      "true_positive": 3,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.00043239999999999945,
+        "input_tokens": 701,
+        "output_tokens": 95
+      },
+      "latency_seconds": 1.907
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "hvac_estimates",
+      "expected": [
+        "quote_generation"
+      ],
+      "predicted": [
+        "quote_generation"
+      ],
+      "summary": "The user wants to prepare a draft quote from job notes for approval. They already have email software but need help generating the quote document.",
+      "inferred_attributes": [
+        "user needs automated quote generation from notes",
+        "email will be used to send the quote"
+      ],
+      "exact_match": true,
+      "semantic_pass": true,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.0004231999999999986,
+        "input_tokens": 702,
+        "output_tokens": 89
+      },
+      "latency_seconds": 1.48
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "bakery_forecast",
+      "expected": [
+        "demand_forecasting",
+        "inventory_optimization"
+      ],
+      "predicted": [
+        "demand_forecasting",
+        "inventory_optimization"
+      ],
+      "summary": "The user wants to predict tomorrow's bread demand based on daily sales history to plan stock purchases effectively.",
+      "inferred_attributes": [
+        "business sells bread",
+        "needs demand forecasting to optimize inventory"
+      ],
+      "exact_match": true,
+      "semantic_pass": true,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.00041120000000000045,
+        "input_tokens": 700,
+        "output_tokens": 82
+      },
+      "latency_seconds": 1.389
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "salon_calendar",
+      "expected": [
+        "appointment_scheduling"
+      ],
+      "predicted": [
+        "appointment_scheduling"
+      ],
+      "summary": "The user wants to enable clients to book appointments directly into their calendar, indicating a need for appointment scheduling functionality.",
+      "inferred_attributes": [
+        "the booking is likely online or via digital means",
+        "the calendar is probably digital and connected to the business"
+      ],
+      "exact_match": true,
+      "semantic_pass": true,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.0004139999999999977,
+        "input_tokens": 691,
+        "output_tokens": 86
+      },
+      "latency_seconds": 1.656
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "shop_faq",
+      "expected": [
+        "customer_support_chat",
+        "lead_capture"
+      ],
+      "predicted": [
+        "customer_support_chat",
+        "lead_capture"
+      ],
+      "summary": "Implement a website chatbot that answers customer questions and captures contact details when unable to resolve queries.",
+      "inferred_attributes": [
+        "contact channel is website chat"
+      ],
+      "exact_match": true,
+      "semantic_pass": true,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.0003948000000000007,
+        "input_tokens": 699,
+        "output_tokens": 72
+      },
+      "latency_seconds": 1.314
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "nonprofit_receipts",
+      "expected": [
+        "invoice_automation"
+      ],
+      "predicted": [
+        "invoice_automation"
+      ],
+      "summary": "Extracting receipt and invoice details for bookkeeping purposes to assist the bookkeeper.",
+      "inferred_attributes": [
+        "task involves processing financial documents for bookkeeping"
+      ],
+      "exact_match": true,
+      "semantic_pass": true,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.0003808000000000006,
+        "input_tokens": 700,
+        "output_tokens": 63
+      },
+      "latency_seconds": 1.393
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "instagram_scheduling",
+      "expected": [
+        "marketing_content"
+      ],
+      "predicted": [
+        "marketing_content"
+      ],
+      "summary": "The task is to create and schedule Instagram posts for a craft shop, which is a marketing content creation and scheduling activity.",
+      "inferred_attributes": [
+        "social media marketing",
+        "content scheduling"
+      ],
+      "exact_match": true,
+      "semantic_pass": true,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.0003924000000000011,
+        "input_tokens": 693,
+        "output_tokens": 72
+      },
+      "latency_seconds": 1.422
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "quote_followup",
+      "expected": [
+        "automated_followup"
+      ],
+      "predicted": [
+        "automated_followup"
+      ],
+      "summary": "The user wants to send reminders to customers to respond to existing quotes they have already prepared, without generating new quotes.",
+      "inferred_attributes": [
+        "the reminders are likely sent via email or messaging, but the exact channel is not specified"
+      ],
+      "exact_match": true,
+      "semantic_pass": true,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": true,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.0004255999999999982,
+        "input_tokens": 700,
+        "output_tokens": 91
+      },
+      "latency_seconds": 1.49
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "handoff",
+      "expected": [
+        "workflow_automation"
+      ],
+      "predicted": [
+        "workflow_automation"
+      ],
+      "summary": "The task is to automate the copying of information between existing software applications (QuickBooks and Gmail) to reduce repetitive office work. This involves connecting software systems to streamline data transfer.",
+      "inferred_attributes": [
+        "integration between accounting and email software",
+        "focus on office workflow efficiency"
+      ],
+      "exact_match": true,
+      "semantic_pass": true,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.0004347999999999991,
+        "input_tokens": 699,
+        "output_tokens": 97
+      },
+      "latency_seconds": 2.234
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "physical_cooking",
+      "expected": [],
+      "predicted": [],
+      "summary": "The task involves physical labor (cooking and washing dishes) which is outside the scope of software capabilities and automation solutions.",
+      "inferred_attributes": [
+        "need for human labor",
+        "not a software automation task"
+      ],
+      "exact_match": true,
+      "semantic_pass": true,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.00039200000000000346,
+        "input_tokens": 696,
+        "output_tokens": 71
+      },
+      "latency_seconds": 1.266
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "unspecified",
+      "expected": [],
+      "predicted": [],
+      "summary": "The user owns a small shop and wants to improve it using AI but has not specified any particular task or area for improvement. Without a defined task or objective, no specific AI capabilities can be recommended.",
+      "inferred_attributes": [
+        "interested in AI solutions",
+        "needs guidance to identify improvement areas"
+      ],
+      "exact_match": true,
+      "semantic_pass": true,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.0004299999999999998,
+        "input_tokens": 703,
+        "output_tokens": 93
+      },
+      "latency_seconds": 1.402
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "injected_problem",
+      "expected": [
+        "invoice_automation"
+      ],
+      "predicted": [
+        "invoice_automation"
+      ],
+      "summary": "The user needs assistance with extracting invoice details from their documents or software.",
+      "inferred_attributes": [
+        "task involves processing invoices likely from QuickBooks or similar software"
+      ],
+      "exact_match": true,
+      "semantic_pass": true,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.00038559999999999983,
+        "input_tokens": 704,
+        "output_tokens": 65
+      },
+      "latency_seconds": 1.359
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "no_chatbot",
+      "expected": [
+        "ai_voice_receptionist",
+        "lead_capture"
+      ],
+      "predicted": [
+        "ai_voice_receptionist",
+        "lead_capture"
+      ],
+      "summary": "The user wants to have incoming phone calls answered and caller details recorded for their small business. This involves handling phone calls and capturing lead information from callers.",
+      "inferred_attributes": [
+        "the task involves managing inbound phone communication",
+        "lead capture is related to recording caller details"
+      ],
+      "exact_match": true,
+      "semantic_pass": true,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.00043239999999999945,
+        "input_tokens": 701,
+        "output_tokens": 95
+      },
+      "latency_seconds": 1.477
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "ambiguous_contact",
+      "expected": [
+        "lead_capture",
+        "automated_followup"
+      ],
+      "predicted": [
+        "automated_followup",
+        "lead_capture"
+      ],
+      "summary": "The business needs assistance managing customer enquiries to prevent them from getting lost and to ensure timely responses and follow-ups.",
+      "inferred_attributes": [
+        "customer enquiries are received but not tracked effectively",
+        "follow-up communication is currently insufficient or manual"
+      ],
+      "exact_match": true,
+      "semantic_pass": false,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.00042240000000000333,
+        "input_tokens": 696,
+        "output_tokens": 90
+      },
+      "latency_seconds": 1.436
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "outbound",
+      "expected": [],
+      "predicted": [],
+      "summary": "The task is to make outbound cold calls to prospects, which involves outbound sales calls. This is not supported by the available capabilities, as ai_voice_receptionist only covers answering incoming calls, not making outbound calls.",
+      "inferred_attributes": [
+        "task involves outbound sales calls"
+      ],
+      "exact_match": true,
+      "semantic_pass": true,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.00041480000000000683,
+        "input_tokens": 693,
+        "output_tokens": 86
+      },
+      "latency_seconds": 1.347
+    }
+  ],
+  "evaluation_note": "All 15 required task sets matched. The raw model missed one contact-clarification flag; the application's deterministic contact-channel gate covers that case. Earlier contradictory-profile evaluation is retained separately."
+}

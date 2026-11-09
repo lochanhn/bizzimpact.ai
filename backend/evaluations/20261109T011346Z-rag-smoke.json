@@ -1,0 +1,112 @@
+{
+  "timestamp": "2026-11-09T01:13:46.182405+00:00",
+  "model": "openai/gpt-4.1-mini",
+  "synthetic_profiles": true,
+  "real_paid_calls": true,
+  "limitations": "Automated consistency checks on vendor claims, not independent product testing or real-owner validation.",
+  "cases": [
+    {
+      "case": "inventory",
+      "status": "completed",
+      "latency_seconds": 14.566,
+      "usage": {
+        "model_calls": 5,
+        "search_calls": 1,
+        "estimated_cost_usd": 0.011715200000000023,
+        "input_tokens": 7596,
+        "output_tokens": 1048
+      },
+      "quality_report": {
+        "prompt_version": "discovery-rag-v1",
+        "rubric_version": "evidence-match-v1",
+        "retrieved_candidates": 1,
+        "assessed_candidates": 1,
+        "quality_gate_passed": 1,
+        "checks": [
+          "Controlled capability IDs",
+          "Catalogue identity",
+          "Source URL presence",
+          "Per-tool citation ownership",
+          "Separate model evidence audit"
+        ],
+        "limitations": [
+          "An evidence match index is not a probability of success or an independent product rating.",
+          "Price, exact integrations, regional availability and privacy terms still need verification."
+        ],
+        "rejected_candidates": [],
+        "interpretation_source": "model",
+        "model_id": "openai/gpt-4.1-mini",
+        "retrieval_basis": "Controlled task capabilities, approved industry/software query terms, then source-grounded assessment.",
+        "web_trigger": "Explicit request or empty catalogue result",
+        "retrieval_audit": [
+          {
+            "url": "https://www.restroworks.com/restaurant-forecasting-software/",
+            "status": "fetch_rejected_or_unavailable",
+            "reason": "ValueError"
+          },
+          {
+            "url": "https://www.nory.ai/us/product/inventory",
+            "status": "provisional_candidate",
+            "reason": null
+          }
+        ]
+      },
+      "warnings": [],
+      "queries": [
+        {
+          "query_kind": "capability",
+          "query_text": "AI inventory optimization demand forecasting small business",
+          "executed": false
+        },
+        {
+          "query_kind": "industry",
+          "query_text": "AI inventory optimization demand forecasting for restaurant",
+          "executed": true,
+          "simulated": false
+        },
+        {
+          "query_kind": "alternate",
+          "query_text": "AI inventory optimization demand forecasting software alternatives official features",
+          "executed": false
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "480be758-6f5d-5993-b0de-770161b1133c",
+          "name": "Nory",
+          "quality": {
+            "rubric_version": "evidence-match-v1",
+            "score": null,
+            "task_coverage_points": 50.0,
+            "source_evidence_points": 0.0,
+            "workflow_relevance_points": 25.0,
+            "assessment_status": "provisional",
+            "explanation": "The tool explicitly claims demand forecasting by learning site-specific trading patterns and forecasting revenue and covers by the hour, which supports forecasting ingredient demand. It also claims inventory optimization aimed at maximizing margins, reducing waste, and streamlining supply chain management, which aligns with planning stock purchases. However, there is no explicit mention of a user-",
+            "evidence_ids": [
+              "480be758-6f5d-5993-b0de-770161b1133c:e0",
+              "480be758-6f5d-5993-b0de-770161b1133c:e1"
+            ],
+            "source_urls": [
+              "https://www.nory.ai/us/product/inventory"
+            ],
+            "checks": [
+              "Controlled capability IDs",
+              "Catalogue identity",
+              "Source URL presence",
+              "Per-tool citation ownership",
+              "Separate model evidence audit"
+            ],
+            "limitations": [
+              "An evidence match index is not a probability of success or an independent product rating.",
+              "Price, exact integrations, regional availability and privacy terms still need verification.",
+              "Provisional or incomplete source evidence prevents a full score."
+            ]
+          },
+          "source_urls": [
+            "https://www.nory.ai/us/product/inventory"
+          ]
+        }
+      ]
+    }
+  ]
+}

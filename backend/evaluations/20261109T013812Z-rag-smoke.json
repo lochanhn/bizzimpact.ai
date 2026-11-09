@@ -1,0 +1,513 @@
+{
+  "timestamp": "2026-11-09T01:38:12.970055+00:00",
+  "model": "openai/gpt-4.1-mini",
+  "synthetic_profiles": true,
+  "real_paid_calls": true,
+  "limitations": "Automated consistency checks on vendor claims, not independent product testing or real-owner validation.",
+  "cases": [
+    {
+      "case": "calls",
+      "status": "completed",
+      "latency_seconds": 11.985,
+      "usage": {
+        "model_calls": 3,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.006440399999999999,
+        "input_tokens": 9941,
+        "output_tokens": 1540
+      },
+      "quality_report": {
+        "prompt_version": "discovery-rag-v1.4",
+        "rubric_version": "evidence-match-v1",
+        "retrieved_candidates": 10,
+        "assessed_candidates": 8,
+        "quality_gate_passed": 8,
+        "checks": [
+          "Controlled capability IDs",
+          "Retrieved record identity",
+          "Source URL and date presence",
+          "Per-tool citation ownership",
+          "Separate model evidence audit"
+        ],
+        "limitations": [
+          "An evidence match index is not a probability of success or an independent product rating.",
+          "Price, exact integrations, regional availability and privacy terms still need verification."
+        ],
+        "rejected_candidates": [],
+        "assessment_audit": [
+          {
+            "tool_id": "20dc1582-3b77-5391-b2e7-d9f86f1d790e",
+            "applicability": "partial",
+            "proposed_explanation": "This tool offers AI voice receptionist and appointment scheduling features (e0,e1,e3). However, it requires checking for exact destination support and approval workflows, so full booking with user approval is unclear.",
+            "evidence_ids": [
+              "20dc1582-3b77-5391-b2e7-d9f86f1d790e:e0",
+              "20dc1582-3b77-5391-b2e7-d9f86f1d790e:e1",
+              "20dc1582-3b77-5391-b2e7-d9f86f1d790e:e3"
+            ],
+            "audit_passed": true,
+            "audit_reason": "Evidence confirms AI receptionist and appointment scheduling; approval workflow is unknown, so partial support is accurate."
+          },
+          {
+            "tool_id": "ea272abc-233f-578f-92d7-54de33b06aab",
+            "applicability": "partial",
+            "proposed_explanation": "Rosie provides AI voice receptionist and appointment scheduling capabilities (e1,e3). The documentation lacks details on user approval before booking, so direct compliance with approval constraint is unclear.",
+            "evidence_ids": [
+              "ea272abc-233f-578f-92d7-54de33b06aab:e1",
+              "ea272abc-233f-578f-92d7-54de33b06aab:e3"
+            ],
+            "audit_passed": true,
+            "audit_reason": "Evidence shows AI receptionist and scheduling but no approval details; partial support with approval unknown is correct."
+          },
+          {
+            "tool_id": "772ca3ce-88e7-5de3-8469-8d5a0388e72d",
+            "applicability": "partial",
+            "proposed_explanation": "Smith.ai offers AI receptionist with qualification and scheduling options (e0,e1,e3). It is unclear if it supports explicit user approval before sending or booking appointments.",
+            "evidence_ids": [
+              "772ca3ce-88e7-5de3-8469-8d5a0388e72d:e0",
+              "772ca3ce-88e7-5de3-8469-8d5a0388e72d:e1",
+              "772ca3ce-88e7-5de3-8469-8d5a0388e72d:e3"
+            ],
+            "audit_passed": true,
+            "audit_reason": "AI receptionist and scheduling documented; approval before booking not evidenced, so partial support is justified."
+          },
+          {
+            "tool_id": "7d00fb8d-85c7-5943-8554-8be4da94f02a",
+            "applicability": "partial",
+            "proposed_explanation": "Retell AI provides AI voice receptionist capabilities (e1) but lacks appointment scheduling evidence, so it cannot fully meet the booking requirement.",
+            "evidence_ids": [
+              "7d00fb8d-85c7-5943-8554-8be4da94f02a:e1"
+            ],
+            "audit_passed": true,
+            "audit_reason": "Only AI receptionist capability shown; no appointment scheduling evidence, so partial support is accurate."
+          },
+          {
+            "tool_id": "7107afcf-7315-5a12-922c-a25b2f8552b2",
+            "applicability": "partial",
+            "proposed_explanation": "Bland AI offers AI voice receptionist features (e1) but no appointment scheduling evidence, limiting its ability to book appointments as required.",
+            "evidence_ids": [
+              "7107afcf-7315-5a12-922c-a25b2f8552b2:e1"
+            ],
+            "audit_passed": true,
+            "audit_reason": "AI receptionist capability only; no scheduling evidence, so partial support is factually correct."
+          },
+          {
+            "tool_id": "0594df1e-384b-5141-a1c2-d7b49700eb70",
+            "applicability": "partial",
+            "proposed_explanation": "Goodcall has AI voice receptionist and lead capture (e1,e2) but no explicit appointment scheduling capability, so it cannot confirm booking appointments.",
+            "evidence_ids": [
+              "0594df1e-384b-5141-a1c2-d7b49700eb70:e1",
+              "0594df1e-384b-5141-a1c2-d7b49700eb70:e2"
+            ],
+            "audit_passed": true,
+            "audit_reason": "AI receptionist and lead capture shown; no appointment scheduling evidence, so partial support is appropriate."
+          },
+          {
+            "tool_id": "b3b3d059-af86-58c9-a849-0b7c760cffcc",
+            "applicability": "partial",
+            "proposed_explanation": "Dialzara provides AI voice receptionist and lead capture (e1,e2) with calendar features on higher plans, but confirmed appointment booking and approval workflows are not documented.",
+            "evidence_ids": [
+              "b3b3d059-af86-58c9-a849-0b7c760cffcc:e1",
+              "b3b3d059-af86-58c9-a849-0b7c760cffcc:e2"
+            ],
+            "audit_passed": true,
+            "audit_reason": "AI receptionist and lead capture with calendar features noted; no confirmed booking or approval evidence, so partial support fits."
+          },
+          {
+            "tool_id": "39c80799-8a41-5176-b9e0-114423b07b04",
+            "applicability": "partial",
+            "proposed_explanation": "Housecall Pro CSR AI offers AI voice receptionist and lead capture (e1,e2) but official sources differ on booking rollout and approval support, so direct fit is unclear.",
+            "evidence_ids": [
+              "39c80799-8a41-5176-b9e0-114423b07b04:e1",
+              "39c80799-8a41-5176-b9e0-114423b07b04:e2"
+            ],
+            "audit_passed": true,
+            "audit_reason": "AI receptionist and lead capture documented; booking rollout and approval unclear, so partial support is justified."
+          }
+        ],
+        "interpretation_source": "model",
+        "model_id": "openai/gpt-4.1-mini",
+        "retrieval_basis": "Controlled task coverage first, local BM25 task-text relevance to break ties, then source-grounded AI assessment.",
+        "web_trigger": "Explicit request or empty catalogue result",
+        "retrieval_audit": [],
+        "retrieval_pool": [
+          {
+            "tool_id": "20dc1582-3b77-5391-b2e7-d9f86f1d790e",
+            "matched_capabilities": [
+              "ai_voice_receptionist",
+              "appointment_scheduling"
+            ],
+            "bm25": 0
+          },
+          {
+            "tool_id": "ea272abc-233f-578f-92d7-54de33b06aab",
+            "matched_capabilities": [
+              "ai_voice_receptionist",
+              "appointment_scheduling"
+            ],
+            "bm25": 0
+          },
+          {
+            "tool_id": "772ca3ce-88e7-5de3-8469-8d5a0388e72d",
+            "matched_capabilities": [
+              "ai_voice_receptionist",
+              "appointment_scheduling"
+            ],
+            "bm25": 0
+          },
+          {
+            "tool_id": "7d00fb8d-85c7-5943-8554-8be4da94f02a",
+            "matched_capabilities": [
+              "ai_voice_receptionist"
+            ],
+            "bm25": 4.5831
+          },
+          {
+            "tool_id": "7107afcf-7315-5a12-922c-a25b2f8552b2",
+            "matched_capabilities": [
+              "ai_voice_receptionist"
+            ],
+            "bm25": 1.6727
+          },
+          {
+            "tool_id": "0594df1e-384b-5141-a1c2-d7b49700eb70",
+            "matched_capabilities": [
+              "ai_voice_receptionist"
+            ],
+            "bm25": 1.4273
+          },
+          {
+            "tool_id": "b3b3d059-af86-58c9-a849-0b7c760cffcc",
+            "matched_capabilities": [
+              "ai_voice_receptionist"
+            ],
+            "bm25": 0
+          },
+          {
+            "tool_id": "39c80799-8a41-5176-b9e0-114423b07b04",
+            "matched_capabilities": [
+              "ai_voice_receptionist"
+            ],
+            "bm25": 0
+          },
+          {
+            "tool_id": "05f661c0-4076-570b-b2e1-3f24725bd891",
+            "matched_capabilities": [
+              "ai_voice_receptionist"
+            ],
+            "bm25": 0
+          },
+          {
+            "tool_id": "890d57cc-1720-5839-8292-e44e01a01742",
+            "matched_capabilities": [
+              "ai_voice_receptionist"
+            ],
+            "bm25": 0
+          }
+        ]
+      },
+      "warnings": [],
+      "queries": [
+        {
+          "query_kind": "capability",
+          "query_text": "AI phone answering voice receptionist small business",
+          "executed": false
+        },
+        {
+          "query_kind": "industry",
+          "query_text": "AI phone answering voice receptionist for landscaping",
+          "executed": false
+        },
+        {
+          "query_kind": "alternate",
+          "query_text": "AI phone answering voice receptionist software alternatives official features",
+          "executed": false
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "20dc1582-3b77-5391-b2e7-d9f86f1d790e",
+          "name": "My AI Front Desk",
+          "quality": {
+            "rubric_version": "evidence-match-v1",
+            "score": 87.5,
+            "task_coverage_points": 50.0,
+            "source_evidence_points": 25.0,
+            "workflow_relevance_points": 12.5,
+            "assessment_status": "passed",
+            "explanation": "This tool offers AI voice receptionist and appointment scheduling features (e0,e1,e3). However, it requires checking for exact destination support and approval workflows, so full booking with user approval is unclear.",
+            "evidence_ids": [
+              "20dc1582-3b77-5391-b2e7-d9f86f1d790e:e0",
+              "20dc1582-3b77-5391-b2e7-d9f86f1d790e:e1",
+              "20dc1582-3b77-5391-b2e7-d9f86f1d790e:e3"
+            ],
+            "source_urls": [
+              "https://www.myaifrontdesk.com/ai-receptionist"
+            ],
+            "checks": [
+              "Controlled capability IDs",
+              "Retrieved record identity",
+              "Source URL and date presence",
+              "Per-tool citation ownership",
+              "Separate model evidence audit"
+            ],
+            "limitations": [
+              "An evidence match index is not a probability of success or an independent product rating.",
+              "Price, exact integrations, regional availability and privacy terms still need verification.",
+              "The exact booking action is not established by a broad scheduling tag; workflow points are capped at 12.5."
+            ]
+          },
+          "source_urls": [
+            "https://www.myaifrontdesk.com/ai-receptionist",
+            "https://www.myaifrontdesk.com/pricing"
+          ]
+        },
+        {
+          "tool_id": "ea272abc-233f-578f-92d7-54de33b06aab",
+          "name": "Rosie",
+          "quality": {
+            "rubric_version": "evidence-match-v1",
+            "score": 87.5,
+            "task_coverage_points": 50.0,
+            "source_evidence_points": 25.0,
+            "workflow_relevance_points": 12.5,
+            "assessment_status": "passed",
+            "explanation": "Rosie provides AI voice receptionist and appointment scheduling capabilities (e1,e3). The documentation lacks details on user approval before booking, so direct compliance with approval constraint is unclear.",
+            "evidence_ids": [
+              "ea272abc-233f-578f-92d7-54de33b06aab:e1",
+              "ea272abc-233f-578f-92d7-54de33b06aab:e3"
+            ],
+            "source_urls": [
+              "https://heyrosie.com/"
+            ],
+            "checks": [
+              "Controlled capability IDs",
+              "Retrieved record identity",
+              "Source URL and date presence",
+              "Per-tool citation ownership",
+              "Separate model evidence audit"
+            ],
+            "limitations": [
+              "An evidence match index is not a probability of success or an independent product rating.",
+              "Price, exact integrations, regional availability and privacy terms still need verification.",
+              "The exact booking action is not established by a broad scheduling tag; workflow points are capped at 12.5."
+            ]
+          },
+          "source_urls": [
+            "https://heyrosie.com/",
+            "https://heyrosie.com/pricing"
+          ]
+        },
+        {
+          "tool_id": "772ca3ce-88e7-5de3-8469-8d5a0388e72d",
+          "name": "Smith.ai",
+          "quality": {
+            "rubric_version": "evidence-match-v1",
+            "score": 87.5,
+            "task_coverage_points": 50.0,
+            "source_evidence_points": 25.0,
+            "workflow_relevance_points": 12.5,
+            "assessment_status": "passed",
+            "explanation": "Smith.ai offers AI receptionist with qualification and scheduling options (e0,e1,e3). It is unclear if it supports explicit user approval before sending or booking appointments.",
+            "evidence_ids": [
+              "772ca3ce-88e7-5de3-8469-8d5a0388e72d:e0",
+              "772ca3ce-88e7-5de3-8469-8d5a0388e72d:e1",
+              "772ca3ce-88e7-5de3-8469-8d5a0388e72d:e3"
+            ],
+            "source_urls": [
+              "https://smith.ai/pricing/ai-receptionist"
+            ],
+            "checks": [
+              "Controlled capability IDs",
+              "Retrieved record identity",
+              "Source URL and date presence",
+              "Per-tool citation ownership",
+              "Separate model evidence audit"
+            ],
+            "limitations": [
+              "An evidence match index is not a probability of success or an independent product rating.",
+              "Price, exact integrations, regional availability and privacy terms still need verification.",
+              "The exact booking action is not established by a broad scheduling tag; workflow points are capped at 12.5."
+            ]
+          },
+          "source_urls": [
+            "https://smith.ai/pricing/ai-receptionist"
+          ]
+        },
+        {
+          "tool_id": "7d00fb8d-85c7-5943-8554-8be4da94f02a",
+          "name": "Retell AI",
+          "quality": {
+            "rubric_version": "evidence-match-v1",
+            "score": 62.5,
+            "task_coverage_points": 25.0,
+            "source_evidence_points": 25.0,
+            "workflow_relevance_points": 12.5,
+            "assessment_status": "passed",
+            "explanation": "Retell AI provides AI voice receptionist capabilities (e1) but lacks appointment scheduling evidence, so it cannot fully meet the booking requirement.",
+            "evidence_ids": [
+              "7d00fb8d-85c7-5943-8554-8be4da94f02a:e1"
+            ],
+            "source_urls": [
+              "https://www.retellai.com/"
+            ],
+            "checks": [
+              "Controlled capability IDs",
+              "Retrieved record identity",
+              "Source URL and date presence",
+              "Per-tool citation ownership",
+              "Separate model evidence audit"
+            ],
+            "limitations": [
+              "An evidence match index is not a probability of success or an independent product rating.",
+              "Price, exact integrations, regional availability and privacy terms still need verification.",
+              "The exact booking action is not established by a broad scheduling tag; workflow points are capped at 12.5."
+            ]
+          },
+          "source_urls": [
+            "https://www.retellai.com/"
+          ]
+        },
+        {
+          "tool_id": "7107afcf-7315-5a12-922c-a25b2f8552b2",
+          "name": "Bland AI",
+          "quality": {
+            "rubric_version": "evidence-match-v1",
+            "score": 62.5,
+            "task_coverage_points": 25.0,
+            "source_evidence_points": 25.0,
+            "workflow_relevance_points": 12.5,
+            "assessment_status": "passed",
+            "explanation": "Bland AI offers AI voice receptionist features (e1) but no appointment scheduling evidence, limiting its ability to book appointments as required.",
+            "evidence_ids": [
+              "7107afcf-7315-5a12-922c-a25b2f8552b2:e1"
+            ],
+            "source_urls": [
+              "https://www.bland.ai/"
+            ],
+            "checks": [
+              "Controlled capability IDs",
+              "Retrieved record identity",
+              "Source URL and date presence",
+              "Per-tool citation ownership",
+              "Separate model evidence audit"
+            ],
+            "limitations": [
+              "An evidence match index is not a probability of success or an independent product rating.",
+              "Price, exact integrations, regional availability and privacy terms still need verification.",
+              "The exact booking action is not established by a broad scheduling tag; workflow points are capped at 12.5."
+            ]
+          },
+          "source_urls": [
+            "https://www.bland.ai/"
+          ]
+        },
+        {
+          "tool_id": "0594df1e-384b-5141-a1c2-d7b49700eb70",
+          "name": "Goodcall",
+          "quality": {
+            "rubric_version": "evidence-match-v1",
+            "score": 62.5,
+            "task_coverage_points": 25.0,
+            "source_evidence_points": 25.0,
+            "workflow_relevance_points": 12.5,
+            "assessment_status": "passed",
+            "explanation": "Goodcall has AI voice receptionist and lead capture (e1,e2) but no explicit appointment scheduling capability, so it cannot confirm booking appointments.",
+            "evidence_ids": [
+              "0594df1e-384b-5141-a1c2-d7b49700eb70:e1",
+              "0594df1e-384b-5141-a1c2-d7b49700eb70:e2"
+            ],
+            "source_urls": [
+              "https://www.goodcall.com/how-it-works"
+            ],
+            "checks": [
+              "Controlled capability IDs",
+              "Retrieved record identity",
+              "Source URL and date presence",
+              "Per-tool citation ownership",
+              "Separate model evidence audit"
+            ],
+            "limitations": [
+              "An evidence match index is not a probability of success or an independent product rating.",
+              "Price, exact integrations, regional availability and privacy terms still need verification.",
+              "The exact booking action is not established by a broad scheduling tag; workflow points are capped at 12.5."
+            ]
+          },
+          "source_urls": [
+            "https://www.goodcall.com/how-it-works",
+            "https://www.goodcall.com/pricing"
+          ]
+        },
+        {
+          "tool_id": "b3b3d059-af86-58c9-a849-0b7c760cffcc",
+          "name": "Dialzara",
+          "quality": {
+            "rubric_version": "evidence-match-v1",
+            "score": 62.5,
+            "task_coverage_points": 25.0,
+            "source_evidence_points": 25.0,
+            "workflow_relevance_points": 12.5,
+            "assessment_status": "passed",
+            "explanation": "Dialzara provides AI voice receptionist and lead capture (e1,e2) with calendar features on higher plans, but confirmed appointment booking and approval workflows are not documented.",
+            "evidence_ids": [
+              "b3b3d059-af86-58c9-a849-0b7c760cffcc:e1",
+              "b3b3d059-af86-58c9-a849-0b7c760cffcc:e2"
+            ],
+            "source_urls": [
+              "https://dialzara.com/pricing"
+            ],
+            "checks": [
+              "Controlled capability IDs",
+              "Retrieved record identity",
+              "Source URL and date presence",
+              "Per-tool citation ownership",
+              "Separate model evidence audit"
+            ],
+            "limitations": [
+              "An evidence match index is not a probability of success or an independent product rating.",
+              "Price, exact integrations, regional availability and privacy terms still need verification.",
+              "The exact booking action is not established by a broad scheduling tag; workflow points are capped at 12.5."
+            ]
+          },
+          "source_urls": [
+            "https://dialzara.com/pricing"
+          ]
+        },
+        {
+          "tool_id": "39c80799-8a41-5176-b9e0-114423b07b04",
+          "name": "Housecall Pro CSR AI",
+          "quality": {
+            "rubric_version": "evidence-match-v1",
+            "score": 62.5,
+            "task_coverage_points": 25.0,
+            "source_evidence_points": 25.0,
+            "workflow_relevance_points": 12.5,
+            "assessment_status": "passed",
+            "explanation": "Housecall Pro CSR AI offers AI voice receptionist and lead capture (e1,e2) but official sources differ on booking rollout and approval support, so direct fit is unclear.",
+            "evidence_ids": [
+              "39c80799-8a41-5176-b9e0-114423b07b04:e1",
+              "39c80799-8a41-5176-b9e0-114423b07b04:e2"
+            ],
+            "source_urls": [
+              "https://help.housecallpro.com/en/articles/9740104-csr-ai-overview"
+            ],
+            "checks": [
+              "Controlled capability IDs",
+              "Retrieved record identity",
+              "Source URL and date presence",
+              "Per-tool citation ownership",
+              "Separate model evidence audit"
+            ],
+            "limitations": [
+              "An evidence match index is not a probability of success or an independent product rating.",
+              "Price, exact integrations, regional availability and privacy terms still need verification.",
+              "The exact booking action is not established by a broad scheduling tag; workflow points are capped at 12.5."
+            ]
+          },
+          "source_urls": [
+            "https://help.housecallpro.com/en/articles/9740104-csr-ai-overview"
+          ]
+        }
+      ]
+    }
+  ]
+}

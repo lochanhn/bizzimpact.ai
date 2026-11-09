@@ -1,0 +1,25 @@
+{
+  "purpose": "Synthetic regression cases, not a measured accuracy claim on real owner searches.",
+  "cases": [
+    {"id":"missed_calls","problem":"I miss incoming phone calls.","expected":["ai_voice_receptionist","lead_capture"]},
+    {"id":"calls_and_booking","problem":"I miss phone calls and need appointments booked.","expected":["ai_voice_receptionist","lead_capture","appointment_scheduling"]},
+    {"id":"outcome_adds_booking","problem":"I miss phone calls.","context":{"desired_outcome":"Book appointments in my calendar."},"expected":["ai_voice_receptionist","lead_capture","appointment_scheduling"]},
+    {"id":"website_questions","problem":"Answer questions on my website with a chatbot.","expected":["customer_support_chat","lead_capture"]},
+    {"id":"website_marketing_not_chat","problem":"Create marketing content for my website.","expected":["marketing_content"],"excluded":["customer_support_chat","lead_capture"]},
+    {"id":"social_schedule_not_appointments","problem":"Create and schedule social posts for my shop.","expected":["marketing_content"],"excluded":["appointment_scheduling"]},
+    {"id":"food_waste","problem":"We waste perishable ingredients and need better stock planning.","expected":["demand_forecasting","inventory_optimization"]},
+    {"id":"restock","problem":"Forecast demand so we can restock before running out.","expected":["demand_forecasting","inventory_optimization"]},
+    {"id":"invoices","problem":"I enter invoices manually every week.","expected":["invoice_automation"]},
+    {"id":"workflow_not_requested","problem":"I need invoice automation.","context":{"current_workflow":"We answer phone calls and schedule appointments too."},"expected":["invoice_automation"],"excluded":["ai_voice_receptionist","appointment_scheduling"]},
+    {"id":"explicit_exclusion","problem":"I do not need invoices, but I want marketing content.","expected":["marketing_content"],"excluded":["invoice_automation"]},
+    {"id":"negative_pain_not_exclusion","problem":"I do not want to miss incoming phone calls.","expected":["ai_voice_receptionist","lead_capture"]},
+    {"id":"quote_preparation","problem":"Prepare quotes for landscaping jobs.","expected":["quote_generation"]},
+    {"id":"copy_between_tools","problem":"Copy information between my existing tools automatically.","expected":["workflow_automation"]},
+    {"id":"unknown_task","problem":"Please improve my business somehow.","expected":[]},
+    {"id":"physical_work","problem":"I need someone to mow lawns for me.","expected":[]},
+    {"id":"outbound_not_receptionist","problem":"Make outbound cold calls to prospects.","expected":[],"excluded":["ai_voice_receptionist"]},
+    {"id":"ambiguous_channel","problem":"Customer inquiries get lost and I need help responding.","expected":["lead_capture","automated_followup"],"clarification":true},
+    {"id":"outcome_resolves_channel","problem":"Customer inquiries get lost.","context":{"desired_outcome":"Answer incoming phone calls."},"expected":["ai_voice_receptionist","lead_capture"],"clarification":false},
+    {"id":"constraints_not_automatic_features","problem":"Create marketing content.","context":{"constraints":"We already have invoice software and a phone system."},"expected":["marketing_content"],"excluded":["invoice_automation","ai_voice_receptionist"]}
+  ]
+}

@@ -1,0 +1,553 @@
+{
+  "timestamp": "2026-11-09T01:10:38.194851+00:00",
+  "model": "openai/gpt-4.1-mini",
+  "synthetic_profiles": true,
+  "real_paid_calls": true,
+  "limitations": "Automated consistency checks on vendor claims, not independent product testing or real-owner validation.",
+  "cases": [
+    {
+      "case": "invoices",
+      "status": "completed",
+      "latency_seconds": 15.758,
+      "usage": {
+        "model_calls": 5,
+        "search_calls": 1,
+        "estimated_cost_usd": 0.012093999999999994,
+        "input_tokens": 7259,
+        "output_tokens": 1369
+      },
+      "quality_report": {
+        "prompt_version": "discovery-rag-v1",
+        "rubric_version": "evidence-match-v1",
+        "retrieved_candidates": 3,
+        "assessed_candidates": 3,
+        "quality_gate_passed": 3,
+        "checks": [
+          "Controlled capability IDs",
+          "Catalogue identity",
+          "Source URL presence",
+          "Per-tool citation ownership",
+          "Separate model evidence audit"
+        ],
+        "limitations": [
+          "An evidence match index is not a probability of success or an independent product rating.",
+          "Price, exact integrations, regional availability and privacy terms still need verification."
+        ],
+        "rejected_candidates": [],
+        "interpretation_source": "model",
+        "model_id": "openai/gpt-4.1-mini",
+        "retrieval_basis": "Controlled task capabilities, approved industry/software query terms, then source-grounded assessment.",
+        "web_trigger": "Explicit request or empty catalogue result"
+      },
+      "warnings": [],
+      "queries": [
+        {
+          "query_kind": "capability",
+          "query_text": "AI invoice automation small business",
+          "executed": false
+        },
+        {
+          "query_kind": "industry",
+          "query_text": "AI invoice automation for consultancy",
+          "executed": true,
+          "simulated": false
+        },
+        {
+          "query_kind": "alternate",
+          "query_text": "AI invoice automation software alternatives official features",
+          "executed": false
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "f7e13c1f-5392-57ff-b139-b0b4c5a543e0",
+          "name": "Dext",
+          "quality": {
+            "rubric_version": "evidence-match-v1",
+            "score": 100.0,
+            "task_coverage_points": 50.0,
+            "source_evidence_points": 25.0,
+            "workflow_relevance_points": 25.0,
+            "assessment_status": "passed",
+            "explanation": "Dext explicitly claims invoice automation capability and AI features to capture and organize receipts and accounting documents, which supports extracting and matching invoice details for bookkeeping.",
+            "evidence_ids": [
+              "f7e13c1f-5392-57ff-b139-b0b4c5a543e0:e0",
+              "f7e13c1f-5392-57ff-b139-b0b4c5a543e0:e1"
+            ],
+            "source_urls": [
+              "https://dext.com/us"
+            ],
+            "checks": [
+              "Controlled capability IDs",
+              "Catalogue identity",
+              "Source URL presence",
+              "Per-tool citation ownership",
+              "Separate model evidence audit"
+            ],
+            "limitations": [
+              "An evidence match index is not a probability of success or an independent product rating.",
+              "Price, exact integrations, regional availability and privacy terms still need verification."
+            ]
+          },
+          "source_urls": [
+            "https://dext.com/us"
+          ]
+        },
+        {
+          "tool_id": "d40f9b86-f595-529f-b7b9-acbad2aec791",
+          "name": "Ramp",
+          "quality": {
+            "rubric_version": "evidence-match-v1",
+            "score": 100.0,
+            "task_coverage_points": 50.0,
+            "source_evidence_points": 25.0,
+            "workflow_relevance_points": 25.0,
+            "assessment_status": "passed",
+            "explanation": "Ramp claims invoice automation capability and AI features assisting finance and spend-management workflows, indicating support for extracting and matching invoice details relevant to bookkeeping.",
+            "evidence_ids": [
+              "d40f9b86-f595-529f-b7b9-acbad2aec791:e0",
+              "d40f9b86-f595-529f-b7b9-acbad2aec791:e1"
+            ],
+            "source_urls": [
+              "https://ramp.com/intelligence"
+            ],
+            "checks": [
+              "Controlled capability IDs",
+              "Catalogue identity",
+              "Source URL presence",
+              "Per-tool citation ownership",
+              "Separate model evidence audit"
+            ],
+            "limitations": [
+              "An evidence match index is not a probability of success or an independent product rating.",
+              "Price, exact integrations, regional availability and privacy terms still need verification."
+            ]
+          },
+          "source_urls": [
+            "https://ramp.com/intelligence"
+          ]
+        },
+        {
+          "tool_id": "dca04378-4e17-593d-a68c-d87116bac63c",
+          "name": "Vic.ai",
+          "quality": {
+            "rubric_version": "evidence-match-v1",
+            "score": 100.0,
+            "task_coverage_points": 50.0,
+            "source_evidence_points": 25.0,
+            "workflow_relevance_points": 25.0,
+            "assessment_status": "passed",
+            "explanation": "Vic.ai claims invoice automation capability and AI features assisting accounts-payable and invoice workflows, which aligns with extracting and matching invoice details for bookkeeping.",
+            "evidence_ids": [
+              "dca04378-4e17-593d-a68c-d87116bac63c:e0",
+              "dca04378-4e17-593d-a68c-d87116bac63c:e1"
+            ],
+            "source_urls": [
+              "https://www.vic.ai/"
+            ],
+            "checks": [
+              "Controlled capability IDs",
+              "Catalogue identity",
+              "Source URL presence",
+              "Per-tool citation ownership",
+              "Separate model evidence audit"
+            ],
+            "limitations": [
+              "An evidence match index is not a probability of success or an independent product rating.",
+              "Price, exact integrations, regional availability and privacy terms still need verification."
+            ]
+          },
+          "source_urls": [
+            "https://www.vic.ai/"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "marketing",
+      "status": "completed",
+      "latency_seconds": 21.439,
+      "usage": {
+        "model_calls": 5,
+        "search_calls": 1,
+        "estimated_cost_usd": 0.015048400000000017,
+        "input_tokens": 10397,
+        "output_tokens": 2431
+      },
+      "quality_report": {
+        "prompt_version": "discovery-rag-v1",
+        "rubric_version": "evidence-match-v1",
+        "retrieved_candidates": 15,
+        "assessed_candidates": 8,
+        "quality_gate_passed": 8,
+        "checks": [
+          "Controlled capability IDs",
+          "Catalogue identity",
+          "Source URL presence",
+          "Per-tool citation ownership",
+          "Separate model evidence audit"
+        ],
+        "limitations": [
+          "An evidence match index is not a probability of success or an independent product rating.",
+          "Price, exact integrations, regional availability and privacy terms still need verification."
+        ],
+        "rejected_candidates": [],
+        "interpretation_source": "model",
+        "model_id": "openai/gpt-4.1-mini",
+        "retrieval_basis": "Controlled task capabilities, approved industry/software query terms, then source-grounded assessment.",
+        "web_trigger": "Explicit request or empty catalogue result"
+      },
+      "warnings": [],
+      "queries": [
+        {
+          "query_kind": "capability",
+          "query_text": "AI marketing content small business",
+          "executed": false
+        },
+        {
+          "query_kind": "industry",
+          "query_text": "AI marketing content for online retail",
+          "executed": true,
+          "simulated": false
+        },
+        {
+          "query_kind": "integration",
+          "query_text": "AI marketing content shopify integration",
+          "executed": false
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "1224f3a1-f50a-59d6-a024-f3523cf621b7",
+          "name": "AdCreative.ai",
+          "quality": {
+            "rubric_version": "evidence-match-v1",
+            "score": 100.0,
+            "task_coverage_points": 50.0,
+            "source_evidence_points": 25.0,
+            "workflow_relevance_points": 25.0,
+            "assessment_status": "passed",
+            "explanation": "AdCreative.ai explicitly claims the capability to generate marketing content, specifically advertising creative and variants, which directly supports creating marketing content for an online shop.",
+            "evidence_ids": [
+              "1224f3a1-f50a-59d6-a024-f3523cf621b7:e0",
+              "1224f3a1-f50a-59d6-a024-f3523cf621b7:e1"
+            ],
+            "source_urls": [
+              "https://www.adcreative.ai/"
+            ],
+            "checks": [
+              "Controlled capability IDs",
+              "Catalogue identity",
+              "Source URL presence",
+              "Per-tool citation ownership",
+              "Separate model evidence audit"
+            ],
+            "limitations": [
+              "An evidence match index is not a probability of success or an independent product rating.",
+              "Price, exact integrations, regional availability and privacy terms still need verification."
+            ]
+          },
+          "source_urls": [
+            "https://www.adcreative.ai/"
+          ]
+        },
+        {
+          "tool_id": "2bc6141e-9f89-5835-a1da-584daa79b40c",
+          "name": "Adobe Express",
+          "quality": {
+            "rubric_version": "evidence-match-v1",
+            "score": 100.0,
+            "task_coverage_points": 50.0,
+            "source_evidence_points": 25.0,
+            "workflow_relevance_points": 25.0,
+            "assessment_status": "passed",
+            "explanation": "Adobe Express claims the ability to create promotional graphics and social content, which are forms of marketing content suitable for an online retail shop.",
+            "evidence_ids": [
+              "2bc6141e-9f89-5835-a1da-584daa79b40c:e0",
+              "2bc6141e-9f89-5835-a1da-584daa79b40c:e1"
+            ],
+            "source_urls": [
+              "https://www.adobe.com/express/"
+            ],
+            "checks": [
+              "Controlled capability IDs",
+              "Catalogue identity",
+              "Source URL presence",
+              "Per-tool citation ownership",
+              "Separate model evidence audit"
+            ],
+            "limitations": [
+              "An evidence match index is not a probability of success or an independent product rating.",
+              "Price, exact integrations, regional availability and privacy terms still need verification."
+            ]
+          },
+          "source_urls": [
+            "https://www.adobe.com/express/"
+          ]
+        },
+        {
+          "tool_id": "29e17262-7938-5134-b7b5-b5d95d7ceb1f",
+          "name": "Anyword",
+          "quality": {
+            "rubric_version": "evidence-match-v1",
+            "score": 100.0,
+            "task_coverage_points": 50.0,
+            "source_evidence_points": 25.0,
+            "workflow_relevance_points": 25.0,
+            "assessment_status": "passed",
+            "explanation": "Anyword offers creation and evaluation of marketing copy variants, directly addressing the need for marketing content creation for an online shop.",
+            "evidence_ids": [
+              "29e17262-7938-5134-b7b5-b5d95d7ceb1f:e0",
+              "29e17262-7938-5134-b7b5-b5d95d7ceb1f:e1"
+            ],
+            "source_urls": [
+              "https://www.anyword.com/"
+            ],
+            "checks": [
+              "Controlled capability IDs",
+              "Catalogue identity",
+              "Source URL presence",
+              "Per-tool citation ownership",
+              "Separate model evidence audit"
+            ],
+            "limitations": [
+              "An evidence match index is not a probability of success or an independent product rating.",
+              "Price, exact integrations, regional availability and privacy terms still need verification."
+            ]
+          },
+          "source_urls": [
+            "https://www.anyword.com/"
+          ]
+        },
+        {
+          "tool_id": "9cadf118-54a7-5b28-9b9d-76945e2ca4b4",
+          "name": "Buffer",
+          "quality": {
+            "rubric_version": "evidence-match-v1",
+            "score": 100.0,
+            "task_coverage_points": 50.0,
+            "source_evidence_points": 25.0,
+            "workflow_relevance_points": 25.0,
+            "assessment_status": "passed",
+            "explanation": "Buffer provides AI help with social text and includes publishing and scheduling tools, supporting marketing content creation and management for an online retail context.",
+            "evidence_ids": [
+              "9cadf118-54a7-5b28-9b9d-76945e2ca4b4:e0",
+              "9cadf118-54a7-5b28-9b9d-76945e2ca4b4:e1"
+            ],
+            "source_urls": [
+              "https://buffer.com/pricing"
+            ],
+            "checks": [
+              "Controlled capability IDs",
+              "Catalogue identity",
+              "Source URL presence",
+              "Per-tool citation ownership",
+              "Separate model evidence audit"
+            ],
+            "limitations": [
+              "An evidence match index is not a probability of success or an independent product rating.",
+              "Price, exact integrations, regional availability and privacy terms still need verification."
+            ]
+          },
+          "source_urls": [
+            "https://buffer.com/pricing"
+          ]
+        },
+        {
+          "tool_id": "f552f4a8-baa0-567b-a698-d003acd9814f",
+          "name": "Canva Magic Write",
+          "quality": {
+            "rubric_version": "evidence-match-v1",
+            "score": 100.0,
+            "task_coverage_points": 50.0,
+            "source_evidence_points": 25.0,
+            "workflow_relevance_points": 25.0,
+            "assessment_status": "passed",
+            "explanation": "Canva Magic Write offers AI text assistance within Canva with a manual download/copy workflow, enabling creation of marketing content that can be approved before use.",
+            "evidence_ids": [
+              "f552f4a8-baa0-567b-a698-d003acd9814f:e0",
+              "f552f4a8-baa0-567b-a698-d003acd9814f:e1"
+            ],
+            "source_urls": [
+              "https://www.canva.com/magic-write/"
+            ],
+            "checks": [
+              "Controlled capability IDs",
+              "Catalogue identity",
+              "Source URL presence",
+              "Per-tool citation ownership",
+              "Separate model evidence audit"
+            ],
+            "limitations": [
+              "An evidence match index is not a probability of success or an independent product rating.",
+              "Price, exact integrations, regional availability and privacy terms still need verification."
+            ]
+          },
+          "source_urls": [
+            "https://www.canva.com/magic-write/",
+            "https://www.canva.com/pricing/"
+          ]
+        },
+        {
+          "tool_id": "63ffdc7a-d029-5e79-b83a-03e0338cc4b8",
+          "name": "ContentStudio",
+          "quality": {
+            "rubric_version": "evidence-match-v1",
+            "score": 100.0,
+            "task_coverage_points": 50.0,
+            "source_evidence_points": 25.0,
+            "workflow_relevance_points": 25.0,
+            "assessment_status": "passed",
+            "explanation": "ContentStudio supports planning social content and assists with drafting marketing content, directly addressing the creation of marketing content for an online shop.",
+            "evidence_ids": [
+              "63ffdc7a-d029-5e79-b83a-03e0338cc4b8:e0",
+              "63ffdc7a-d029-5e79-b83a-03e0338cc4b8:e1"
+            ],
+            "source_urls": [
+              "https://contentstudio.io/"
+            ],
+            "checks": [
+              "Controlled capability IDs",
+              "Catalogue identity",
+              "Source URL presence",
+              "Per-tool citation ownership",
+              "Separate model evidence audit"
+            ],
+            "limitations": [
+              "An evidence match index is not a probability of success or an independent product rating.",
+              "Price, exact integrations, regional availability and privacy terms still need verification."
+            ]
+          },
+          "source_urls": [
+            "https://contentstudio.io/"
+          ]
+        },
+        {
+          "tool_id": "4ce38685-06c9-5a52-bdda-ed98b641057b",
+          "name": "Descript",
+          "quality": {
+            "rubric_version": "evidence-match-v1",
+            "score": 87.5,
+            "task_coverage_points": 50.0,
+            "source_evidence_points": 25.0,
+            "workflow_relevance_points": 12.5,
+            "assessment_status": "passed",
+            "explanation": "Descript focuses on editing spoken video and audio through text, which can support marketing content creation but is more specialized and may not fully cover general marketing content needs for an online shop.",
+            "evidence_ids": [
+              "4ce38685-06c9-5a52-bdda-ed98b641057b:e0",
+              "4ce38685-06c9-5a52-bdda-ed98b641057b:e1"
+            ],
+            "source_urls": [
+              "https://www.descript.com/"
+            ],
+            "checks": [
+              "Controlled capability IDs",
+              "Catalogue identity",
+              "Source URL presence",
+              "Per-tool citation ownership",
+              "Separate model evidence audit"
+            ],
+            "limitations": [
+              "An evidence match index is not a probability of success or an independent product rating.",
+              "Price, exact integrations, regional availability and privacy terms still need verification."
+            ]
+          },
+          "source_urls": [
+            "https://www.descript.com/"
+          ]
+        },
+        {
+          "tool_id": "9850ff94-c9e6-506a-ace7-6a646ea21281",
+          "name": "Flair",
+          "quality": {
+            "rubric_version": "evidence-match-v1",
+            "score": 87.5,
+            "task_coverage_points": 50.0,
+            "source_evidence_points": 25.0,
+            "workflow_relevance_points": 12.5,
+            "assessment_status": "passed",
+            "explanation": "Flair generates branded product imagery, which supports marketing content creation visually but does not explicitly cover textual marketing content creation needed for the online shop.",
+            "evidence_ids": [
+              "9850ff94-c9e6-506a-ace7-6a646ea21281:e0",
+              "9850ff94-c9e6-506a-ace7-6a646ea21281:e1"
+            ],
+            "source_urls": [
+              "https://flair.ai/"
+            ],
+            "checks": [
+              "Controlled capability IDs",
+              "Catalogue identity",
+              "Source URL presence",
+              "Per-tool citation ownership",
+              "Separate model evidence audit"
+            ],
+            "limitations": [
+              "An evidence match index is not a probability of success or an independent product rating.",
+              "Price, exact integrations, regional availability and privacy terms still need verification."
+            ]
+          },
+          "source_urls": [
+            "https://flair.ai/"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "inventory",
+      "status": "partial",
+      "latency_seconds": 12.09,
+      "usage": {
+        "model_calls": 3,
+        "search_calls": 1,
+        "estimated_cost_usd": 0.009301600000000007,
+        "input_tokens": 3654,
+        "output_tokens": 525
+      },
+      "quality_report": {
+        "prompt_version": "discovery-rag-v1",
+        "rubric_version": "evidence-match-v1",
+        "retrieved_candidates": 0,
+        "assessed_candidates": 0,
+        "quality_gate_passed": 0,
+        "checks": [
+          "Controlled capability IDs",
+          "Catalogue identity",
+          "Source URL presence",
+          "Per-tool citation ownership",
+          "Separate model evidence audit"
+        ],
+        "limitations": [
+          "An evidence match index is not a probability of success or an independent product rating.",
+          "Price, exact integrations, regional availability and privacy terms still need verification."
+        ],
+        "rejected_candidates": [],
+        "interpretation_source": "model",
+        "model_id": "openai/gpt-4.1-mini",
+        "retrieval_basis": "Controlled task capabilities, approved industry/software query terms, then source-grounded assessment.",
+        "web_trigger": "Explicit request or empty catalogue result"
+      },
+      "warnings": [
+        "No evidenced catalogue candidate covers this need yet. No tools were invented to fill the result."
+      ],
+      "queries": [
+        {
+          "query_kind": "capability",
+          "query_text": "AI inventory optimization demand forecasting small business",
+          "executed": false
+        },
+        {
+          "query_kind": "industry",
+          "query_text": "AI inventory optimization demand forecasting for restaurant",
+          "executed": true,
+          "simulated": false
+        },
+        {
+          "query_kind": "alternate",
+          "query_text": "AI inventory optimization demand forecasting software alternatives official features",
+          "executed": false
+        }
+      ],
+      "tools": []
+    }
+  ]
+}

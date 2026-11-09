@@ -1,0 +1,267 @@
+{
+  "document_title": "Business Onboarding Questionnaire — AI Discovery Platform",
+  "version": "2.0",
+  "document_date": "2026-11-08",
+  "status": "owner_language_revision_pending_user_research",
+  "scope": "first_time_business_onboarding_only",
+  "standard_question_count": 8,
+  "conditional_question_count_max": 1,
+  "screen_count": 3,
+  "target_completion_minutes": 2,
+  "completion_target_is_empirically_verified": false,
+  "screens": [
+    {
+      "screen_id": "business_identity",
+      "title": "Tell us about your business",
+      "questions": [
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4"
+      ]
+    },
+    {
+      "screen_id": "operating_context",
+      "title": "Understand your existing setup",
+      "questions": [
+        "Q5",
+        "Q6"
+      ]
+    },
+    {
+      "screen_id": "business_priorities",
+      "title": "Understand your priorities",
+      "questions": [
+        "Q7",
+        "Q8"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "label": "What kind of business do you run?",
+      "required": true,
+      "input_type": "searchable_single_select_with_subtype",
+      "field": "industry",
+      "options": [
+        "Food & Beverage",
+        "Home Services",
+        "Retail & E-commerce",
+        "Professional Services",
+        "Health & Wellness",
+        "Education",
+        "Manufacturing",
+        "Other"
+      ],
+      "subtype_required": true,
+      "subtype_is_conditional_on_category": true,
+      "allow_custom_category_or_subtype": true,
+      "example_home_services_subtypes": [
+        "HVAC",
+        "Plumbing",
+        "Landscaping",
+        "Cleaning",
+        "Other"
+      ],
+      "purpose": "Classify industry and determine relevant workflow terminology and default discovery context."
+    },
+    {
+      "id": "Q2",
+      "label": "What do you sell or help people with?",
+      "required": true,
+      "input_type": "short_text",
+      "field": "business_description",
+      "validation": "nonblank; one-sentence wording is guidance, not strict sentence counting",
+      "example": "We provide residential HVAC repair and installation services.",
+      "purpose": "Provide natural-language business context beyond broad industry categories."
+    },
+    {
+      "id": "Q3",
+      "label": "Who usually buys from you?",
+      "required": false,
+      "input_type": "single_select",
+      "field": "customer_type",
+      "options": [
+        "People or households",
+        "Other businesses",
+        "Both people and businesses",
+        "Public agencies or institutions",
+        "Something else"
+      ],
+      "allow_other_description": true,
+      "purpose": "Provide optional customer context using everyday language. Internal IDs remain compatible with existing profiles.",
+      "description_field": "customer_description"
+    },
+    {
+      "id": "Q4",
+      "label": "How many people work in your business?",
+      "required": true,
+      "input_type": "single_select",
+      "field": "employee_band",
+      "options": [
+        "Just me",
+        "2–10 people",
+        "11–50 people",
+        "51–249 people",
+        "250 or more people"
+      ],
+      "purpose": "Capture organization-size band rather than exact headcount."
+    },
+    {
+      "id": "Q5",
+      "label": "Where does your business primarily operate?",
+      "required": true,
+      "input_type": "country_plus_applicable_region",
+      "field": "operating_region",
+      "requires_street_address": false,
+      "example": {
+        "country": "US",
+        "region": "MD"
+      },
+      "purpose": "Provide broad geography for availability and localization considerations."
+    },
+    {
+      "id": "Q6",
+      "label": "Which software or digital tools do you currently use?",
+      "required": true,
+      "input_type": "searchable_multi_select_with_custom_and_status",
+      "fields": [
+        "existing_software",
+        "existing_software_status"
+      ],
+      "example_suggestions": [
+        "Google Workspace",
+        "Microsoft 365",
+        "QuickBooks",
+        "Square",
+        "Shopify",
+        "Salesforce"
+      ],
+      "industry_dependent_suggestions": true,
+      "allow_custom_products": true,
+      "special_responses": [
+        "None",
+        "Not sure"
+      ],
+      "special_responses_exclusive": true,
+      "purpose": "Record the existing software ecosystem without conflating none, unknown, or selected tools."
+    },
+    {
+      "id": "Q7",
+      "label": "Where would a little help make the biggest difference?",
+      "required": false,
+      "input_type": "multi_select",
+      "field": "improvement_priorities",
+      "max_selections": 3,
+      "options": [
+        "Marketing",
+        "Getting new customers",
+        "Sales",
+        "Customer service",
+        "Scheduling",
+        "Inventory & purchasing",
+        "Logistics & delivery",
+        "Finance & invoicing",
+        "HR & workforce",
+        "Administrative work",
+        "Analytics & planning",
+        "Not sure yet"
+      ],
+      "exclusive_option": "Not sure yet",
+      "purpose": "Indicate broad business areas for a lightweight baseline catalog lookup.",
+      "option_labels": {
+        "Marketing": "Create marketing content",
+        "Getting new customers": "Find new customers",
+        "Sales": "Prepare quotes and follow up on sales",
+        "Customer service": "Answer customer questions",
+        "Scheduling": "Book appointments and manage schedules",
+        "Inventory & purchasing": "Track stock and plan purchases",
+        "Logistics & delivery": "Organize deliveries",
+        "Finance & invoicing": "Handle invoices and bookkeeping",
+        "HR & workforce": "Organize staff and training",
+        "Administrative work": "Reduce repetitive office work",
+        "Analytics & planning": "Understand sales and plan ahead",
+        "Not sure yet": "Not sure yet"
+      }
+    },
+    {
+      "id": "Q8",
+      "label": "What could you spend each month on new tools, in US dollars?",
+      "required": false,
+      "input_type": "single_select",
+      "field": "monthly_budget_band",
+      "options": [
+        "Free tools only",
+        "Under US$50",
+        "US$50 to under US$150",
+        "US$150–US$500",
+        "Over US$500",
+        "Not sure yet"
+      ],
+      "budget_is_total_not_per_tool": true,
+      "not_a_discovery_exclusion_filter": true,
+      "purpose": "Record an affordability preference for downstream evaluation.",
+      "currency": "USD"
+    },
+    {
+      "id": "Q9",
+      "label": "How do customers usually reach your business?",
+      "required": false,
+      "conditional": true,
+      "preferred_stage": "problem_specific_discovery",
+      "input_type": "multi_select",
+      "field": "customer_contact_channels",
+      "options": [
+        "Phone calls",
+        "Email",
+        "Website",
+        "Social media",
+        "WhatsApp / SMS",
+        "Walk-ins",
+        "Online marketplaces",
+        "Other"
+      ],
+      "trigger": "Customer-facing priorities or problem (acquisition, sales, customer support, scheduling), and relevant contact channels are not already known, and answer could materially improve discovery.",
+      "purpose": "Disambiguate phone, web, messaging, walk-in, and marketplace solution requirements."
+    }
+  ],
+  "required_standard_questions": [
+    "Q1",
+    "Q2",
+    "Q4",
+    "Q5",
+    "Q6"
+  ],
+  "optional_standard_questions": [
+    "Q3",
+    "Q7",
+    "Q8"
+  ],
+  "special_state_handling": {
+    "missing_optional_answer": null,
+    "software_none": "none",
+    "software_unknown": "unknown",
+    "software_selected": "selected",
+    "inferred_values_must_be_marked": true
+  },
+  "onboarding_completion": {
+    "save_business_profile": true,
+    "reuse_for_returning_users": true,
+    "profile_editable": true,
+    "next_screen": "What would you like help with today?",
+    "baseline_discovery": "Perform lightweight catalog lookup based on industry and priorities; broad external scraping at sign-up is not required."
+  },
+  "deferred_topics": [
+    "API providers",
+    "full discovery architecture",
+    "rating metric formula",
+    "multi-tool integration",
+    "authentication provider"
+  ],
+  "revision_notes": [
+    "Owner-facing wording revised at the user's request; this is not a validated questionnaire.",
+    "Stored customer, team-size and budget IDs remain compatible; display boundaries no longer overlap.",
+    "Problem-specific workflow, desired outcome and constraints are optional and reviewed before discovery."
+  ]
+}

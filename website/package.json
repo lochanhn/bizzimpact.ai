@@ -11,7 +11,8 @@
     "eval:discovery": "tsx scripts/eval-discovery.mts",
     "warm:live": "tsx scripts/warm-live-discovery.mts",
     "enrich:facts": "tsx scripts/enrich-tool-facts.mts",
-    "verify:zapier": "tsx scripts/verify-zapier-listings.mts"
+    "verify:zapier": "tsx scripts/verify-zapier-listings.mts",
+    "dev:full": "node scripts/dev-full.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "0.12.7",

@@ -4,12 +4,11 @@
 // - Bounded: timeout, one retry on 429/5xx, max tokens.
 // - Only purpose, model, token counts and cost are logged; prompts and responses are not.
 // Imported only by API routes and server libraries; node:fs keeps it out of any client bundle.
-import { promises as fs } from 'node:fs';
-import path from 'node:path';
+import { readJson, writeJson } from '../server/storage';
 import { logEvent } from '../server/logger';
 
 export const AI_MODEL = process.env.OPENROUTER_MODEL || 'anthropic/claude-haiku-5.5';
-const LEDGER = () => process.env.AI_LEDGER_PATH || path.join(process.cwd(), 'data', 'runtime', 'ai-ledger.json');
+const LEDGER = () => process.env.AI_LEDGER_PATH || 'ai-ledger.json';
 const RESERVE_PER_CALL = 0.05; // conservative pre-call estimate so a call can never overshoot the cap
 
 export class AiUnavailable extends Error { constructor(public reason: 'disabled' | 'budget' | 'error', message: string) { super(message); } }
@@ -22,11 +21,10 @@ export function webEnabled(): boolean { return aiEnabled() && process.env.LIVE_W
 export function budgetUsd(): number { const b = Number(process.env.AI_BUDGET_USD ?? '20'); return Number.isFinite(b) && b > 0 ? b : 20; }
 
 async function readLedger(): Promise<Ledger> {
-  try { return JSON.parse(await fs.readFile(/*turbopackIgnore: true*/ LEDGER(), 'utf8')); } catch { return { spentUsd: 0, calls: [] }; }
+  return readJson<Ledger>(LEDGER(), { spentUsd: 0, calls: [] });
 }
 async function writeLedger(l: Ledger) {
-  await fs.mkdir(/*turbopackIgnore: true*/ path.dirname(LEDGER()), { recursive: true });
-  await fs.writeFile(/*turbopackIgnore: true*/ LEDGER(), JSON.stringify({ ...l, calls: l.calls.slice(-500) }, null, 2));
+  await writeJson(LEDGER(), { ...l, calls: l.calls.slice(-500) });
 }
 export async function spendSummary() { const l = await readLedger(); return { spentUsd: Math.round(l.spentUsd * 10000) / 10000, budgetUsd: budgetUsd(), calls: l.calls.length }; }
 

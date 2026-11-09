@@ -6,6 +6,9 @@ Built for the **AI for Small Business Hack-a-thon, Fall 2026** (Robert H. Smith 
 
 ---
 
+## Live demo
+**https://bizzimpact.3-92-95-188.sslip.io** (Docker on AWS EC2 behind Caddy; see [deploy/ec2/README.md](deploy/ec2/README.md)). Pushing to GitHub does not deploy automatically; follow the deployment README.
+
 ## Try it in 60 seconds
 ```sh
 cd website
@@ -21,6 +24,12 @@ npm run dev            # then open http://127.0.0.1:3000
 | `/architecture` · `/methodology` | How it's built · how we rate (published weights, neutrality policy) |
 
 No account and no API key needed. Live web discovery and the AI fallback need `OPENROUTER_API_KEY` in `website/.env.local` (see `.env.example`).
+
+**Two journeys in one app:**
+- **`/start`** is the full **discover → review → integrate** plan. It runs inside the Next.js app.
+- **Get started → `/onboarding` → `/dashboard` → `/discovery/[runId]`** is the Phase 1 account-based discovery flow, backed by the FastAPI service in `backend/` with Supabase.
+
+To run both locally: `uv sync --project backend --frozen && npm ci --prefix website && cd website && npm run dev:full`.
 
 ## What makes it different
 | Others | bizzimpact.ai |
@@ -39,6 +48,10 @@ No account and no API key needed. Live web discovery and the AI fallback need `O
 ## Documents
 | Doc | For |
 |---|---|
+| [backend/AI_DISCOVERY.md](backend/AI_DISCOVERY.md) | Phase 1 backend: RAG pipeline, prompts, evaluation, budget controls |
+| [deploy/ec2/README.md](deploy/ec2/README.md) | Docker packaging and EC2 deployment: build, release, verify, roll back |
+| [website/AUTH_SETUP.md](website/AUTH_SETUP.md) · [website/PHASE1_STATUS.md](website/PHASE1_STATUS.md) | Supabase setup · Phase 1 audit |
+| [HANDOVER.md](HANDOVER.md) | Project handover notes |
 | [docs/RESEARCH.md](docs/RESEARCH.md) | Market, owner needs, existing products, gaps, our metrics (all sourced) |
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Three engines, data, safety, scaling path |
 | [docs/VIDEO_SCRIPT.md](docs/VIDEO_SCRIPT.md) | 10-minute demo script mapped to the judging rubric |
@@ -50,6 +63,9 @@ No account and no API key needed. Live web discovery and the AI fallback need `O
 bizzimpact.ai/
 ├── README.md                ← you are here
 ├── docs/                    ← research, architecture, video script, design
+├── backend/                 ← Phase 1 discovery API (FastAPI, Supabase/Postgres, OpenRouter)
+├── deploy/ec2/              ← Docker + Caddy deployment on AWS EC2
+├── .github/workflows/       ← image build workflow
 ├── website/                 ← the app (Next.js + TypeScript)
 │   ├── app/                 ← pages: / start discover architecture methodology, API routes
 │   ├── lib/
@@ -69,7 +85,7 @@ bizzimpact.ai/
 ## Team
 | Member | Contribution |
 |---|---|
-| Lochan | Research (21 publications, owner accounts), the 111-tool reviewed catalog, V1 site, plan-level matching, accounts |
+| Lochan | Research (21 publications, owner accounts), the 111-tool reviewed catalog, V1 site and plan-level matching, Phase 1 backend, Supabase accounts, AWS EC2 deployment |
 | Abhinav | Phase 1 product specification and discovery architecture |
 | Salman | Master questionnaire, Discover / Review / Integrate engines, market gap analysis, live discovery |
 

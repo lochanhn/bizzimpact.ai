@@ -1,0 +1,3 @@
+bizzimpact.3-92-95-188.sslip.io {
+    reverse_proxy 127.0.0.1:3100
+}

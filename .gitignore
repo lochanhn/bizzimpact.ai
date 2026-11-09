@@ -10,3 +10,9 @@ website/coverage/
 
 # Per-machine AI spend ledger
 website/data/runtime/
+backend/.venv/
+backend/.runtime/
+__pycache__/
+.pytest_cache/
+*.pyc
+!backend/.env.example

@@ -1,0 +1,379 @@
+{
+  "timestamp": "2026-11-09T01:03:17.923607+00:00",
+  "prompt_version": "discovery-rag-v1",
+  "dataset": "live-evaluation.json",
+  "limitations": "Synthetic operator-labelled regression examples; no claim of real-owner accuracy. Reusing these cases for prompt tuning makes them development data.",
+  "budget_usd": 1.0,
+  "total_cost_usd": 0.006357,
+  "summaries": [
+    {
+      "model": "openai/gpt-4.1-mini",
+      "cases": 15,
+      "exact_matches": 14,
+      "semantic_passes": 14,
+      "precision": 1.0,
+      "recall": 0.889,
+      "cost_usd": 0.006357,
+      "mean_latency_seconds": 1.52
+    }
+  ],
+  "cases": [
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "groomer_calls",
+      "expected": [
+        "ai_voice_receptionist",
+        "lead_capture",
+        "appointment_scheduling"
+      ],
+      "predicted": [
+        "ai_voice_receptionist",
+        "appointment_scheduling",
+        "lead_capture"
+      ],
+      "exact_match": true,
+      "semantic_pass": true,
+      "true_positive": 3,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.0004491999999999968,
+        "input_tokens": 699,
+        "output_tokens": 106
+      },
+      "latency_seconds": 1.855
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "hvac_estimates",
+      "expected": [
+        "quote_generation"
+      ],
+      "predicted": [
+        "quote_generation"
+      ],
+      "exact_match": true,
+      "semantic_pass": true,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.0004272000000000026,
+        "input_tokens": 700,
+        "output_tokens": 92
+      },
+      "latency_seconds": 1.41
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "bakery_forecast",
+      "expected": [
+        "demand_forecasting",
+        "inventory_optimization"
+      ],
+      "predicted": [],
+      "exact_match": false,
+      "semantic_pass": false,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 2,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.0005095999999999989,
+        "input_tokens": 698,
+        "output_tokens": 144
+      },
+      "latency_seconds": 1.598
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "salon_calendar",
+      "expected": [
+        "appointment_scheduling"
+      ],
+      "predicted": [
+        "appointment_scheduling"
+      ],
+      "exact_match": true,
+      "semantic_pass": true,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.00040360000000000396,
+        "input_tokens": 689,
+        "output_tokens": 80
+      },
+      "latency_seconds": 1.393
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "shop_faq",
+      "expected": [
+        "customer_support_chat",
+        "lead_capture"
+      ],
+      "predicted": [
+        "customer_support_chat",
+        "lead_capture"
+      ],
+      "exact_match": true,
+      "semantic_pass": true,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.00039559999999999595,
+        "input_tokens": 697,
+        "output_tokens": 73
+      },
+      "latency_seconds": 1.363
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "nonprofit_receipts",
+      "expected": [
+        "invoice_automation"
+      ],
+      "predicted": [
+        "invoice_automation"
+      ],
+      "exact_match": true,
+      "semantic_pass": true,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.0004008000000000067,
+        "input_tokens": 698,
+        "output_tokens": 76
+      },
+      "latency_seconds": 1.348
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "instagram_scheduling",
+      "expected": [
+        "marketing_content"
+      ],
+      "predicted": [
+        "marketing_content"
+      ],
+      "exact_match": true,
+      "semantic_pass": true,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.00041080000000000283,
+        "input_tokens": 691,
+        "output_tokens": 84
+      },
+      "latency_seconds": 1.5
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "quote_followup",
+      "expected": [
+        "automated_followup"
+      ],
+      "predicted": [
+        "automated_followup"
+      ],
+      "exact_match": true,
+      "semantic_pass": true,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.00040719999999999645,
+        "input_tokens": 698,
+        "output_tokens": 80
+      },
+      "latency_seconds": 1.885
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "handoff",
+      "expected": [
+        "workflow_automation"
+      ],
+      "predicted": [
+        "workflow_automation"
+      ],
+      "exact_match": true,
+      "semantic_pass": true,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.0004355999999999943,
+        "input_tokens": 697,
+        "output_tokens": 98
+      },
+      "latency_seconds": 1.534
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "physical_cooking",
+      "expected": [],
+      "predicted": [],
+      "exact_match": true,
+      "semantic_pass": true,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.00039119999999999433,
+        "input_tokens": 694,
+        "output_tokens": 71
+      },
+      "latency_seconds": 1.328
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "unspecified",
+      "expected": [],
+      "predicted": [],
+      "exact_match": true,
+      "semantic_pass": true,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.0004403999999999936,
+        "input_tokens": 701,
+        "output_tokens": 100
+      },
+      "latency_seconds": 1.524
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "injected_problem",
+      "expected": [
+        "invoice_automation"
+      ],
+      "predicted": [
+        "invoice_automation"
+      ],
+      "exact_match": true,
+      "semantic_pass": true,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.0004231999999999986,
+        "input_tokens": 702,
+        "output_tokens": 89
+      },
+      "latency_seconds": 1.437
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "no_chatbot",
+      "expected": [
+        "ai_voice_receptionist",
+        "lead_capture"
+      ],
+      "predicted": [
+        "ai_voice_receptionist",
+        "lead_capture"
+      ],
+      "exact_match": true,
+      "semantic_pass": true,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.0004235999999999962,
+        "input_tokens": 699,
+        "output_tokens": 90
+      },
+      "latency_seconds": 1.633
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "ambiguous_contact",
+      "expected": [
+        "lead_capture",
+        "automated_followup"
+      ],
+      "predicted": [
+        "automated_followup",
+        "lead_capture"
+      ],
+      "exact_match": true,
+      "semantic_pass": true,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": true,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.00042480000000000295,
+        "input_tokens": 694,
+        "output_tokens": 92
+      },
+      "latency_seconds": 1.496
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "outbound",
+      "expected": [],
+      "predicted": [],
+      "exact_match": true,
+      "semantic_pass": true,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.0004139999999999977,
+        "input_tokens": 691,
+        "output_tokens": 86
+      },
+      "latency_seconds": 1.492
+    }
+  ]
+}

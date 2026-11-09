@@ -8,15 +8,17 @@
 // - Products already in the catalogue are not repeated.
 // - Results are cached (30 days) and stored as unverified catalogue candidates, so the catalogue
 //   grows with use and repeat searches cost nothing.
-import { promises as fs } from 'node:fs';
-import path from 'node:path';
+import { readJson, writeJson } from '../server/storage';
+import seedFile from '../../data/discovered/live-candidates.json';
 import { z } from 'zod';
 import { tools } from '../catalog';
 import { capabilityById } from './taxonomy';
 import { AiUnavailable, chat, parseJson, webEnabled, type Annotation } from '../ai/openrouter';
 
 export const LIVE_VERSION = '1.0.0';
-const STORE = () => process.env.LIVE_STORE_PATH || path.join(process.cwd(), 'data', 'discovered', 'live-candidates.json');
+// Pre-run finds are bundled into the build (seed); new finds are written to runtime storage (overlay).
+const STORE = () => process.env.LIVE_STORE_PATH || 'live-candidates.json';
+const SEED = () => (process.env.LIVE_STORE_PATH ? {} : seedFile) as Record<string, { searchedAt: string; candidates: LiveCandidate[]; dropped: number; costUsd: number }>;
 const TTL_DAYS = 30;
 const INDUSTRY: Record<string, string> = { food: 'restaurant or cafe', home: 'home services (e.g. HVAC, landscaping)', retail: 'retail or online store', professional: 'professional services', health: 'health and wellness', beauty: 'beauty and personal care', education: 'education or training', manufacturing: 'small manufacturing or wholesale', other: 'small' };
 
@@ -54,8 +56,8 @@ const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
 const catalogueNames = new Set(tools.flatMap(t => [norm(t.name), norm(t.name.split(' ')[0])]));
 const catalogueHosts = new Set(tools.flatMap(t => t.sources.map(s => hostOf(s.url))));
 
-async function readStore(): Promise<Store> { try { return JSON.parse(await fs.readFile(/*turbopackIgnore: true*/ STORE(), 'utf8')); } catch { return {}; } }
-async function writeStore(s: Store) { await fs.mkdir(/*turbopackIgnore: true*/ path.dirname(STORE()), { recursive: true }); await fs.writeFile(/*turbopackIgnore: true*/ STORE(), JSON.stringify(s, null, 2)); }
+async function readStore(): Promise<Store> { return { ...SEED(), ...(await readJson<Store>(STORE(), {})) }; }
+async function writeStore(s: Store) { await writeJson(STORE(), s); }
 const keyOf = (cap: string, industry: string | null) => `${cap}|${industry ?? 'any'}`;
 
 /** Parse the model reply; if it was cut off mid-array, salvage the complete product objects. */

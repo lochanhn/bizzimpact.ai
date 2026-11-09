@@ -8,14 +8,13 @@
 //    Wilson lower bound, so 1 of 1 never reads as 100%.
 // Self-reported but plan-verified; the product adds invoice/OAuth proof of use later.
 import { createHmac, randomBytes, timingSafeEqual } from 'node:crypto';
-import { promises as fs } from 'node:fs';
-import path from 'node:path';
+import { readJson, writeJson } from '../server/storage';
 import { z } from 'zod';
 
 export const OUTCOMES_VERSION = '1.0.0';
 const DEV_SECRET = randomBytes(32).toString('hex');
 const secret = () => process.env.PLAN_SIGNING_SECRET || DEV_SECRET;
-const storePath = () => process.env.OUTCOMES_PATH || path.join(process.cwd(), 'data', 'runtime', 'outcomes.json');
+const storePath = () => process.env.OUTCOMES_PATH || 'outcomes.json';
 const minDays = () => { const n = Number(process.env.OUTCOME_MIN_DAYS ?? '14'); return Number.isFinite(n) && n >= 0 ? n : 14; };
 const PRIOR = 50, PRIOR_WEIGHT = 5, DECAY_PER_MONTH = 0.03, BURST_PER_HOUR = 5;
 
@@ -47,8 +46,8 @@ export const reportSchema = z.object({
 }).strict();
 export type Report = Omit<z.infer<typeof reportSchema>, 'token'> & { planId: string; industry: string; teamSize: string; reportedAt: string; status: 'counted' | 'held' };
 type Store = { reports: Report[] };
-async function readStore(): Promise<Store> { try { return JSON.parse(await fs.readFile(/*turbopackIgnore: true*/ storePath(), 'utf8')); } catch { return { reports: [] }; } }
-async function writeStore(s: Store) { await fs.mkdir(/*turbopackIgnore: true*/ path.dirname(storePath()), { recursive: true }); await fs.writeFile(/*turbopackIgnore: true*/ storePath(), JSON.stringify(s, null, 2)); }
+async function readStore(): Promise<Store> { return readJson<Store>(storePath(), { reports: [] }); }
+async function writeStore(s: Store) { return writeJson(storePath(), s); }
 
 export type SubmitResult = { ok: true; status: Report['status']; message: string } | { ok: false; error: string };
 export async function submitReport(input: unknown, now = new Date()): Promise<SubmitResult> {
@@ -67,7 +66,7 @@ export async function submitReport(input: unknown, now = new Date()): Promise<Su
   const status: Report['status'] = lastHour >= BURST_PER_HOUR ? 'held' : 'counted';
   const { token: _t, ...rest } = p.data;
   store.reports.push({ ...rest, planId: claims.planId, industry: claims.industry, teamSize: claims.teamSize, reportedAt: now.toISOString(), status });
-  await writeStore(store);
+  if (!(await writeStore(store))) return { ok: false, error: 'We could not save your result right now. Please try again later.' };
   return { ok: true, status, message: status === 'counted' ? 'Thank you. Your result now helps owners like you.' : 'Thank you. Your result is held for a quick review before it counts.' };
 }
 

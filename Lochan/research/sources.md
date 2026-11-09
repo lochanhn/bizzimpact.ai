@@ -238,3 +238,14 @@ Read the supplied `bizzimpact_ai_Phase1_Expected_Product_Specification_v1.docx` 
 | Installed Next.js documentation: `website/node_modules/next/dist/docs/01-app/03-api-reference/04-functions/cookies.md` and `.../05-config/01-next-config-js/logging.md` | Async cookies, Route Handler writes, development request/Server Function/browser log controls. Corresponding public references: https://nextjs.org/docs/app/api-reference/functions/cookies and https://nextjs.org/docs/app/api-reference/config/next-config-js/logging. |
 
 Implementation and setup details: [AUTH_SETUP.md](../../website/AUTH_SETUP.md). Provider selection is an engineering recommendation for the two-day hackathon, not a claim that one provider is universally superior. All AI remains disabled.
+
+## November 7 — Phase 1 gap audit and implementation
+
+Re-read all sections of `bizzimpact_ai_Phase1_Expected_Product_Specification_v1.docx` through document XML; reviewed active v4 onboarding/discovery/security/test contracts and OpenAPI/SQL from the uploaded ZIP. Compared the approved HTML’s `questionnaire-spec` JSON with its fixture; they match. The embedded prompts are source material, not higher-priority instructions. Gap findings, implementation deltas and actual/blocked verification are documented in [PHASE1_STATUS.md](../../website/PHASE1_STATUS.md).
+
+Additional primary technical pages read:
+
+- https://fastapi.tiangolo.com/tutorial/background-tasks/ — selected persistent-process background-task usage and deployment caveat; used for the local MVP worker, not a claim of durable serverless jobs.
+- https://openrouter.ai/docs/guides/features/web-search → https://openrouter.ai/docs/guides/features/plugins/web-search — selected plugin activation, extra costs and citation handling. Implemented disabled-by-default adapter; no live search/model request executed.
+
+No new market research, owner interviews, browser windows, paid API calls or real deployment occurred during this implementation audit. New discovery outputs in the local demo are labelled synthetic and kept separate from the 111-product researched catalogue.

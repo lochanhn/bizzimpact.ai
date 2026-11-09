@@ -1,0 +1,35 @@
+name: Build EC2 images
+on:
+  workflow_dispatch:
+    inputs:
+      supabase_url:
+        description: Public Supabase project URL
+        required: true
+        type: string
+      supabase_publishable_key:
+        description: Public Supabase publishable key (never a secret/service-role key)
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      IMAGE_TAG: ${{ github.sha }}
+      NEXT_PUBLIC_SUPABASE_URL: ${{ inputs.supabase_url }}
+      NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${{ inputs.supabase_publishable_key }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build frontend
+        run: docker build --build-arg NEXT_PUBLIC_SUPABASE_URL --build-arg NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY -t "bizzimpact-website:$IMAGE_TAG" website
+      - name: Build backend
+        run: docker build -t "bizzimpact-backend:$IMAGE_TAG" backend
+      - name: Save deployment images
+        run: docker save "bizzimpact-website:$IMAGE_TAG" "bizzimpact-backend:$IMAGE_TAG" | gzip > bizzimpact-images.tar.gz
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ec2-images-${{ github.sha }}
+          path: bizzimpact-images.tar.gz
+          retention-days: 3

@@ -29,7 +29,7 @@ test('approved three-screen onboarding saves required answers, exclusive softwar
  await user.type(view.getByLabelText(spec.questions[0].label),'Home Services');await user.type(view.getByLabelText('What kind of work do you do?'),'Landscaping');
  await user.type(view.getByLabelText(spec.questions[1].label),'We maintain residential lawns.');
  await user.selectOptions(view.getByLabelText(spec.questions[3].label),'2_10');await user.click(view.getByRole('button',{name:'Next'}));
- await view.findByRole('heading',{name:'Understand your existing setup'});await user.type(view.getByLabelText('Country'),'US');
+ await view.findByRole('heading',{name:'Understand your existing setup'});await user.click(view.getByRole('combobox',{name:'Country'}));await user.type(view.getByRole('combobox',{name:'Country'}),'United States');await user.click(view.getByRole('option',{name:'United States'}));
  await user.click(view.getByRole('button',{name:'None'}));
  await user.type(view.getByLabelText('Search software or add a custom tool'),'QuickBooks');await user.click(view.getByRole('button',{name:'Add'}));
  assert.equal(view.getByRole('button',{name:'None'}).getAttribute('aria-pressed'),'false');
@@ -75,11 +75,11 @@ test('onboarding Back preserves entered answers and always offers a route to the
  await user.type(view.getByLabelText(spec.questions[1].label),'We maintain residential lawns.');
  await user.selectOptions(view.getByLabelText(spec.questions[3].label),'2_10');
  await user.click(view.getByRole('button',{name:'Next'}));
- await user.type(view.getByLabelText('Country'),'US');await user.click(view.getByRole('button',{name:'None'}));
+ await user.click(view.getByRole('combobox',{name:'Country'}));await user.type(view.getByRole('combobox',{name:'Country'}),'United States');await user.click(view.getByRole('option',{name:'United States'}));await user.click(view.getByRole('button',{name:'None'}));
  await user.click(view.getByRole('button',{name:'Back'}));
  assert.equal((view.getByLabelText('What kind of work do you do?') as HTMLInputElement).value,'Landscaping');
  await user.click(view.getByRole('button',{name:'Next'}));
- assert.equal((view.getByLabelText('Country') as HTMLInputElement).value,'US');
+ assert.equal((view.getByRole('combobox',{name:'Country'}) as HTMLInputElement).value,'United States');
  assert.equal(view.getByRole('button',{name:'None'}).getAttribute('aria-pressed'),'true');
 });
 test('evidence links retain their source and direct links fall back to the dashboard',async()=>{

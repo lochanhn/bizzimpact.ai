@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import questionnaire from '../../data/onboarding-spec.json';
+import { locationLabel } from './locations';
 export const spec=questionnaire;
 export const priorities=questionnaire.questions.find(q=>q.id==='Q7')!.options!;
 export const channels=questionnaire.questions.find(q=>q.id==='Q9')!.options!;
@@ -22,4 +23,4 @@ export const profileSchema=z.object({
 export type Profile=z.infer<typeof profileSchema>;
 export const blankProfile={industry:{category:'',subtype:''},business_description:'',customer_type:null,customer_description:null,employee_band:'',operating_region:{country:'',region:null},existing_software_status:'',existing_software:[],improvement_priorities:[],monthly_budget_band:null,customer_contact_channels:null};
 export const BUSINESS_KEY='bizzimpact-phase1-business';
-export const profileSummary=(p:Profile)=>[`${p.industry.category} · ${p.industry.subtype}`,p.business_description,`Team size: ${teamLabels[p.employee_band]??p.employee_band}`,`Region: ${p.operating_region.country}${p.operating_region.region?' · '+p.operating_region.region:''}`,`Software: ${p.existing_software_status==='selected'?p.existing_software.map(s=>s.raw_name).join(', '):p.existing_software_status==='none'?'None':'Not sure'}`,`Priorities: ${p.improvement_priorities.map(v=>priorityLabels[v]??v).join(', ')||'Not provided'}`,`Budget: ${p.monthly_budget_band?budgetLabels[p.monthly_budget_band]:'Not provided'}`,`Customers: ${p.customer_description||customerLabels[p.customer_type??'']||'Not provided'}`];
+export const profileSummary=(p:Profile)=>[`${p.industry.category} · ${p.industry.subtype}`,p.business_description,`Team size: ${teamLabels[p.employee_band]??p.employee_band}`,`Region: ${locationLabel(p.operating_region.country,p.operating_region.region)}`,`Software: ${p.existing_software_status==='selected'?p.existing_software.map(s=>s.raw_name).join(', '):p.existing_software_status==='none'?'None':'Not sure'}`,`Priorities: ${p.improvement_priorities.map(v=>priorityLabels[v]??v).join(', ')||'Not provided'}`,`Budget: ${p.monthly_budget_band?budgetLabels[p.monthly_budget_band]:'Not provided'}`,`Customers: ${p.customer_description||customerLabels[p.customer_type??'']||'Not provided'}`];

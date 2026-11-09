@@ -25,8 +25,8 @@ class LocalStore:
    value=json.loads(raw)
    if value['status'] not in ('completed','partial','failed','needs_clarification'):
     value['status']='partial' if value.get('tools') else 'failed';value['error_code']='worker_restarted';value['warnings'].append('The local worker restarted before this run finished. Start a new discovery to retry.');value['updated_at']=now();value['state_history'].append({'status':value['status'],'at':now()});self.put('run',id,owner,value)
- def demo(self):
-  token='demo_'+secrets.token_urlsafe(32);owner=str(uuid4());expiry=time.time()+7200
+ def demo(self,prefix='demo_'):
+  token=prefix+secrets.token_urlsafe(32);owner=str(uuid4());expiry=time.time()+7200
   with self.connect() as c:
    expired=c.execute('SELECT owner FROM sessions WHERE expires<?',(time.time(),)).fetchall()
    for (old,) in expired:c.execute('DELETE FROM objects WHERE owner=?',(old,))
@@ -47,6 +47,16 @@ class LocalStore:
    c.execute('UPDATE spend SET spent=spent+? WHERE id=1',(amount,));return True
  def settle(self,reserved,actual):
   with self.lock,self.connect() as c:c.execute('UPDATE spend SET spent=MAX(0,spent+?) WHERE id=1',(actual-reserved,))
+class TrialStore:
+ """Ephemeral trial records, researched catalogue and one shared PostgreSQL spend ledger."""
+ def __init__(self,local,shared):self.local=local;self.shared=shared
+ def put(self,*args):return self.local.put(*args)
+ def get(self,*args):return self.local.get(*args)
+ def list(self,*args):return self.local.list(*args)
+ def catalog(self):return self.shared.catalog()
+ def reserve(self,*args,**kwargs):return self.shared.reserve(*args,**kwargs)
+ def settle(self,*args):return self.shared.settle(*args)
+ def upsert_catalog(self,records):return None  # Public trials cannot mutate the curated catalogue.
 class PostgresStore:
  """Private records use the supplied businesses/discovery_runs tables plus JSON wire snapshots."""
  def __init__(self,url):self.url=url

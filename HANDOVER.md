@@ -2,6 +2,10 @@
 
 **Purpose:** Paste this file into the next chat before continuing work. It is a factual project snapshot as of **November 8, 2026**.
 
+## Paid AI authorization update — November 8, 2026
+
+The user explicitly authorized paid calls, live testing, recommendation ordering and quality/scoring work. This supersedes older disabled-live/no-score runtime notes below. Authorization persists; do not ask again for already-authorized bounded calls. Credentials remain private and server-only. See `backend/AI_DISCOVERY.md` for the RAG pipeline, chosen GPT-4.1 mini model, versioned prompts, experimental 50/25/25 evidence match index, automated evidence audit, evaluation reports, $20 shared ledger and $5 provider-credit buffer. A separate four-search AI trial uses real catalogue data without email signup; synthetic demo identities still cannot spend. New web leads remain provisional and do not modify the curated catalogue.
+
 ## EC2 deployment update — November 8, 2026
 
 - Hosting target is the user's existing EC2 instance `i-0c83c7fa3551b554c` at `3.92.95.188`, an Amazon Linux t2.micro shared with NourishNet.

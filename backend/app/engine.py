@@ -1,8 +1,10 @@
-import copy,json,re,logging
+import copy,json,re,logging,math
+from collections import Counter
 from pathlib import Path
 from urllib.parse import urlsplit
 from .contracts import Intent,CAPABILITIES
 from .storage import now
+from .quality import assess_recommendations
 DATA=Path(__file__).resolve().parents[1]/'data'
 FIXTURES=json.loads((DATA/'synthetic-catalog.json').read_text())
 Q9='How do customers usually reach your business?'
@@ -67,15 +69,30 @@ def catalog(mode):
  if mode=='mock':return [fixture_product(p) for p in FIXTURES['products']]
  return json.loads((DATA/'researched-catalog.json').read_text())
 
-def search_catalog(products,capabilities,limit=15):
+def search_catalog(products,capabilities,limit=15,query=''):
  result=[]
  for product in products:
   matched=[cap for cap in product['matched_capabilities'] if cap in capabilities]
   if matched:
    p=copy.deepcopy(product);p['matched_capabilities']=matched;result.append(p)
- # Consider the whole catalogue before limiting. Coverage is retrieval order,
- # not a suitability score, price check or integration guarantee.
- return sorted(result,key=lambda p:-len(set(p['matched_capabilities'])))[:limit]
+ # A lightweight BM25 tie-breaker retrieves task-specific records without an
+ # embedding service. Private task text stays local at this retrieval stage.
+ stop={'the','and','for','with','that','this','from','our','your','have','need','want','help','please','would','should','could','about','they','them','into','today','business','what','when'}
+ def tokens(text):return [t for t in re.findall(r'[a-z0-9]+',text.lower()) if len(t)>2 and t not in stop]
+ terms=set(tokens(query));documents=[]
+ for p in result:
+  facts=' '.join(json.dumps(e['claim_value']) for e in p.get('evidence',[]) if e.get('claim_key') in ('ai_feature','integration'))
+  documents.append(Counter(tokens(p['name']+' '+(p.get('short_description') or '')+' '+facts)))
+ average=sum(sum(d.values()) for d in documents)/max(1,len(documents)) or 1
+ for p,doc in zip(result,documents):
+  score=0;length=sum(doc.values())
+  for term in terms:
+   tf=doc[term]
+   if not tf:continue
+   frequency=sum(term in d for d in documents);idf=math.log(1+(len(documents)-frequency+0.5)/(frequency+0.5))
+   score+=idf*tf*2.2/(tf+1.2*(0.25+0.75*length/average))
+  p['_retrieval_bm25']=round(score,4)
+ return sorted(result,key=lambda p:(-len(set(p['matched_capabilities'])),-p['_retrieval_bm25']))[:limit]
 
 def baseline_capabilities(profile):
  priorities=profile['improvement_priorities'];caps=[]
@@ -116,47 +133,62 @@ class Orchestrator:
  def execute(self,run,answer=None,skip=False):
   try:
    self.save(run,'parsing');profile=run['profile_snapshot']
-   context=run.get('discovery_context') or {}
-   intent=interpret(profile,run['problem_text'],answer,skip,context)
+   context=run.get('discovery_context') or {};retrieval_audit=[]
+   intent=interpret(profile,run['problem_text'],answer,skip,context);interpretation_source='deterministic'
    if self.parser:
     try:
      parsed=self.parser.parse_problem(profile,run['problem_text'],run['usage'],context=context)
      # Deterministic clarification state/explicit channels override model guesses.
      parsed.clarification_needed=intent.clarification_needed
      if answer or skip:parsed.required_capabilities=list(dict.fromkeys(parsed.required_capabilities+intent.required_capabilities))
-     intent=parsed
+     intent=parsed;interpretation_source='model'
     except Exception:run['warnings'].append('AI interpretation unavailable or invalid; a deterministic capability parser was used.')
    run['requirements']=intent.model_dump();run['clarification_question']=Q9 if intent.clarification_needed else None
    if intent.clarification_needed:self.save(run,'needs_clarification');return
-   run['queries']=plan_queries(profile,intent);self.save(run,'catalog_search')
-   run['tools']=search_catalog(self.store.catalog() if self.mode!='mock' and hasattr(self.store,'catalog') else catalog(self.mode),intent.required_capabilities)
-   if self.searcher and self.fetcher:
+   run['queries']=plan_queries(profile,intent) if intent.required_capabilities else [];self.save(run,'catalog_search')
+   retrieval_query=run['problem_text']+' '+(context.get('desired_outcome') or '')
+   run['tools']=search_catalog(self.store.catalog() if self.mode!='mock' and hasattr(self.store,'catalog') else catalog(self.mode),intent.required_capabilities,query=retrieval_query)
+   wants_web=self.mode=='mock' or run.get('force_web') or not run['tools']
+   if self.searcher and self.fetcher and wants_web and (self.mode=='mock' or run['usage']['model_calls']<=1):
     self.save(run,'web_search');seen=set();pages=0
-    for query in run['queries']:
+    queries=run['queries'] if self.mode=='mock' else run['queries'][1:2]
+    for query in queries:
      if run['usage']['model_calls']>=5:run['warnings'].append('Per-run model-call limit reached; remaining live work paused.');break
      try:
-      hits=self.searcher.search(query['query_text'],run['usage']);query['executed']=self.mode!='mock';query['simulated']=self.mode=='mock'
+      query['executed']=self.mode!='mock';query['simulated']=self.mode=='mock'
+      hits=self.searcher.search(query['query_text'],run['usage']);query['result_count']=len(hits)
       for hit in hits:
        host=urlsplit(hit['url']).hostname
-       if host in seen or len(seen)>=5 or pages>=10:continue
+       if host in seen or len(seen)>=5 or pages>=(10 if self.mode=='mock' else 3):continue
        seen.add(host);pages+=1
        if run['usage']['model_calls']>=5:break
-       page=self.fetcher.fetch(hit['url']);candidate=self.parser.extract_claims(page,run['usage'])
+       try:page=self.fetcher.fetch(hit['url'])
+       except Exception as error:retrieval_audit.append({'url':hit['url'],'status':'fetch_rejected_or_unavailable','reason':type(error).__name__});continue
+       candidate=self.parser.extract_claims(page,run['usage'])
        if candidate:run['tools'].append(candidate)
+       retrieval_audit.append({'url':hit['url'],'status':'provisional_candidate' if candidate else 'evidence_rejected','reason':None if candidate else getattr(self.parser,'last_extraction_rejection','Insufficient evidence')})
+       if self.mode!='mock':break
      except Exception:run['warnings'].append('Some live retrieval failed or reached a safety/budget limit; known catalogue results are retained.')
-   else:run['warnings'].append('Live discovery is disabled or unavailable; these are catalogue results only.')
+   elif self.mode!='live':run['warnings'].append('Catalogue-only retrieval; external web search was not performed.')
    if self.mode=='mock':run['warnings'].append('Synthetic demo: web results are simulated; no external request was made.')
    self.save(run,'enriching');run['tools']=dedupe(run['tools']);run['clarification_question']=None
    catalog_updates=copy.deepcopy([p for p in run['tools'] if 'web_search' in p['retrieval_channels']])
-   run['tools']=search_catalog(run['tools'],intent.required_capabilities)
+   run['tools']=search_catalog(run['tools'],intent.required_capabilities,query=retrieval_query)
+   retrieval_pool=[{'tool_id':p['tool_id'],'matched_capabilities':p['matched_capabilities'],'bm25':p.get('_retrieval_bm25',0)} for p in run['tools']]
    if context.get('constraints'):
     for product in run['tools']:
      product['issues']=list(dict.fromkeys(product.get('issues',[])+['Your stated requirements still need to be checked against the vendor; a capability match does not confirm compatibility.']))
+   if self.mode!='mock':
+    assessor=self.parser if hasattr(self.parser,'assess_candidates') else None
+    run['tools'],run['quality_report']=assess_recommendations(run['tools'],intent,assessor,profile,run['problem_text'],context,run['usage'])
+    run['quality_report'].update(interpretation_source=interpretation_source,model_id=getattr(self.parser,'model',None),retrieval_basis='Controlled task coverage first, local BM25 task-text relevance to break ties, then source-grounded AI assessment.',web_trigger='Explicit request or empty catalogue result',retrieval_audit=retrieval_audit,retrieval_pool=retrieval_pool)
+    if run['quality_report'].get('assessment_warning'):run['warnings'].append(run['quality_report']['assessment_warning'])
    if not intent.required_capabilities:run['warnings'].append('We could not identify a supported task. Refine your request with the work you want done and the result you need.')
    if not run['tools']:run['warnings'].append('No evidenced catalogue candidate covers this need yet. No tools were invented to fill the result.')
-   terminal='partial' if self.mode!='mock' and (not self.searcher or run['warnings']) else 'completed'
+   terminal='partial' if self.mode!='mock' and (self.mode=='catalog' and not self.searcher or not run['tools'] or any('failed' in w or 'unavailable' in w or 'withheld' in w for w in run['warnings'])) else 'completed'
    if self.mode!='mock' and hasattr(self.store,'upsert_catalog'):
-    self.store.upsert_catalog(catalog_updates)
+    reviewed=[p for p in catalog_updates if p.get('catalog_status') in ('seeded','confirmed')]
+    if reviewed:self.store.upsert_catalog(reviewed)
    self.save(run,terminal)
    logging.getLogger('bizzimpact').info(json.dumps({'event':'discovery_completed','run_id':run['run_id'],'status':terminal,'model_id':getattr(self.parser,'model',None),**run['usage']}))
   except Exception:

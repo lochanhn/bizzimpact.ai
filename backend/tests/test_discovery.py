@@ -134,6 +134,7 @@ def test_live_search_timeout_falls_back_to_catalogue(service):
  private=app.state.local.get('run',result['run_id'],next(iter(app.state.local.list('business',app.state.local.demo_owner(c.headers['Authorization'].removeprefix('Bearer ')))) )['owner'])
  class TimeoutSearch:
   def search(self,*args):raise httpx.ReadTimeout('simulated timeout')
+ private['force_web']=True
  Orchestrator(app.state.local,'catalog',searcher=TimeoutSearch(),fetcher=SafePageFetcher()).execute(private)
  reread=c.get(f"/api/v1/discovery/runs/{result['run_id']}").json();assert reread['status']=='partial';assert reread['tools'];assert any('failed' in w for w in reread['warnings'])
 

@@ -1,0 +1,83 @@
+{
+  "timestamp": "2026-11-09T01:12:07.866544+00:00",
+  "model": "openai/gpt-4.1-mini",
+  "synthetic_profiles": true,
+  "real_paid_calls": true,
+  "limitations": "Automated consistency checks on vendor claims, not independent product testing or real-owner validation.",
+  "cases": [
+    {
+      "case": "inventory",
+      "status": "partial",
+      "latency_seconds": 12.172,
+      "usage": {
+        "model_calls": 3,
+        "search_calls": 1,
+        "estimated_cost_usd": 0.010830400000000004,
+        "input_tokens": 5964,
+        "output_tokens": 903
+      },
+      "quality_report": {
+        "prompt_version": "discovery-rag-v1",
+        "rubric_version": "evidence-match-v1",
+        "retrieved_candidates": 0,
+        "assessed_candidates": 0,
+        "quality_gate_passed": 0,
+        "checks": [
+          "Controlled capability IDs",
+          "Catalogue identity",
+          "Source URL presence",
+          "Per-tool citation ownership",
+          "Separate model evidence audit"
+        ],
+        "limitations": [
+          "An evidence match index is not a probability of success or an independent product rating.",
+          "Price, exact integrations, regional availability and privacy terms still need verification."
+        ],
+        "rejected_candidates": [],
+        "interpretation_source": "model",
+        "model_id": "openai/gpt-4.1-mini",
+        "retrieval_basis": "Controlled task capabilities, approved industry/software query terms, then source-grounded assessment.",
+        "web_trigger": "Explicit request or empty catalogue result",
+        "retrieval_audit": [
+          {
+            "url": "https://www.restroworks.com/restaurant-forecasting-software/",
+            "status": "fetch_rejected_or_unavailable",
+            "reason": "ValueError"
+          },
+          {
+            "url": "https://www.sightlineos.com/forecasting",
+            "status": "fetch_rejected_or_unavailable",
+            "reason": "ValueError"
+          },
+          {
+            "url": "https://www.nory.ai/us/product/inventory",
+            "status": "evidence_rejected",
+            "reason": "No source-backed controlled capability"
+          }
+        ]
+      },
+      "warnings": [
+        "No evidenced catalogue candidate covers this need yet. No tools were invented to fill the result."
+      ],
+      "queries": [
+        {
+          "query_kind": "capability",
+          "query_text": "AI inventory optimization demand forecasting small business",
+          "executed": false
+        },
+        {
+          "query_kind": "industry",
+          "query_text": "AI inventory optimization demand forecasting for restaurant",
+          "executed": true,
+          "simulated": false
+        },
+        {
+          "query_kind": "alternate",
+          "query_text": "AI inventory optimization demand forecasting software alternatives official features",
+          "executed": false
+        }
+      ],
+      "tools": []
+    }
+  ]
+}

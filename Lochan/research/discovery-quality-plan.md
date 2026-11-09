@@ -1,5 +1,7 @@
 # Questionnaire and discovery quality update
 
+Later update: the user authorized paid calls on November 8. The implemented RAG/scoring/quality pipeline and actual evaluation artifacts are now described in [backend/AI_DISCOVERY.md](../../backend/AI_DISCOVERY.md). Catalogue-only and disabled-live statements below describe the earlier stage.
+
 November 8, 2026. This records the user's requested changes and the limits of what has been verified.
 
 ## Assessment

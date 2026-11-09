@@ -1,5 +1,7 @@
 # Docker packaging and EC2 deployment
 
+Current paid-AI update: the user authorized live calls on November 8. The separate AI trial, shared credit controls, model/prompt versions and scoring are described in [AI_DISCOVERY.md](../../backend/AI_DISCOVERY.md). Preserve the deployed private backend environment during updates. New-environment templates below deliberately keep paid flags off until explicitly configured; the earlier initial-deployment snapshot records a catalogue-only setup.
+
 This README explains how teammates can package BizzImpact, deploy a release, check it, and roll it back. Commands use Bash. Run **local** commands from the repository root; commands marked **EC2** run after SSH. A Git push saves source but does **not** automatically deploy the application.
 
 ## Current deployment

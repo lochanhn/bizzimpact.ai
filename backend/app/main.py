@@ -9,7 +9,7 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.security import HTTPBearer,HTTPAuthorizationCredentials
 from fastapi.responses import JSONResponse
 from .contracts import BusinessProfile,DiscoveryRequest,BusinessRequest,Clarification,DiscoveredTool,DiscoveryRunCreated,DiscoveryRun,BaselineResult,BusinessCreated
-from .storage import LocalStore,PostgresStore,now
+from .storage import LocalStore,PostgresStore,TrialStore,now
 from .engine import DATA,Orchestrator,baseline_capabilities,catalog,search_catalog
 from .providers import OpenRouterProvider,OpenRouterSearchAdapter,SafePageFetcher,MockLLMProvider,MockSearchProvider,MockPageFetcher
 log=logging.getLogger('bizzimpact');logging.basicConfig(level=logging.INFO,format='%(message)s')
@@ -20,10 +20,12 @@ class Actor:
  demo:bool
  store:object
  mode:str
+ trial:bool=False
 
 def create_app(local_path=None,db_url=None):
  local=LocalStore(local_path or os.getenv('DEMO_DB_PATH',str(DATA.parent/'.runtime/demo.sqlite')));local.recover_runs()
  database_url=db_url or os.getenv('DATABASE_URL');pg=PostgresStore(database_url) if database_url else None
+ def live_enabled():return os.getenv('DISCOVERY_MODE')=='live' and os.getenv('OPENROUTER_ENABLED')=='true' and os.getenv('EXPLICIT_LIVE_AUTHORIZED')=='true' and bool(os.getenv('OPENROUTER_API_KEY')) and bool(os.getenv('OPENROUTER_MODEL'))
  limits={};limit_lock=threading.Lock();clarify_lock=threading.Lock()
  app=FastAPI(title='bizzimpact.ai Phase 1 discovery',version='2.0.0')
  app.state.local=local
@@ -61,6 +63,9 @@ def create_app(local_path=None,db_url=None):
   if token.startswith('demo_'):
    owner=local.demo_owner(token)
    if owner:return Actor(owner,True,local,'mock')
+  elif token.startswith('trial_'):
+   owner=local.demo_owner(token)
+   if owner and pg and live_enabled() and os.getenv('PUBLIC_AI_TRIAL_ENABLED')=='true':return Actor(owner,False,TrialStore(local,pg),'live',True)
   elif token:
    url=os.getenv('SUPABASE_URL','').rstrip('/');key=os.getenv('SUPABASE_PUBLISHABLE_KEY','')
    if not url or not key:raise HTTPException(503,'Supabase backend configuration is missing.')
@@ -87,11 +92,23 @@ def create_app(local_path=None,db_url=None):
   if authorized:
    key=os.getenv('OPENROUTER_API_KEY');model=os.getenv('OPENROUTER_MODEL')
    if key and model:
-    provider=OpenRouterProvider(key,model,a.store)
+    provider=OpenRouterProvider(key,model,a.store,credit_floor=5)
     if os.getenv('LIVE_WEB_ENABLED')=='true':searcher=OpenRouterSearchAdapter(provider)
   return Orchestrator(a.store,a.mode,provider,searcher,SafePageFetcher() if searcher else None)
  @app.get('/health')
- def health():return {'ok':True,'default_mode':os.getenv('DISCOVERY_MODE','mock'),'paid_calls_enabled_by_default':False}
+ def health():return {'ok':True,'default_mode':os.getenv('DISCOVERY_MODE','mock'),'paid_calls_enabled_by_default':live_enabled()}
+ @app.get('/api/v1/availability')
+ def availability():return {'live_trial':bool(pg and live_enabled() and os.getenv('PUBLIC_AI_TRIAL_ENABLED')=='true'),'live_web':live_enabled() and os.getenv('LIVE_WEB_ENABLED')=='true'}
+ @app.post('/api/v1/trial',status_code=201)
+ def trial(request:Request):
+  if not pg or not live_enabled() or os.getenv('PUBLIC_AI_TRIAL_ENABLED')!='true':raise HTTPException(503,'AI trials are not enabled.')
+  rate('trial:'+str(request.client.host),3);token,_owner=local.demo(prefix='trial_')
+  return {'token':token,'synthetic':False,'trial':True,'expires_in':7200}
+ @app.post('/api/v1/trial/logout')
+ def trial_logout(request:Request):
+  token=request.headers.get('authorization','').removeprefix('Bearer ')
+  if token.startswith('trial_'):local.revoke(token)
+  return {'ok':True}
  @app.post('/api/v1/demo',status_code=201)
  def demo(request:Request):
   rate('demo:'+str(request.client.host),12);token,_owner=local.demo()
@@ -101,7 +118,7 @@ def create_app(local_path=None,db_url=None):
  def demo_logout(request:Request):
   token=request.headers.get('authorization','').removeprefix('Bearer ');local.revoke(token);return {'ok':True}
  @app.get('/api/v1/context')
- def context(a:Actor=Depends(actor)):return {'demo':a.demo,'mode':a.mode,'synthetic':a.mode=='mock'}
+ def context(a:Actor=Depends(actor)):return {'demo':a.demo,'trial':a.trial,'mode':a.mode,'synthetic':a.mode=='mock'}
  @app.get('/api/v1/onboarding/schema')
  def schema():return json.loads((DATA/'onboarding-spec.json').read_text())
  @app.get('/api/v1/businesses')
@@ -120,7 +137,10 @@ def create_app(local_path=None,db_url=None):
   p=owned('business',body.business_id,a)['profile'];caps=baseline_capabilities(p)
   return {'business_id':body.business_id,'capability_categories':caps,'tools':search_catalog(a.store.catalog() if a.mode!='mock' and hasattr(a.store,'catalog') else catalog(a.mode),caps,6),'is_baseline':True,'usage':{'model_calls':0,'search_calls':0,'estimated_cost_usd':0},'synthetic':a.mode=='mock'}
  @app.post('/api/v1/discovery/runs',status_code=202,response_model=DiscoveryRunCreated)
- def create_run(body:DiscoveryRequest,background:BackgroundTasks,a:Actor=Depends(actor)):
+ def create_run(body:DiscoveryRequest,background:BackgroundTasks,request:Request,a:Actor=Depends(actor)):
+  if a.trial:
+   rate('trial-run:'+str(request.client.host),10)
+   if len(a.store.list('run',a.owner))>=4:raise HTTPException(429,'This AI trial has reached its four-search limit.')
   rate(a.owner+':run',8);p=owned('business',body.business_id,a)['profile'];id=str(uuid4())
   run={'run_id':id,'business_id':body.business_id,'owner':a.owner,'status':'queued','mode':'problem_search','profile_snapshot':copy.deepcopy(p),'discovery_context':body.context.model_dump(),'problem_text':body.problem_text,'force_web':body.force_web,'requirements':None,'clarification_question':None,'tools':[],'warnings':[],'error_code':None,'usage':{'search_calls':0,'model_calls':0,'estimated_cost_usd':0},'queries':[],'state_history':[{'status':'queued','at':now()}],'synthetic':a.mode=='mock','created_at':now(),'updated_at':now()}
   a.store.put('run',id,a.owner,run);background.add_task(orchestrator(a).execute,run)

@@ -1,0 +1,362 @@
+{
+  "timestamp": "2026-11-09T00:59:57.864388+00:00",
+  "prompt_version": "discovery-rag-v1",
+  "dataset": "discovery-evaluation.json",
+  "limitations": "Synthetic operator-labelled regression examples; no claim of real-owner accuracy. Reusing these cases for prompt tuning makes them development data.",
+  "budget_usd": 1,
+  "total_cost_usd": 0.00407,
+  "summaries": [
+    {
+      "model": "openai/gpt-4.1-mini",
+      "cases": 10,
+      "exact_matches": 7,
+      "precision": 1,
+      "recall": 0.833,
+      "cost_usd": 0.00407,
+      "mean_latency_seconds": 1.46
+    },
+    {
+      "model": "google/gemini-2.5-flash",
+      "cases": 4,
+      "exact_matches": 0,
+      "precision": null,
+      "recall": 0,
+      "cost_usd": 0,
+      "mean_latency_seconds": 0.927,
+      "evaluation_note": "Provider rejected these requests; no inference accuracy measurement is available."
+    }
+  ],
+  "cases": [
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "missed_calls",
+      "expected": [
+        "ai_voice_receptionist",
+        "lead_capture"
+      ],
+      "predicted": [
+        "ai_voice_receptionist",
+        "lead_capture"
+      ],
+      "exact_match": true,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.00039000000000000146,
+        "input_tokens": 687,
+        "output_tokens": 72
+      },
+      "latency_seconds": 1.515
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "calls_and_booking",
+      "expected": [
+        "ai_voice_receptionist",
+        "lead_capture",
+        "appointment_scheduling"
+      ],
+      "predicted": [
+        "ai_voice_receptionist",
+        "appointment_scheduling"
+      ],
+      "exact_match": false,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 1,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.00042480000000000295,
+        "input_tokens": 690,
+        "output_tokens": 93
+      },
+      "latency_seconds": 1.419
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "outcome_adds_booking",
+      "expected": [
+        "ai_voice_receptionist",
+        "lead_capture",
+        "appointment_scheduling"
+      ],
+      "predicted": [
+        "ai_voice_receptionist",
+        "appointment_scheduling",
+        "lead_capture"
+      ],
+      "exact_match": true,
+      "true_positive": 3,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.0004456000000000043,
+        "input_tokens": 698,
+        "output_tokens": 104
+      },
+      "latency_seconds": 1.74
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "website_questions",
+      "expected": [
+        "customer_support_chat",
+        "lead_capture"
+      ],
+      "predicted": [
+        "customer_support_chat"
+      ],
+      "exact_match": false,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 1,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.0003944000000000031,
+        "input_tokens": 690,
+        "output_tokens": 74
+      },
+      "latency_seconds": 1.853
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "website_marketing_not_chat",
+      "expected": [
+        "marketing_content"
+      ],
+      "predicted": [
+        "marketing_content"
+      ],
+      "exact_match": true,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.0004095999999999961,
+        "input_tokens": 688,
+        "output_tokens": 84
+      },
+      "latency_seconds": 1.279
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "social_schedule_not_appointments",
+      "expected": [
+        "marketing_content"
+      ],
+      "predicted": [
+        "marketing_content"
+      ],
+      "exact_match": true,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.0004119999999999957,
+        "input_tokens": 690,
+        "output_tokens": 85
+      },
+      "latency_seconds": 1.367
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "food_waste",
+      "expected": [
+        "demand_forecasting",
+        "inventory_optimization"
+      ],
+      "predicted": [
+        "inventory_optimization"
+      ],
+      "exact_match": false,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 1,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.0004080000000000056,
+        "input_tokens": 692,
+        "output_tokens": 82
+      },
+      "latency_seconds": 1.293
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "restock",
+      "expected": [
+        "demand_forecasting",
+        "inventory_optimization"
+      ],
+      "predicted": [
+        "demand_forecasting",
+        "inventory_optimization"
+      ],
+      "exact_match": true,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.0004095999999999961,
+        "input_tokens": 692,
+        "output_tokens": 83
+      },
+      "latency_seconds": 1.377
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "invoices",
+      "expected": [
+        "invoice_automation"
+      ],
+      "predicted": [
+        "invoice_automation"
+      ],
+      "exact_match": true,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.0003872000000000042,
+        "input_tokens": 688,
+        "output_tokens": 70
+      },
+      "latency_seconds": 1.388
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "case_id": "workflow_not_requested",
+      "expected": [
+        "invoice_automation"
+      ],
+      "predicted": [
+        "invoice_automation"
+      ],
+      "exact_match": true,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "clarification": false,
+      "usage": {
+        "model_calls": 1,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.0003892000000000062,
+        "input_tokens": 701,
+        "output_tokens": 68
+      },
+      "latency_seconds": 1.367
+    },
+    {
+      "model": "google/gemini-2.5-flash",
+      "case_id": "missed_calls",
+      "expected": [
+        "ai_voice_receptionist",
+        "lead_capture"
+      ],
+      "exact_match": false,
+      "error": "HTTPStatusError",
+      "usage": {
+        "model_calls": 2,
+        "search_calls": 0,
+        "estimated_cost_usd": 0,
+        "original_rejected_request_reservation_usd": 0.2
+      },
+      "latency_seconds": 0.988,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 2,
+      "accounting_note": "Provider rejected the schema request (HTTP 400); unused reservations were reconciled and not treated as model charges."
+    },
+    {
+      "model": "google/gemini-2.5-flash",
+      "case_id": "calls_and_booking",
+      "expected": [
+        "ai_voice_receptionist",
+        "lead_capture",
+        "appointment_scheduling"
+      ],
+      "exact_match": false,
+      "error": "HTTPStatusError",
+      "usage": {
+        "model_calls": 2,
+        "search_calls": 0,
+        "estimated_cost_usd": 0,
+        "original_rejected_request_reservation_usd": 0.2
+      },
+      "latency_seconds": 0.976,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 3,
+      "accounting_note": "Provider rejected the schema request (HTTP 400); unused reservations were reconciled and not treated as model charges."
+    },
+    {
+      "model": "google/gemini-2.5-flash",
+      "case_id": "outcome_adds_booking",
+      "expected": [
+        "ai_voice_receptionist",
+        "lead_capture",
+        "appointment_scheduling"
+      ],
+      "exact_match": false,
+      "error": "HTTPStatusError",
+      "usage": {
+        "model_calls": 2,
+        "search_calls": 0,
+        "estimated_cost_usd": 0,
+        "original_rejected_request_reservation_usd": 0.2
+      },
+      "latency_seconds": 0.869,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 3,
+      "accounting_note": "Provider rejected the schema request (HTTP 400); unused reservations were reconciled and not treated as model charges."
+    },
+    {
+      "model": "google/gemini-2.5-flash",
+      "case_id": "website_questions",
+      "expected": [
+        "customer_support_chat",
+        "lead_capture"
+      ],
+      "exact_match": false,
+      "error": "HTTPStatusError",
+      "usage": {
+        "model_calls": 2,
+        "search_calls": 0,
+        "estimated_cost_usd": 0,
+        "original_rejected_request_reservation_usd": 0.2
+      },
+      "latency_seconds": 0.876,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 2,
+      "accounting_note": "Provider rejected the schema request (HTTP 400); unused reservations were reconciled and not treated as model charges."
+    }
+  ],
+  "original_conservative_total_usd": 0.80407,
+  "reservations_reconciled_usd": 0.8
+}

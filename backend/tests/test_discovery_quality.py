@@ -22,6 +22,12 @@ def test_retrieval_considers_full_catalogue_before_limiting():
  assert result[0]['name']=='Covers both tasks'
  assert len(result)==3 and products==original
 
+def test_local_lexical_retrieval_can_surface_later_task_specific_records():
+ products=[{'tool_id':str(i),'name':f'General marketing {i}','short_description':'Create marketing content','matched_capabilities':['marketing_content'],'evidence':[]} for i in range(20)]
+ products.append({'tool_id':'specific','name':'Social scheduler','short_description':'Schedule Instagram posts and captions','matched_capabilities':['marketing_content'],'evidence':[]})
+ result=search_catalog(products,['marketing_content'],limit=8,query='Schedule Instagram posts')
+ assert result[0]['tool_id']=='specific' and result[0]['_retrieval_bm25']>0
+
 def test_discovery_context_is_saved_and_constraints_are_not_claimed_verified(service):
  client,_=service
  p=profile();p['customer_description']='Local homeowners';id=business(client,p)

@@ -1,6 +1,6 @@
 # bizzimpact.ai
 
-Phase 1: small-business onboarding and evidence-backed discovery of existing AI tools. Next.js frontend in `website/`; FastAPI/Pydantic backend in `backend/`. The primary flow has no scores or ratings.
+Small-business onboarding and evidence-backed discovery of existing AI tools. Next.js frontend in `website/`; FastAPI/Pydantic backend in `backend/`. The user-authorized live AI trial adds an experimental evidence match index with visible weights, citations and quality gates; it is not a validated product rating.
 
 ## Run the complete local demo
 
@@ -43,6 +43,8 @@ The local SQLite demo database is ignored under `backend/.runtime/`; sessions ex
 The earlier scored assessment is retained as source in `components/prototype.tsx` and in its regression tests; it is not mounted in the Phase 1 user journey. Its weights are not validated Phase 2 metrics.
 
 ## Real accounts and live discovery
+
+[Paid AI discovery and quality checks](../backend/AI_DISCOVERY.md) explains the RAG pipeline, prompts, scoring formula, provider evaluation, public trial, cost controls and remaining limitations. Choose **Try AI recommendations** on the deployed site for real catalogue/model results without signup. The separate synthetic demo remains free of paid calls.
 
 [AUTH_SETUP.md](AUTH_SETUP.md) explains Supabase configuration. The current project's schema, access grants, and 111-tool catalogue seed are applied, and private connection settings are configured locally and on EC2. Credentials are excluded from Git. Public Auth redirect configuration and genuine signup/session checks remain pending.
 

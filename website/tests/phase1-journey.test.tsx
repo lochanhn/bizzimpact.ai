@@ -6,8 +6,8 @@ import OnboardingForm from '../components/phase1/onboarding-form';
 import Landing from '../app/page';
 import Dashboard from '../app/dashboard/page';
 import DiscoveryForm from '../components/phase1/discovery-form';
-import { CandidateCard } from '../components/phase1/shared';
-import { startDemo } from '../lib/phase1/api';
+import { CandidateCard,QualityDetails,StartLiveButton } from '../components/phase1/shared';
+import { startDemo,startTrial } from '../lib/phase1/api';
 import { evidenceBackTarget } from '../lib/phase1/navigation';
 import products from '../data/discovery-catalog.json';
 import type { ToolRecord } from '../lib/phase1/types';
@@ -137,4 +137,32 @@ test('search drafts survive returning to the dashboard and remain separate by bu
  assert.equal((next.view.getByLabelText('What task would you like help with?') as HTMLTextAreaElement).value,'Help with invoices each week.');
  next.view.rerender(<DiscoveryForm business={searchBusiness('22222222-2222-4222-8222-222222222222')} synthetic={false}/>);
  assert.equal((next.view.getByLabelText('What task would you like help with?') as HTMLTextAreaElement).value,'');
+});
+test('AI trial entry is shown only when the backend enables it',async()=>{
+ globalThis.fetch=async()=>Response.json({live_trial:true});
+ const {view}=await setup(<StartLiveButton/>);
+ await view.findByRole('button',{name:'Try AI recommendations'});
+ assert.ok(view.getByText(/No signup required/));
+});
+test('starting an AI trial clears prior workspace drafts and lands on the dashboard',async()=>{
+ let destination='';const originalWindow=Object.getOwnPropertyDescriptor(globalThis,'window')!;
+ globalThis.fetch=async()=>Response.json({trial:true});sessionStorage.setItem('bizzimpact-search-draft:old','private draft');
+ Object.defineProperty(globalThis,'window',{configurable:true,value:{location:{replace:(path:string)=>{destination=path;}}}});
+ try{await startTrial();assert.equal(destination,'/dashboard');assert.equal(sessionStorage.getItem('bizzimpact-search-draft:old'),null);}finally{Object.defineProperty(globalThis,'window',originalWindow);}
+});
+test('score UI exposes all weights and marks the index as experimental',async()=>{
+ const {view}=await setup(<QualityDetails quality={{rubric_version:'evidence-match-v1',score:100,task_coverage_points:50,source_evidence_points:25,workflow_relevance_points:25,assessment_status:'passed',explanation:'Supports the requested tasks.',evidence_ids:[],source_urls:[],checks:[],limitations:['Exact integrations need verification.']}}/>);
+ assert.ok(view.getByText('Evidence match index: 100/100'));
+ assert.ok(view.getByText('Requested task coverage: 50/50'));
+ assert.ok(view.getByText(/Experimental rubric/));
+});
+test('live review requires explicit confirmation and can request additional source checking',async()=>{
+ const sent:any[]=[];globalThis.fetch=async(_input,init)=>{sent.push(JSON.parse(String(init?.body)));return Response.json({run_id:'live-run'});};
+ const {view,user}=await setup(<DiscoveryForm business={searchBusiness()} synthetic={false} live trial onStarted={()=>{}}/>);
+ await user.type(view.getByLabelText('What task would you like help with?'),'Handle incoming phone calls.');
+ assert.ok(view.getByText(/Confirming this search uses shared project AI credits/));
+ await user.click(view.getByRole('button',{name:'Review my search'}));assert.equal(sent.length,0);
+ await user.click(view.getByRole('checkbox',{name:/Also check current vendor pages/}));
+ await user.click(view.getByRole('button',{name:'Search for candidate tools'}));
+ assert.equal(sent.length,1);assert.equal(sent[0].force_web,true);
 });

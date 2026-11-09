@@ -70,11 +70,40 @@ class ExtractedClaim(StrictModel):
  claim_key:Literal['ai_feature','capability','integration','pricing']
  claim_value:str=Field(min_length=1,max_length=300)
  evidence_excerpt:str=Field(min_length=1,max_length=180)
+ @model_validator(mode='after')
+ def controlled_capability_value(self):
+  if self.claim_key=='capability' and self.claim_value not in CAPABILITIES:raise ValueError('Capability claims must use a controlled capability ID.')
+  return self
 class ExtractedProduct(StrictModel):
  name:str=Field(min_length=1,max_length=100)
  description:str=Field(max_length=400)
  capabilities:list[Capability]=Field(max_length=11)
  claims:list[ExtractedClaim]=Field(max_length=8)
+class CandidateAssessment(StrictModel):
+ tool_id:str=Field(min_length=1,max_length=100)
+ applicability:Literal['direct','partial','unclear','not_relevant']
+ explanation:str=Field(min_length=1,max_length=400)
+ evidence_ids:list[str]=Field(max_length=8)
+class AssessmentBatch(StrictModel):
+ assessments:list[CandidateAssessment]=Field(max_length=8)
+class CandidateVerdict(StrictModel):
+ tool_id:str=Field(min_length=1,max_length=100)
+ supported:bool
+ reason:str=Field(max_length=300)
+class VerdictBatch(StrictModel):
+ verdicts:list[CandidateVerdict]=Field(max_length=8)
+class MatchQuality(BaseModel):
+ rubric_version:str='evidence-match-v1'
+ score:float|None=None
+ task_coverage_points:float
+ source_evidence_points:float
+ workflow_relevance_points:float|None=None
+ assessment_status:Literal['passed','withheld','not_assessed','provisional']
+ explanation:str|None=None
+ evidence_ids:list[str]=Field(default_factory=list)
+ source_urls:list[str]=Field(default_factory=list)
+ checks:list[str]=Field(default_factory=list)
+ limitations:list[str]=Field(default_factory=list)
 
 class ClaimEvidence(BaseModel):
  claim_key:str
@@ -82,6 +111,7 @@ class ClaimEvidence(BaseModel):
  verification_state:Literal['vendor_documented','third_party_reported','independently_tested','unverified','conflicting']
  source_url:str|None=None
  observed_at:str|None=None
+ evidence_excerpt:str|None=None
 class DiscoveredTool(BaseModel):
  tool_id:str
  name:str
@@ -95,6 +125,7 @@ class DiscoveredTool(BaseModel):
  evidence:list[ClaimEvidence]
  issues:list[str]=Field(default_factory=list)
  synthetic:bool=False
+ quality:MatchQuality|None=None
 class Usage(BaseModel):
  model_config=ConfigDict(extra='allow')
  model_calls:int=Field(ge=0)
@@ -118,6 +149,7 @@ class DiscoveryRun(BaseModel):
  usage:Usage
  profile_snapshot:BusinessProfile
  discovery_context:DiscoveryContext=Field(default_factory=DiscoveryContext)
+ quality_report:dict=Field(default_factory=dict)
  state_history:list[dict]
  queries:list[dict]
  synthetic:bool

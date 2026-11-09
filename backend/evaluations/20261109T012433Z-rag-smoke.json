@@ -1,0 +1,300 @@
+{
+  "timestamp": "2026-11-09T01:24:33.003006+00:00",
+  "model": "openai/gpt-4.1-mini",
+  "synthetic_profiles": true,
+  "real_paid_calls": true,
+  "limitations": "Automated consistency checks on vendor claims, not independent product testing or real-owner validation.",
+  "cases": [
+    {
+      "case": "calls",
+      "status": "completed",
+      "latency_seconds": 15.136,
+      "usage": {
+        "model_calls": 3,
+        "search_calls": 0,
+        "estimated_cost_usd": 0.007109600000000008,
+        "input_tokens": 9974,
+        "output_tokens": 1950
+      },
+      "quality_report": {
+        "prompt_version": "discovery-rag-v1.2",
+        "rubric_version": "evidence-match-v1",
+        "retrieved_candidates": 10,
+        "assessed_candidates": 8,
+        "quality_gate_passed": 0,
+        "checks": [
+          "Controlled capability IDs",
+          "Retrieved record identity",
+          "Source URL and date presence",
+          "Per-tool citation ownership",
+          "Separate model evidence audit"
+        ],
+        "limitations": [
+          "An evidence match index is not a probability of success or an independent product rating.",
+          "Price, exact integrations, regional availability and privacy terms still need verification."
+        ],
+        "rejected_candidates": [],
+        "interpretation_source": "model",
+        "model_id": "openai/gpt-4.1-mini",
+        "retrieval_basis": "Controlled task capabilities, approved industry/software query terms, then source-grounded assessment.",
+        "web_trigger": "Explicit request or empty catalogue result",
+        "retrieval_audit": []
+      },
+      "warnings": [],
+      "queries": [
+        {
+          "query_kind": "capability",
+          "query_text": "AI phone answering voice receptionist small business",
+          "executed": false
+        },
+        {
+          "query_kind": "industry",
+          "query_text": "AI phone answering voice receptionist for landscaping",
+          "executed": false
+        },
+        {
+          "query_kind": "alternate",
+          "query_text": "AI phone answering voice receptionist software alternatives official features",
+          "executed": false
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "20dc1582-3b77-5391-b2e7-d9f86f1d790e",
+          "name": "My AI Front Desk",
+          "quality": {
+            "rubric_version": "evidence-match-v1",
+            "score": null,
+            "task_coverage_points": 50.0,
+            "source_evidence_points": 25.0,
+            "workflow_relevance_points": null,
+            "assessment_status": "withheld",
+            "explanation": null,
+            "evidence_ids": [],
+            "source_urls": [],
+            "checks": [
+              "Controlled capability IDs",
+              "Retrieved record identity",
+              "Source URL and date presence",
+              "Per-tool citation ownership",
+              "Separate model evidence audit"
+            ],
+            "limitations": [
+              "An evidence match index is not a probability of success or an independent product rating.",
+              "Price, exact integrations, regional availability and privacy terms still need verification."
+            ]
+          },
+          "source_urls": [
+            "https://www.myaifrontdesk.com/ai-receptionist",
+            "https://www.myaifrontdesk.com/pricing"
+          ]
+        },
+        {
+          "tool_id": "ea272abc-233f-578f-92d7-54de33b06aab",
+          "name": "Rosie",
+          "quality": {
+            "rubric_version": "evidence-match-v1",
+            "score": null,
+            "task_coverage_points": 50.0,
+            "source_evidence_points": 25.0,
+            "workflow_relevance_points": null,
+            "assessment_status": "withheld",
+            "explanation": null,
+            "evidence_ids": [],
+            "source_urls": [],
+            "checks": [
+              "Controlled capability IDs",
+              "Retrieved record identity",
+              "Source URL and date presence",
+              "Per-tool citation ownership",
+              "Separate model evidence audit"
+            ],
+            "limitations": [
+              "An evidence match index is not a probability of success or an independent product rating.",
+              "Price, exact integrations, regional availability and privacy terms still need verification."
+            ]
+          },
+          "source_urls": [
+            "https://heyrosie.com/",
+            "https://heyrosie.com/pricing"
+          ]
+        },
+        {
+          "tool_id": "772ca3ce-88e7-5de3-8469-8d5a0388e72d",
+          "name": "Smith.ai",
+          "quality": {
+            "rubric_version": "evidence-match-v1",
+            "score": null,
+            "task_coverage_points": 50.0,
+            "source_evidence_points": 25.0,
+            "workflow_relevance_points": null,
+            "assessment_status": "withheld",
+            "explanation": null,
+            "evidence_ids": [],
+            "source_urls": [],
+            "checks": [
+              "Controlled capability IDs",
+              "Retrieved record identity",
+              "Source URL and date presence",
+              "Per-tool citation ownership",
+              "Separate model evidence audit"
+            ],
+            "limitations": [
+              "An evidence match index is not a probability of success or an independent product rating.",
+              "Price, exact integrations, regional availability and privacy terms still need verification."
+            ]
+          },
+          "source_urls": [
+            "https://smith.ai/pricing/ai-receptionist"
+          ]
+        },
+        {
+          "tool_id": "7107afcf-7315-5a12-922c-a25b2f8552b2",
+          "name": "Bland AI",
+          "quality": {
+            "rubric_version": "evidence-match-v1",
+            "score": null,
+            "task_coverage_points": 25.0,
+            "source_evidence_points": 25.0,
+            "workflow_relevance_points": null,
+            "assessment_status": "withheld",
+            "explanation": null,
+            "evidence_ids": [],
+            "source_urls": [],
+            "checks": [
+              "Controlled capability IDs",
+              "Retrieved record identity",
+              "Source URL and date presence",
+              "Per-tool citation ownership",
+              "Separate model evidence audit"
+            ],
+            "limitations": [
+              "An evidence match index is not a probability of success or an independent product rating.",
+              "Price, exact integrations, regional availability and privacy terms still need verification."
+            ]
+          },
+          "source_urls": [
+            "https://www.bland.ai/"
+          ]
+        },
+        {
+          "tool_id": "b3b3d059-af86-58c9-a849-0b7c760cffcc",
+          "name": "Dialzara",
+          "quality": {
+            "rubric_version": "evidence-match-v1",
+            "score": null,
+            "task_coverage_points": 25.0,
+            "source_evidence_points": 25.0,
+            "workflow_relevance_points": null,
+            "assessment_status": "withheld",
+            "explanation": null,
+            "evidence_ids": [],
+            "source_urls": [],
+            "checks": [
+              "Controlled capability IDs",
+              "Retrieved record identity",
+              "Source URL and date presence",
+              "Per-tool citation ownership",
+              "Separate model evidence audit"
+            ],
+            "limitations": [
+              "An evidence match index is not a probability of success or an independent product rating.",
+              "Price, exact integrations, regional availability and privacy terms still need verification."
+            ]
+          },
+          "source_urls": [
+            "https://dialzara.com/pricing"
+          ]
+        },
+        {
+          "tool_id": "0594df1e-384b-5141-a1c2-d7b49700eb70",
+          "name": "Goodcall",
+          "quality": {
+            "rubric_version": "evidence-match-v1",
+            "score": null,
+            "task_coverage_points": 25.0,
+            "source_evidence_points": 25.0,
+            "workflow_relevance_points": null,
+            "assessment_status": "withheld",
+            "explanation": null,
+            "evidence_ids": [],
+            "source_urls": [],
+            "checks": [
+              "Controlled capability IDs",
+              "Retrieved record identity",
+              "Source URL and date presence",
+              "Per-tool citation ownership",
+              "Separate model evidence audit"
+            ],
+            "limitations": [
+              "An evidence match index is not a probability of success or an independent product rating.",
+              "Price, exact integrations, regional availability and privacy terms still need verification."
+            ]
+          },
+          "source_urls": [
+            "https://www.goodcall.com/how-it-works",
+            "https://www.goodcall.com/pricing"
+          ]
+        },
+        {
+          "tool_id": "39c80799-8a41-5176-b9e0-114423b07b04",
+          "name": "Housecall Pro CSR AI",
+          "quality": {
+            "rubric_version": "evidence-match-v1",
+            "score": null,
+            "task_coverage_points": 25.0,
+            "source_evidence_points": 25.0,
+            "workflow_relevance_points": null,
+            "assessment_status": "withheld",
+            "explanation": null,
+            "evidence_ids": [],
+            "source_urls": [],
+            "checks": [
+              "Controlled capability IDs",
+              "Retrieved record identity",
+              "Source URL and date presence",
+              "Per-tool citation ownership",
+              "Separate model evidence audit"
+            ],
+            "limitations": [
+              "An evidence match index is not a probability of success or an independent product rating.",
+              "Price, exact integrations, regional availability and privacy terms still need verification."
+            ]
+          },
+          "source_urls": [
+            "https://help.housecallpro.com/en/articles/9740104-csr-ai-overview"
+          ]
+        },
+        {
+          "tool_id": "7d00fb8d-85c7-5943-8554-8be4da94f02a",
+          "name": "Retell AI",
+          "quality": {
+            "rubric_version": "evidence-match-v1",
+            "score": null,
+            "task_coverage_points": 25.0,
+            "source_evidence_points": 25.0,
+            "workflow_relevance_points": null,
+            "assessment_status": "withheld",
+            "explanation": null,
+            "evidence_ids": [],
+            "source_urls": [],
+            "checks": [
+              "Controlled capability IDs",
+              "Retrieved record identity",
+              "Source URL and date presence",
+              "Per-tool citation ownership",
+              "Separate model evidence audit"
+            ],
+            "limitations": [
+              "An evidence match index is not a probability of success or an independent product rating.",
+              "Price, exact integrations, regional availability and privacy terms still need verification."
+            ]
+          },
+          "source_urls": [
+            "https://www.retellai.com/"
+          ]
+        }
+      ]
+    }
+  ]
+}

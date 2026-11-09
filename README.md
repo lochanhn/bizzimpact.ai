@@ -4,6 +4,8 @@ Phase 1 helps small-business owners describe their business and discover suitabl
 
 ## Team references
 
+- **[Paid AI discovery and quality checks](backend/AI_DISCOVERY.md)** — RAG architecture, model/prompt evaluation, score weights, evidence audits, paid trial and budget controls.
+
 - **[Docker packaging and EC2 deployment](deploy/ec2/README.md)** — build images, deploy to the shared EC2 host, configure runtime settings and HTTPS, verify, update, and roll back.
 - [Application README](website/README.md) — local development, routes, checks, and data sources.
 - [Authentication and database setup](website/AUTH_SETUP.md) — current Supabase configuration and remaining account checks.
